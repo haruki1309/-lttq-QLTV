@@ -11,3 +11,7 @@ C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\Grap
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CoreCompileInputs.cache
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.exe
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.pdb
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.dll
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.pdb
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmLogin.resources
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmMain.resources

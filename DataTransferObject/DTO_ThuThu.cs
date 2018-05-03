@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    class DTO_ThuThu
+    public class DTO_ThuThu
     {
         private string maThuThu;
         private string hoTen;

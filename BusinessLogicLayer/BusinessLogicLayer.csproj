@@ -40,7 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_ThuThu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseAccessLayer\DatabaseAccessLayer.csproj">
+      <Project>{c001c5d5-f15d-4f62-be9a-a5335f0619aa}</Project>
+      <Name>DatabaseAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
+      <Project>{e3aa118e-37da-47c3-98d6-0ea28871ab32}</Project>
+      <Name>DataTransferObject</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

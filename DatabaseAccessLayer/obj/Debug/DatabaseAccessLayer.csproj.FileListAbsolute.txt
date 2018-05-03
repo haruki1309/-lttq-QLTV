@@ -1,0 +1,8 @@
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\bin\Debug\DatabaseAccessLayer.dll
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\bin\Debug\DatabaseAccessLayer.pdb
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\bin\Debug\DataTransferObject.dll
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\bin\Debug\DataTransferObject.pdb
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.dll
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.pdb

@@ -4,3 +4,7 @@ C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\obj\Debug\Busine
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\bin\Debug\DatabaseAccessLayer.dll
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\bin\Debug\DataTransferObject.dll
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\bin\Debug\DatabaseAccessLayer.pdb
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\bin\Debug\DataTransferObject.pdb
