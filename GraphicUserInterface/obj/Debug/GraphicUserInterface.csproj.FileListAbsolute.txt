@@ -1,0 +1,13 @@
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\GraphicUserInterface.exe.config
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\GraphicUserInterface.exe
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\GraphicUserInterface.pdb
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\BusinessLogicLayer.dll
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\DataTransferObject.dll
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\DataTransferObject.pdb
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.csprojResolveAssemblyReference.cache
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.Properties.Resources.resources
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.GenerateResource.Cache
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CoreCompileInputs.cache
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.exe
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.pdb
