@@ -25,6 +25,10 @@ namespace DataTransferObject
         public string MaDocGia { get => maDocGia; set => maDocGia = value; }
         public string SoDT { get => soDT; set => soDT = value; }
 
+
+        public DTO_DocGia()
+        { }
+
         public DTO_DocGia(string maDocGia, string hoTen, string diaChi, string soDT, string cmnd, DateTime ngaySinh, DateTime ngayDK)
         {
             this.maDocGia = maDocGia;
