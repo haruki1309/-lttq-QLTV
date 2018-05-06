@@ -17,58 +17,24 @@ namespace BusinessLogicLayer
         {
             return dalDocGia.Get();
         }
-        
-        public DataTable getDocGia(List<string> listProperties)
+        public DataTable getDocGia(string dieuKien)
         {
-            return dalDocGia.Get(listProperties);
+            return dalDocGia.Get(dieuKien);
         }
 
-        public bool insertDocGia(string prvMaDocGia, string hoTen, string diaChi, string soDT, string cmnd, DateTime ngaySinh, DateTime ngayDK)
-        {
-            try
-            {
-                int indexOfString = 2;
-                for(int i = 2; i < prvMaDocGia.Length; i++)
-                {
-                    if(prvMaDocGia[i] != '0')
-                    {
-                        indexOfString = i;
-                    }
-                }
-
-                int iMaDocGia = int.Parse(prvMaDocGia.Substring(indexOfString)) + 1;
-                string sMaDocGia = "DG";
-                if (iMaDocGia >= 0 && iMaDocGia <= 9)
-                {
-                    sMaDocGia += string.Format("00{0}", iMaDocGia.ToString());
-                }
-                else if (iMaDocGia >= 10 && iMaDocGia <= 99)
-                {
-                    sMaDocGia += string.Format("0{0}", iMaDocGia.ToString());
-                }
-                else if (iMaDocGia >= 100 && iMaDocGia <= 999)
-                {
-                    sMaDocGia += iMaDocGia.ToString();
-                }
-
-
-                DTO_DocGia dTO_DocGia = new DTO_DocGia(sMaDocGia, hoTen, diaChi, soDT, cmnd, ngaySinh, ngayDK);
-                
-                return dalDocGia.Insert(dTO_DocGia);
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        //public bool insertDocGia(string prvMaDocGia, string hoTen, string diaChi, string soDT, string cmnd, DateTime ngaySinh, DateTime ngayDK)
+        //{
+        //    int iMaDocGia;
+        //    DataTable dt = dalDocGia.Get();
+        //    return dalDocGia.Insert(dTO_DocGia);
+        //}
         public bool updateDocGia(DTO_DocGia dTO_DocGia)
         {
             return dalDocGia.Update(dTO_DocGia);
         }
-        public bool delete(string MaDocGia)
+        public bool deleteDocGia(string MaDocGia)
         {
             return dalDocGia.Delete(MaDocGia);
         }
-        
     }
 }
