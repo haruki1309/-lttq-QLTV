@@ -6,14 +6,3 @@ C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\bin\Debug\DataT
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\bin\Debug\DataTransferObject.pdb
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.dll
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.pdb
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\bin\Debug\DatabaseAccessLayer.dll
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\bin\Debug\DatabaseAccessLayer.pdb
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\bin\Debug\DataTransferObject.dll
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\bin\Debug\DataTransferObject.pdb
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csprojResolveAssemblyReference.cache
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csproj.CoreCompileInputs.cache
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csproj.CopyComplete
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.dll
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.pdb
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.Properties.Resource1.resources
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csproj.GenerateResource.cache

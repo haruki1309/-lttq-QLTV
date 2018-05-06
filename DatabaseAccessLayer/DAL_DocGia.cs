@@ -26,12 +26,19 @@ namespace DatabaseAccessLayer
                 return null;
             }
         }
-        public DataTable Get(string Condition)
+        public DataTable Get(List<string> listProperties)
         {
             try
             {
-                string SQL = String.Format("select * from DocGia where {0}", Condition);
-                SqlDataAdapter da = new SqlDataAdapter(SQL, cn);
+                //string SQL = string.Format("select {0} from DocGia", listProperties);
+                string sql = "select " + listProperties[0];
+                for(int i = 1; i < listProperties.Count; i++)
+                {
+                    sql += (", " + listProperties[i]);
+                }
+                sql += " from DocGia";
+              
+                SqlDataAdapter da = new SqlDataAdapter(sql, cn);
                 
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -49,9 +56,18 @@ namespace DatabaseAccessLayer
             try
             {
                 cn.Open();
-                string SQL = string.Format("INSERT INTO ThuThu VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", dTO_DocGia.MaDocGia, dTO_DocGia.HoTen, dTO_DocGia.DiaChi, dTO_DocGia.SoDT, dTO_DocGia.Cmnd, dTO_DocGia.NgaySinh, dTO_DocGia.NgayDK);
-                SqlCommand cmd = new SqlCommand(SQL, cn);
+                //string SQL = string.Format("INSERT INTO ThuThu VALUES('{0}', N'{1}', N'{2}', '{3}', '{4}', {5}, {6})", dTO_DocGia.MaDocGia, dTO_DocGia.HoTen, dTO_DocGia.DiaChi, dTO_DocGia.SoDT, dTO_DocGia.Cmnd, dTO_DocGia.NgaySinh.ToString(), dTO_DocGia.NgayDK.ToString());
+                SqlCommand cmd = new SqlCommand("ThemDocGia", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@MaDocGia", dTO_DocGia.MaDocGia);
+                cmd.Parameters.AddWithValue("@HoTen", dTO_DocGia.HoTen);
+                cmd.Parameters.AddWithValue("@DiaChi", dTO_DocGia.DiaChi);
+                cmd.Parameters.AddWithValue("@SDT", dTO_DocGia.SoDT);
+                cmd.Parameters.AddWithValue("@CMND", dTO_DocGia.Cmnd);
+                cmd.Parameters.AddWithValue("@NgaySinh", dTO_DocGia.NgaySinh);
+                cmd.Parameters.AddWithValue("@NgayDK", dTO_DocGia.NgayDK);
+                
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -74,30 +90,8 @@ namespace DatabaseAccessLayer
             try
             {
                 cn.Open();
-                //string SQL = string.Format("UPDATE ThuThu SET HoTen = '{0}', DiaChi = '{1}', SDT = '{2}', CMND = '{3}', NgaySinh = '{4}', NgayDK = '{5}' WHERE MaDocGia = '{6}'", dTO_DocGia.HoTen, dTO_DocGia.DiaChi, dTO_DocGia.SoDT, dTO_DocGia.Cmnd, dTO_DocGia.NgaySinh, dTO_DocGia.NgayDK, dTO_DocGia.MaDocGia);
-                //SqlCommand cmd = new SqlCommand(SQL, cn);
-                
-                SqlCommand cmd = new SqlCommand("SuaDocGia", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                SqlParameter p = new SqlParameter("@MaDocGia", dTO_DocGia.MaDocGia);
-                cmd.Parameters.Add(p);
-
-                p = new SqlParameter("@HoTen", dTO_DocGia.HoTen);
-                cmd.Parameters.Add(p);
-
-                p = new SqlParameter("@DiaChi", dTO_DocGia.DiaChi);
-                cmd.Parameters.Add(p);
-
-                p = new SqlParameter("@CMND", dTO_DocGia.Cmnd);
-                cmd.Parameters.Add(p);
-
-                p = new SqlParameter("@SDT", dTO_DocGia.SoDT);
-                cmd.Parameters.Add(p);
-
-                p = new SqlParameter("@NgaySinh", dTO_DocGia.NgaySinh);
-                cmd.Parameters.Add(p);               
-
+                string SQL = string.Format("UPDATE ThuThu SET HoTen = '{0}', DiaChi = '{1}', SDT = '{2}', CMND = '{3}', NgaySinh = '{4}', NgayDK = '{5}' WHERE MaDocGia = '{6}'", dTO_DocGia.HoTen, dTO_DocGia.DiaChi, dTO_DocGia.SoDT, dTO_DocGia.Cmnd, dTO_DocGia.NgaySinh, dTO_DocGia.NgayDK, dTO_DocGia.MaDocGia);
+                SqlCommand cmd = new SqlCommand(SQL, cn);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;
@@ -119,15 +113,8 @@ namespace DatabaseAccessLayer
             try
             {
                 cn.Open();
-                //string SQL = string.Format("DELETE FROM DocGia WHERE MaDocGia = {0}", MaDocGia);
-                //SqlCommand cmd = new SqlCommand(SQL, cn);
-
-                SqlCommand cmd = new SqlCommand("XoaDocGia", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                SqlParameter p = new SqlParameter("@MaDocGia", MaDocGia);
-                cmd.Parameters.Add(p);
-
+                string SQL = string.Format("DELETE FROM DocGia WHERE MaDocGia = {0}", MaDocGia);
+                SqlCommand cmd = new SqlCommand(SQL, cn);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;
@@ -144,30 +131,28 @@ namespace DatabaseAccessLayer
             return false;
         }
 
-        // bug cho nay
-    //    public int CountRow()
-    //    {
-    //        try
-    //        {
-    //            cn.Open();
+     
+        public int CountRow()
+        {
+            try
+            {
+                cn.Open();
+                string SQL = "select count(*) from DocGia";
+                SqlCommand sCmd = new SqlCommand(SQL, cn);
                 
-    //            SqlCommand cmd = cn.CreateCommand();
-    //            DbDataReader reader = cmd.ExecuteReader();
-    //            reader.getV
-    //            if (cmd.ExecuteNonQuery() > 0)
-    //            {
-    //                return true;
-    //            }
-    //        }
-    //        catch (Exception e)
-    //        {
 
-    //        }
-    //        finally
-    //        {
-    //            cn.Close();
-    //        }
-    //        return false;
-    //    }
+                return (int)sCmd.ExecuteScalar();
+                
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return 0;
+        }
     }
 }
