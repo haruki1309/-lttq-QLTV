@@ -46,24 +46,27 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.clbThuocTinh = new System.Windows.Forms.CheckedListBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.grpTimKiemDocGia = new System.Windows.Forms.GroupBox();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.cboFindFor = new System.Windows.Forms.ComboBox();
+            this.txtFindID = new System.Windows.Forms.TextBox();
+            this.txtFindName = new System.Windows.Forms.TextBox();
+            this.txtFindPersonalID = new System.Windows.Forms.TextBox();
+            this.txtFindPhoneNumber = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.grpTimKiemDocGia.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(442, 88);
+            this.btnInsert.Location = new System.Drawing.Point(56, 4);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(79, 29);
             this.btnInsert.TabIndex = 1;
             this.btnInsert.Text = "Thêm";
             this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // panel1
             // 
@@ -81,9 +84,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(669, 7);
+            this.panel1.Location = new System.Drawing.Point(669, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(347, 202);
+            this.panel1.Size = new System.Drawing.Size(347, 209);
             this.panel1.TabIndex = 2;
             // 
             // dtpNgaySinh
@@ -189,10 +192,9 @@
             // 
             this.dgvDocGia.BackgroundColor = System.Drawing.Color.White;
             this.dgvDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDocGia.Location = new System.Drawing.Point(4, 142);
+            this.dgvDocGia.Location = new System.Drawing.Point(4, 12);
             this.dgvDocGia.Name = "dgvDocGia";
-            this.dgvDocGia.ReadOnly = true;
-            this.dgvDocGia.Size = new System.Drawing.Size(659, 376);
+            this.dgvDocGia.Size = new System.Drawing.Size(659, 506);
             this.dgvDocGia.TabIndex = 2;
             this.dgvDocGia.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDocGia_RowHeaderMouseClick);
             // 
@@ -200,68 +202,110 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnFind);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnInsert);
-            this.panel2.Location = new System.Drawing.Point(4, 7);
+            this.panel2.Location = new System.Drawing.Point(669, 227);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(526, 129);
+            this.panel2.Size = new System.Drawing.Size(347, 75);
             this.panel2.TabIndex = 3;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(442, 45);
+            this.btnUpdate.Location = new System.Drawing.Point(141, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(79, 29);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(442, 5);
+            this.btnDelete.Location = new System.Drawing.Point(226, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 29);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnFilter
+            // grpTimKiemDocGia
             // 
-            this.btnFilter.Location = new System.Drawing.Point(24, 88);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(79, 29);
-            this.btnFilter.TabIndex = 4;
-            this.btnFilter.Text = "Lọc";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            this.grpTimKiemDocGia.Controls.Add(this.txtFindPhoneNumber);
+            this.grpTimKiemDocGia.Controls.Add(this.txtFindPersonalID);
+            this.grpTimKiemDocGia.Controls.Add(this.txtFindName);
+            this.grpTimKiemDocGia.Controls.Add(this.txtFindID);
+            this.grpTimKiemDocGia.Controls.Add(this.cboFindFor);
+            this.grpTimKiemDocGia.Location = new System.Drawing.Point(669, 308);
+            this.grpTimKiemDocGia.Name = "grpTimKiemDocGia";
+            this.grpTimKiemDocGia.Size = new System.Drawing.Size(347, 210);
+            this.grpTimKiemDocGia.TabIndex = 4;
+            this.grpTimKiemDocGia.TabStop = false;
+            this.grpTimKiemDocGia.Text = "Tìm kiếm độc giả";
+            this.grpTimKiemDocGia.Visible = false;
             // 
-            // clbThuocTinh
+            // btnFind
             // 
-            this.clbThuocTinh.BackColor = System.Drawing.Color.White;
-            this.clbThuocTinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.clbThuocTinh.CheckOnClick = true;
-            this.clbThuocTinh.FormattingEnabled = true;
-            this.clbThuocTinh.Items.AddRange(new object[] {
-            "DiaChi",
-            "SDT",
+            this.btnFind.Location = new System.Drawing.Point(56, 39);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(79, 29);
+            this.btnFind.TabIndex = 4;
+            this.btnFind.Text = "Tìm kiếm";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // cboFindFor
+            // 
+            this.cboFindFor.FormattingEnabled = true;
+            this.cboFindFor.Items.AddRange(new object[] {
+            "Mã độc giả",
+            "Tên độc giả",
             "CMND",
-            "NgaySinh",
-            "NgayDK"});
-            this.clbThuocTinh.Location = new System.Drawing.Point(24, 7);
-            this.clbThuocTinh.Name = "clbThuocTinh";
-            this.clbThuocTinh.Size = new System.Drawing.Size(79, 75);
-            this.clbThuocTinh.TabIndex = 5;
+            "Số điện thoại"});
+            this.cboFindFor.Location = new System.Drawing.Point(6, 19);
+            this.cboFindFor.Name = "cboFindFor";
+            this.cboFindFor.Size = new System.Drawing.Size(121, 21);
+            this.cboFindFor.TabIndex = 0;
+            this.cboFindFor.Text = "Tìm kiếm theo";
+            this.cboFindFor.SelectedIndexChanged += new System.EventHandler(this.cboFindFor_SelectedIndexChanged);
             // 
-            // panel3
+            // txtFindID
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.clbThuocTinh);
-            this.panel3.Controls.Add(this.btnFilter);
-            this.panel3.Location = new System.Drawing.Point(536, 7);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(127, 129);
-            this.panel3.TabIndex = 6;
+            this.txtFindID.Location = new System.Drawing.Point(6, 59);
+            this.txtFindID.Name = "txtFindID";
+            this.txtFindID.Size = new System.Drawing.Size(160, 20);
+            this.txtFindID.TabIndex = 1;
+            this.txtFindID.Text = "Mã độc giả";
+            this.txtFindID.Visible = false;
+            // 
+            // txtFindName
+            // 
+            this.txtFindName.Location = new System.Drawing.Point(184, 58);
+            this.txtFindName.Name = "txtFindName";
+            this.txtFindName.Size = new System.Drawing.Size(150, 20);
+            this.txtFindName.TabIndex = 2;
+            this.txtFindName.Text = "Họ tên";
+            this.txtFindName.Visible = false;
+            // 
+            // txtFindPersonalID
+            // 
+            this.txtFindPersonalID.Location = new System.Drawing.Point(8, 98);
+            this.txtFindPersonalID.Name = "txtFindPersonalID";
+            this.txtFindPersonalID.Size = new System.Drawing.Size(157, 20);
+            this.txtFindPersonalID.TabIndex = 3;
+            this.txtFindPersonalID.Text = "CMND";
+            this.txtFindPersonalID.Visible = false;
+            // 
+            // txtFindPhoneNumber
+            // 
+            this.txtFindPhoneNumber.Location = new System.Drawing.Point(184, 98);
+            this.txtFindPhoneNumber.Name = "txtFindPhoneNumber";
+            this.txtFindPhoneNumber.Size = new System.Drawing.Size(146, 20);
+            this.txtFindPhoneNumber.TabIndex = 4;
+            this.txtFindPhoneNumber.Text = "Số điện thoại";
+            this.txtFindPhoneNumber.Visible = false;
             // 
             // frmDocGia
             // 
@@ -269,7 +313,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1018, 528);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.grpTimKiemDocGia);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvDocGia);
             this.Controls.Add(this.panel1);
@@ -280,7 +324,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.grpTimKiemDocGia.ResumeLayout(false);
+            this.grpTimKiemDocGia.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -304,8 +349,12 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
-        private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.CheckedListBox clbThuocTinh;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.GroupBox grpTimKiemDocGia;
+        private System.Windows.Forms.ComboBox cboFindFor;
+        private System.Windows.Forms.TextBox txtFindPhoneNumber;
+        private System.Windows.Forms.TextBox txtFindPersonalID;
+        private System.Windows.Forms.TextBox txtFindName;
+        private System.Windows.Forms.TextBox txtFindID;
     }
 }

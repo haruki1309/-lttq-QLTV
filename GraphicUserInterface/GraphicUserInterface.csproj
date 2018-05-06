@@ -99,9 +99,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lib_9_BENK.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Resources\lib_9_BENK.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lib_2_WXSU.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

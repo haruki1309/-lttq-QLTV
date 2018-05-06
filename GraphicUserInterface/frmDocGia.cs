@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataTransferObject;
 using BusinessLogicLayer;
 
 namespace GraphicUserInterface
@@ -14,6 +15,7 @@ namespace GraphicUserInterface
     public partial class frmDocGia : Form
     {
         BUS_DocGia busDG = new BUS_DocGia();
+        
         public frmDocGia()
         {
             InitializeComponent();
@@ -26,13 +28,6 @@ namespace GraphicUserInterface
 
         private void dgvDocGia_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            this.tbxHoten.ReadOnly = true;
-            this.tbxDiaChi.ReadOnly = true;
-            this.tbxCMND.ReadOnly = true;
-            this.tbxSDT.ReadOnly = true;
-            this.dtpNgaySinh.Enabled = false;
-            this.dtpNgayDK.Enabled = false;
-
             DataTable dt = busDG.getDocGia();
             tbxHoten.Text = dt.Rows[e.RowIndex]["HoTen"].ToString();
             tbxDiaChi.Text = dt.Rows[e.RowIndex]["DiaChi"].ToString();
@@ -42,55 +37,158 @@ namespace GraphicUserInterface
             dtpNgayDK.Value = Convert.ToDateTime(dt.Rows[e.RowIndex]["NgayDK"].ToString());
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            this.tbxHoten.ReadOnly = false;
-            this.tbxHoten.Clear();
-            this.tbxDiaChi.ReadOnly = false;
-            this.tbxDiaChi.Clear();
-            this.tbxCMND.ReadOnly = false;
-            this.tbxCMND.Clear();
-            this.tbxSDT.ReadOnly = false;
-            this.tbxSDT.Clear();
-            this.dtpNgaySinh.Enabled = true;
-            this.dtpNgayDK.Enabled = true;
-
-            
-
-            if (tbxHoten.Text != "")
+            if (dgvDocGia.SelectedRows.Count > 0)
             {
-                string prvMaDocGia = "";
-                DataTable dt = busDG.getDocGia();
-                prvMaDocGia = dt.Rows[dt.Rows.Count - 1]["MaDocGia"].ToString();
+                if (tbxHoten.Text != "" && tbxDiaChi.Text != "" && tbxSDT.Text !="" && tbxCMND.Text != "")
+                {
+                    DataGridViewRow row = dgvDocGia.CurrentRow;
 
-                DialogResult dialog = MessageBox.Show("Thông tin bạn nhập đã chính xác chưa!", "Cảnh báo!", MessageBoxButtons.YesNo);
-                bool isInsert = false;
-                if (dialog == DialogResult.Yes)
-                {
-                    isInsert = busDG.insertDocGia(prvMaDocGia, tbxHoten.Text, tbxDiaChi.Text, tbxSDT.Text, tbxCMND.Text, dtpNgaySinh.Value, dtpNgayDK.Value);
+                    DTO_DocGia dtoDocGia = new DTO_DocGia(row.Cells[0].Value.ToString(), tbxHoten.Text, tbxDiaChi.Text, tbxSDT.Text, tbxCMND.Text, dtpNgaySinh.Value, dtpNgayDK.Value);
+
+                    if(busDG.updateDocGia(dtoDocGia))
+                    {
+                        MessageBox.Show("Sửa thành công !");
+                        dgvDocGia.DataSource = busDG.getDocGia();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa không thành công !");
+                    }
                 }
-                if (isInsert)
+                else
                 {
-                    dgvDocGia.DataSource = busDG.getDocGia();
-                    MessageBox.Show("Thêm thành công");
-                }             
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin !");
+                }
             }
+            
+            
             
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            List<string> listProperties = new List<string>();                    
-            listProperties.Add("MaDocGia");
-            listProperties.Add("HoTen");
-            if(clbThuocTinh.CheckedItems.Count > 0)
+            if (dgvDocGia.SelectedRows.Count > 0)
             {
-                foreach(string item in clbThuocTinh.CheckedItems)
+                DialogResult result = MessageBox.Show("Khi bạn nhấn \"Yes\" đối tượng sẽ bị xóa vĩnh viễn.\nBạn có chắc chắn muốn xóa?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                
+                if (result == DialogResult.Yes)
                 {
-                    listProperties.Add(item);
-                }              
+                    DataGridViewRow row = dgvDocGia.CurrentRow;
+
+                    string maDocGia = row.Cells[0].Value.ToString();
+
+                    if (busDG.deleteDocGia(maDocGia))
+                    {
+                        MessageBox.Show("Xóa thành công !");
+                        dgvDocGia.DataSource = busDG.getDocGia();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công !");
+                    }
+                }
             }
-            dgvDocGia.DataSource = busDG.getDocGia(listProperties);
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một đối tượng !");
+            }
+
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if (grpTimKiemDocGia.Visible == false)
+                grpTimKiemDocGia.Visible = true;
+            else
+            {
+                string findCondition = "";
+
+                //if (cboFindFor.SelectedItem.ToString() == "Mã độc giả")
+                //    findCondition = String.Format("MaDocGia = '{0}'", txtFindID.Text);
+                //else
+                //{
+                //    if (cboFindFor.SelectedItem.ToString() == "Họ tên")
+                //        findCondition = String.Format("HoTen = '{0}'", txtFindName.Text);
+                //    else
+                //    {
+                //        if (cboFindFor.SelectedItem.ToString() == "CMND")
+                //            findCondition = String.Format("CMND = '{0}'", txtFindPersonalID.Text);
+                //        else
+                //        {
+                //            if (cboFindFor.SelectedItem.ToString() == "Số điện thoại")
+                //                findCondition = String.Format("SDT = '{0}'", txtFindPhoneNumber.Text);
+                //        }
+                //    }
+
+                //}
+
+
+
+                if (cboFindFor.SelectedItem.ToString() == "Mã độc giả")
+                    findCondition = String.Format("MaDocGia = '{0}'", txtFindID.Text);
+                
+                    if (cboFindFor.SelectedItem.ToString() == "Họ tên")
+                        findCondition = String.Format("HoTen = N'{0}'", txtFindName.Text);
+                    
+                        if (cboFindFor.SelectedItem.ToString() == "CMND")
+                            findCondition = String.Format("CMND = '{0}'", txtFindPersonalID.Text);
+                        
+                            if (cboFindFor.SelectedItem.ToString() == "Số điện thoại")
+                                findCondition = String.Format("SDT = '{0}'", txtFindPhoneNumber.Text);
+                        
+                    
+
+                
+
+
+
+                dgvDocGia.DataSource = busDG.getDocGia(findCondition);
+
+            }
+        }
+
+        private void cboFindFor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Point p = new Point(6, 59);
+
+            if (cboFindFor.SelectedIndex == 3)
+            {
+                txtFindPhoneNumber.Location = p;
+                txtFindPhoneNumber.Visible = true;
+
+                txtFindID.Visible = false;
+                txtFindPersonalID.Visible = false;
+                txtFindName.Visible = false;
+            }
+            else if (cboFindFor.SelectedIndex == 2)
+            {
+                txtFindPersonalID.Location = p;
+                txtFindPersonalID.Visible = true;
+
+                txtFindID.Visible = false;
+                txtFindName.Visible = false;
+                txtFindPhoneNumber.Visible = false;
+            }
+            else if (cboFindFor.SelectedIndex == 1)
+            {
+                txtFindName.Location = p;
+                txtFindName.Visible = true;
+
+                txtFindID.Visible = false;
+                txtFindPersonalID.Visible = false;
+                txtFindPhoneNumber.Visible = false;
+            }
+            else if (cboFindFor.SelectedIndex == 0)
+            {
+                txtFindID.Location = p;
+
+                txtFindID.Visible = true;
+                txtFindName.Visible = false;
+                txtFindPersonalID.Visible = false;
+                txtFindPhoneNumber.Visible = false;            
+            }
         }
     }
 }

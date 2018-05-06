@@ -6,7 +6,6 @@ namespace GraphicUserInterface
     public partial class frmLogin : Form
     {
         BUS_ThuThu busTT = new BUS_ThuThu();
-        
         public frmLogin()
         {
             InitializeComponent();
@@ -17,13 +16,11 @@ namespace GraphicUserInterface
         {
             if(busTT.Login(tbx_MaThuThu.Text, tbx_MatKhau.Text))
             {
-                frmDocGia frmDocGia = new frmDocGia();
-                frmDocGia.ShowDialog();
-                
+                MessageBox.Show("Đăng Nhập Thành Công");
             }
             else
             {
-                MessageBox.Show("Sai USERNAME hoặc PASSWORD");
+                MessageBox.Show("Đăng Nhập Thất Bại");
             }
         }
 
