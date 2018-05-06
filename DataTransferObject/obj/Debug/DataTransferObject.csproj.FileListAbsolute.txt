@@ -4,9 +4,3 @@ C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DataTransferObject\obj\Debug\DataTr
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DataTransferObject\obj\Debug\DataTransferObject.csproj.CoreCompileInputs.cache
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DataTransferObject\obj\Debug\DataTransferObject.dll
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\DataTransferObject\obj\Debug\DataTransferObject.pdb
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DataTransferObject\bin\Debug\DataTransferObject.dll
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DataTransferObject\bin\Debug\DataTransferObject.pdb
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DataTransferObject\obj\Debug\DataTransferObject.csprojResolveAssemblyReference.cache
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DataTransferObject\obj\Debug\DataTransferObject.csproj.CoreCompileInputs.cache
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DataTransferObject\obj\Debug\DataTransferObject.dll
-F:\For Me\Study\4 - Trực quan\Project\GIT2\-lttq-QLTV-master\DataTransferObject\obj\Debug\DataTransferObject.pdb

@@ -15,3 +15,4 @@ C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\Data
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.pdb
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmLogin.resources
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmMain.resources
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\Resources\lib_9_BENK.jpg
