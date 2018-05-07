@@ -30,8 +30,31 @@ namespace DatabaseAccessLayer
         {
             try
             {
-                string SQL = String.Format("select * from DocGia where {0}", Condition);
+                string SQL = String.Format("select * from DocGia where " + Condition);
                 SqlDataAdapter da = new SqlDataAdapter(SQL, cn);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public DataTable Get(List<string> listProperties)
+        {
+            try
+            {
+                //string SQL = string.Format("select {0} from DocGia", listProperties);
+                string sql = "select " + listProperties[0];
+                for(int i = 1; i < listProperties.Count; i++)
+                {
+                    sql += (", " + listProperties[i]);
+                }
+                sql += " from DocGia";
+              
+                SqlDataAdapter da = new SqlDataAdapter(sql, cn);
                 
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -83,8 +106,16 @@ namespace DatabaseAccessLayer
             try
             {
                 cn.Open();
-                string SQL = string.Format("UPDATE ThuThu SET HoTen = '{0}', DiaChi = '{1}', SDT = '{2}', CMND = '{3}', NgaySinh = '{4}', NgayDK = '{5}' WHERE MaDocGia = '{6}'", dTO_DocGia.HoTen, dTO_DocGia.DiaChi, dTO_DocGia.SoDT, dTO_DocGia.Cmnd, dTO_DocGia.NgaySinh, dTO_DocGia.NgayDK, dTO_DocGia.MaDocGia);
-                SqlCommand cmd = new SqlCommand(SQL, cn);
+                SqlCommand cmd = new SqlCommand("SuaDocGia", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@MaDocGia", dTO_DocGia.MaDocGia);
+                cmd.Parameters.AddWithValue("@HoTen", dTO_DocGia.HoTen);
+                cmd.Parameters.AddWithValue("@DiaChi", dTO_DocGia.DiaChi);
+                cmd.Parameters.AddWithValue("@CMND", dTO_DocGia.Cmnd);
+                cmd.Parameters.AddWithValue("@SDT", dTO_DocGia.SoDT);
+                cmd.Parameters.AddWithValue("@NgaySinh", dTO_DocGia.NgaySinh);
+
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;
