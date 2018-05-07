@@ -30,7 +30,6 @@
         {
             this.btnInsert = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayDK = new System.Windows.Forms.DateTimePicker();
             this.tbxCMND = new System.Windows.Forms.TextBox();
             this.tbxSDT = new System.Windows.Forms.TextBox();
@@ -46,6 +45,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
             this.panel2.SuspendLayout();
@@ -81,14 +81,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(347, 209);
             this.panel1.TabIndex = 2;
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(101, 134);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(233, 20);
-            this.dtpNgaySinh.TabIndex = 24;
             // 
             // dtpNgayDK
             // 
@@ -187,7 +179,6 @@
             this.dgvDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocGia.Location = new System.Drawing.Point(4, 12);
             this.dgvDocGia.Name = "dgvDocGia";
-            this.dgvDocGia.ReadOnly = true;
             this.dgvDocGia.Size = new System.Drawing.Size(659, 506);
             this.dgvDocGia.TabIndex = 2;
             this.dgvDocGia.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDocGia_RowHeaderMouseClick);
@@ -221,6 +212,14 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(101, 134);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(233, 20);
+            this.dtpNgaySinh.TabIndex = 24;
             // 
             // frmMain
             // 

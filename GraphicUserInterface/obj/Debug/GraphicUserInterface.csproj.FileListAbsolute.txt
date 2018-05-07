@@ -14,5 +14,24 @@ C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\Grap
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.dll
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.pdb
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmLogin.resources
-C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmMain.resources
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\bin\Debug\Resources\lib_9_BENK.jpg
+C:\Users\T-PC\source\repos\lttqQuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmDocGia.resources
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\obj\Debug\GraphicUserInterface.csprojResolveAssemblyReference.cache
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmLogin.resources
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmDocGia.resources
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\obj\Debug\GraphicUserInterface.Properties.Resources.resources
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.GenerateResource.cache
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CoreCompileInputs.cache
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\obj\Debug\GraphicUserInterface.exe
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\obj\Debug\GraphicUserInterface.pdb
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\Resources\lib_9_BENK.jpg
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\GraphicUserInterface.exe.config
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\GraphicUserInterface.exe
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\GraphicUserInterface.pdb
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\BusinessLogicLayer.dll
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\DataTransferObject.dll
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.dll
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\BusinessLogicLayer.pdb
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\DataTransferObject.pdb
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.pdb
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CopyComplete

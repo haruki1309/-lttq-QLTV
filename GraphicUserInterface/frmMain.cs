@@ -37,21 +37,7 @@ namespace GraphicUserInterface
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            string prvMaDocGia = "";
-            DataTable dt = busDG.getDocGia();
-            prvMaDocGia = dt.Rows[dt.Rows.Count - 1]["MaDocGia"].ToString();
-
-            DialogResult dialog = MessageBox.Show("Thông tin bạn nhập đã chính xác chưa!", "Cảnh báo!", MessageBoxButtons.YesNo);
-            bool isInsert = false;
-            if (dialog == DialogResult.Yes)
-            {
-                isInsert = busDG.insertDocGia(prvMaDocGia, tbxHoten.Text, tbxDiaChi.Text, tbxSDT.Text, tbxCMND.Text, dtpNgaySinh.Value, dtpNgayDK.Value);
-            }
-            if(isInsert)
-            {
-                dgvDocGia.DataSource = busDG.getDocGia();
-                MessageBox.Show("Thêm thành công");
-            }
+           
         }
     }
 }
