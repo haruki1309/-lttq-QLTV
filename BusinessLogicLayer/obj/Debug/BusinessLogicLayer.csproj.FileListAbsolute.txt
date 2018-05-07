@@ -8,3 +8,14 @@ C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\bin\Debug\Databa
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\bin\Debug\DataTransferObject.dll
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\bin\Debug\DatabaseAccessLayer.pdb
 C:\Users\T-PC\source\repos\lttqQuanLyThuVien\BusinessLogicLayer\bin\Debug\DataTransferObject.pdb
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\bin\Debug\DatabaseAccessLayer.dll
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\bin\Debug\DataTransferObject.dll
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\bin\Debug\DatabaseAccessLayer.pdb
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\bin\Debug\DataTransferObject.pdb
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

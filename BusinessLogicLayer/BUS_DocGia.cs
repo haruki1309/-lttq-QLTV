@@ -17,6 +17,14 @@ namespace BusinessLogicLayer
         {
             return dalDocGia.Get();
         }
+        public DataTable getDocGia(string condition)
+        {
+            return dalDocGia.Get(condition);
+        }
+        public DataTable getDocGia(List<string> listProperties)
+        {
+            return dalDocGia.Get(listProperties);
+        }
 
         public bool insertDocGia(string prvMaDocGia, string hoTen, string diaChi, string soDT, string cmnd, DateTime ngaySinh, DateTime ngayDK)
         {
@@ -56,17 +64,15 @@ namespace BusinessLogicLayer
                 return false;
             }
         }
-        public bool updateDocGia(DTO_DocGia dTO_DocGia)
+        public bool updateDocGia(string maDG, string hoTen, string diaChi, string SDT, string CMND, DateTime ngaySinh, DateTime ngayDK)
         {
+            DTO_DocGia dTO_DocGia = new DTO_DocGia(maDG, hoTen, diaChi, SDT, CMND, ngaySinh, ngayDK);
             return dalDocGia.Update(dTO_DocGia);
         }
-        public bool delete(string MaDocGia)
+        public bool deleteDocGia(string MaDocGia)
         {
             return dalDocGia.Delete(MaDocGia);
         }
-        public DataTable getDocGia(string MaDocGia)
-        {
-            return dalDocGia.Get(MaDocGia);
-        }
+        
     }
 }
