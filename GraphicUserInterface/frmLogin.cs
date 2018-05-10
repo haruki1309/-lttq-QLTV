@@ -15,18 +15,20 @@ namespace GraphicUserInterface
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if(busTT.Login(tbx_MaThuThu.Text, tbx_MatKhau.Text))
+            if(busTT.Login(txtTaiKhoan.Text, txtMatKhau.Text))
             {
-                frmDocGia frmDocGia = new frmDocGia();
+                lblStatus.Text = "(*) Đăng nhập thành công";
+                frmDocGia frmDocGia = new frmDocGia();                
+                this.Hide();
                 frmDocGia.ShowDialog();
                 
             }
             else
             {
-                MessageBox.Show("Sai USERNAME hoặc PASSWORD");
+                lblStatus.Text = "(*) Sai Tên tài khoản hoặc Mật khẩu";
             }
         }
-
+        
         
     }
 }
