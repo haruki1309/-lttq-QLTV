@@ -12,6 +12,8 @@ namespace DatabaseAccessLayer
 {
     public class DAL_DocGia: DBConnect
     {
+
+        //Lay doc gia
         public DataTable Get()
         {
             try
@@ -65,6 +67,9 @@ namespace DatabaseAccessLayer
                 return null;
             }
         }
+
+
+
         DataTable dt = new DataTable();
         //Them
         public bool Insert(DTO_DocGia dTO_DocGia)
@@ -83,7 +88,7 @@ namespace DatabaseAccessLayer
                 cmd.Parameters.AddWithValue("@CMND", dTO_DocGia.Cmnd);
                 cmd.Parameters.AddWithValue("@NgaySinh", dTO_DocGia.NgaySinh);
                 cmd.Parameters.AddWithValue("@NgayDK", dTO_DocGia.NgayDK);
-                
+
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {

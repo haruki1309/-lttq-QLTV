@@ -35,3 +35,20 @@ F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\b
 F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\DataTransferObject.pdb
 F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.pdb
 F:\For Me\Study\4 - Trực quan\Project\TrucQuanSln_07_05\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CopyComplete
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\bin\Debug\GraphicUserInterface.exe.config
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\bin\Debug\GraphicUserInterface.exe
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\bin\Debug\GraphicUserInterface.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\bin\Debug\BusinessLogicLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\bin\Debug\DataTransferObject.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\bin\Debug\BusinessLogicLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\bin\Debug\DataTransferObject.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\obj\Debug\GraphicUserInterface.csprojResolveAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmLogin.resources
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmDocGia.resources
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\obj\Debug\GraphicUserInterface.Properties.Resources.resources
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.GenerateResource.Cache
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\obj\Debug\GraphicUserInterface.exe
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\GraphicUserInterface\obj\Debug\GraphicUserInterface.pdb

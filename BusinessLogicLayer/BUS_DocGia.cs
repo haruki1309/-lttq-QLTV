@@ -36,9 +36,10 @@ namespace BusinessLogicLayer
                     if(prvMaDocGia[i] != '0')
                     {
                         indexOfString = i;
+                        break;
                     }
                 }
-
+                
                 int iMaDocGia = int.Parse(prvMaDocGia.Substring(indexOfString)) + 1;
                 string sMaDocGia = "DG";
                 if (iMaDocGia >= 0 && iMaDocGia <= 9)

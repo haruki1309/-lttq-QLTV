@@ -17,126 +17,261 @@ namespace GraphicUserInterface
         public frmDocGia()
         {
             InitializeComponent();
-        }    
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            dgvDocGia.DataSource = busDG.getDocGia();
         }
-
-        private void dgvDocGia_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void frmDocGia_Load(object sender, EventArgs e)
         {
-            this.tbxHoten.ReadOnly = true;
-            this.tbxDiaChi.ReadOnly = true;
-            this.tbxCMND.ReadOnly = true;
-            this.tbxSDT.ReadOnly = true;
-            this.dtpNgaySinh.Enabled = false;
-            this.dtpNgayDK.Enabled = false;
-
             DataTable dt = busDG.getDocGia();
-            tbxHoten.Text = dt.Rows[e.RowIndex]["HoTen"].ToString();
-            tbxDiaChi.Text = dt.Rows[e.RowIndex]["DiaChi"].ToString();
-            tbxCMND.Text = dt.Rows[e.RowIndex]["CMND"].ToString();
-            tbxSDT.Text = dt.Rows[e.RowIndex]["SDT"].ToString();          
-            dtpNgaySinh.Value = Convert.ToDateTime(dt.Rows[e.RowIndex]["NgaySinh"].ToString());                      
-            dtpNgayDK.Value = Convert.ToDateTime(dt.Rows[e.RowIndex]["NgayDK"].ToString());
-        }
+            this.dgvDocGia.DataSource = dt;
 
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-            //chỗ này ban đầu t set read-only, nên khi insert vào set lại bằng false
-            //hàm này còn chưa đúng luồng chạy nhá
-            this.tbxHoten.ReadOnly = false;
-            this.tbxHoten.Clear();
-            this.tbxDiaChi.ReadOnly = false;
-            this.tbxDiaChi.Clear();
-            this.tbxCMND.ReadOnly = false;
-            this.tbxCMND.Clear();
-            this.tbxSDT.ReadOnly = false;
-            this.tbxSDT.Clear();
-            this.dtpNgaySinh.Enabled = true;
-            this.dtpNgayDK.Enabled = true;
-           
-            if (tbxHoten.Text != "")
-            {
-                string prvMaDocGia = "";
-                DataTable dt = busDG.getDocGia();
-                prvMaDocGia = dt.Rows[dt.Rows.Count - 1]["MaDocGia"].ToString();
-
-                DialogResult dialog = MessageBox.Show("Thông tin bạn nhập đã chính xác chưa!", "Cảnh báo!", MessageBoxButtons.YesNo);
-                bool isInsert = false;
-                if (dialog == DialogResult.Yes)
-                {
-                    isInsert = busDG.insertDocGia(prvMaDocGia, tbxHoten.Text, tbxDiaChi.Text, tbxSDT.Text, tbxCMND.Text, dtpNgaySinh.Value, dtpNgayDK.Value);
-                }
-                if (isInsert)
-                {
-                    dgvDocGia.DataSource = busDG.getDocGia();
-                    MessageBox.Show("Thêm thành công");
-                }             
-            }
             
+            txtHoTenDocGia.Text = dt.Rows[0]["HoTen"].ToString();
+            txtDiaChiDocGia.Text = dt.Rows[0]["DiaChi"].ToString();
+            txtCMNDDocGia.Text = dt.Rows[0]["CMND"].ToString();
+            txtSDTDocGia.Text = dt.Rows[0]["SDT"].ToString();
+            dtmNgaySinhDocGia.Value = Convert.ToDateTime(dt.Rows[0]["NgaySinh"].ToString());
+            dtmNgayDKDocGia.Value = Convert.ToDateTime(dt.Rows[0]["NgayDK"].ToString());
+
+            this.txtHoTenDocGia.ReadOnly = true;
+            this.txtDiaChiDocGia.ReadOnly = true;
+            this.txtCMNDDocGia.ReadOnly = true;
+            this.txtSDTDocGia.ReadOnly = true;
+            this.dtmNgaySinhDocGia.Enabled = false;
+            this.dtmNgayDKDocGia.Enabled = false;
+
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
+        //
+        //TAB DOC GIA
+        //
+
+        private void mainbtnDocGia_Click(object sender, EventArgs e)
         {
-            List<string> listProperties = new List<string>();                    
+            this.pnltabDocGia.BringToFront();
+        }
+       
+        private void btnThongTinChiTiet_Click(object sender, EventArgs e)
+        {
+            this.pnlThongTinDocGia.BringToFront();
+            this.pnlHightLightThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.pnlHightLightTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            this.pnlHightLightBoLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+        }
+
+        private void tabbtnTimKiem_Click(object sender, EventArgs e)
+        {
+            this.pnlSearchFor.BringToFront();
+            this.pnlHightLightThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            this.pnlHightLightTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.pnlHightLightBoLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+        }
+
+        private void btnSearchFor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabbtnBoLoc_Click(object sender, EventArgs e)
+        {
+            this.pnlBoLoc.BringToFront();
+            this.pnlHightLightThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            this.pnlHightLightTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            this.pnlHightLightBoLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            List<string> listProperties = new List<string>();
             listProperties.Add("MaDocGia");
             listProperties.Add("HoTen");
-            if(clbThuocTinh.CheckedItems.Count > 0)
+
+            if (this.chkCMND.Checked)
             {
-                foreach(string item in clbThuocTinh.CheckedItems)
-                {
-                    if (item == "Địa chỉ")
-                        listProperties.Add("DiaChi");
-                    else if (item == "SĐT")
-                        listProperties.Add("SDT");
-                    else if (item == "CMND")
-                        listProperties.Add("CMND");
-                    else if (item == "Ngày sinh")
-                        listProperties.Add("NgaySinh");
-                    else if (item == "Ngày ĐK")
-                        listProperties.Add("NgayDK");
-                }              
+                listProperties.Add("Cmnd");
             }
+            if (this.chkDiaChi.Checked)
+            {
+                listProperties.Add("DiaChi");
+            }
+            if (this.chkSDT.Checked)
+            {
+                listProperties.Add("SDT");
+            }
+            if (this.chkNgaySinh.Checked)
+            {
+                listProperties.Add("NgaySinh");
+            }
+            if (this.chkNgayDK.Checked)
+            {
+                listProperties.Add("NgayDK");
+            }
+
             dgvDocGia.DataSource = busDG.getDocGia(listProperties);
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (dgvDocGia.SelectedRows.Count > 0)
-            {
-                if (tbxHoten.Text != "" && tbxDiaChi.Text != "" && tbxSDT.Text != "" && tbxCMND.Text != "")
-                {
-                    DataGridViewRow row = dgvDocGia.CurrentRow;
+       
 
-                    if (busDG.updateDocGia(row.Cells[0].Value.ToString(), tbxHoten.Text, tbxDiaChi.Text, tbxSDT.Text, tbxCMND.Text, dtpNgaySinh.Value, dtpNgayDK.Value))
+
+        private void dgvDocGia_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {            
+            this.txtHoTenDocGia.ReadOnly = true;
+            this.txtDiaChiDocGia.ReadOnly = true;
+            this.txtCMNDDocGia.ReadOnly = true;
+            this.txtSDTDocGia.ReadOnly = true;
+            this.dtmNgaySinhDocGia.Enabled = false;
+            this.dtmNgayDKDocGia.Enabled = false;
+
+            DataTable dt = busDG.getDocGia();
+            txtHoTenDocGia.Text = dt.Rows[e.RowIndex]["HoTen"].ToString();
+            txtDiaChiDocGia.Text = dt.Rows[e.RowIndex]["DiaChi"].ToString();
+            txtCMNDDocGia.Text = dt.Rows[e.RowIndex]["CMND"].ToString();
+            txtSDTDocGia.Text = dt.Rows[e.RowIndex]["SDT"].ToString();
+            dtmNgaySinhDocGia.Value = Convert.ToDateTime(dt.Rows[e.RowIndex]["NgaySinh"].ToString());
+            dtmNgayDKDocGia.Value = Convert.ToDateTime(dt.Rows[e.RowIndex]["NgayDK"].ToString());
+
+            btnThemDocGia.Text = "Thêm";
+            btnXoaDocGia.Text = "Xóa";
+            btnSuaDocGia.Text = "Sửa";
+            lblThongBaoDocGia.Text = "";
+        }
+
+        //ThemDocGia
+       
+        private void btnThemDocGia_Click(object sender, EventArgs e)
+        {
+            btnXoaDocGia.Text = "Xóa";
+            btnSuaDocGia.Text = "Sửa";
+
+            if (btnThemDocGia.Text == "Thêm")
+            {
+                this.txtHoTenDocGia.Clear();
+                this.txtDiaChiDocGia.Clear();
+                this.txtCMNDDocGia.Clear();
+                this.txtSDTDocGia.Clear();
+                this.dtmNgaySinhDocGia.Value = DateTime.Today;
+                this.dtmNgayDKDocGia.Value = DateTime.Today;
+
+                this.txtHoTenDocGia.ReadOnly = false;
+                this.txtDiaChiDocGia.ReadOnly = false;
+                this.txtCMNDDocGia.ReadOnly = false;
+                this.txtSDTDocGia.ReadOnly = false;
+                this.dtmNgaySinhDocGia.Enabled = true;
+                this.dtmNgayDKDocGia.Enabled = true;
+
+                btnThemDocGia.Text = "Xác Nhận";               
+               
+               
+
+                
+            }
+            else if (btnThemDocGia.Text == "Xác Nhận")
+            {                
+                if (txtHoTenDocGia.Text != "" && txtDiaChiDocGia.Text != "" && txtCMNDDocGia.Text != "" && txtSDTDocGia.Text != "" && dtmNgaySinhDocGia.Value != DateTime.Today)
+                {
+                    DataTable dt = busDG.getDocGia();
+
+                    string prvMaDocGia = dt.Rows[dt.Rows.Count - 1]["MaDocGia"].ToString();
+
+                    if (busDG.insertDocGia(prvMaDocGia, txtHoTenDocGia.Text, txtDiaChiDocGia.Text, txtSDTDocGia.Text, txtCMNDDocGia.Text, dtmNgaySinhDocGia.Value, dtmNgayDKDocGia.Value))
                     {
-                        MessageBox.Show("Sửa thành công !");
+                        this.lblThongBaoDocGia.Text = "(*) Thêm thành công";
                         dgvDocGia.DataSource = busDG.getDocGia();
+                        btnThemDocGia.Text = "Thêm";
                     }
                     else
                     {
-                        MessageBox.Show("Sửa không thành công !");
+                        this.lblThongBaoDocGia.Text = "Thêm không thành công !";
+                        btnThemDocGia.Text = "Thêm";
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin !");
+                    lblThongBaoDocGia.Text = "Vui lòng nhập thông tin độc giả";
+                }
+            }
+        }        
+
+        //Sua thong tin doc gia        
+        private void btnSuaDocGia_Click(object sender, EventArgs e)
+        {
+            btnThemDocGia.Text = "Thêm";
+            btnXoaDocGia.Text = "Xóa";
+
+            
+
+            if (btnSuaDocGia.Text == "Sửa")
+            {               
+                if (dgvDocGia.SelectedRows.Count == 0)
+                {
+                    lblThongBaoDocGia.Text = "Vui lòng chọn độc giả";
+                }
+                else if (dgvDocGia.SelectedRows.Count > 0)
+                {
+                    this.txtHoTenDocGia.ReadOnly = false;
+                    this.txtDiaChiDocGia.ReadOnly = false;
+                    this.txtCMNDDocGia.ReadOnly = false;
+                    this.txtSDTDocGia.ReadOnly = false;
+                    this.dtmNgaySinhDocGia.Enabled = true;
+                    this.dtmNgayDKDocGia.Enabled = true;
+
+
+                    lblThongBaoDocGia.Text = "Bạn có chắn chắn sẽ\nsửa các độc giả\nnày chứ?";
+                    btnSuaDocGia.Text = "Xác Nhận";
+                }
+            }
+            else if (btnSuaDocGia.Text == "Xác Nhận")
+            {
+                if (dgvDocGia.SelectedRows.Count == 0)
+                {
+                    lblThongBaoDocGia.Text = "Vui lòng chọn độc giả";
+                }
+                else if (dgvDocGia.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow row = dgvDocGia.CurrentRow;
+
+                    string maDocGia = row.Cells[0].Value.ToString();
+
+                    if (busDG.updateDocGia(maDocGia, txtHoTenDocGia.Text, txtDiaChiDocGia.Text ,txtSDTDocGia.Text, txtCMNDDocGia.Text, dtmNgaySinhDocGia.Value, dtmNgayDKDocGia.Value))
+                    {
+                        this.lblThongBaoDocGia.Text = "(*) Sửa thành công";
+                        dgvDocGia.DataSource = busDG.getDocGia();
+                        btnSuaDocGia.Text = "Sửa";
+                    }
+                    else
+                    {
+                        this.lblThongBaoDocGia.Text = "Sửa không thành công !";
+                        btnSuaDocGia.Text = "Sửa";
+                    }
                 }
             }
 
 
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
+        }            
+        //Xoa doc gia       
+        private void btnXoaDocGia_Click(object sender, EventArgs e)
         {
-            if (dgvDocGia.SelectedRows.Count > 0)
-            {
-                DialogResult result = MessageBox.Show("Khi bạn nhấn \"Yes\" đối tượng sẽ bị xóa vĩnh viễn.\nBạn có chắc chắn muốn xóa?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+            btnThemDocGia.Text = "Thêm";
+            btnSuaDocGia.Text = "Sửa";
 
-                if (result == DialogResult.Yes)
+            if (btnXoaDocGia.Text == "Xóa")
+            {
+                if (dgvDocGia.SelectedRows.Count == 0)
+                {
+                    lblThongBaoDocGia.Text = "Vui lòng chọn độc giả";
+                }
+                else if (dgvDocGia.SelectedRows.Count > 0)
+                {
+                    lblThongBaoDocGia.Text = "Bạn có chắn chắn sẽ\nxóa các độc giả\nnày chứ?";
+                    btnXoaDocGia.Text = "Xác Nhận";
+                }
+            }
+            else if (btnXoaDocGia.Text == "Xác Nhận")
+            {
+                if (dgvDocGia.SelectedRows.Count == 0)
+                {
+                    lblThongBaoDocGia.Text = "Vui lòng chọn độc giả";
+                }
+                else if (dgvDocGia.SelectedRows.Count > 0)
                 {
                     DataGridViewRow row = dgvDocGia.CurrentRow;
 
@@ -144,89 +279,125 @@ namespace GraphicUserInterface
 
                     if (busDG.deleteDocGia(maDocGia))
                     {
-                        MessageBox.Show("Xóa thành công !");
+                        this.lblThongBaoDocGia.Text = "(*) Xóa thành công";
                         dgvDocGia.DataSource = busDG.getDocGia();
+                        btnXoaDocGia.Text = "Xóa";
                     }
                     else
                     {
-                        MessageBox.Show("Xóa không thành công !");
+                        this.lblThongBaoDocGia.Text = "Xóa không thành công !";
+                        btnXoaDocGia.Text = "Xóa";
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một đối tượng !");
-            }
-
+            }                                
         }
 
-        private void btnFinishSearch_Click(object sender, EventArgs e)
-        {
-            dgvDocGia.DataSource = busDG.getDocGia();
-        }
 
-        private void btnSearchFor_Click(object sender, EventArgs e)
-        {
-            string findCondition = "";
 
-            try
-            {
-                if (cboSearchFor.SelectedItem.ToString() == "Mã độc giả")
-                    findCondition = String.Format("MaDocGia = '{0}'", txtSearchFor.Text);
-                else
-                {
-                    if (cboSearchFor.SelectedItem.ToString() == "Tên độc giả")
-                        findCondition = String.Format("HoTen = N'{0}'", txtSearchFor.Text);
-                    else
-                    {
-                        if (cboSearchFor.SelectedItem.ToString() == "CMND")
-                            findCondition = String.Format("CMND = '{0}'", txtSearchFor.Text);
-                        else
-                        {
-                            if (cboSearchFor.SelectedItem.ToString() == "Số điện thoại")
-                                findCondition = String.Format("SDT = '{0}'", txtSearchFor.Text);
-                        }
-                    }
 
-                }
 
-                dgvDocGia.DataSource = busDG.getDocGia(findCondition);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
 
-        }
 
-        private void cboSearchFor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboSearchFor.SelectedIndex == 3)
-            {
-                txtSearchFor.Visible = true;
-                txtSearchFor.Text = "Số điện thoại";
-            }
-            else if (cboSearchFor.SelectedIndex == 2)
-            {
-                txtSearchFor.Visible = true;
-                txtSearchFor.Text = "CMND";
-            }
-            else if (cboSearchFor.SelectedIndex == 1)
-            {
-                txtSearchFor.Visible = true;
-                txtSearchFor.Text = "Họ tên";
-            }
-            else if (cboSearchFor.SelectedIndex == 0)
-            {
-                txtSearchFor.Visible = true;
-                txtSearchFor.Text = "Mã độc giả";
-            }
-        }
 
-        private void clbThuocTinh_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        //private void btnDelete_Click(object sender, EventArgs e)
+        //{
+        //    if (dgvDocGia.SelectedRows.Count > 0)
+        //    {
+        //        DialogResult result = MessageBox.Show("Khi bạn nhấn \"Yes\" đối tượng sẽ bị xóa vĩnh viễn.\nBạn có chắc chắn muốn xóa?", "Xác nhận xóa", MessageBoxButtons.YesNo);
 
-        }
+        //        if (result == DialogResult.Yes)
+        //        {
+        //            DataGridViewRow row = dgvDocGia.CurrentRow;
+
+        //            string maDocGia = row.Cells[0].Value.ToString();
+
+        //            if (busDG.deleteDocGia(maDocGia))
+        //            {
+        //                MessageBox.Show("Xóa thành công !");
+        //                dgvDocGia.DataSource = busDG.getDocGia();
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Xóa không thành công !");
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Vui lòng chọn một đối tượng !");
+        //    }
+
+        //}
+
+        //private void btnFinishSearch_Click(object sender, EventArgs e)
+        //{
+        //    dgvDocGia.DataSource = busDG.getDocGia();
+        //}
+
+        //private void btnSearchFor_Click(object sender, EventArgs e)
+        //{
+        //    string findCondition = "";
+
+        //    try
+        //    {
+        //        if (cboSearchFor.SelectedItem.ToString() == "Mã độc giả")
+        //            findCondition = String.Format("MaDocGia = '{0}'", txtSearchFor.Text);
+        //        else
+        //        {
+        //            if (cboSearchFor.SelectedItem.ToString() == "Tên độc giả")
+        //                findCondition = String.Format("HoTen = N'{0}'", txtSearchFor.Text);
+        //            else
+        //            {
+        //                if (cboSearchFor.SelectedItem.ToString() == "CMND")
+        //                    findCondition = String.Format("CMND = '{0}'", txtSearchFor.Text);
+        //                else
+        //                {
+        //                    if (cboSearchFor.SelectedItem.ToString() == "Số điện thoại")
+        //                        findCondition = String.Format("SDT = '{0}'", txtSearchFor.Text);
+        //                }
+        //            }
+
+        //        }
+
+        //        dgvDocGia.DataSource = busDG.getDocGia(findCondition);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message.ToString());
+        //    }
+
+        //}
+
+        //private void cboSearchFor_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (cboSearchFor.SelectedIndex == 3)
+        //    {
+        //        txtSearchFor.Visible = true;
+        //        txtSearchFor.Text = "Số điện thoại";
+        //    }
+        //    else if (cboSearchFor.SelectedIndex == 2)
+        //    {
+        //        txtSearchFor.Visible = true;
+        //        txtSearchFor.Text = "CMND";
+        //    }
+        //    else if (cboSearchFor.SelectedIndex == 1)
+        //    {
+        //        txtSearchFor.Visible = true;
+        //        txtSearchFor.Text = "Họ tên";
+        //    }
+        //    else if (cboSearchFor.SelectedIndex == 0)
+        //    {
+        //        txtSearchFor.Visible = true;
+        //        txtSearchFor.Text = "Mã độc giả";
+        //    }
+        //}
+
+        //private void clbThuocTinh_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+
+        //}
+
+
     }
 }
     
