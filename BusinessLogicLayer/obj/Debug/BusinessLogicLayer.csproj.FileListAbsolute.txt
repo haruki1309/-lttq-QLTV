@@ -29,3 +29,13 @@ F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\BusinessLogicLayer\obj\Debug\BusinessLogicLay
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\BusinessLogicLayer\bin\Debug\DatabaseAccessLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\BusinessLogicLayer\bin\Debug\DataTransferObject.dll
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\BusinessLogicLayer\bin\Debug\DatabaseAccessLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\BusinessLogicLayer\bin\Debug\DataTransferObject.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

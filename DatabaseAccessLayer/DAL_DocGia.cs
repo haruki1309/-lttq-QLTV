@@ -142,8 +142,9 @@ namespace DatabaseAccessLayer
             try
             {
                 cn.Open();
-                string SQL = string.Format("DELETE FROM DocGia WHERE MaDocGia = {0}", MaDocGia);
-                SqlCommand cmd = new SqlCommand(SQL, cn);
+                SqlCommand cmd = new SqlCommand("XoaDocGia", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MaDocGia", MaDocGia);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;

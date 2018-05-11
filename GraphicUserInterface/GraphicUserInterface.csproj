@@ -101,17 +101,5 @@
   <ItemGroup>
     <None Include="Resources\LIBRARY.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon-books-white.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\person.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\phieu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\thongke.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,3 +27,13 @@ F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\DatabaseAccessLayer\obj\Debug\DatabaseAccessL
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csproj.CoreCompileInputs.cache
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.dll
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\DatabaseAccessLayer\bin\Debug\DatabaseAccessLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\DatabaseAccessLayer\bin\Debug\DatabaseAccessLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\DatabaseAccessLayer\bin\Debug\DataTransferObject.dll
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\DatabaseAccessLayer\bin\Debug\DataTransferObject.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csprojResolveAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.Properties.Resource1.resources
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csproj.GenerateResource.Cache
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.pdb
