@@ -20,16 +20,15 @@ namespace GraphicUserInterface
         }
         private void frmDocGia_Load(object sender, EventArgs e)
         {
-            DataTable dt = busDG.getDocGia();
-            this.dgvDocGia.DataSource = dt;
+            this.dgvDocGia.DataSource = busDG.getDocGia();
 
-            
-            txtHoTenDocGia.Text = dt.Rows[0]["HoTen"].ToString();
-            txtDiaChiDocGia.Text = dt.Rows[0]["DiaChi"].ToString();
-            txtCMNDDocGia.Text = dt.Rows[0]["CMND"].ToString();
-            txtSDTDocGia.Text = dt.Rows[0]["SDT"].ToString();
-            dtmNgaySinhDocGia.Value = Convert.ToDateTime(dt.Rows[0]["NgaySinh"].ToString());
-            dtmNgayDKDocGia.Value = Convert.ToDateTime(dt.Rows[0]["NgayDK"].ToString());
+            this.dgvDocGia.Columns["MaDocGia"].HeaderText = "Mã Độc Giả";
+            this.dgvDocGia.Columns["HoTen"].HeaderText = "Họ Tên";
+            this.dgvDocGia.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            this.dgvDocGia.Columns["SDT"].HeaderText = "Số Điện Thoại";
+            this.dgvDocGia.Columns["CMND"].HeaderText = "Chứng Minh Thư";
+            this.dgvDocGia.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+            this.dgvDocGia.Columns["NgayDK"].HeaderText = "Ngày Đăng Ký";
 
             this.txtHoTenDocGia.ReadOnly = true;
             this.txtDiaChiDocGia.ReadOnly = true;
@@ -51,18 +50,27 @@ namespace GraphicUserInterface
        
         private void btnThongTinChiTiet_Click(object sender, EventArgs e)
         {
-            this.pnlThongTinDocGia.BringToFront();
-            this.pnlHightLightThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.pnlThongTinDocGia.BringToFront();            
             this.pnlHightLightTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
             this.pnlHightLightBoLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
         }
 
+        bool isClose = false; // dung cho ham TabBoLocClick va ham TabTimKiemClick
         private void tabbtnTimKiem_Click(object sender, EventArgs e)
         {
-            this.pnlSearchFor.BringToFront();
-            this.pnlHightLightThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
-            this.pnlHightLightTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            this.pnlHightLightBoLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            if(!isClose)
+            {
+                this.pnlSearchFor.BringToFront();               
+                this.pnlHightLightTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+                this.pnlHightLightBoLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+
+                isClose = true;
+            }
+            else
+            {
+                this.pnlThongTinDocGia.BringToFront();
+                isClose = false;
+            }
         }
 
         private void btnSearchFor_Click(object sender, EventArgs e)
@@ -70,12 +78,23 @@ namespace GraphicUserInterface
 
         }
 
+        //Chuc nang loc doc gia
+        
         private void tabbtnBoLoc_Click(object sender, EventArgs e)
         {
-            this.pnlBoLoc.BringToFront();
-            this.pnlHightLightThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
-            this.pnlHightLightTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
-            this.pnlHightLightBoLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            if(!isClose)
+            {
+                this.pnlBoLoc.BringToFront();               
+                this.pnlHightLightTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+                this.pnlHightLightBoLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+
+                isClose = true;
+            }
+            else
+            {
+                this.pnlThongTinDocGia.BringToFront();
+                isClose = false;
+            }
 
         }
 
@@ -107,6 +126,30 @@ namespace GraphicUserInterface
             }
 
             dgvDocGia.DataSource = busDG.getDocGia(listProperties);
+
+            foreach(string column in  listProperties)
+            {               
+                if (column == "DiaChi")
+                {
+                    this.dgvDocGia.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+                }
+                else if (column == "SDT")
+                {
+                    this.dgvDocGia.Columns["SDT"].HeaderText = "Số Điện Thoại";
+                }
+                else if(column == "Cmnd")
+                {
+                    this.dgvDocGia.Columns["CMND"].HeaderText = "Chứng Minh Thư";
+                }
+                else if(column == "NgaySinh")
+                {
+                    this.dgvDocGia.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+                }
+                else if(column == "NgayDK")
+                {
+                    this.dgvDocGia.Columns["NgayDK"].HeaderText = "Ngày Đăng Ký";
+                }
+            }           
         }
 
        
@@ -142,6 +185,10 @@ namespace GraphicUserInterface
             btnXoaDocGia.Text = "Xóa";
             btnSuaDocGia.Text = "Sửa";
 
+            btnHuyThaoTacDocGia.Enabled = true;
+            btnSuaDocGia.Enabled = false;
+            btnXoaDocGia.Enabled = false;
+
             if (btnThemDocGia.Text == "Thêm")
             {
                 this.txtHoTenDocGia.Clear();
@@ -158,36 +205,50 @@ namespace GraphicUserInterface
                 this.dtmNgaySinhDocGia.Enabled = true;
                 this.dtmNgayDKDocGia.Enabled = true;
 
-                btnThemDocGia.Text = "Xác Nhận";               
-               
-               
-
-                
+                btnThemDocGia.Text = "Xác Nhận";                                                    
             }
             else if (btnThemDocGia.Text == "Xác Nhận")
-            {                
+            {
+                
                 if (txtHoTenDocGia.Text != "" && txtDiaChiDocGia.Text != "" && txtCMNDDocGia.Text != "" && txtSDTDocGia.Text != "" && dtmNgaySinhDocGia.Value != DateTime.Today)
-                {
+                {                  
                     DataTable dt = busDG.getDocGia();
 
                     string prvMaDocGia = dt.Rows[dt.Rows.Count - 1]["MaDocGia"].ToString();
 
                     if (busDG.insertDocGia(prvMaDocGia, txtHoTenDocGia.Text, txtDiaChiDocGia.Text, txtSDTDocGia.Text, txtCMNDDocGia.Text, dtmNgaySinhDocGia.Value, dtmNgayDKDocGia.Value))
                     {
-                        this.lblThongBaoDocGia.Text = "(*) Thêm thành công";
+                        this.lblThongBaoDocGia.Text = "Thêm thành công";
                         dgvDocGia.DataSource = busDG.getDocGia();
-                        btnThemDocGia.Text = "Thêm";
+                        btnThemDocGia.Text = "Okay";
                     }
                     else
                     {
                         this.lblThongBaoDocGia.Text = "Thêm không thành công !";
-                        btnThemDocGia.Text = "Thêm";
+                        btnThemDocGia.Text = "Okay";
                     }
+
+                    this.txtHoTenDocGia.ReadOnly = true;
+                    this.txtDiaChiDocGia.ReadOnly = true;
+                    this.txtCMNDDocGia.ReadOnly = true;
+                    this.txtSDTDocGia.ReadOnly = true;
+                    this.dtmNgaySinhDocGia.Enabled = false;
+                    this.dtmNgayDKDocGia.Enabled = false;
+
+                    btnHuyThaoTacDocGia.Enabled = false;
+                    btnXoaDocGia.Enabled = true;
+                    btnSuaDocGia.Enabled = true;
                 }
+
                 else
                 {
                     lblThongBaoDocGia.Text = "Vui lòng nhập thông tin độc giả";
                 }
+            }
+            else if(btnThemDocGia.Text == "Okay")
+            {
+                this.lblThongBaoDocGia.Text = "";
+                btnThemDocGia.Text = "Thêm";
             }
         }        
 
@@ -198,6 +259,9 @@ namespace GraphicUserInterface
             btnXoaDocGia.Text = "Xóa";
 
             
+            btnThemDocGia.Enabled = false;
+            btnXoaDocGia.Enabled = false;
+
 
             if (btnSuaDocGia.Text == "Sửa")
             {               
@@ -214,8 +278,9 @@ namespace GraphicUserInterface
                     this.dtmNgaySinhDocGia.Enabled = true;
                     this.dtmNgayDKDocGia.Enabled = true;
 
+                    btnHuyThaoTacDocGia.Enabled = true;
 
-                    lblThongBaoDocGia.Text = "Bạn có chắn chắn sẽ\nsửa các độc giả\nnày chứ?";
+                    lblThongBaoDocGia.Text = "Bạn có chắn chắn sẽ sửa các độc giả\nnày chứ?";
                     btnSuaDocGia.Text = "Xác Nhận";
                 }
             }
@@ -233,7 +298,7 @@ namespace GraphicUserInterface
 
                     if (busDG.updateDocGia(maDocGia, txtHoTenDocGia.Text, txtDiaChiDocGia.Text ,txtSDTDocGia.Text, txtCMNDDocGia.Text, dtmNgaySinhDocGia.Value, dtmNgayDKDocGia.Value))
                     {
-                        this.lblThongBaoDocGia.Text = "(*) Sửa thành công";
+                        this.lblThongBaoDocGia.Text = "Sửa thành công";
                         dgvDocGia.DataSource = busDG.getDocGia();
                         btnSuaDocGia.Text = "Sửa";
                     }
@@ -242,6 +307,16 @@ namespace GraphicUserInterface
                         this.lblThongBaoDocGia.Text = "Sửa không thành công !";
                         btnSuaDocGia.Text = "Sửa";
                     }
+                    this.txtHoTenDocGia.ReadOnly = true;
+                    this.txtDiaChiDocGia.ReadOnly = true;
+                    this.txtCMNDDocGia.ReadOnly = true;
+                    this.txtSDTDocGia.ReadOnly = true;
+                    this.dtmNgaySinhDocGia.Enabled = false;
+                    this.dtmNgayDKDocGia.Enabled = false;
+
+                    btnHuyThaoTacDocGia.Enabled = false;
+                    btnXoaDocGia.Enabled = true;
+                    btnThemDocGia.Enabled = true;
                 }
             }
 
@@ -253,6 +328,8 @@ namespace GraphicUserInterface
             btnThemDocGia.Text = "Thêm";
             btnSuaDocGia.Text = "Sửa";
 
+
+
             if (btnXoaDocGia.Text == "Xóa")
             {
                 if (dgvDocGia.SelectedRows.Count == 0)
@@ -261,12 +338,16 @@ namespace GraphicUserInterface
                 }
                 else if (dgvDocGia.SelectedRows.Count > 0)
                 {
-                    lblThongBaoDocGia.Text = "Bạn có chắn chắn sẽ\nxóa các độc giả\nnày chứ?";
+                    lblThongBaoDocGia.Text = "Bạn có chắn chắn sẽ xóa các độc giả\nnày chứ?";
                     btnXoaDocGia.Text = "Xác Nhận";
+
+                    btnHuyThaoTacDocGia.Enabled = true;
                 }
             }
             else if (btnXoaDocGia.Text == "Xác Nhận")
             {
+                btnHuyThaoTacDocGia.Enabled = true;
+
                 if (dgvDocGia.SelectedRows.Count == 0)
                 {
                     lblThongBaoDocGia.Text = "Vui lòng chọn độc giả";
@@ -279,7 +360,7 @@ namespace GraphicUserInterface
 
                     if (busDG.deleteDocGia(maDocGia))
                     {
-                        this.lblThongBaoDocGia.Text = "(*) Xóa thành công";
+                        this.lblThongBaoDocGia.Text = "Xóa thành công";
                         dgvDocGia.DataSource = busDG.getDocGia();
                         btnXoaDocGia.Text = "Xóa";
                     }
@@ -288,12 +369,77 @@ namespace GraphicUserInterface
                         this.lblThongBaoDocGia.Text = "Xóa không thành công !";
                         btnXoaDocGia.Text = "Xóa";
                     }
+                    btnHuyThaoTacDocGia.Enabled = false;
+                    btnSuaDocGia.Enabled = true;
+                    btnThemDocGia.Enabled = true;
                 }
             }                                
         }
 
+        private void btnHuyThaoTacDocGia_Click(object sender, EventArgs e)
+        {
+            if(btnHuyThaoTacDocGia.Text == "Hủy")
+            {
+                if(btnThemDocGia.Text == "Xác Nhận")
+                {
+                    btnHuyThaoTacDocGia.Text = "Xác Nhận";
+                    lblThongBaoDocGia.Text = "Xác nhận hủy thao tác thêm độc giả?";
+                }
+                else if (btnSuaDocGia.Text == "Xác Nhận")
+                {
+                    btnHuyThaoTacDocGia.Text = "Xác Nhận";
+                    lblThongBaoDocGia.Text = "Xác nhận hủy thao tác sửa thông tin\nđộc giả?";
+                }
+                else if (btnXoaDocGia.Text == "Xác Nhận")
+                {
+                    btnHuyThaoTacDocGia.Text = "Xác Nhận";
+                    lblThongBaoDocGia.Text = "Xác nhận hủy thao tác xóa độc giả?";
+                }
+            }
+            else if(btnHuyThaoTacDocGia.Text == "Xác Nhận")
+            {
+                this.txtHoTenDocGia.ReadOnly = true;
+                this.txtDiaChiDocGia.ReadOnly = true;
+                this.txtCMNDDocGia.ReadOnly = true;
+                this.txtSDTDocGia.ReadOnly = true;
+                this.dtmNgaySinhDocGia.Enabled = false;
+                this.dtmNgayDKDocGia.Enabled = false;
+
+                btnHuyThaoTacDocGia.Enabled = false;
+
+                if (btnThemDocGia.Text == "Xác Nhận")
+                {                                       
+                    btnThemDocGia.Text = "Thêm";
+                    btnSuaDocGia.Enabled = true;
+                    btnXoaDocGia.Enabled = true;
+                }
+                else if(btnSuaDocGia.Text == "Xác Nhận")
+                {
+                    btnSuaDocGia.Text = "Sửa";
+                    btnThemDocGia.Enabled = true;
+                    btnXoaDocGia.Enabled = true;
+                }
+                else if(btnXoaDocGia.Text == "Xác Nhận")
+                {
+                    btnXoaDocGia.Text = "Xóa";
+                    btnSuaDocGia.Enabled = true;
+                    btnThemDocGia.Enabled = true;
+                }
+                btnHuyThaoTacDocGia.Text = "Hủy";
+                lblThongBaoDocGia.Text = "";
+            }
+        }
 
 
+
+
+        //
+        //Tab Kho Sach
+        //
+        private void mainbtnKhoSach_Click(object sender, EventArgs e)
+        {
+            this.pnltabKhoSach.BringToFront();
+        }
 
 
 

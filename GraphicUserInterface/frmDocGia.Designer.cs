@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -73,19 +75,22 @@
             this.lblTimKiem = new System.Windows.Forms.Label();
             this.btnSearchFor = new System.Windows.Forms.Button();
             this.cboSearchFor = new System.Windows.Forms.ComboBox();
-            this.pnlTacVu = new System.Windows.Forms.Panel();
-            this.pnlHightLightTimKiem = new System.Windows.Forms.Panel();
-            this.pnlHightLightBoLoc = new System.Windows.Forms.Panel();
-            this.pnlHightLightThongTin = new System.Windows.Forms.Panel();
-            this.btnThongTinChiTietDocGia = new System.Windows.Forms.Button();
-            this.tabbtnTimKiemDocGia = new System.Windows.Forms.Button();
+            this.btnHuyThaoTacDocGia = new System.Windows.Forms.Button();
+            this.pnlThongBaoDocGia = new System.Windows.Forms.Panel();
+            this.lblTitleThongBaoDocGia = new System.Windows.Forms.Label();
             this.tabbtnBoLocDocGia = new System.Windows.Forms.Button();
+            this.tabbtnTimKiemDocGia = new System.Windows.Forms.Button();
+            this.pnlHightLightBoLoc = new System.Windows.Forms.Panel();
+            this.pnlHightLightTimKiem = new System.Windows.Forms.Panel();
+            this.pnlTacVu = new System.Windows.Forms.Panel();
+            this.pnltabKhoSach = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.pnltabDocGia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
             this.pnlThongTinDocGia.SuspendLayout();
             this.pnlBoLoc.SuspendLayout();
             this.pnlSearchFor.SuspendLayout();
+            this.pnlThongBaoDocGia.SuspendLayout();
             this.pnlTacVu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -238,6 +243,7 @@
             this.mainbtnKhoSach.Text = "Kho Sách";
             this.mainbtnKhoSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mainbtnKhoSach.UseVisualStyleBackColor = true;
+            this.mainbtnKhoSach.Click += new System.EventHandler(this.mainbtnKhoSach_Click);
             // 
             // panel4
             // 
@@ -264,16 +270,36 @@
             this.dgvDocGia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDocGia.BackgroundColor = System.Drawing.Color.White;
             this.dgvDocGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocGia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocGia.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDocGia.Location = new System.Drawing.Point(415, 29);
             this.dgvDocGia.Name = "dgvDocGia";
+            this.dgvDocGia.ReadOnly = true;
+            this.dgvDocGia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDocGia.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDocGia.Size = new System.Drawing.Size(453, 486);
             this.dgvDocGia.TabIndex = 36;
             this.dgvDocGia.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDocGia_RowHeaderMouseClick);
             // 
             // pnlThongTinDocGia
             // 
-            this.pnlThongTinDocGia.Controls.Add(this.lblThongBaoDocGia);
+            this.pnlThongTinDocGia.Controls.Add(this.pnlThongBaoDocGia);
+            this.pnlThongTinDocGia.Controls.Add(this.btnHuyThaoTacDocGia);
             this.pnlThongTinDocGia.Controls.Add(this.label1);
             this.pnlThongTinDocGia.Controls.Add(this.dtmNgayDKDocGia);
             this.pnlThongTinDocGia.Controls.Add(this.dtmNgaySinhDocGia);
@@ -292,7 +318,7 @@
             this.pnlThongTinDocGia.Controls.Add(this.lblHoTen);
             this.pnlThongTinDocGia.Location = new System.Drawing.Point(0, 0);
             this.pnlThongTinDocGia.Name = "pnlThongTinDocGia";
-            this.pnlThongTinDocGia.Size = new System.Drawing.Size(415, 474);
+            this.pnlThongTinDocGia.Size = new System.Drawing.Size(415, 473);
             this.pnlThongTinDocGia.TabIndex = 34;
             // 
             // lblThongBaoDocGia
@@ -300,7 +326,7 @@
             this.lblThongBaoDocGia.AutoSize = true;
             this.lblThongBaoDocGia.Font = new System.Drawing.Font("Sitka Display", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblThongBaoDocGia.ForeColor = System.Drawing.Color.Red;
-            this.lblThongBaoDocGia.Location = new System.Drawing.Point(33, 365);
+            this.lblThongBaoDocGia.Location = new System.Drawing.Point(6, 17);
             this.lblThongBaoDocGia.Name = "lblThongBaoDocGia";
             this.lblThongBaoDocGia.Size = new System.Drawing.Size(0, 21);
             this.lblThongBaoDocGia.TabIndex = 42;
@@ -351,28 +377,36 @@
             // 
             // btnSuaDocGia
             // 
+            this.btnSuaDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
             this.btnSuaDocGia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSuaDocGia.FlatAppearance.BorderSize = 0;
+            this.btnSuaDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
+            this.btnSuaDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
             this.btnSuaDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaDocGia.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSuaDocGia.Location = new System.Drawing.Point(170, 300);
+            this.btnSuaDocGia.Location = new System.Drawing.Point(165, 300);
             this.btnSuaDocGia.Name = "btnSuaDocGia";
             this.btnSuaDocGia.Size = new System.Drawing.Size(108, 38);
             this.btnSuaDocGia.TabIndex = 13;
             this.btnSuaDocGia.Text = "Sửa";
-            this.btnSuaDocGia.UseVisualStyleBackColor = true;
+            this.btnSuaDocGia.UseVisualStyleBackColor = false;
             this.btnSuaDocGia.Click += new System.EventHandler(this.btnSuaDocGia_Click);
             // 
             // btnXoaDocGia
             // 
+            this.btnXoaDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
             this.btnXoaDocGia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnXoaDocGia.FlatAppearance.BorderSize = 0;
+            this.btnXoaDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
+            this.btnXoaDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
             this.btnXoaDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaDocGia.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXoaDocGia.Location = new System.Drawing.Point(301, 300);
+            this.btnXoaDocGia.Location = new System.Drawing.Point(293, 300);
             this.btnXoaDocGia.Name = "btnXoaDocGia";
             this.btnXoaDocGia.Size = new System.Drawing.Size(108, 38);
             this.btnXoaDocGia.TabIndex = 14;
             this.btnXoaDocGia.Text = "Xóa";
-            this.btnXoaDocGia.UseVisualStyleBackColor = true;
+            this.btnXoaDocGia.UseVisualStyleBackColor = false;
             this.btnXoaDocGia.Click += new System.EventHandler(this.btnXoaDocGia_Click);
             // 
             // txtDiaChiDocGia
@@ -385,7 +419,11 @@
             // 
             // btnThemDocGia
             // 
+            this.btnThemDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
             this.btnThemDocGia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnThemDocGia.FlatAppearance.BorderSize = 0;
+            this.btnThemDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
+            this.btnThemDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
             this.btnThemDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemDocGia.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThemDocGia.Location = new System.Drawing.Point(37, 300);
@@ -393,7 +431,7 @@
             this.btnThemDocGia.Size = new System.Drawing.Size(108, 38);
             this.btnThemDocGia.TabIndex = 12;
             this.btnThemDocGia.Text = "Thêm";
-            this.btnThemDocGia.UseVisualStyleBackColor = true;
+            this.btnThemDocGia.UseVisualStyleBackColor = false;
             this.btnThemDocGia.Click += new System.EventHandler(this.btnThemDocGia_Click);
             // 
             // txtHoTenDocGia
@@ -474,9 +512,9 @@
             this.pnlBoLoc.Controls.Add(this.chkSDT);
             this.pnlBoLoc.Controls.Add(this.chkDiaChi);
             this.pnlBoLoc.Controls.Add(this.lblTuaDe);
-            this.pnlBoLoc.Location = new System.Drawing.Point(74, 279);
+            this.pnlBoLoc.Location = new System.Drawing.Point(6, 261);
             this.pnlBoLoc.Name = "pnlBoLoc";
-            this.pnlBoLoc.Size = new System.Drawing.Size(341, 195);
+            this.pnlBoLoc.Size = new System.Drawing.Size(400, 211);
             this.pnlBoLoc.TabIndex = 35;
             // 
             // btnLoc
@@ -485,7 +523,7 @@
             this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoc.Font = new System.Drawing.Font("Sitka Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLoc.ForeColor = System.Drawing.Color.White;
-            this.btnLoc.Location = new System.Drawing.Point(41, 157);
+            this.btnLoc.Location = new System.Drawing.Point(247, 148);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(104, 32);
             this.btnLoc.TabIndex = 6;
@@ -581,19 +619,19 @@
             this.pnlSearchFor.Controls.Add(this.lblTimKiem);
             this.pnlSearchFor.Controls.Add(this.btnSearchFor);
             this.pnlSearchFor.Controls.Add(this.cboSearchFor);
-            this.pnlSearchFor.Location = new System.Drawing.Point(74, 279);
+            this.pnlSearchFor.Location = new System.Drawing.Point(6, 261);
             this.pnlSearchFor.Name = "pnlSearchFor";
-            this.pnlSearchFor.Size = new System.Drawing.Size(341, 195);
+            this.pnlSearchFor.Size = new System.Drawing.Size(400, 212);
             this.pnlSearchFor.TabIndex = 34;
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(154, 73);
+            this.textBox1.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox1.Location = new System.Drawing.Point(25, 63);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 24);
+            this.textBox1.Size = new System.Drawing.Size(181, 21);
             this.textBox1.TabIndex = 11;
             // 
             // lblTimKiem
@@ -613,7 +651,7 @@
             this.btnSearchFor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchFor.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSearchFor.ForeColor = System.Drawing.Color.White;
-            this.btnSearchFor.Location = new System.Drawing.Point(227, 154);
+            this.btnSearchFor.Location = new System.Drawing.Point(240, 148);
             this.btnSearchFor.Name = "btnSearchFor";
             this.btnSearchFor.Size = new System.Drawing.Size(111, 36);
             this.btnSearchFor.TabIndex = 7;
@@ -631,79 +669,50 @@
             "Tên độc giả",
             "CMND",
             "Số điện thoại"});
-            this.cboSearchFor.Location = new System.Drawing.Point(25, 73);
+            this.cboSearchFor.Location = new System.Drawing.Point(25, 90);
             this.cboSearchFor.Name = "cboSearchFor";
             this.cboSearchFor.Size = new System.Drawing.Size(123, 29);
             this.cboSearchFor.TabIndex = 8;
             this.cboSearchFor.Text = "Tìm kiếm theo";
             // 
-            // pnlTacVu
+            // btnHuyThaoTacDocGia
             // 
-            this.pnlTacVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
-            this.pnlTacVu.Controls.Add(this.pnlHightLightTimKiem);
-            this.pnlTacVu.Controls.Add(this.pnlHightLightBoLoc);
-            this.pnlTacVu.Controls.Add(this.pnlHightLightThongTin);
-            this.pnlTacVu.Controls.Add(this.btnThongTinChiTietDocGia);
-            this.pnlTacVu.Controls.Add(this.tabbtnTimKiemDocGia);
-            this.pnlTacVu.Controls.Add(this.tabbtnBoLocDocGia);
-            this.pnlTacVu.Location = new System.Drawing.Point(0, 475);
-            this.pnlTacVu.Name = "pnlTacVu";
-            this.pnlTacVu.Size = new System.Drawing.Size(415, 40);
-            this.pnlTacVu.TabIndex = 33;
+            this.btnHuyThaoTacDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnHuyThaoTacDocGia.Enabled = false;
+            this.btnHuyThaoTacDocGia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnHuyThaoTacDocGia.FlatAppearance.BorderSize = 0;
+            this.btnHuyThaoTacDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
+            this.btnHuyThaoTacDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnHuyThaoTacDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuyThaoTacDocGia.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHuyThaoTacDocGia.Location = new System.Drawing.Point(293, 365);
+            this.btnHuyThaoTacDocGia.Name = "btnHuyThaoTacDocGia";
+            this.btnHuyThaoTacDocGia.Size = new System.Drawing.Size(108, 38);
+            this.btnHuyThaoTacDocGia.TabIndex = 43;
+            this.btnHuyThaoTacDocGia.Text = "Hủy";
+            this.btnHuyThaoTacDocGia.UseVisualStyleBackColor = false;
+            this.btnHuyThaoTacDocGia.Click += new System.EventHandler(this.btnHuyThaoTacDocGia_Click);
             // 
-            // pnlHightLightTimKiem
+            // pnlThongBaoDocGia
             // 
-            this.pnlHightLightTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
-            this.pnlHightLightTimKiem.Location = new System.Drawing.Point(219, 33);
-            this.pnlHightLightTimKiem.Name = "pnlHightLightTimKiem";
-            this.pnlHightLightTimKiem.Size = new System.Drawing.Size(110, 7);
-            this.pnlHightLightTimKiem.TabIndex = 35;
+            this.pnlThongBaoDocGia.BackColor = System.Drawing.Color.White;
+            this.pnlThongBaoDocGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlThongBaoDocGia.Controls.Add(this.lblTitleThongBaoDocGia);
+            this.pnlThongBaoDocGia.Controls.Add(this.lblThongBaoDocGia);
+            this.pnlThongBaoDocGia.Location = new System.Drawing.Point(37, 365);
+            this.pnlThongBaoDocGia.Name = "pnlThongBaoDocGia";
+            this.pnlThongBaoDocGia.Size = new System.Drawing.Size(236, 100);
+            this.pnlThongBaoDocGia.TabIndex = 44;
             // 
-            // pnlHightLightBoLoc
+            // lblTitleThongBaoDocGia
             // 
-            this.pnlHightLightBoLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
-            this.pnlHightLightBoLoc.Location = new System.Drawing.Point(327, 33);
-            this.pnlHightLightBoLoc.Name = "pnlHightLightBoLoc";
-            this.pnlHightLightBoLoc.Size = new System.Drawing.Size(88, 7);
-            this.pnlHightLightBoLoc.TabIndex = 36;
-            // 
-            // pnlHightLightThongTin
-            // 
-            this.pnlHightLightThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            this.pnlHightLightThongTin.Location = new System.Drawing.Point(0, 33);
-            this.pnlHightLightThongTin.Name = "pnlHightLightThongTin";
-            this.pnlHightLightThongTin.Size = new System.Drawing.Size(219, 7);
-            this.pnlHightLightThongTin.TabIndex = 34;
-            // 
-            // btnThongTinChiTietDocGia
-            // 
-            this.btnThongTinChiTietDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
-            this.btnThongTinChiTietDocGia.FlatAppearance.BorderSize = 0;
-            this.btnThongTinChiTietDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongTinChiTietDocGia.Font = new System.Drawing.Font("Sitka Subheading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThongTinChiTietDocGia.ForeColor = System.Drawing.Color.White;
-            this.btnThongTinChiTietDocGia.Location = new System.Drawing.Point(0, 0);
-            this.btnThongTinChiTietDocGia.Name = "btnThongTinChiTietDocGia";
-            this.btnThongTinChiTietDocGia.Size = new System.Drawing.Size(219, 33);
-            this.btnThongTinChiTietDocGia.TabIndex = 31;
-            this.btnThongTinChiTietDocGia.Text = "Thông Tin Độc Giả";
-            this.btnThongTinChiTietDocGia.UseVisualStyleBackColor = false;
-            this.btnThongTinChiTietDocGia.Click += new System.EventHandler(this.btnThongTinChiTiet_Click);
-            // 
-            // tabbtnTimKiemDocGia
-            // 
-            this.tabbtnTimKiemDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
-            this.tabbtnTimKiemDocGia.FlatAppearance.BorderSize = 0;
-            this.tabbtnTimKiemDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tabbtnTimKiemDocGia.Font = new System.Drawing.Font("Sitka Subheading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tabbtnTimKiemDocGia.ForeColor = System.Drawing.Color.White;
-            this.tabbtnTimKiemDocGia.Location = new System.Drawing.Point(219, 0);
-            this.tabbtnTimKiemDocGia.Name = "tabbtnTimKiemDocGia";
-            this.tabbtnTimKiemDocGia.Size = new System.Drawing.Size(110, 33);
-            this.tabbtnTimKiemDocGia.TabIndex = 29;
-            this.tabbtnTimKiemDocGia.Text = "Tìm Kiếm";
-            this.tabbtnTimKiemDocGia.UseVisualStyleBackColor = false;
-            this.tabbtnTimKiemDocGia.Click += new System.EventHandler(this.tabbtnTimKiem_Click);
+            this.lblTitleThongBaoDocGia.AutoSize = true;
+            this.lblTitleThongBaoDocGia.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleThongBaoDocGia.Location = new System.Drawing.Point(149, 75);
+            this.lblTitleThongBaoDocGia.Name = "lblTitleThongBaoDocGia";
+            this.lblTitleThongBaoDocGia.Size = new System.Drawing.Size(82, 21);
+            this.lblTitleThongBaoDocGia.TabIndex = 43;
+            this.lblTitleThongBaoDocGia.Text = "Thông Báo";
             // 
             // tabbtnBoLocDocGia
             // 
@@ -712,13 +721,63 @@
             this.tabbtnBoLocDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabbtnBoLocDocGia.Font = new System.Drawing.Font("Sitka Subheading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tabbtnBoLocDocGia.ForeColor = System.Drawing.Color.White;
-            this.tabbtnBoLocDocGia.Location = new System.Drawing.Point(327, 0);
+            this.tabbtnBoLocDocGia.Location = new System.Drawing.Point(200, 0);
             this.tabbtnBoLocDocGia.Name = "tabbtnBoLocDocGia";
-            this.tabbtnBoLocDocGia.Size = new System.Drawing.Size(88, 33);
+            this.tabbtnBoLocDocGia.Size = new System.Drawing.Size(200, 33);
             this.tabbtnBoLocDocGia.TabIndex = 30;
             this.tabbtnBoLocDocGia.Text = "Bộ Lọc";
             this.tabbtnBoLocDocGia.UseVisualStyleBackColor = false;
             this.tabbtnBoLocDocGia.Click += new System.EventHandler(this.tabbtnBoLoc_Click);
+            // 
+            // tabbtnTimKiemDocGia
+            // 
+            this.tabbtnTimKiemDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            this.tabbtnTimKiemDocGia.FlatAppearance.BorderSize = 0;
+            this.tabbtnTimKiemDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tabbtnTimKiemDocGia.Font = new System.Drawing.Font("Sitka Subheading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tabbtnTimKiemDocGia.ForeColor = System.Drawing.Color.White;
+            this.tabbtnTimKiemDocGia.Location = new System.Drawing.Point(0, 0);
+            this.tabbtnTimKiemDocGia.Name = "tabbtnTimKiemDocGia";
+            this.tabbtnTimKiemDocGia.Size = new System.Drawing.Size(200, 33);
+            this.tabbtnTimKiemDocGia.TabIndex = 29;
+            this.tabbtnTimKiemDocGia.Text = "Tìm Kiếm";
+            this.tabbtnTimKiemDocGia.UseVisualStyleBackColor = false;
+            this.tabbtnTimKiemDocGia.Click += new System.EventHandler(this.tabbtnTimKiem_Click);
+            // 
+            // pnlHightLightBoLoc
+            // 
+            this.pnlHightLightBoLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            this.pnlHightLightBoLoc.Location = new System.Drawing.Point(202, 33);
+            this.pnlHightLightBoLoc.Name = "pnlHightLightBoLoc";
+            this.pnlHightLightBoLoc.Size = new System.Drawing.Size(200, 7);
+            this.pnlHightLightBoLoc.TabIndex = 36;
+            // 
+            // pnlHightLightTimKiem
+            // 
+            this.pnlHightLightTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            this.pnlHightLightTimKiem.Location = new System.Drawing.Point(0, 33);
+            this.pnlHightLightTimKiem.Name = "pnlHightLightTimKiem";
+            this.pnlHightLightTimKiem.Size = new System.Drawing.Size(200, 7);
+            this.pnlHightLightTimKiem.TabIndex = 35;
+            // 
+            // pnlTacVu
+            // 
+            this.pnlTacVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            this.pnlTacVu.Controls.Add(this.pnlHightLightTimKiem);
+            this.pnlTacVu.Controls.Add(this.pnlHightLightBoLoc);
+            this.pnlTacVu.Controls.Add(this.tabbtnTimKiemDocGia);
+            this.pnlTacVu.Controls.Add(this.tabbtnBoLocDocGia);
+            this.pnlTacVu.Location = new System.Drawing.Point(6, 475);
+            this.pnlTacVu.Name = "pnlTacVu";
+            this.pnlTacVu.Size = new System.Drawing.Size(400, 40);
+            this.pnlTacVu.TabIndex = 33;
+            // 
+            // pnltabKhoSach
+            // 
+            this.pnltabKhoSach.Location = new System.Drawing.Point(150, 54);
+            this.pnltabKhoSach.Name = "pnltabKhoSach";
+            this.pnltabKhoSach.Size = new System.Drawing.Size(871, 518);
+            this.pnltabKhoSach.TabIndex = 30;
             // 
             // frmDocGia
             // 
@@ -726,6 +785,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1021, 572);
+            this.Controls.Add(this.pnltabKhoSach);
             this.Controls.Add(this.pnltabDocGia);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -745,6 +805,8 @@
             this.pnlBoLoc.PerformLayout();
             this.pnlSearchFor.ResumeLayout(false);
             this.pnlSearchFor.PerformLayout();
+            this.pnlThongBaoDocGia.ResumeLayout(false);
+            this.pnlThongBaoDocGia.PerformLayout();
             this.pnlTacVu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -791,17 +853,19 @@
         private System.Windows.Forms.Label lblTimKiem;
         private System.Windows.Forms.Button btnSearchFor;
         private System.Windows.Forms.ComboBox cboSearchFor;
-        private System.Windows.Forms.Panel pnlTacVu;
-        private System.Windows.Forms.Panel pnlHightLightTimKiem;
-        private System.Windows.Forms.Panel pnlHightLightBoLoc;
-        private System.Windows.Forms.Panel pnlHightLightThongTin;
-        private System.Windows.Forms.Button btnThongTinChiTietDocGia;
-        private System.Windows.Forms.Button tabbtnTimKiemDocGia;
-        private System.Windows.Forms.Button tabbtnBoLocDocGia;
         private System.Windows.Forms.DataGridView dgvDocGia;
         private System.Windows.Forms.DateTimePicker dtmNgayDKDocGia;
         private System.Windows.Forms.DateTimePicker dtmNgaySinhDocGia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblThongBaoDocGia;
+        private System.Windows.Forms.Button btnHuyThaoTacDocGia;
+        private System.Windows.Forms.Panel pnlThongBaoDocGia;
+        private System.Windows.Forms.Label lblTitleThongBaoDocGia;
+        private System.Windows.Forms.Panel pnlTacVu;
+        private System.Windows.Forms.Panel pnlHightLightTimKiem;
+        private System.Windows.Forms.Panel pnlHightLightBoLoc;
+        private System.Windows.Forms.Button tabbtnTimKiemDocGia;
+        private System.Windows.Forms.Button tabbtnBoLocDocGia;
+        private System.Windows.Forms.Panel pnltabKhoSach;
     }
 }
