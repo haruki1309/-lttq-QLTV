@@ -257,12 +257,7 @@ namespace GraphicUserInterface
         {
             btnThemDocGia.Text = "Thêm";
             btnXoaDocGia.Text = "Xóa";
-
-            
-            btnThemDocGia.Enabled = false;
-            btnXoaDocGia.Enabled = false;
-
-
+                    
             if (btnSuaDocGia.Text == "Sửa")
             {               
                 if (dgvDocGia.SelectedRows.Count == 0)
@@ -280,9 +275,13 @@ namespace GraphicUserInterface
 
                     btnHuyThaoTacDocGia.Enabled = true;
 
+                    btnThemDocGia.Enabled = false;
+                    btnXoaDocGia.Enabled = false;
+
                     lblThongBaoDocGia.Text = "Bạn có chắn chắn sẽ sửa các độc giả\nnày chứ?";
                     btnSuaDocGia.Text = "Xác Nhận";
                 }
+                
             }
             else if (btnSuaDocGia.Text == "Xác Nhận")
             {
@@ -340,6 +339,9 @@ namespace GraphicUserInterface
                 {
                     lblThongBaoDocGia.Text = "Bạn có chắn chắn sẽ xóa các độc giả\nnày chứ?";
                     btnXoaDocGia.Text = "Xác Nhận";
+
+                    btnSuaDocGia.Enabled = false;
+                    btnThemDocGia.Enabled = false;
 
                     btnHuyThaoTacDocGia.Enabled = true;
                 }
