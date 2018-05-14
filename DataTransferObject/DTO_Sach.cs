@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    partial class DTO_Sach
+    public partial class DTO_Sach
     {
         //======= Properties ========//
         private string maSach;
@@ -92,5 +92,20 @@ namespace DataTransferObject
         //===== Constructor =====//
         public DTO_Sach()
         { }
+
+        public DTO_Sach(string maSach, string tenSach, string maTacGia, int namXB, string maNXB, string maNhaPhatHanh, DateTime ngayNhap, string maChuDe, string maTheLoai, double giaTri, int soLuong)
+        {
+            this.maSach = maSach;
+            this.tenSach = tenSach;
+            this.maTacGia = maTacGia;
+            this.namXB = namXB;
+            this.maNXB = maNXB;
+            this.maNhaPhatHanh = maNhaPhatHanh;
+            this.ngayNhap = ngayNhap;
+            this.maChuDe = maChuDe;
+            this.maTheLoai = maTheLoai;
+            this.giaTri = giaTri;
+            this.soLuong = soLuong;
+        }
     }
 }

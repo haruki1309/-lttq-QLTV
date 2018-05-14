@@ -10,3 +10,9 @@ F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\DataTransferObject\obj\Debug\DataTransferObje
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\DataTransferObject\obj\Debug\DataTransferObject.csproj.CoreCompileInputs.cache
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\DataTransferObject\obj\Debug\DataTransferObject.dll
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\DataTransferObject\obj\Debug\DataTransferObject.pdb
+F:\For Me\Study\4 - Trực quan\Project\DataTransferObject\bin\Debug\DataTransferObject.dll
+F:\For Me\Study\4 - Trực quan\Project\DataTransferObject\bin\Debug\DataTransferObject.pdb
+F:\For Me\Study\4 - Trực quan\Project\DataTransferObject\obj\Debug\DataTransferObject.csprojResolveAssemblyReference.cache
+F:\For Me\Study\4 - Trực quan\Project\DataTransferObject\obj\Debug\DataTransferObject.csproj.CoreCompileInputs.cache
+F:\For Me\Study\4 - Trực quan\Project\DataTransferObject\obj\Debug\DataTransferObject.dll
+F:\For Me\Study\4 - Trực quan\Project\DataTransferObject\obj\Debug\DataTransferObject.pdb

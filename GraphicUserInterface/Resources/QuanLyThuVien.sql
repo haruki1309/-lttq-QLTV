@@ -49,9 +49,7 @@ Create Table Sach
 Create Table TacGia
 (
 	MaTacGia char(5) Primary key,
-	HoTen nvarchar(20),	
-	NamSinh int,
-	NamMat int
+	HoTen nvarchar(20)
 )
 
 Create Table CTTG
@@ -66,7 +64,7 @@ Create Table CTTG
 Create Table NXB
 (
 	MaNXB char(5) Primary key,
-	TenNXB nvarchar(20),
+	TenNXB nvarchar(50),
 	DiaChi nvarchar(50),
 	SDT varchar(15),
 	Email varchar(50)
@@ -140,6 +138,7 @@ set dateformat dmy
 
 
 /*========== Tạo Procedure ===========*/
+/*== Procedure Độc giả == */
 
 Create Procedure SuaDocGia
 	@MaDocGia char(5),
@@ -170,4 +169,34 @@ Begin
 End
 Go
 
-select * from DocGia
+
+/*== Procedure Sách ==*/
+Create Procedure GetFullSach
+As
+Begin
+	Select MaSach, TenSach, HoTen, NamXB , TenNXB, TenNhaPhatHanh, NgayNhap, TenChuDe, TenTheLoai, GiaTri, SoLuong 
+	From Sach, TacGia, NXB, NhaPhatHanh, ChuDe, TheLoai
+	Where (Sach.MaTacGia = TacGia.MaTacGia) and (Sach.MaNXB = NXB.MaNXB) and (Sach.MaNhaPhatHanh = NhaPhatHanh.MaNhaPhatHanh)
+		  and (Sach.MaChuDe = ChuDe.MaChuDe) and (Sach.MaTheLoai = TheLoai.MaTheLoai)
+End
+Go
+
+
+Create Procedure ThemSach
+	@MaSach char(5),
+	@TenSach nvarchar(50),
+	@MaTacGia char(5),
+	@NamXB int,
+	@MaNXB char(5),
+	@MaNhaPhatHanh char(5),
+	@NgayNhap smalldatetime,
+	@MaChuDe char(5),
+	@MaTheLoai char(5),
+	@GiaTri money,
+	@SoLuong int
+As
+Begin
+	Insert Into Sach
+	Values (@MaSach, @TenSach, @MaTacGia, @NamXB, @MaNXB, @MaNhaPhatHanh, @NgayNhap, @MaChuDe, @MaTheLoai, @GiaTri, @SoLuong)
+End
+Go

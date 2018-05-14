@@ -69,3 +69,21 @@ F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUser
 F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CoreCompileInputs.cache
 F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.exe
 F:\DoAnMonHoc\DoAn_LTTQ\QuanLyThuVien\GraphicUserInterface\obj\Debug\GraphicUserInterface.pdb
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\bin\Debug\GraphicUserInterface.exe.config
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\bin\Debug\GraphicUserInterface.exe
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\bin\Debug\GraphicUserInterface.pdb
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\bin\Debug\BusinessLogicLayer.dll
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\bin\Debug\DataTransferObject.dll
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.dll
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\bin\Debug\BusinessLogicLayer.pdb
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\bin\Debug\DataTransferObject.pdb
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.pdb
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\obj\Debug\GraphicUserInterface.csprojResolveAssemblyReference.cache
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmLogin.resources
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmDocGia.resources
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\obj\Debug\GraphicUserInterface.Properties.Resources.resources
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.GenerateResource.cache
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CoreCompileInputs.cache
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CopyComplete
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\obj\Debug\GraphicUserInterface.exe
+F:\For Me\Study\4 - Trực quan\Project\GraphicUserInterface\obj\Debug\GraphicUserInterface.pdb

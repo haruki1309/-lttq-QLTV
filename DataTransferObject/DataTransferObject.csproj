@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO_DocGia.cs" />
+    <Compile Include="DTO_Sach.cs" />
     <Compile Include="DTO_ThuThu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
