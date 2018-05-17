@@ -77,29 +77,31 @@ namespace DatabaseAccessLayer
         {
             try
             {
-                string Sql = "";
-
+                string condition = "A.MaSach, A.TenSach";
+                
                 if (listCondition.Count == 1)
                 {
-                    Sql = ", " + listCondition[0];
+                    condition += (", " + listCondition[0]);
                 }
-                else
+                else if (listCondition.Count > 1)
                 {
-                    Sql = ", " + listCondition[0] + ", ";
+                    condition += (", " + listCondition[0] + ", ");
 
                     for (int i = 1; i < listCondition.Count; i++)
                     {
                         if (i == listCondition.Count - 1)
-                            Sql += listCondition[i];
+                            condition += listCondition[i];
                         else
-                            Sql += listCondition[i] + ", ";
+                            condition += listCondition[i] + ", ";
                     }
                 }
+
                 cn.Open();
 
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlCommand command = new SqlCommand("LocSach", cn);
-                command.Parameters.AddWithValue("@DieuKienLoc", Sql);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@DieuKienLoc", condition);
                 adapter.SelectCommand = command;
 
                 DataTable dataTable = new DataTable();
