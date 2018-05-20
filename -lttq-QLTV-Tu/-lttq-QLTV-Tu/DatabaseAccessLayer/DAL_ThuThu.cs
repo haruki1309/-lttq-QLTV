@@ -25,6 +25,28 @@ namespace DatabaseAccessLayer
                 return null;
             }
         }
+        public DataTable Get(List<string> listProps, string condition)
+        {
+            try
+            {
+                string sql = "select " + listProps[0];
+                for (int i = 1; i < listProps.Count; i++)
+                {
+                    sql += (", " + listProps[i]);
+                }
+                sql += " from ThuThu";
+
+                sql += (" where " + condition);
+                SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public bool Login(string MaThuThu, string MatKhau)
         {
             try

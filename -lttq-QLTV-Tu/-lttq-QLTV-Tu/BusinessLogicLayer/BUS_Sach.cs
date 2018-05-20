@@ -29,6 +29,14 @@ namespace BusinessLogicLayer
             return dalSach.Get(listCondition);
         }
 
+        public DataTable getSach(List<string> listProperties, string condition)
+        {
+            return dalSach.Get(listProperties, condition);
+        }
+        public DataTable LocSach(List<string> listCondition)
+        {
+            return dalSach.Filt(listCondition);
+        }
         // Nhớ kiểm tra điều kiện Insert
         public bool insertSach(string maSach, string tenSach, string maTacGia, int namXB, string maNXB, string maNhaPhatHanh, DateTime ngayNhap, string maChuDe, string maTheLoai, double giaTri, int soLuong)
         {
@@ -50,6 +58,11 @@ namespace BusinessLogicLayer
             DTO_Sach dtoSach = new DTO_Sach(maSach, tenSach, maTacGia, namXB, maNXB, maNhaPhatHanh, ngayNhap, maChuDe, maTheLoai, giaTri, soLuong);
 
             return dalSach.Update(dtoSach);
+        }
+
+        public bool updateSoluongSach(string maSach, int soLuong)
+        {
+            return dalSach.UpdateSoLuong(maSach, soLuong);
         }
 
         // Nhớ kiểm tra điều kiện Delete

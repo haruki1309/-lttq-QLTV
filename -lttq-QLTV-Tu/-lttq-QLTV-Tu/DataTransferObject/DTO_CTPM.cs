@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    class DTO_CTPM
+    public class DTO_CTPM
     {
         //====== Properties ======//
         private string maPhieuMuon;
         private string maSach;
+       
 
         //======= Getter/Setter =======//
         public string MaPhieuMuon
@@ -25,6 +26,7 @@ namespace DataTransferObject
             set { maSach = value; }
         }
 
+        
         //===== Constructor =======//
         public DTO_CTPM()
         { }

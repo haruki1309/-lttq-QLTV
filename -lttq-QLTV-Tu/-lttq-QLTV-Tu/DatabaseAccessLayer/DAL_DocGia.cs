@@ -28,20 +28,28 @@ namespace DatabaseAccessLayer
                 return null;
             }
         }
-        public DataTable Get(string Condition)
+        public DataTable GetHoTen(string MaDocGia)
         {
             try
             {
-                string SQL = String.Format("select * from DocGia where " + Condition);
-                SqlDataAdapter da = new SqlDataAdapter(SQL, cn);
-
+                cn.Open();
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+
+                string SQL = String.Format("select DocGia.MaDocGia, DocGia.HoTen from DocGia where MaDocGia like '%{0}%'", MaDocGia);                             
+
+                SqlDataAdapter adapter = new SqlDataAdapter(SQL, cn);
+                SqlCommand command = new SqlCommand(SQL, cn);
+
+                adapter.Fill(dt);
                 return dt;
             }
             catch (Exception)
             {
                 return null;
+            }
+            finally
+            {
+                cn.Close();
             }
         }
         public DataTable Get(List<string> listProperties)
@@ -68,7 +76,31 @@ namespace DatabaseAccessLayer
             }
         }
 
+        public DataTable Get(List<string> listProperties, string condition)
+        {
+            try
+            {
+                //string SQL = string.Format("select {0} from DocGia", listProperties);
+                string sql = "select " + listProperties[0];
+                for (int i = 1; i < listProperties.Count; i++)
+                {
+                    sql += (", " + listProperties[i]);
+                }
+                sql += " from DocGia";
 
+                sql += (" where " + condition);
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
 
         DataTable dt = new DataTable();
         //Them

@@ -17,6 +17,10 @@ namespace BusinessLogicLayer
         {
             return dalThuThu.Get();
         }
+        public DataTable getThuThu(List<string> listProps, string condition)
+        {
+            return dalThuThu.Get(listProps, condition);
+        }
         public bool Login(string MaThuThu, string MatKhau)
         {
             if(dalThuThu.Login(MaThuThu, MatKhau))

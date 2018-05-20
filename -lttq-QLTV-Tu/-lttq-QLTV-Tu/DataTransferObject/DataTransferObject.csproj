@@ -40,9 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO_ChuDe.cs" />
+    <Compile Include="DTO_CTPM.cs" />
+    <Compile Include="DTO_CTPT.cs" />
     <Compile Include="DTO_DocGia.cs" />
+    <Compile Include="DTO_NhaPhatHanh.cs" />
+    <Compile Include="DTO_NXB.cs" />
+    <Compile Include="DTO_PhieuMuon.cs" />
+    <Compile Include="DTO_PhieuTra.cs" />
     <Compile Include="DTO_Sach.cs" />
+    <Compile Include="DTO_TheLoai.cs" />
     <Compile Include="DTO_ThuThu.cs" />
+    <Compile Include="DTO_TinhTrang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

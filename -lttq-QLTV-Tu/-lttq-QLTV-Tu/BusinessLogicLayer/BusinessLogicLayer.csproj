@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_CTPM.cs" />
     <Compile Include="BUS_DocGia.cs" />
+    <Compile Include="BUS_PhieuMuon.cs" />
     <Compile Include="BUS_Sach.cs" />
     <Compile Include="BUS_ThuThu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
