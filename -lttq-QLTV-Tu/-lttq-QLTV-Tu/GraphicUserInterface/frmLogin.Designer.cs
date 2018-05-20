@@ -159,7 +159,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblTaiKhoan;
-        private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Label lblMatKhau;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Button btnDangNhap;
@@ -167,6 +166,7 @@
         private System.Windows.Forms.PictureBox picTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.TextBox txtTaiKhoan;
     }
 }
 

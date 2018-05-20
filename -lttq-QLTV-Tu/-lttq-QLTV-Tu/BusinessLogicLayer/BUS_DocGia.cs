@@ -17,13 +17,17 @@ namespace BusinessLogicLayer
         {
             return dalDocGia.Get();
         }
-        public DataTable getDocGia(string condition)
+        public DataTable GetHoTenDocGia(string MaDocGia)
         {
-            return dalDocGia.Get(condition);
+            return dalDocGia.GetHoTen(MaDocGia);
         }
         public DataTable getDocGia(List<string> listProperties)
         {
             return dalDocGia.Get(listProperties);
+        }
+        public DataTable getDocGia(List<string> listProperties, string condition)
+        {
+            return dalDocGia.Get(listProperties, condition);
         }
 
         public bool insertDocGia(string prvMaDocGia, string hoTen, string diaChi, string soDT, string cmnd, DateTime ngaySinh, DateTime ngayDK)

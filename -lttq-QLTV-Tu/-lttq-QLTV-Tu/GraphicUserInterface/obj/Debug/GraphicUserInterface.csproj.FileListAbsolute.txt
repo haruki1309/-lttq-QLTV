@@ -105,3 +105,20 @@ F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserI
 F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CopyComplete
 F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.exe
 F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\bin\Debug\GraphicUserInterface.exe.config
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\bin\Debug\GraphicUserInterface.exe
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\bin\Debug\GraphicUserInterface.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\bin\Debug\BusinessLogicLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\bin\Debug\DataTransferObject.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\bin\Debug\BusinessLogicLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\bin\Debug\DataTransferObject.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\bin\Debug\DatabaseAccessLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.csprojResolveAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmLogin.resources
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.frmDocGia.resources
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.Properties.Resources.resources
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.GenerateResource.Cache
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.exe
+F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\GraphicUserInterface\obj\Debug\GraphicUserInterface.pdb

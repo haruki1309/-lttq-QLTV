@@ -426,8 +426,18 @@ Begin
 		SoLuong = @SoLuong
 	Where  MaSach = @MaSach	
 End
+--cap nhat so luong sach
 Go
-
+Create Procedure CapNhatSoLuongSach
+	@MaSach char(5),
+	@SoLuong int
+As
+Begin
+	Update Sach
+	Set SoLuong = @SoLuong
+	Where  MaSach = @MaSach
+End
+Go
 Create Procedure XoaSach
 	@MaSach char(5)
 As
@@ -566,6 +576,7 @@ End
 
 /*=== Procedure Thể loại ===*/
 
+<<<<<<< HEAD
 Create Function AutoID_TL()
 	Returns varchar(5)
 As
@@ -609,5 +620,39 @@ Begin
 	Exec(@Sql)
 End
 Go
+=======
+--procedure cho tab Cho muon sach
+
+---------------------------------
+--Them phieu muon:
+---------------------------------
+Create Procedure ThemPhieuMuon
+	@MaPhieuMuon char(5),
+	@MaDocGia char(50),
+	@MaThuThu char(5),
+	@NgayMuon smalldatetime,
+	@SoLuong int
+	
+As
+Begin
+	Insert Into PhieuMuon
+	Values (@MaPhieuMuon, @MaDocGia, @MaThuThu,@NgayMuon, @SoLuong)
+End
+Go
+---------------------------------
+--Them CTPM:
+---------------------------------
+Create Procedure ThemCTPM
+	@MaPhieuMuon char(5),
+	@MaSach char(5)
+	
+As
+Begin
+	Insert Into CTPM
+	Values (@MaPhieuMuon, @MaSach)
+End
+Go
+
+>>>>>>> 6de0dae676d395e52d5e71084284e2d90f7d29c2
 
 

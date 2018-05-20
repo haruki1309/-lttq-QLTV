@@ -12,15 +12,18 @@ namespace GraphicUserInterface
             InitializeComponent();
             
         }
-
+        
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if(busTT.Login(txtTaiKhoan.Text, txtMatKhau.Text))
             {
+                
                 lblStatus.Text = "(*) Đăng nhập thành công";
-                frmDocGia frmDocGia = new frmDocGia();                
+                frmDocGia frmDocGia = new frmDocGia();
+                frmDocGia.DTO_ThuThu.MaThuThu = txtTaiKhoan.Text;
                 this.Hide();
                 frmDocGia.ShowDialog();
+                
                 
             }
             else

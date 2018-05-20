@@ -105,7 +105,10 @@ namespace DataTransferObject
                 this.password = value;
             }
         }
+        public DTO_ThuThu()
+        {
 
+        }
         public DTO_ThuThu(string mathuthu, string hoten, string diachi, string sodt, string cmnd, string email, string ngayvl, string pass)
         {
             this.maThuThu = mathuthu;

@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_CTPM.cs" />
     <Compile Include="DAL_DocGia.cs" />
+    <Compile Include="DAL_PhieuMuon.cs" />
     <Compile Include="DAL_Sach.cs" />
     <Compile Include="DAL_ThuThu.cs" />
     <Compile Include="DBConnect.cs" />

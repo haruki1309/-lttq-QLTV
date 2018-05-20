@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    class DTO_PhieuMuon
+    public class DTO_PhieuMuon
     {        
         //======== Properties =========//
         private string maPhieuMuon;

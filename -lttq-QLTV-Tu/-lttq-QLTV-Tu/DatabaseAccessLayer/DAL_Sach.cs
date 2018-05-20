@@ -75,12 +75,74 @@ namespace DatabaseAccessLayer
             }
         }
 
+
+        //============================================
+        //lay Sach theo thuoc tinh
+        //EDIT: t sửa hàm này xí, nó dùng để lấy DS sách nên không thể thêm code phần lọc vào
+        // => đã thay thế bằng hàm DataTable Filt(List<string> listCondition);
+
         public DataTable Get(List<string> listCondition)
         {
             try
             {
+                //string SQL = string.Format("select {0} from DocGia", listProperties);
+                string sql = "select " + listCondition[0];
+                for (int i = 1; i < listCondition.Count; i++)
+                {
+                    sql += (", " + listCondition[i]);
+                }
+                sql += " from Sach";
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public DataTable Get(List<string> listProps, string condition)
+        {
+            try
+            {
+                string sql = "select " + listProps[0];
+                for (int i = 1; i < listProps.Count; i++)
+                {
+                    sql += (", " + listProps[i]);
+                }
+                sql += " from Sach";
+
+                sql += (" where " + condition);
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public DataTable Filt(List<string> listCondition)
+        {
+            try
+            {
                 string condition = "A.MaSach, A.TenSach";
-                
+
                 if (listCondition.Count == 1)
                 {
                     condition += (", " + listCondition[0]);
@@ -192,7 +254,31 @@ namespace DatabaseAccessLayer
 
             return false;
         }
+        public bool UpdateSoLuong(string maSach, int soLuong)
+        {
+            try
+            {
+                cn.Open();
 
+                SqlCommand cm = new SqlCommand("CapNhatSoLuongSach", cn);
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.AddWithValue("@MaSach", maSach);
+                cm.Parameters.AddWithValue("@SoLuong", soLuong);
+
+                if (cm.ExecuteNonQuery() > 0)
+                    return true;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            return false;
+        }
         public bool Delete(string maSach)
         {
             try
@@ -220,6 +306,7 @@ namespace DatabaseAccessLayer
         }
 
 
+<<<<<<< HEAD
         public List<string> AutoCompleteTextBox(string columnName, string tableName)
         {
             try
@@ -256,5 +343,7 @@ namespace DatabaseAccessLayer
                 return null;
             }
         }
+=======
+>>>>>>> 6de0dae676d395e52d5e71084284e2d90f7d29c2
     }
 }
