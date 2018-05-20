@@ -297,30 +297,19 @@ End
 ---
 
 Create Procedure ThemSach
-	--@MaSach varchar(5),
-	--@TenSach nvarchar(100),
-	--@TenTacGia nvarchar(100),
-	--@NamXB int,
-	--@TenNXB nvarchar(100),
-	--@TenNhaPhatHanh nvarchar(100),
-	--@NgayNhap smalldatetime,
-	--@TenChuDe nvarchar(100),
-	--@TenTheLoai nvarchar(100),
-	--@GiaTri money,
-	--@SoLuong int
+	@MaSach varchar(5),
+	@TenSach nvarchar(100),
+	@TenTacGia nvarchar(100),
+	@NamXB int,
+	@TenNXB nvarchar(100),
+	@TenNhaPhatHanh nvarchar(100),
+	@NgayNhap smalldatetime,
+	@TenChuDe nvarchar(100),
+	@TenTheLoai nvarchar(100),
+	@GiaTri money,
+	@SoLuong int
 As 
-Begin	 set dateformat dmy
-	Declare @MaSach varchar(5) = N'MS003',
-		@TenSach nvarchar(100) = N'Tuổi trẻ không trì hoãn',
-		@TenTacGia nvarchar(100) = N'Thần Cách',
-		@NamXB int = 2017,
-		@TenNXB nvarchar(100) = N'NXB Thế Giới',
-		@TenNhaPhatHanh nvarchar(100)= N'ibooks',
-		@NgayNhap smalldatetime = '16-05-2018',
-		@TenChuDe nvarchar(100) = N'Cuộc sống',
-		@TenTheLoai nvarchar(100) = N'Kỹ năng',
-		@GiaTri money = 88000,
-		@SoLuong int = 35
+Begin	 
 	If Not exists (Select Sach.TenSach, TacGia.HoTen, NXB.TenNXB, NhaPhatHanh.TenNhaPhatHanh, Sach.NamXB
 				   From Sach Inner Join TacGia On Sach.MaTacGia = TacGia.MaTacGia
 						Inner Join NXB On Sach.MaNXB = NXB.MaNXB
@@ -576,7 +565,7 @@ End
 
 /*=== Procedure Thể loại ===*/
 
-<<<<<<< HEAD
+
 Create Function AutoID_TL()
 	Returns varchar(5)
 As
@@ -620,7 +609,7 @@ Begin
 	Exec(@Sql)
 End
 Go
-=======
+
 --procedure cho tab Cho muon sach
 
 ---------------------------------
@@ -653,6 +642,5 @@ Begin
 End
 Go
 
->>>>>>> 6de0dae676d395e52d5e71084284e2d90f7d29c2
 
 

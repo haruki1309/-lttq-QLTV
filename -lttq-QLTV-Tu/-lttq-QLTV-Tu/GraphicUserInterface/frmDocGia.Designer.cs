@@ -1983,7 +1983,7 @@
         private System.Windows.Forms.Button tabbtnBoLocSach;
         private System.Windows.Forms.Label lblThongBaoSach;
         private System.Windows.Forms.CheckBox chkTheLoai;
-<<<<<<< HEAD
+
         private System.Windows.Forms.Panel pnlThongTinSach;
         private System.Windows.Forms.Label lblNamXB;
         private System.Windows.Forms.Label lblTacGia;
@@ -2005,7 +2005,7 @@
         private System.Windows.Forms.Label lblGiaTri;
         private System.Windows.Forms.Label lblNhaPhatHanh;
         private System.Windows.Forms.Label lblNXB;
-=======
+
         private System.Windows.Forms.Panel pnltabChoMuonSach;
         private System.Windows.Forms.Label lblCMSNhapMaDocGia;
         private System.Windows.Forms.Panel pnlPMLapPhieuMuon;
@@ -2031,6 +2031,6 @@
         private System.Windows.Forms.Label lblCMSHeadingDSPM;
         private System.Windows.Forms.DataGridView dgvCMSDSPhieuMuon;
         private System.Windows.Forms.Button btnPMEsc;
->>>>>>> 6de0dae676d395e52d5e71084284e2d90f7d29c2
+
     }
 }

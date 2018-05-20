@@ -9,11 +9,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using BusinessLogicLayer;
-<<<<<<< HEAD
 using System.Data.SqlClient;
-=======
 using DataTransferObject;
->>>>>>> 6de0dae676d395e52d5e71084284e2d90f7d29c2
+
 
 namespace GraphicUserInterface
 {
@@ -550,134 +548,6 @@ namespace GraphicUserInterface
 
             lblThongBaoSach.Text = "";
         }
-<<<<<<< HEAD
-        
-        
-=======
-
-        private void SetConTrolInsertUpdateSach()
-        {
-            // Enable cac TextBox de nhap thong tin
-            this.txtTenSach.ReadOnly = false;
-            this.txtTacGia.ReadOnly = false;
-            this.txtNamXB.ReadOnly = false;
-            this.txtNXB.ReadOnly = false;
-            this.txtNhaPhatHanh.ReadOnly = false;
-            this.txtGiaTri.ReadOnly = false;
-            this.txtSoLuong.ReadOnly = false;
-
-            // Resize cac TextBox co san
-            Size size = new Size(100, 28);
-
-            txtTenSach.Size = size;
-            txtTacGia.Size = size;
-            txtNamXB.Size = size;
-            txtNXB.Size = size;
-            txtNhaPhatHanh.Size = size;
-            txtGiaTri.Size = size;
-            txtSoLuong.Size = size;
-
-            // Rename cac TextBox nhap ID
-            lblTacGia.Text = "Mã Tác Giả";
-            lblNXB.Text = "Mã NXB";
-            lblNhaPhatHanh.Text = "Mã Nhà Phát Hành";
-
-            // Renew Font cac TextBox co san
-            Font fontTextBox = new Font("Sitka Display", 10, FontStyle.Bold);
-
-            txtTenSach.Font = fontTextBox;
-            txtTacGia.Font = fontTextBox;
-            txtNamXB.Font = fontTextBox;
-            txtNXB.Font = fontTextBox;
-            txtNhaPhatHanh.Font = fontTextBox;
-            txtGiaTri.Font = fontTextBox;
-            txtSoLuong.Font = fontTextBox;
-
-            // Renew Font cac Label co san
-            Font fontLabel = new Font("Sitka Heading", 10, FontStyle.Bold);
-
-            lblTenSach.Font = fontLabel;
-            lblTacGia.Font = fontLabel;
-            lblNamXB.Font = fontLabel;
-            lblNXB.Font = fontLabel;
-            lblNhaPhatHanh.Font = fontLabel;
-            lblGiaTri.Font = fontLabel;
-            lblSoLuong.Font = fontLabel;
-
-            // Relocated cac Lable va TextBox co san
-            Point location = new Point(0, 18);
-            lblTenSach.Location = location;
-
-            location = new Point(121, 15);
-            txtTenSach.Location = location;
-
-            location = new Point(0, 55);
-            lblTacGia.Location = location;
-
-            location = new Point(121, 52);
-            txtTacGia.Location = location;
-
-            location = new Point(0, 92);
-            lblNamXB.Location = location;
-
-            location = new Point(121, 89);
-            txtNamXB.Location = location;
-
-            location = new Point(0, 130);
-            lblNXB.Location = location;
-
-            location = new Point(121, 127);
-            txtNXB.Location = location;
-
-            location = new Point(0, 167);
-            lblNhaPhatHanh.Location = location;
-
-            location = new Point(121, 164);
-            txtNhaPhatHanh.Location = location;
-
-            location = new Point(0, 202);
-            lblGiaTri.Location = location;
-
-            location = new Point(121, 199);
-            txtGiaTri.Location = location;
-
-            location = new Point(0, 237);
-            lblSoLuong.Location = location;
-
-            location = new Point(121, 234);
-            txtSoLuong.Location = location;
-
-            // Display cac TextBox moi de nhap day du thong tin             
-            txtMaChuDe.Size = size;
-            txtMaChuDe.Visible = true;
-
-            txtMaTheLoai.Size = size;
-            txtMaTheLoai.Visible = true;
-
-            dtmNgayNhap.Size = size;
-            dtmNgayNhap.Visible = true;
-
-            // Display cac Label moi cho cac TextBox                
-            lblMaChuDe.Visible = true;
-            lblMaTheLoai.Visible = true;
-            lblNgayNhap.Visible = true;
-
-            // Clear cac TextBox de nhap thong tin
-            txtTenSach.Clear();
-            txtTacGia.Clear();
-            txtNamXB.Clear();
-            txtNXB.Clear();
-            txtNhaPhatHanh.Clear();
-            txtGiaTri.Clear();
-            txtSoLuong.Clear();
-            txtMaChuDe.Clear();
-            txtMaTheLoai.Clear();
-            dtmNgayNhap.Value = DateTime.Today;
-        }
-
-
->>>>>>> 6de0dae676d395e52d5e71084284e2d90f7d29c2
-
         //=============== Them Sach ===============//
         private void btnThemSach_Click(object sender, EventArgs e)
         {
@@ -700,12 +570,7 @@ namespace GraphicUserInterface
 
                 btnThemSach.Text = "Xác nhận thêm";
                 btnThemSach.Font = new Font("Sitka Display", 10, FontStyle.Bold);
-<<<<<<< HEAD
-                
-=======
 
-                SetConTrolInsertUpdateSach();
->>>>>>> 6de0dae676d395e52d5e71084284e2d90f7d29c2
             }
             else if (btnThemSach.Text == "Xác nhận thêm")
             {
@@ -716,30 +581,7 @@ namespace GraphicUserInterface
                     int ID = 0;
                     string maSach = "";
 
-                    try
-                    {
-
-                        ID = dgvSach.Rows.Count + 1;
-
-                        if (0 <= ID && ID < 10)
-                        {
-                            maSach = string.Format("MS00{0}", ID.ToString());
-                        }
-                        else if (10 <= ID && ID < 100)
-                        {
-                            maSach = string.Format("MS0{0}", ID.ToString());
-                        }
-                        else if (100 <= ID && ID < 1000)
-                        {
-                            maSach = string.Format("MS{0}", ID.ToString());
-                        }
-
-                    }
-                    catch (Exception) when (ID >= 1000)
-                    {
-                        lblThongBaoSach.Text = "Số lượng sách vượt quá\nkhả năng lưu trữ";
-                    }
-
+                    
                     if (busSach.insertSach(maSach, txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNamXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtChuDe.Text, txtTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
                     {
                         lblThongBaoSach.Text = "Thêm thành công !";
@@ -1003,11 +845,7 @@ namespace GraphicUserInterface
                 pnlTimKiemSach.Visible = false;
                 pnlHighLightBoLocSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
 
-<<<<<<< HEAD
-                pnlCapNhatSach.BringToFront();                
-=======
                 pnlThongTinSach.BringToFront();
->>>>>>> 6de0dae676d395e52d5e71084284e2d90f7d29c2
             }
 
         }
@@ -1099,7 +937,6 @@ namespace GraphicUserInterface
         }
 
 
-<<<<<<< HEAD
         //============= Auto Complete TextBox ==================//
         private void txtTenSach_TextChanged(object sender, EventArgs e)
         {
@@ -1210,8 +1047,6 @@ namespace GraphicUserInterface
         }
         
 
-
-=======
         // ==========================================================================
         //
         // CHO MUON SACH
@@ -1391,7 +1226,7 @@ namespace GraphicUserInterface
         }
 
         
->>>>>>> 6de0dae676d395e52d5e71084284e2d90f7d29c2
+
     }
 
 

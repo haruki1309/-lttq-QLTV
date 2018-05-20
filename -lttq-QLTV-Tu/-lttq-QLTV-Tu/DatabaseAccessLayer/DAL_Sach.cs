@@ -306,7 +306,6 @@ namespace DatabaseAccessLayer
         }
 
 
-<<<<<<< HEAD
         public List<string> AutoCompleteTextBox(string columnName, string tableName)
         {
             try
@@ -343,7 +342,6 @@ namespace DatabaseAccessLayer
                 return null;
             }
         }
-=======
->>>>>>> 6de0dae676d395e52d5e71084284e2d90f7d29c2
+
     }
 }
