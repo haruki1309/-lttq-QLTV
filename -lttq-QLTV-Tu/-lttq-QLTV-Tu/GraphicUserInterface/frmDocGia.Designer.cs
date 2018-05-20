@@ -93,6 +93,7 @@
             this.tabbtnTimKiemDocGia = new System.Windows.Forms.Button();
             this.tabbtnBoLocDocGia = new System.Windows.Forms.Button();
             this.pnltabKhoSach = new System.Windows.Forms.Panel();
+            this.pnlCapNhatSach = new System.Windows.Forms.Panel();
             this.pnlThongTinSach = new System.Windows.Forms.Panel();
             this.lblNgayNhap = new System.Windows.Forms.Label();
             this.lblTheLoai = new System.Windows.Forms.Label();
@@ -114,7 +115,6 @@
             this.txtNamXB = new System.Windows.Forms.TextBox();
             this.txtTacGia = new System.Windows.Forms.TextBox();
             this.txtTenSach = new System.Windows.Forms.TextBox();
-            this.pnlCapNhatSach = new System.Windows.Forms.Panel();
             this.pnlThongBaoSach = new System.Windows.Forms.Panel();
             this.lblThongBaoSach = new System.Windows.Forms.Label();
             this.lblTitleThongBaoSach = new System.Windows.Forms.Label();
@@ -177,8 +177,8 @@
             this.pnlSearchFor.SuspendLayout();
             this.pnlTacVu.SuspendLayout();
             this.pnltabKhoSach.SuspendLayout();
-            this.pnlThongTinSach.SuspendLayout();
             this.pnlCapNhatSach.SuspendLayout();
+            this.pnlThongTinSach.SuspendLayout();
             this.pnlThongBaoSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).BeginInit();
             this.pnlTimKiemSach.SuspendLayout();
@@ -884,6 +884,20 @@
             this.pnltabKhoSach.Size = new System.Drawing.Size(871, 515);
             this.pnltabKhoSach.TabIndex = 37;
             // 
+            // pnlCapNhatSach
+            // 
+            this.pnlCapNhatSach.Controls.Add(this.pnlThongTinSach);
+            this.pnlCapNhatSach.Controls.Add(this.pnlThongBaoSach);
+            this.pnlCapNhatSach.Controls.Add(this.btnHuyCapNhatSach);
+            this.pnlCapNhatSach.Controls.Add(this.lblCapNhatDocGia);
+            this.pnlCapNhatSach.Controls.Add(this.btnSuaSach);
+            this.pnlCapNhatSach.Controls.Add(this.btnXoaSach);
+            this.pnlCapNhatSach.Controls.Add(this.btnThemSach);
+            this.pnlCapNhatSach.Location = new System.Drawing.Point(0, 0);
+            this.pnlCapNhatSach.Name = "pnlCapNhatSach";
+            this.pnlCapNhatSach.Size = new System.Drawing.Size(415, 473);
+            this.pnlCapNhatSach.TabIndex = 34;
+            // 
             // pnlThongTinSach
             // 
             this.pnlThongTinSach.Controls.Add(this.lblNgayNhap);
@@ -1026,7 +1040,7 @@
             this.txtTheLoai.Name = "txtTheLoai";
             this.txtTheLoai.Size = new System.Drawing.Size(232, 28);
             this.txtTheLoai.TabIndex = 8;
-            this.txtTheLoai.TextChanged += new System.EventHandler(this.txtTheLoai_TextChanged);
+            //this.txtTheLoai.TextChanged += new System.EventHandler(this.txtTheLoai_TextChanged);
             // 
             // txtChuDe
             // 
@@ -1035,7 +1049,7 @@
             this.txtChuDe.Name = "txtChuDe";
             this.txtChuDe.Size = new System.Drawing.Size(232, 28);
             this.txtChuDe.TabIndex = 7;
-            this.txtChuDe.TextChanged += new System.EventHandler(this.txtChuDe_TextChanged);
+            //this.txtChuDe.TextChanged += new System.EventHandler(this.txtChuDe_TextChanged);
             // 
             // txtSoLuong
             // 
@@ -1060,7 +1074,7 @@
             this.txtNhaPhatHanh.Name = "txtNhaPhatHanh";
             this.txtNhaPhatHanh.Size = new System.Drawing.Size(232, 28);
             this.txtNhaPhatHanh.TabIndex = 4;
-            this.txtNhaPhatHanh.TextChanged += new System.EventHandler(this.txtNhaPhatHanh_TextChanged);
+            //this.txtNhaPhatHanh.TextChanged += new System.EventHandler(this.txtNhaPhatHanh_TextChanged);
             // 
             // txtNXB
             // 
@@ -1069,7 +1083,7 @@
             this.txtNXB.Name = "txtNXB";
             this.txtNXB.Size = new System.Drawing.Size(232, 28);
             this.txtNXB.TabIndex = 3;
-            this.txtNXB.TextChanged += new System.EventHandler(this.txtNXB_TextChanged);
+            //this.txtNXB.TextChanged += new System.EventHandler(this.txtNXB_TextChanged);
             // 
             // txtNamXB
             // 
@@ -1086,7 +1100,7 @@
             this.txtTacGia.Name = "txtTacGia";
             this.txtTacGia.Size = new System.Drawing.Size(232, 28);
             this.txtTacGia.TabIndex = 1;
-            this.txtTacGia.TextChanged += new System.EventHandler(this.txtTacGia_TextChanged);
+            //this.txtTacGia.TextChanged += new System.EventHandler(this.txtTacGia_TextChanged);
             // 
             // txtTenSach
             // 
@@ -1095,21 +1109,7 @@
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.Size = new System.Drawing.Size(232, 28);
             this.txtTenSach.TabIndex = 0;
-            this.txtTenSach.TextChanged += new System.EventHandler(this.txtTenSach_TextChanged);
-            // 
-            // pnlCapNhatSach
-            // 
-            this.pnlCapNhatSach.Controls.Add(this.pnlThongTinSach);
-            this.pnlCapNhatSach.Controls.Add(this.pnlThongBaoSach);
-            this.pnlCapNhatSach.Controls.Add(this.btnHuyCapNhatSach);
-            this.pnlCapNhatSach.Controls.Add(this.lblCapNhatDocGia);
-            this.pnlCapNhatSach.Controls.Add(this.btnSuaSach);
-            this.pnlCapNhatSach.Controls.Add(this.btnXoaSach);
-            this.pnlCapNhatSach.Controls.Add(this.btnThemSach);
-            this.pnlCapNhatSach.Location = new System.Drawing.Point(0, 0);
-            this.pnlCapNhatSach.Name = "pnlCapNhatSach";
-            this.pnlCapNhatSach.Size = new System.Drawing.Size(415, 473);
-            this.pnlCapNhatSach.TabIndex = 34;
+            //this.txtTenSach.TextChanged += new System.EventHandler(this.txtTenSach_TextChanged);
             // 
             // pnlThongBaoSach
             // 
@@ -1872,10 +1872,10 @@
             this.pnlSearchFor.PerformLayout();
             this.pnlTacVu.ResumeLayout(false);
             this.pnltabKhoSach.ResumeLayout(false);
-            this.pnlThongTinSach.ResumeLayout(false);
-            this.pnlThongTinSach.PerformLayout();
             this.pnlCapNhatSach.ResumeLayout(false);
             this.pnlCapNhatSach.PerformLayout();
+            this.pnlThongTinSach.ResumeLayout(false);
+            this.pnlThongTinSach.PerformLayout();
             this.pnlThongBaoSach.ResumeLayout(false);
             this.pnlThongBaoSach.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).EndInit();

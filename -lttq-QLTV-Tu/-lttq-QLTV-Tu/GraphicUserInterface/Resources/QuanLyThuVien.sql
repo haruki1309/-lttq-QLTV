@@ -193,6 +193,9 @@ Insert into TinhTrang Values
 ('TT002', N'Hỏng nặng'),
 ('TT003', N'Mất')
 
+Insert into ThuThu Values
+('TT000',	N'Lầu Phi Tường',	N'Nhật Bản',	'01679681581',	'365235117'	, 'tuonglp@gmail.com',	'2017-05-09 00:00:00',	'1234'),
+('TT001',	N'Nguyễn Vĩnh Kha',	N'Việt Nam',	'01696761984',	'123412312'	, 'khanv@gmail.com',	'2017-05-09 00:00:00',	'1234')
 
 
 /*========== Tạo Procedure ===========*/
