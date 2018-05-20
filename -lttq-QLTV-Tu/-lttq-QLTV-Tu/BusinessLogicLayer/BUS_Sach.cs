@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using DataTransferObject;
 using DatabaseAccessLayer;
+using System.Windows.Forms;
 
 namespace BusinessLogicLayer
 {
@@ -38,7 +39,7 @@ namespace BusinessLogicLayer
 
                 return dalSach.Insert(dtoSach);
             }
-            catch when (DateTime.Now.Year - ngayNhap.Year > 8)
+            catch when (DateTime.Now.Year - namXB > 8)
             {
                 return false;
             }
@@ -58,5 +59,10 @@ namespace BusinessLogicLayer
             return dalSach.Delete(maSach);
         }
        
+
+        public List<string> autoCompleteTextBox(string columnName, string tableName)
+        {
+            return dalSach.AutoCompleteTextBox(columnName, tableName);
+        }
     }
 }

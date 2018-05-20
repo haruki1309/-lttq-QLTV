@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using DataTransferObject;
+using System.Windows;
+using System.Windows.Forms;
 
 namespace DatabaseAccessLayer
 {
@@ -129,14 +131,14 @@ namespace DatabaseAccessLayer
                 cm.CommandType = CommandType.StoredProcedure;
 
                 cm.Parameters.AddWithValue("@MaSach", dtoSach.MaSach);
-                cm.Parameters.AddWithValue("TenSach", dtoSach.TenSach);
-                cm.Parameters.AddWithValue("@MaTacGia", dtoSach.MaTacGia);
+                cm.Parameters.AddWithValue("@TenSach", dtoSach.TenSach);
+                cm.Parameters.AddWithValue("@TenTacGia", dtoSach.MaTacGia);
                 cm.Parameters.AddWithValue("@NamXB", dtoSach.NamXB);
-                cm.Parameters.AddWithValue("@MaNXB", dtoSach.MaNXB);
-                cm.Parameters.AddWithValue("@MaNhaPhatHanh", dtoSach.MaNhaPhatHanh);
+                cm.Parameters.AddWithValue("@TenNXB", dtoSach.MaNXB);
+                cm.Parameters.AddWithValue("@TenNhaPhatHanh", dtoSach.MaNhaPhatHanh);
                 cm.Parameters.AddWithValue("@NgayNhap", dtoSach.NgayNhap);
-                cm.Parameters.AddWithValue("@MaChuDe", dtoSach.MaChuDe);
-                cm.Parameters.AddWithValue("@MaTheLoai", dtoSach.MaTheLoai);
+                cm.Parameters.AddWithValue("@TenChuDe", dtoSach.MaChuDe);
+                cm.Parameters.AddWithValue("@TenTheLoai", dtoSach.MaTheLoai);
                 cm.Parameters.AddWithValue("@GiaTri", dtoSach.GiaTri);
                 cm.Parameters.AddWithValue("@SoLuong", dtoSach.SoLuong);
 
@@ -165,14 +167,14 @@ namespace DatabaseAccessLayer
                 cm.CommandType = CommandType.StoredProcedure;
 
                 cm.Parameters.AddWithValue("@MaSach", dtoSach.MaSach);
-                cm.Parameters.AddWithValue("TenSach", dtoSach.TenSach);
-                cm.Parameters.AddWithValue("@MaTacGia", dtoSach.MaTacGia);
+                cm.Parameters.AddWithValue("@TenSach", dtoSach.TenSach);
+                cm.Parameters.AddWithValue("@TenTacGia", dtoSach.MaTacGia);
                 cm.Parameters.AddWithValue("@NamXB", dtoSach.NamXB);
-                cm.Parameters.AddWithValue("@MaNXB", dtoSach.MaNXB);
-                cm.Parameters.AddWithValue("@MaNhaPhatHanh", dtoSach.MaNhaPhatHanh);
+                cm.Parameters.AddWithValue("@TenNXB", dtoSach.MaNXB);
+                cm.Parameters.AddWithValue("@TenNhaPhatHanh", dtoSach.MaNhaPhatHanh);
                 cm.Parameters.AddWithValue("@NgayNhap", dtoSach.NgayNhap);
-                cm.Parameters.AddWithValue("@MaChuDe", dtoSach.MaChuDe);
-                cm.Parameters.AddWithValue("@MaTheLoai", dtoSach.MaTheLoai);
+                cm.Parameters.AddWithValue("@TenChuDe", dtoSach.MaChuDe);
+                cm.Parameters.AddWithValue("@TenTheLoai", dtoSach.MaTheLoai);
                 cm.Parameters.AddWithValue("@GiaTri", dtoSach.GiaTri);
                 cm.Parameters.AddWithValue("@SoLuong", dtoSach.SoLuong);
 
@@ -215,6 +217,44 @@ namespace DatabaseAccessLayer
             }
 
             return false;
+        }
+
+
+        public List<string> AutoCompleteTextBox(string columnName, string tableName)
+        {
+            try
+            {
+                cn.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlCommand command = new SqlCommand("AutoCompleteText", cn);
+                command.CommandType = CommandType.StoredProcedure;
+                adapter.SelectCommand = command;
+
+                command.Parameters.AddWithValue("@TenCot", columnName);
+                command.Parameters.AddWithValue("@TenBang", tableName);
+
+                command.ExecuteNonQuery();
+
+                SqlDataReader reader = command.ExecuteReader();
+                List<string> completeStringSource = new List<string>();
+
+                if (reader != null)
+                {
+                    while (reader.Read())
+                    {
+                        completeStringSource.Add(reader[columnName].ToString());
+                    }
+                }
+
+                cn.Close();
+
+                return completeStringSource;
+            }
+            catch(Exception)
+            {
+                return null;
+            }
         }
     }
 }

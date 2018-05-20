@@ -6,8 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using BusinessLogicLayer;
+using System.Data.SqlClient;
 
 namespace GraphicUserInterface
 {
@@ -448,6 +450,14 @@ namespace GraphicUserInterface
         {
             this.pnltabKhoSach.BringToFront();
 
+            //foreach (Control ctr in pnlThongTinSach.Controls)
+            //{
+            //    ctr.Visible = true;
+            //}
+
+            pnlThongTinSach.AutoScroll = true;
+            pnlThongTinSach.VerticalScroll.Visible = true;
+
             dgvSach.DataSource = busSach.getSach();
             dgvSach_RenameColumn();
 
@@ -462,15 +472,15 @@ namespace GraphicUserInterface
             txtTenSach.Clear();
             txtTacGia.Clear();
             txtNamXB.Clear();
-            txtNXB.Clear();
+            txtNamXB.Clear();
             txtNhaPhatHanh.Clear();
             txtGiaTri.Clear();
             txtSoLuong.Clear();
-            txtMaChuDe.Clear();
-            txtMaTheLoai.Clear();
+            txtChuDe.Clear();
+            txtTheLoai.Clear();
             dtmNgayNhap.Value = DateTime.Today;
 
-            // Dat lai trang thai ReadOnly va Visible
+            // Dat lai trang thai ReadOnly
             this.txtTenSach.ReadOnly = true;
             this.txtTacGia.ReadOnly = true;
             this.txtNamXB.ReadOnly = true;
@@ -478,96 +488,11 @@ namespace GraphicUserInterface
             this.txtNhaPhatHanh.ReadOnly = true;
             this.txtGiaTri.ReadOnly = true;
             this.txtSoLuong.ReadOnly = true;
+            this.txtChuDe.ReadOnly = true;
+            this.txtTheLoai.ReadOnly = true;
+            this.dtmNgayNhap.Enabled = false;
 
-            lblMaChuDe.Visible = false;
-            lblMaTheLoai.Visible = false;
-            lblNgayNhap.Visible = false;
-
-            txtMaChuDe.Visible = false;
-            dtmNgayNhap.Visible = false;
-            txtMaTheLoai.Visible = false;
-
-            // Dat lai size cho cac TextBox
-            Size size = new Size(231, 28);
-
-            txtTenSach.Size = size;
-            txtTacGia.Size = size;
-            txtNamXB.Size = size;
-            txtNXB.Size = size;
-            txtNhaPhatHanh.Size = size;
-            txtGiaTri.Size = size;
-            txtSoLuong.Size = size;
-
-            // Dat lai Text cho cac Label
-            lblTacGia.Text = "Tác Giả";
-            lblNXB.Text = "Nhà Xuất Bản";
-            lblNhaPhatHanh.Text = "Nhà Phát Hành";
-
-            // Dat lai Font cho TextBox
-            Font fontTextBox = new Font("Sitka Display", 12, FontStyle.Bold);
-
-            txtTenSach.Font = fontTextBox;
-            txtTacGia.Font = fontTextBox;
-            txtNamXB.Font = fontTextBox;
-            txtNXB.Font = fontTextBox;
-            txtNhaPhatHanh.Font = fontTextBox;
-            txtGiaTri.Font = fontTextBox;
-            txtSoLuong.Font = fontTextBox;
-
-            // Dat lai Font cho Lable
-            Font fontLabel = new Font("Sitka Heading", 12, FontStyle.Bold);
-
-            lblTenSach.Font = fontLabel;
-            lblTacGia.Font = fontLabel;
-            lblNamXB.Font = fontLabel;
-            lblNXB.Font = fontLabel;
-            lblNhaPhatHanh.Font = fontLabel;
-            lblGiaTri.Font = fontLabel;
-            lblSoLuong.Font = fontLabel;
-
-            // Dat lai vi tri cac Lable va TextBox
-            Point location = new Point(86, 18);
-            lblTenSach.Location = location;
-
-            location = new Point(165, 15);
-            txtTenSach.Location = location;
-
-            location = new Point(92, 55);
-            lblTacGia.Location = location;
-
-            location = new Point(165, 52);
-            txtTacGia.Location = location;
-
-            location = new Point(48, 92);
-            lblNamXB.Location = location;
-
-            location = new Point(165, 89);
-            txtNamXB.Location = location;
-
-            location = new Point(53, 130);
-            lblNXB.Location = location;
-
-            location = new Point(165, 127);
-            txtNXB.Location = location;
-
-            location = new Point(43, 167);
-            lblNhaPhatHanh.Location = location;
-
-            location = new Point(165, 164);
-            txtNhaPhatHanh.Location = location;
-
-            location = new Point(99, 202);
-            lblGiaTri.Location = location;
-
-            location = new Point(165, 199);
-            txtGiaTri.Location = location;
-
-            location = new Point(81, 237);
-            lblSoLuong.Location = location;
-
-            location = new Point(165, 234);
-            txtSoLuong.Location = location;
-
+            
             // Dat lai cac button Cap nhat
             Font fontButton = new Font("Sitka Display", 12, FontStyle.Bold);
 
@@ -589,127 +514,7 @@ namespace GraphicUserInterface
             
             lblThongBaoSach.Text = "";
         }
-
-        private void SetConTrolInsertUpdateSach()
-        {
-            // Enable cac TextBox de nhap thong tin
-            this.txtTenSach.ReadOnly = false;
-            this.txtTacGia.ReadOnly = false;
-            this.txtNamXB.ReadOnly = false;
-            this.txtNXB.ReadOnly = false;
-            this.txtNhaPhatHanh.ReadOnly = false;
-            this.txtGiaTri.ReadOnly = false;
-            this.txtSoLuong.ReadOnly = false;
-
-            // Resize cac TextBox co san
-            Size size = new Size(100, 28);
-
-            txtTenSach.Size = size;
-            txtTacGia.Size = size;
-            txtNamXB.Size = size;
-            txtNXB.Size = size;
-            txtNhaPhatHanh.Size = size;
-            txtGiaTri.Size = size;
-            txtSoLuong.Size = size;
-
-            // Rename cac TextBox nhap ID
-            lblTacGia.Text = "Mã Tác Giả";
-            lblNXB.Text = "Mã NXB";
-            lblNhaPhatHanh.Text = "Mã Nhà Phát Hành";
-
-            // Renew Font cac TextBox co san
-            Font fontTextBox = new Font("Sitka Display", 10, FontStyle.Bold);
-
-            txtTenSach.Font = fontTextBox;
-            txtTacGia.Font = fontTextBox;
-            txtNamXB.Font = fontTextBox;
-            txtNXB.Font = fontTextBox;
-            txtNhaPhatHanh.Font = fontTextBox;
-            txtGiaTri.Font = fontTextBox;
-            txtSoLuong.Font = fontTextBox;
-
-            // Renew Font cac Label co san
-            Font fontLabel = new Font("Sitka Heading", 10, FontStyle.Bold);
-
-            lblTenSach.Font = fontLabel;
-            lblTacGia.Font = fontLabel;
-            lblNamXB.Font = fontLabel;
-            lblNXB.Font = fontLabel;
-            lblNhaPhatHanh.Font = fontLabel;
-            lblGiaTri.Font = fontLabel;
-            lblSoLuong.Font = fontLabel;
-
-            // Relocated cac Lable va TextBox co san
-            Point location = new Point(0, 18);
-            lblTenSach.Location = location;
-
-            location = new Point(121, 15);
-            txtTenSach.Location = location;
-
-            location = new Point(0, 55);
-            lblTacGia.Location = location;
-
-            location = new Point(121, 52);
-            txtTacGia.Location = location;
-
-            location = new Point(0, 92);
-            lblNamXB.Location = location;
-
-            location = new Point(121, 89);
-            txtNamXB.Location = location;
-
-            location = new Point(0, 130);
-            lblNXB.Location = location;
-
-            location = new Point(121, 127);
-            txtNXB.Location = location;
-
-            location = new Point(0, 167);
-            lblNhaPhatHanh.Location = location;
-
-            location = new Point(121, 164);
-            txtNhaPhatHanh.Location = location;
-
-            location = new Point(0, 202);
-            lblGiaTri.Location = location;
-
-            location = new Point(121, 199);
-            txtGiaTri.Location = location;
-
-            location = new Point(0, 237);
-            lblSoLuong.Location = location;
-
-            location = new Point(121, 234);
-            txtSoLuong.Location = location;
-
-            // Display cac TextBox moi de nhap day du thong tin             
-            txtMaChuDe.Size = size;
-            txtMaChuDe.Visible = true;
-
-            txtMaTheLoai.Size = size;
-            txtMaTheLoai.Visible = true;
-
-            dtmNgayNhap.Size = size;
-            dtmNgayNhap.Visible = true;
-
-            // Display cac Label moi cho cac TextBox                
-            lblMaChuDe.Visible = true;
-            lblMaTheLoai.Visible = true;
-            lblNgayNhap.Visible = true;
-
-            // Clear cac TextBox de nhap thong tin
-            txtTenSach.Clear();
-            txtTacGia.Clear();
-            txtNamXB.Clear();
-            txtNXB.Clear();
-            txtNhaPhatHanh.Clear();
-            txtGiaTri.Clear();
-            txtSoLuong.Clear();
-            txtMaChuDe.Clear();
-            txtMaTheLoai.Clear();
-            dtmNgayNhap.Value = DateTime.Today;
-        }
-
+        
         
 
         //=============== Them Sach ===============//
@@ -721,15 +526,25 @@ namespace GraphicUserInterface
 
             if (btnThemSach.Text == "Thêm")
             {
+                this.txtTenSach.ReadOnly = false;
+                this.txtTacGia.ReadOnly = false;
+                this.txtNamXB.ReadOnly = false;
+                this.txtNXB.ReadOnly = false;
+                this.txtNhaPhatHanh.ReadOnly = false;
+                this.txtGiaTri.ReadOnly = false;
+                this.txtSoLuong.ReadOnly = false;
+                this.txtChuDe.ReadOnly = false;
+                this.txtTheLoai.ReadOnly = false;
+                this.dtmNgayNhap.Enabled = true;
+
                 btnThemSach.Text = "Xác nhận thêm";
                 btnThemSach.Font = new Font("Sitka Display", 10, FontStyle.Bold);
                 
-                SetConTrolInsertUpdateSach();
             }
             else if (btnThemSach.Text == "Xác nhận thêm")
             {             
                 // Them Sach
-                if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtNamXB.Text != "" && txtNXB.Text != "" && txtNhaPhatHanh.Text != "" && txtMaChuDe.Text != "" && txtMaTheLoai.Text != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
+                if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtNamXB.Text != "" && txtNamXB.Text != "" && txtNhaPhatHanh.Text != "" && txtChuDe.Text != "" && txtTheLoai.Text != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
                 {
                     // Tao ID cho Sach                    
                     int ID = 0;                   
@@ -738,7 +553,7 @@ namespace GraphicUserInterface
                     try
                     {
 
-                        ID = dgvSach.Rows.Count - 1;
+                        ID = dgvSach.Rows.Count + 1;
 
                         if (0 <= ID && ID < 10)
                         {
@@ -759,7 +574,7 @@ namespace GraphicUserInterface
                         lblThongBaoSach.Text = "Số lượng sách vượt quá\nkhả năng lưu trữ";
                     }
 
-                    if (busSach.insertSach(maSach, txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtMaChuDe.Text, txtMaTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
+                    if (busSach.insertSach(maSach, txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNamXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtChuDe.Text, txtTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
                     {
                         lblThongBaoSach.Text = "Thêm thành công !";
                         btnThemSach.Text = "Hoàn tất";
@@ -803,7 +618,16 @@ namespace GraphicUserInterface
                 }
                 else
                 {
-                    SetConTrolInsertUpdateSach();
+                    this.txtTenSach.ReadOnly = false;
+                    this.txtTacGia.ReadOnly = false;
+                    this.txtNamXB.ReadOnly = false;
+                    this.txtNXB.ReadOnly = false;
+                    this.txtNhaPhatHanh.ReadOnly = false;
+                    this.txtGiaTri.ReadOnly = false;
+                    this.txtSoLuong.ReadOnly = false;
+                    this.txtChuDe.ReadOnly = false;
+                    this.txtTheLoai.ReadOnly = false;
+                    this.dtmNgayNhap.Enabled = true;
 
                     lblThongBaoSach.Text = "Bạn có chắc chắn muốn sửa?";
                     btnSuaSach.Text = "Xác nhận sửa";
@@ -812,11 +636,12 @@ namespace GraphicUserInterface
             }
             else if (btnSuaSach.Text == "Xác nhận sửa")
             {
+                
                 DataGridViewRow row = dgvSach.CurrentRow;
 
-                if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtNamXB.Text != "" && txtNXB.Text != "" && txtNhaPhatHanh.Text != "" && txtMaChuDe.Text != "" && txtMaTheLoai.Text != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
+                if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtNamXB.Text != "" && txtNamXB.Text != "" && txtNhaPhatHanh.Text != "" && txtChuDe.Text != "" && txtTheLoai.Text != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
                 {
-                    if (busSach.updateSach(row.Cells[0].Value.ToString(), txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtMaChuDe.Text, txtMaTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
+                    if (busSach.updateSach(row.Cells["MaSach"].Value.ToString(), txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNamXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtChuDe.Text, txtTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
                     {
                         lblThongBaoSach.Text = "Sửa thành công !";
                         btnSuaSach.Text = "Hoàn tất";
@@ -897,6 +722,7 @@ namespace GraphicUserInterface
             {
                 lblThongBaoSach.Text = "Bạn có chắc chắn\nmuốn hủy tác vụ này?";
                 btnHuyCapNhatSach.Text = "Xác nhận hủy";
+                btnXoaSach.Font = new Font("Sitka Display", 10, FontStyle.Bold);
             }
             else if (btnHuyCapNhatSach.Text == "Xác nhận hủy")
             {
@@ -931,7 +757,7 @@ namespace GraphicUserInterface
                 pnlLocSach.Visible = false;
                 pnlHighLightTimKiemSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
 
-                pnlThongTinSach.BringToFront();
+                pnlCapNhatSach.BringToFront();
             }
         }
 
@@ -942,7 +768,7 @@ namespace GraphicUserInterface
 
             if (cboTimKiemSach.SelectedItem.ToString() == "Mã sách")
             {
-                condition = string.Format("A.MaSach = '{0}'", txtTimKiemSach.Text.ToString());
+                condition = string.Format("A.MaSach like '%{0}%'", txtTimKiemSach.Text.ToString());
                 dgvSach.DataSource = busSach.getSach(condition);
             }
             else if (cboTimKiemSach.SelectedItem.ToString() == "Tên sách")
@@ -957,7 +783,7 @@ namespace GraphicUserInterface
             }
             else if (cboTimKiemSach.SelectedItem.ToString() == "Năm xuất bản")
             {
-                condition = string.Format("cast(A.NamXB as varchar(10)) = '{0}'", txtTimKiemSach.Text.ToString());
+                condition = string.Format("cast(A.NamXB as varchar(10)) like '%{0}%'", txtTimKiemSach.Text.ToString());
                 dgvSach.DataSource = busSach.getSach(condition);
             }
             else if (cboTimKiemSach.SelectedItem.ToString() == "Nhà xuất bản")
@@ -1011,7 +837,7 @@ namespace GraphicUserInterface
                 pnlTimKiemSach.Visible = false;
                 pnlHighLightBoLocSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
 
-                pnlThongTinSach.BringToFront();                
+                pnlCapNhatSach.BringToFront();                
             }
 
         }
@@ -1060,13 +886,16 @@ namespace GraphicUserInterface
                     txtNamXB.Text = dgvSach.CurrentRow.Cells["NamXB"].Value.ToString();
                     txtNXB.Text = dgvSach.CurrentRow.Cells["TenNXB"].Value.ToString();
                     txtNhaPhatHanh.Text = dgvSach.CurrentRow.Cells["TenNhaPhatHanh"].Value.ToString();
+                    txtChuDe.Text = dgvSach.CurrentRow.Cells["TenChuDe"].Value.ToString();
+                    txtTheLoai.Text = dgvSach.CurrentRow.Cells["TenTheLoai"].Value.ToString();
                     txtGiaTri.Text = dgvSach.CurrentRow.Cells["GiaTri"].Value.ToString();
-                    txtSoLuong.Text = dgvSach.CurrentRow.Cells["SoLuong"].Value.ToString();
+                    txtSoLuong.Text = dgvSach.CurrentRow.Cells["SoLuong"].Value.ToString();                    
+                    dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.CurrentRow.Cells["NgayNhap"].Value.ToString());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -1098,6 +927,119 @@ namespace GraphicUserInterface
                     dgvSach.Columns["SoLuong"].HeaderText = "Số lượng";
             }
         }
+
+
+        //============= Auto Complete TextBox ==================//
+        private void txtTenSach_TextChanged(object sender, EventArgs e)
+        {
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+
+            txtTenSach.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtTenSach.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            List<string> sourceSach = new List<string>();
+            sourceSach = busSach.autoCompleteTextBox("TenSach", "Sach");
+
+            foreach (string tenSach in sourceSach)
+            {
+                auto.Add(tenSach);
+            }
+
+            txtTenSach.AutoCompleteCustomSource = auto;
+        }
+
+        private void txtTacGia_TextChanged(object sender, EventArgs e)
+        {
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+
+            txtTacGia.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtTacGia.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            List<string> sourceTacGia = new List<string>();
+            sourceTacGia = busSach.autoCompleteTextBox("HoTen", "TacGia");
+
+            foreach (string tenTG in sourceTacGia)
+            {
+                auto.Add(tenTG);
+            }
+
+            txtTacGia.AutoCompleteCustomSource = auto;
+        }
+        
+        private void txtNXB_TextChanged(object sender, EventArgs e)
+        {
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+
+            txtNXB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtNXB.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            List<string> sourceNXB = new List<string>();
+            sourceNXB = busSach.autoCompleteTextBox("TenNXB", "NXB");
+
+            foreach (string tenNXB in sourceNXB)
+            {
+                auto.Add(tenNXB);
+            }
+
+            txtNhaPhatHanh.AutoCompleteCustomSource = auto;
+        }
+
+        private void txtNhaPhatHanh_TextChanged(object sender, EventArgs e)
+        {
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+
+            txtNhaPhatHanh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtNhaPhatHanh.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            List<string> sourceNPH = new List<string>();
+            sourceNPH = busSach.autoCompleteTextBox("TenNhaPhatHanh", "NhaPhatHanh");
+
+            foreach (string tenNPH in sourceNPH)
+            {
+                auto.Add(tenNPH);
+            }
+
+            txtNhaPhatHanh.AutoCompleteCustomSource = auto;
+        }
+
+        private void txtChuDe_TextChanged(object sender, EventArgs e)
+        {
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+
+            txtChuDe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtChuDe.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            List<string> sourceChuDe = new List<string>();
+            sourceChuDe = busSach.autoCompleteTextBox("TenChuDe", "ChuDe");
+
+            foreach (string tenCD in sourceChuDe)
+            {
+                auto.Add(tenCD);
+            }
+
+            txtChuDe.AutoCompleteCustomSource = auto;
+        }
+
+        private void txtTheLoai_TextChanged(object sender, EventArgs e)
+        {
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+
+            txtTheLoai.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtTheLoai.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            List<string> sourceTheLoai = new List<string>();
+            sourceTheLoai = busSach.autoCompleteTextBox("TenTheLoai", "TheLoai");
+
+            foreach (string tenTL in sourceTheLoai)
+            {
+                auto.Add(tenTL);
+            }
+
+            txtTheLoai.AutoCompleteCustomSource = auto;
+        }
+        
+
+
     }
 }
 
