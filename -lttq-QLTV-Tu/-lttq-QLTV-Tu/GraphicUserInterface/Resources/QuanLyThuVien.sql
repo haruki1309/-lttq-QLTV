@@ -490,6 +490,8 @@ Begin
 	Return @ID
 End 
 
+---
+
 Create Procedure ThemNXB
 	@TenNXB nvarchar(100)
 As
@@ -519,6 +521,8 @@ Begin
 		End
 	Return @ID
 End 
+
+---
 
 Create Procedure ThemNhaPhatHanh
 	@TenNPH nvarchar(100)
@@ -552,6 +556,7 @@ Begin
 	Return @ID
 End 
 
+---
 
 Create Procedure ThemChuDe
 	@TenCD nvarchar(100)
@@ -587,6 +592,7 @@ Begin
 	Return @ID
 End 
 
+---
 
 Create Procedure ThemTheLoai
 	@TenTL nvarchar(100)
