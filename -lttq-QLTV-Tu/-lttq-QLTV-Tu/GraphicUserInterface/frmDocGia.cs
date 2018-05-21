@@ -506,7 +506,7 @@ namespace GraphicUserInterface
             txtTenSach.Clear();
             txtTacGia.Clear();
             txtNamXB.Clear();
-            txtNamXB.Clear();
+            txtNXB.Clear();
             txtNhaPhatHanh.Clear();
             txtGiaTri.Clear();
             txtSoLuong.Clear();
@@ -576,13 +576,10 @@ namespace GraphicUserInterface
             {
                 // Them Sach
                 if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtNamXB.Text != "" && txtNamXB.Text != "" && txtNhaPhatHanh.Text != "" && txtChuDe.Text != "" && txtTheLoai.Text != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
-                {
-                    // Tao ID cho Sach                    
-                    int ID = 0;
+                {                   
                     string maSach = "";
-
                     
-                    if (busSach.insertSach(maSach, txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNamXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtChuDe.Text, txtTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
+                    if (busSach.insertSach(maSach, txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtChuDe.Text, txtTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
                     {
                         lblThongBaoSach.Text = "Thêm thành công !";
                         btnThemSach.Text = "Hoàn tất";
@@ -649,7 +646,7 @@ namespace GraphicUserInterface
 
                 if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtNamXB.Text != "" && txtNamXB.Text != "" && txtNhaPhatHanh.Text != "" && txtChuDe.Text != "" && txtTheLoai.Text != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
                 {
-                    if (busSach.updateSach(row.Cells["MaSach"].Value.ToString(), txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNamXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtChuDe.Text, txtTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
+                    if (busSach.updateSach(row.Cells["MaSach"].Value.ToString(), txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtChuDe.Text, txtTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
                     {
                         lblThongBaoSach.Text = "Sửa thành công !";
                         btnSuaSach.Text = "Hoàn tất";
@@ -887,6 +884,7 @@ namespace GraphicUserInterface
 
             try
             {
+               
                 if (dgvSach.SelectedRows.Count == 1)
                 {
                     txtTenSach.Text = dgvSach.CurrentRow.Cells["TenSach"].Value.ToString();
@@ -897,8 +895,9 @@ namespace GraphicUserInterface
                     txtChuDe.Text = dgvSach.CurrentRow.Cells["TenChuDe"].Value.ToString();
                     txtTheLoai.Text = dgvSach.CurrentRow.Cells["TenTheLoai"].Value.ToString();
                     txtGiaTri.Text = dgvSach.CurrentRow.Cells["GiaTri"].Value.ToString();
-                    txtSoLuong.Text = dgvSach.CurrentRow.Cells["SoLuong"].Value.ToString();                    
+                    txtSoLuong.Text = dgvSach.CurrentRow.Cells["SoLuong"].Value.ToString();
                     dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.CurrentRow.Cells["NgayNhap"].Value.ToString());
+                    
                 }
             }
             catch (Exception ex)
@@ -938,114 +937,132 @@ namespace GraphicUserInterface
 
 
         //============= Auto Complete TextBox ==================//
-        //private void txtTenSach_TextChanged(object sender, EventArgs e)
-        //{
-        //    AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+        private void txtTenSach_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTenSach.ReadOnly)
+            {
+                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-        //    txtTenSach.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        //    txtTenSach.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                txtTenSach.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtTenSach.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-        //    List<string> sourceSach = new List<string>();
-        //    sourceSach = busSach.autoCompleteTextBox("TenSach", "Sach");
+                List<string> sourceSach = new List<string>();
+                sourceSach = busSach.autoCompleteTextBox("TenSach", "Sach");
 
-        //    foreach (string tenSach in sourceSach)
-        //    {
-        //        auto.Add(tenSach);
-        //    }
+                foreach (string tenSach in sourceSach)
+                {
+                    auto.Add(tenSach);
+                }                              
 
-        //    txtTenSach.AutoCompleteCustomSource = auto;
-        //}
+                txtTenSach.AutoCompleteCustomSource = auto;
+            }
+        }
 
-        //private void txtTacGia_TextChanged(object sender, EventArgs e)
-        //{
-        //    AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+        private void txtTacGia_TextChanged(object sender, EventArgs e)
+        {
+            if(txtTacGia.ReadOnly)
+            {
+                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-        //    txtTacGia.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        //    txtTacGia.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                txtTacGia.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtTacGia.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-        //    List<string> sourceTacGia = new List<string>();
-        //    sourceTacGia = busSach.autoCompleteTextBox("HoTen", "TacGia");
+                List<string> sourceTacGia = new List<string>();
+                sourceTacGia = busSach.autoCompleteTextBox("HoTen", "TacGia");
 
-        //    foreach (string tenTG in sourceTacGia)
-        //    {
-        //        auto.Add(tenTG);
-        //    }
+                foreach (string tenTG in sourceTacGia)
+                {
+                    auto.Add(tenTG);
+                }
 
-        //    txtTacGia.AutoCompleteCustomSource = auto;
-        //}
-        
-        //private void txtNXB_TextChanged(object sender, EventArgs e)
-        //{
-        //    AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+                txtTacGia.AutoCompleteCustomSource = auto;
+            }
+        }
 
-        //    txtNXB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        //    txtNXB.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        private void txtNXB_TextChanged(object sender, EventArgs e)
+        {
+            if(txtNXB.ReadOnly)
+            {
+                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-        //    List<string> sourceNXB = new List<string>();
-        //    sourceNXB = busSach.autoCompleteTextBox("TenNXB", "NXB");
+                txtNXB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtNXB.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-        //    foreach (string tenNXB in sourceNXB)
-        //    {
-        //        auto.Add(tenNXB);
-        //    }
+                List<string> sourceNXB = new List<string>();
+                sourceNXB = busSach.autoCompleteTextBox("TenNXB", "NXB");
 
-        //    txtNhaPhatHanh.AutoCompleteCustomSource = auto;
-        //}
+                foreach (string tenNXB in sourceNXB)
+                {
+                    auto.Add(tenNXB);
+                }
 
-        //private void txtNhaPhatHanh_TextChanged(object sender, EventArgs e)
-        //{
-        //    AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+                txtNhaPhatHanh.AutoCompleteCustomSource = auto;
+            }
+        }
 
-        //    txtNhaPhatHanh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        //    txtNhaPhatHanh.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        private void txtNhaPhatHanh_TextChanged(object sender, EventArgs e)
+        {
+            if(txtNhaPhatHanh.ReadOnly)
+            {
+                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-        //    List<string> sourceNPH = new List<string>();
-        //    sourceNPH = busSach.autoCompleteTextBox("TenNhaPhatHanh", "NhaPhatHanh");
+                txtNhaPhatHanh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtNhaPhatHanh.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-        //    foreach (string tenNPH in sourceNPH)
-        //    {
-        //        auto.Add(tenNPH);
-        //    }
+                List<string> sourceNPH = new List<string>();
+                sourceNPH = busSach.autoCompleteTextBox("TenNhaPhatHanh", "NhaPhatHanh");
 
-        //    txtNhaPhatHanh.AutoCompleteCustomSource = auto;
-        //}
+                foreach (string tenNPH in sourceNPH)
+                {
+                    auto.Add(tenNPH);
+                }
 
-        //private void txtChuDe_TextChanged(object sender, EventArgs e)
-        //{
-        //    AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+                txtNhaPhatHanh.AutoCompleteCustomSource = auto;
+            }
+        }
 
-        //    txtChuDe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        //    txtChuDe.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        private void txtChuDe_TextChanged(object sender, EventArgs e)
+        {
+            if(txtChuDe.ReadOnly)
+            {
+                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-        //    List<string> sourceChuDe = new List<string>();
-        //    sourceChuDe = busSach.autoCompleteTextBox("TenChuDe", "ChuDe");
+                txtChuDe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtChuDe.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-        //    foreach (string tenCD in sourceChuDe)
-        //    {
-        //        auto.Add(tenCD);
-        //    }
+                List<string> sourceChuDe = new List<string>();
+                sourceChuDe = busSach.autoCompleteTextBox("TenChuDe", "ChuDe");
 
-        //    txtChuDe.AutoCompleteCustomSource = auto;
-        //}
+                foreach (string tenCD in sourceChuDe)
+                {
+                    auto.Add(tenCD);
+                }
 
-        //private void txtTheLoai_TextChanged(object sender, EventArgs e)
-        //{
-        //    AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+                txtChuDe.AutoCompleteCustomSource = auto;
+            }
+        }
 
-        //    txtTheLoai.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        //    txtTheLoai.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        private void txtTheLoai_TextChanged(object sender, EventArgs e)
+        {
+            if(txtTheLoai.ReadOnly)
+            {
+                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-        //    List<string> sourceTheLoai = new List<string>();
-        //    sourceTheLoai = busSach.autoCompleteTextBox("TenTheLoai", "TheLoai");
+                txtTheLoai.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtTheLoai.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-        //    foreach (string tenTL in sourceTheLoai)
-        //    {
-        //        auto.Add(tenTL);
-        //    }
+                List<string> sourceTheLoai = new List<string>();
+                sourceTheLoai = busSach.autoCompleteTextBox("TenTheLoai", "TheLoai");
 
-        //    txtTheLoai.AutoCompleteCustomSource = auto;
-        //}
-        
+                foreach (string tenTL in sourceTheLoai)
+                {
+                    auto.Add(tenTL);
+                }
+
+                txtTheLoai.AutoCompleteCustomSource = auto;
+            }
+        }
+
 
         // ==========================================================================
         //

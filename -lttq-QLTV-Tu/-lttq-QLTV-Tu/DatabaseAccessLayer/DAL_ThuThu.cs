@@ -66,13 +66,13 @@ namespace DatabaseAccessLayer
             }
             catch(Exception e)
             {
-                
+                return false;
             }
             finally
             {
                 cn.Close();
             }
-            return false;
+            //return false;
         }
         DataTable dt = new DataTable();
         //Them

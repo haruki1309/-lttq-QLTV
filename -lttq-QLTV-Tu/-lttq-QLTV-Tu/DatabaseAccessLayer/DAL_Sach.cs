@@ -192,7 +192,6 @@ namespace DatabaseAccessLayer
                 SqlCommand cm = new SqlCommand("ThemSach", cn);
                 cm.CommandType = CommandType.StoredProcedure;
 
-                cm.Parameters.AddWithValue("@MaSach", dtoSach.MaSach);
                 cm.Parameters.AddWithValue("@TenSach", dtoSach.TenSach);
                 cm.Parameters.AddWithValue("@TenTacGia", dtoSach.MaTacGia);
                 cm.Parameters.AddWithValue("@NamXB", dtoSach.NamXB);
@@ -315,7 +314,7 @@ namespace DatabaseAccessLayer
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlCommand command = new SqlCommand("AutoCompleteText", cn);
                 command.CommandType = CommandType.StoredProcedure;
-                adapter.SelectCommand = command;
+                //adapter.SelectCommand = command;
 
                 command.Parameters.AddWithValue("@TenCot", columnName);
                 command.Parameters.AddWithValue("@TenBang", tableName);
@@ -329,9 +328,12 @@ namespace DatabaseAccessLayer
                 {
                     while (reader.Read())
                     {
-                        completeStringSource.Add(reader[columnName].ToString());
+                        string col = string.Format("{0}", columnName);
+                        completeStringSource.Add(reader[col].ToString());
                     }
                 }
+                else
+                    completeStringSource.Add("");
 
                 cn.Close();
 

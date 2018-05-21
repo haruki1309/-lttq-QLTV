@@ -922,14 +922,14 @@
             this.pnlThongTinSach.Controls.Add(this.txtTenSach);
             this.pnlThongTinSach.Location = new System.Drawing.Point(0, 29);
             this.pnlThongTinSach.Name = "pnlThongTinSach";
-            this.pnlThongTinSach.Size = new System.Drawing.Size(415, 238);
+            this.pnlThongTinSach.Size = new System.Drawing.Size(415, 230);
             this.pnlThongTinSach.TabIndex = 37;
             // 
             // lblNgayNhap
             // 
             this.lblNgayNhap.AutoSize = true;
             this.lblNgayNhap.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblNgayNhap.Location = new System.Drawing.Point(12, 322);
+            this.lblNgayNhap.Location = new System.Drawing.Point(33, 322);
             this.lblNgayNhap.Name = "lblNgayNhap";
             this.lblNgayNhap.Size = new System.Drawing.Size(84, 23);
             this.lblNgayNhap.TabIndex = 19;
@@ -939,7 +939,7 @@
             // 
             this.lblTheLoai.AutoSize = true;
             this.lblTheLoai.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTheLoai.Location = new System.Drawing.Point(12, 287);
+            this.lblTheLoai.Location = new System.Drawing.Point(33, 287);
             this.lblTheLoai.Name = "lblTheLoai";
             this.lblTheLoai.Size = new System.Drawing.Size(67, 23);
             this.lblTheLoai.TabIndex = 18;
@@ -949,7 +949,7 @@
             // 
             this.lblChuDe.AutoSize = true;
             this.lblChuDe.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblChuDe.Location = new System.Drawing.Point(12, 252);
+            this.lblChuDe.Location = new System.Drawing.Point(33, 252);
             this.lblChuDe.Name = "lblChuDe";
             this.lblChuDe.Size = new System.Drawing.Size(58, 23);
             this.lblChuDe.TabIndex = 17;
@@ -959,7 +959,7 @@
             // 
             this.lblSoLuong.AutoSize = true;
             this.lblSoLuong.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblSoLuong.Location = new System.Drawing.Point(12, 217);
+            this.lblSoLuong.Location = new System.Drawing.Point(33, 217);
             this.lblSoLuong.Name = "lblSoLuong";
             this.lblSoLuong.Size = new System.Drawing.Size(74, 23);
             this.lblSoLuong.TabIndex = 16;
@@ -969,7 +969,7 @@
             // 
             this.lblGiaTri.AutoSize = true;
             this.lblGiaTri.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblGiaTri.Location = new System.Drawing.Point(12, 182);
+            this.lblGiaTri.Location = new System.Drawing.Point(33, 182);
             this.lblGiaTri.Name = "lblGiaTri";
             this.lblGiaTri.Size = new System.Drawing.Size(56, 23);
             this.lblGiaTri.TabIndex = 15;
@@ -979,7 +979,7 @@
             // 
             this.lblNhaPhatHanh.AutoSize = true;
             this.lblNhaPhatHanh.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblNhaPhatHanh.Location = new System.Drawing.Point(12, 147);
+            this.lblNhaPhatHanh.Location = new System.Drawing.Point(33, 147);
             this.lblNhaPhatHanh.Name = "lblNhaPhatHanh";
             this.lblNhaPhatHanh.Size = new System.Drawing.Size(113, 23);
             this.lblNhaPhatHanh.TabIndex = 14;
@@ -989,7 +989,7 @@
             // 
             this.lblNXB.AutoSize = true;
             this.lblNXB.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblNXB.Location = new System.Drawing.Point(12, 112);
+            this.lblNXB.Location = new System.Drawing.Point(33, 112);
             this.lblNXB.Name = "lblNXB";
             this.lblNXB.Size = new System.Drawing.Size(103, 23);
             this.lblNXB.TabIndex = 13;
@@ -999,7 +999,7 @@
             // 
             this.lblNamXB.AutoSize = true;
             this.lblNamXB.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblNamXB.Location = new System.Drawing.Point(12, 77);
+            this.lblNamXB.Location = new System.Drawing.Point(33, 77);
             this.lblNamXB.Name = "lblNamXB";
             this.lblNamXB.Size = new System.Drawing.Size(108, 23);
             this.lblNamXB.TabIndex = 12;
@@ -1009,7 +1009,7 @@
             // 
             this.lblTacGia.AutoSize = true;
             this.lblTacGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTacGia.Location = new System.Drawing.Point(12, 42);
+            this.lblTacGia.Location = new System.Drawing.Point(33, 42);
             this.lblTacGia.Name = "lblTacGia";
             this.lblTacGia.Size = new System.Drawing.Size(59, 23);
             this.lblTacGia.TabIndex = 11;
@@ -1019,7 +1019,7 @@
             // 
             this.lblTenSach.AutoSize = true;
             this.lblTenSach.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTenSach.Location = new System.Drawing.Point(12, 7);
+            this.lblTenSach.Location = new System.Drawing.Point(33, 7);
             this.lblTenSach.Name = "lblTenSach";
             this.lblTenSach.Size = new System.Drawing.Size(71, 23);
             this.lblTenSach.TabIndex = 10;
@@ -1028,7 +1028,7 @@
             // dtmNgayNhap
             // 
             this.dtmNgayNhap.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtmNgayNhap.Location = new System.Drawing.Point(131, 319);
+            this.dtmNgayNhap.Location = new System.Drawing.Point(152, 319);
             this.dtmNgayNhap.Name = "dtmNgayNhap";
             this.dtmNgayNhap.Size = new System.Drawing.Size(232, 28);
             this.dtmNgayNhap.TabIndex = 9;
@@ -1036,25 +1036,25 @@
             // txtTheLoai
             // 
             this.txtTheLoai.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTheLoai.Location = new System.Drawing.Point(131, 284);
+            this.txtTheLoai.Location = new System.Drawing.Point(152, 284);
             this.txtTheLoai.Name = "txtTheLoai";
             this.txtTheLoai.Size = new System.Drawing.Size(232, 28);
             this.txtTheLoai.TabIndex = 8;
-            //this.txtTheLoai.TextChanged += new System.EventHandler(this.txtTheLoai_TextChanged);
+            this.txtTheLoai.TextChanged += new System.EventHandler(this.txtTheLoai_TextChanged);
             // 
             // txtChuDe
             // 
             this.txtChuDe.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtChuDe.Location = new System.Drawing.Point(131, 249);
+            this.txtChuDe.Location = new System.Drawing.Point(152, 249);
             this.txtChuDe.Name = "txtChuDe";
             this.txtChuDe.Size = new System.Drawing.Size(232, 28);
             this.txtChuDe.TabIndex = 7;
-            //this.txtChuDe.TextChanged += new System.EventHandler(this.txtChuDe_TextChanged);
+            this.txtChuDe.TextChanged += new System.EventHandler(this.txtChuDe_TextChanged);
             // 
             // txtSoLuong
             // 
             this.txtSoLuong.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSoLuong.Location = new System.Drawing.Point(131, 214);
+            this.txtSoLuong.Location = new System.Drawing.Point(152, 214);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(232, 28);
             this.txtSoLuong.TabIndex = 6;
@@ -1062,7 +1062,7 @@
             // txtGiaTri
             // 
             this.txtGiaTri.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtGiaTri.Location = new System.Drawing.Point(131, 179);
+            this.txtGiaTri.Location = new System.Drawing.Point(152, 179);
             this.txtGiaTri.Name = "txtGiaTri";
             this.txtGiaTri.Size = new System.Drawing.Size(232, 28);
             this.txtGiaTri.TabIndex = 5;
@@ -1070,25 +1070,25 @@
             // txtNhaPhatHanh
             // 
             this.txtNhaPhatHanh.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhaPhatHanh.Location = new System.Drawing.Point(131, 144);
+            this.txtNhaPhatHanh.Location = new System.Drawing.Point(152, 144);
             this.txtNhaPhatHanh.Name = "txtNhaPhatHanh";
             this.txtNhaPhatHanh.Size = new System.Drawing.Size(232, 28);
             this.txtNhaPhatHanh.TabIndex = 4;
-            //this.txtNhaPhatHanh.TextChanged += new System.EventHandler(this.txtNhaPhatHanh_TextChanged);
+            this.txtNhaPhatHanh.TextChanged += new System.EventHandler(this.txtNhaPhatHanh_TextChanged);
             // 
             // txtNXB
             // 
             this.txtNXB.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNXB.Location = new System.Drawing.Point(131, 109);
+            this.txtNXB.Location = new System.Drawing.Point(152, 109);
             this.txtNXB.Name = "txtNXB";
             this.txtNXB.Size = new System.Drawing.Size(232, 28);
             this.txtNXB.TabIndex = 3;
-            //this.txtNXB.TextChanged += new System.EventHandler(this.txtNXB_TextChanged);
+            this.txtNXB.TextChanged += new System.EventHandler(this.txtNXB_TextChanged);
             // 
             // txtNamXB
             // 
             this.txtNamXB.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNamXB.Location = new System.Drawing.Point(131, 74);
+            this.txtNamXB.Location = new System.Drawing.Point(152, 74);
             this.txtNamXB.Name = "txtNamXB";
             this.txtNamXB.Size = new System.Drawing.Size(232, 28);
             this.txtNamXB.TabIndex = 2;
@@ -1096,20 +1096,20 @@
             // txtTacGia
             // 
             this.txtTacGia.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTacGia.Location = new System.Drawing.Point(131, 39);
+            this.txtTacGia.Location = new System.Drawing.Point(152, 39);
             this.txtTacGia.Name = "txtTacGia";
             this.txtTacGia.Size = new System.Drawing.Size(232, 28);
             this.txtTacGia.TabIndex = 1;
-            //this.txtTacGia.TextChanged += new System.EventHandler(this.txtTacGia_TextChanged);
+            this.txtTacGia.TextChanged += new System.EventHandler(this.txtTacGia_TextChanged);
             // 
             // txtTenSach
             // 
             this.txtTenSach.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenSach.Location = new System.Drawing.Point(131, 4);
+            this.txtTenSach.Location = new System.Drawing.Point(152, 4);
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.Size = new System.Drawing.Size(232, 28);
             this.txtTenSach.TabIndex = 0;
-            //this.txtTenSach.TextChanged += new System.EventHandler(this.txtTenSach_TextChanged);
+            this.txtTenSach.TextChanged += new System.EventHandler(this.txtTenSach_TextChanged);
             // 
             // pnlThongBaoSach
             // 
@@ -1522,7 +1522,7 @@
             this.pnlPMThongBao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPMThongBao.Controls.Add(this.lblCMSHeadingThongBao);
             this.pnlPMThongBao.Controls.Add(this.lblCMSThongBao);
-            this.pnlPMThongBao.Location = new System.Drawing.Point(10, 347);
+            this.pnlPMThongBao.Location = new System.Drawing.Point(10, 331);
             this.pnlPMThongBao.Name = "pnlPMThongBao";
             this.pnlPMThongBao.Size = new System.Drawing.Size(391, 115);
             this.pnlPMThongBao.TabIndex = 15;
@@ -1564,7 +1564,7 @@
             this.btnCMSLapPM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
             this.btnCMSLapPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCMSLapPM.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCMSLapPM.Location = new System.Drawing.Point(237, 471);
+            this.btnCMSLapPM.Location = new System.Drawing.Point(237, 452);
             this.btnCMSLapPM.Name = "btnCMSLapPM";
             this.btnCMSLapPM.Size = new System.Drawing.Size(164, 40);
             this.btnCMSLapPM.TabIndex = 15;
@@ -1629,7 +1629,7 @@
             this.dgvCMSDSPhieuMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCMSDSPhieuMuon.RowHeadersVisible = false;
             this.dgvCMSDSPhieuMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCMSDSPhieuMuon.Size = new System.Drawing.Size(428, 466);
+            this.dgvCMSDSPhieuMuon.Size = new System.Drawing.Size(428, 420);
             this.dgvCMSDSPhieuMuon.TabIndex = 0;
             // 
             // cbCMSNhapMaDocGia
@@ -1669,7 +1669,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCMSSachDangMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCMSSachDangMuon.RowHeadersVisible = false;
-            this.dgvCMSSachDangMuon.Size = new System.Drawing.Size(388, 163);
+            this.dgvCMSSachDangMuon.Size = new System.Drawing.Size(388, 147);
             this.dgvCMSSachDangMuon.TabIndex = 9;
             // 
             // lblCMSTienNoDocGia

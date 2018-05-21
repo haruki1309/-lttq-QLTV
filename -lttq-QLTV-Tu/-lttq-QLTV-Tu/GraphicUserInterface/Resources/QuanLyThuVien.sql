@@ -34,7 +34,7 @@ Create Table DocGia
 Create Table Sach
 (
 	MaSach char(5) Primary key,
-	TenSach nvarchar(50),
+	TenSach nvarchar(100),
 	MaTacGia char(5),
 	NamXB int,
 	MaNXB char(5),
@@ -49,31 +49,31 @@ Create Table Sach
 Create Table TacGia
 (
 	MaTacGia char(5) Primary key,
-	HoTen nvarchar(20)
+	HoTen nvarchar(100)
 )
 
 Create Table NXB
 (
 	MaNXB char(5) Primary key,
-	TenNXB nvarchar(50),
+	TenNXB nvarchar(100),
 )
 
 Create Table NhaPhatHanh
 (
 	MaNhaPhatHanh char(5) Primary key,
-	TenNhaPhatHanh nvarchar(50),
+	TenNhaPhatHanh nvarchar(100),
 )
 
 Create Table ChuDe
 (
 	MaChuDe char(5) Primary key,
-	TenChuDe nvarchar(20)
+	TenChuDe nvarchar(100)
 )
 
 Create Table TheLoai
 (
 	MaTheLoai char(5) Primary key,
-	TenTheLoai nvarchar(20)
+	TenTheLoai nvarchar(100)
 )
 
 Create Table PhieuMuon
@@ -159,11 +159,11 @@ Insert into NXB Values
 ('NXB06',	N'NXB Thế Giới')
 
 Insert into Sach Values
-('MS000',	N'Xử Lý Ngôn Ngữ Tự Nhiên',	'TG000',	'2006',	'NXB00',	'NPH00',	'3/20/2017',	'CD002',	'TL003',	16000.00,	30),
-('MS001',	N'Đắc Nhân Tâm',	'TG003',	'2016',	'NXB01',	'NPH01',	'3/2/2017',	'CD001',	'TL002',	45600.00,	40),
-('MS002',	N'Code Dạo Kí Sự',	'TG004',	'2017',	'NXB02',	'NPH02',	'5/1/2017',	'CD002',	'TL003',	159000.00,	20),
-('MS003',	N'Cà Phê Cùng Tony',	'TG005',	'2017',	'NXB03',	'NPH03',	'5/1/2017',	'CD001',	'TL002',	90000.00,	20),
-('MS004',	N'Ngày xưa có một chuyện tình',	'TG002',	'2017',	'NXB03',	'NPH03',	'5/10/2018',	'CD006',	'TL004',	86000.00,	30)
+('MS000',	N'Xử Lý Ngôn Ngữ Tự Nhiên',	'TG000',	'2006',	'NXB00',	'NPH00',	'20/3/2017',	'CD002',	'TL003',	16000.00,	30),
+('MS001',	N'Đắc Nhân Tâm',	'TG003',	'2016',	'NXB01',	'NPH01',	'23/3/2017',	'CD001',	'TL002',	45600.00,	40),
+('MS002',	N'Code Dạo Kí Sự',	'TG004',	'2017',	'NXB02',	'NPH02',	'15/1/2017',	'CD002',	'TL003',	159000.00,	20),
+('MS003',	N'Cà Phê Cùng Tony',	'TG005',	'2017',	'NXB03',	'NPH03',	'25/1/2017',	'CD001',	'TL002',	90000.00,	20),
+('MS004',	N'Ngày xưa có một chuyện tình',	'TG002',	'2017',	'NXB03',	'NPH03',	'25/10/2018',	'CD006',	'TL004',	86000.00,	30)
 
 Insert into TacGia Values
 ('TG000',	N'Nguyễn Tuấn Đăng'),
@@ -298,9 +298,7 @@ Begin
 End
 
 ---
-
 Create Procedure ThemSach
-	@MaSach varchar(5),
 	@TenSach nvarchar(100),
 	@TenTacGia nvarchar(100),
 	@NamXB int,
@@ -312,7 +310,8 @@ Create Procedure ThemSach
 	@GiaTri money,
 	@SoLuong int
 As 
-Begin	 
+Begin 
+
 	If Not exists (Select Sach.TenSach, TacGia.HoTen, NXB.TenNXB, NhaPhatHanh.TenNhaPhatHanh, Sach.NamXB
 				   From Sach Inner Join TacGia On Sach.MaTacGia = TacGia.MaTacGia
 						Inner Join NXB On Sach.MaNXB = NXB.MaNXB
@@ -320,34 +319,34 @@ Begin
 				   Where Sach.TenSach = @TenSach and TacGia.HoTen = @TenTacGia and NXB.TenNXB = @TenNXB
 						 and NhaPhatHanh.TenNhaPhatHanh = @TenNhaPhatHanh and Sach.NamXB = @NamXB)
 	Begin
-		Select @MaSach = dbo.AutoID_Sach()
-				
+		Declare @MaSach varchar(5)
+		Select @MaSach = dbo.AutoID_Sach()				
+			
 		If @TenTacGia Not in (Select HoTen From TacGia)
 			Exec ThemTacGia @TenTacGia
 		Declare @MaTacGia varchar(5)
 		Select @MaTacGia = (Select MaTacGia From TacGia Where HoTen = @TenTacGia)
-
-
+		
 		If @TenNXB Not in (Select TenNXB From NXB)
 			Exec ThemNXB @TenNXB
 		Declare @MaNXB varchar(5)
 		Select @MaNXB = (Select MaNXB From NXB Where TenNXB = @TenNXB)
-
+		
 		If @TenNhaPhatHanh Not in (Select TenNhaPhatHanh From NhaPhatHanh)
 			Exec ThemNhaPhatHanh @TenNhaPhatHanh
 		Declare @MaNhaPhatHanh varchar(5)
 		Select @MaNhaPhatHanh = (Select MaNhaPhatHanh From NhaPhatHanh Where TenNhaPhatHanh = @TenNhaPhatHanh)
-
+		
 		If @TenChuDe Not in (Select TenChuDe From ChuDe)
 			Exec ThemChuDe @TenChuDe
 		Declare @MaChuDe varchar(5)
 		Select @MaChuDe = (Select MaChuDe From ChuDe Where TenChuDe = @TenChuDe)
-
+		
 		If @TenTheLoai Not in (Select TenTheLoai From TheLoai)
 			Exec ThemTheLoai @TenTheLoai
 		Declare @MaTheLoai varchar(5)
 		Select @MaTheLoai = (Select MaTheLoai From TheLoai Where TenTheLoai = @TenTheLoai)
-
+		
 		Insert Into Sach
 		Values (@MaSach, @TenSach, @MaTacGia, @NamXB, @MaNXB, @MaNhaPhatHanh, @NgayNhap, @MaChuDe, @MaTheLoai, @GiaTri, @SoLuong)
 	End
@@ -482,7 +481,7 @@ Begin
 		Set @ID = 'NXB01' 		
 	Else
 		Declare @tempID varchar(5)
-		Select @tempID = Max(Right(MaNXB, 3)) From NXB
+		Select @tempID = Max(Right(MaNXB, 2)) From NXB
 		Select @ID = Case
 			When @tempID + 1 <= 9 Then 'NXB0' + Convert(char, Convert(int, @tempID)+1)
 			When @tempID + 1 <= 99 Then 'NXB' + Convert(char, Convert(int, @tempID)+1)					
@@ -610,7 +609,7 @@ End
 
 Create Procedure AutoCompleteText
 	@TenCot varchar(15),
-	@TenBang varchar(10)	
+	@TenBang varchar(15)	
 As
 Begin
 	Declare @Sql nvarchar(1000)
