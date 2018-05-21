@@ -1103,7 +1103,7 @@ namespace GraphicUserInterface
                     lblCMSTenDocGia.Text = "Độc giả: ";
                     lblCMSTenDocGia.Text += tenDocGia;
                 }
-
+                dgvCMSSachDangMuon.DataSource = busDG.GetSachDangMuon(cbCMSNhapMaDocGia.Text.Substring(0, 5));
             }
         }
 

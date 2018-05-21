@@ -216,5 +216,32 @@ namespace DatabaseAccessLayer
             }
             return 0;
         }
+        // lay sach dang muon
+
+        public DataTable getSachDangMuon(string maDocGia)
+        {
+            try
+            {
+                cn.Open();
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("LaySachDangMuon", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MaDocGia", maDocGia);
+
+                SqlDataAdapter sda = new SqlDataAdapter();
+                sda.SelectCommand = cmd;
+                sda.Fill(dt);
+
+                return dt;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

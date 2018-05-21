@@ -78,6 +78,9 @@ namespace BusinessLogicLayer
         {
             return dalDocGia.Delete(MaDocGia);
         }
-        
+        public DataTable GetSachDangMuon(string maDocGia)
+        {
+            return dalDocGia.getSachDangMuon(maDocGia);
+        }
     }
 }

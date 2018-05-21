@@ -9,6 +9,6 @@ namespace DatabaseAccessLayer
 {
     public class DBConnect
     {
-        protected SqlConnection cn = new SqlConnection("Data Source=DESKTOP-76JI7SV;Initial Catalog=QuanLyThuVien;Integrated Security=True");
+        protected SqlConnection cn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyThuVien;Integrated Security=True");
     }
 }
