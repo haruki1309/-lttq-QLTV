@@ -878,33 +878,7 @@ namespace GraphicUserInterface
 
 
         // =============== DataGridView Sach ===========//
-        private void dgvSach_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            ResetControlSach();
-
-            try
-            {
-               
-                if (dgvSach.SelectedRows.Count == 1)
-                {
-                    txtTenSach.Text = dgvSach.CurrentRow.Cells["TenSach"].Value.ToString();
-                    txtTacGia.Text = dgvSach.CurrentRow.Cells["HoTen"].Value.ToString();
-                    txtNamXB.Text = dgvSach.CurrentRow.Cells["NamXB"].Value.ToString();
-                    txtNXB.Text = dgvSach.CurrentRow.Cells["TenNXB"].Value.ToString();
-                    txtNhaPhatHanh.Text = dgvSach.CurrentRow.Cells["TenNhaPhatHanh"].Value.ToString();
-                    txtChuDe.Text = dgvSach.CurrentRow.Cells["TenChuDe"].Value.ToString();
-                    txtTheLoai.Text = dgvSach.CurrentRow.Cells["TenTheLoai"].Value.ToString();
-                    txtGiaTri.Text = dgvSach.CurrentRow.Cells["GiaTri"].Value.ToString();
-                    txtSoLuong.Text = dgvSach.CurrentRow.Cells["SoLuong"].Value.ToString();
-                    dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.CurrentRow.Cells["NgayNhap"].Value.ToString());
-                    
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
-        }
+        
 
         private void dgvSach_RenameColumn()
         {
@@ -1242,8 +1216,33 @@ namespace GraphicUserInterface
             this.btnCMSLapPM.Text = "Lập Phiếu Mượn";
         }
 
-        
+        private void dgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ResetControlSach();
 
+            try
+            {
+
+                if (dgvSach.SelectedRows.Count == 1)
+                {
+                    txtTenSach.Text = dgvSach.CurrentRow.Cells["TenSach"].Value.ToString();
+                    txtTacGia.Text = dgvSach.CurrentRow.Cells["HoTen"].Value.ToString();
+                    txtNamXB.Text = dgvSach.CurrentRow.Cells["NamXB"].Value.ToString();
+                    txtNXB.Text = dgvSach.CurrentRow.Cells["TenNXB"].Value.ToString();
+                    txtNhaPhatHanh.Text = dgvSach.CurrentRow.Cells["TenNhaPhatHanh"].Value.ToString();
+                    txtChuDe.Text = dgvSach.CurrentRow.Cells["TenChuDe"].Value.ToString();
+                    txtTheLoai.Text = dgvSach.CurrentRow.Cells["TenTheLoai"].Value.ToString();
+                    txtGiaTri.Text = dgvSach.CurrentRow.Cells["GiaTri"].Value.ToString();
+                    txtSoLuong.Text = dgvSach.CurrentRow.Cells["SoLuong"].Value.ToString();
+                    dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.CurrentRow.Cells["NgayNhap"].Value.ToString());
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
     }
 
 
