@@ -77,5 +77,11 @@ namespace BusinessLogicLayer
         {
             return dalSach.AutoCompleteTextBox(columnName, tableName);
         }
+
+        public List<string> getDataComboBox(string columnName, string tableName)
+        {
+            return dalSach.GetDataComboBox(columnName, tableName);
+        }
+
     }
 }

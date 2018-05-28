@@ -29,6 +29,7 @@ namespace GraphicUserInterface
             else
             {
                 lblStatus.Text = "(*) Sai Tên tài khoản hoặc Mật khẩu";
+                txtMatKhau.Clear();
             }
         }
         

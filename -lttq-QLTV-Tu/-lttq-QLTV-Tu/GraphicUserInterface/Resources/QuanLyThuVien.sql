@@ -618,6 +618,19 @@ Begin
 End
 Go
 
+---
+
+Create Procedure LayDuLieuComboBox
+@TenCot varchar(15),
+	@TenBang varchar(15)	
+As
+Begin
+	Declare @Sql nvarchar(1000)
+	Set @Sql = 'Select ' + @TenCot + ' From ' + @TenBang				
+	Exec(@Sql)
+End
+Go
+
 --procedure cho tab Cho muon sach
 
 ---------------------------------

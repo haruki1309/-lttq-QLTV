@@ -48,14 +48,14 @@ namespace GraphicUserInterface
         public frmDocGia()
         {
             InitializeComponent();
-          
+
         }
         private void frmDocGia_Load(object sender, EventArgs e)
         {
             this.dgvDocGia.DataSource = busDG.getDocGia();
             this.pnltabDocGia.BringToFront();
 
-           this.dgvDocGia.Columns["MaDocGia"].HeaderText = "Mã Độc Giả";
+            this.dgvDocGia.Columns["MaDocGia"].HeaderText = "Mã Độc Giả";
             this.dgvDocGia.Columns["HoTen"].HeaderText = "Họ Tên";
             this.dgvDocGia.Columns["DiaChi"].HeaderText = "Địa Chỉ";
             this.dgvDocGia.Columns["SDT"].HeaderText = "Số Điện Thoại";
@@ -503,35 +503,65 @@ namespace GraphicUserInterface
         private void ResetControlSach()
         {
             // Clear noi dung TextBox
-            txtTenSach.Clear();
-            txtTacGia.Clear();
-            txtNamXB.Clear();
-            txtNXB.Clear();
-            txtNhaPhatHanh.Clear();
-            txtGiaTri.Clear();
-            txtSoLuong.Clear();
-            txtChuDe.Clear();
-            txtTheLoai.Clear();
+            cboTenSach.ResetText();
+            cboTacGia.ResetText();
+            cboNamXB.ResetText();
+            cboNXB.ResetText();
+            cboNhaPhatHanh.ResetText();
+            txtGiaTri.ResetText();
+            txtSoLuong.ResetText();
+            cboChuDe.ResetText();
+            cboTheLoai.ResetText();
             dtmNgayNhap.Value = DateTime.Today;
 
-            // Dat lai trang thai ReadOnly
-            this.txtTenSach.ReadOnly = true;
-            this.txtTacGia.ReadOnly = true;
-            this.txtNamXB.ReadOnly = true;
-            this.txtNXB.ReadOnly = true;
-            this.txtNhaPhatHanh.ReadOnly = true;
-            this.txtGiaTri.ReadOnly = true;
-            this.txtSoLuong.ReadOnly = true;
-            this.txtChuDe.ReadOnly = true;
-            this.txtTheLoai.ReadOnly = true;
-            this.dtmNgayNhap.Enabled = false;
+            // Unvisible cac label Them du lieu
+            lblThemSach.Visible = false;
+            lblThemTacGia.Visible = false;
+            lblThemNamXB.Visible = false;
+            lblThemNXB.Visible = false;
+            lblThemNhaPhatHanh.Visible = false;
+            lblThemChuDe.Visible = false;
+            lblThemTheLoai.Visible = false;
 
+            // Dat lai trang thai ReadOnly
+            cboTenSach.Enabled = false;
+            cboTacGia.Enabled = false;
+            cboNamXB.Enabled = false;
+            cboNXB.Enabled = false;
+            cboNhaPhatHanh.Enabled = false;
+            cboChuDe.Enabled = false;
+            cboTheLoai.Enabled = false;
+            txtGiaTri.ReadOnly = true;
+            txtSoLuong.ReadOnly = true;
+            dtmNgayNhap.Enabled = false;
+
+            // Lay lai data cho Combo Box
+            cboTenSach.Items.Clear();
+            GetDataComboBox(cboTenSach, "TenSach", "Sach");
+
+            cboTacGia.Items.Clear();
+            GetDataComboBox(cboTacGia, "HoTen", "TacGia");
+
+            cboNamXB.Items.Clear();
+            GetDataComboBox(cboNamXB, "NamXB", "Sach");
+
+            cboNXB.Items.Clear();
+            GetDataComboBox(cboNXB, "TenNXB", "NXB");
+
+            cboNhaPhatHanh.Items.Clear();
+            GetDataComboBox(cboNhaPhatHanh, "TenNhaPhatHanh", "NhaPhatHanh");
+
+            cboChuDe.Items.Clear();
+            GetDataComboBox(cboChuDe, "TenChuDe", "ChuDe");
+
+            cboTheLoai.Items.Clear();
+            GetDataComboBox(cboTheLoai, "TenTheLoai", "TheLoai");
             
             // Dat lai cac button Cap nhat
             Font fontButton = new Font("Sitka Display", 12, FontStyle.Bold);
 
             btnHuyCapNhatSach.Text = "Hủy";
-            btnHuyCapNhatSach.Enabled = false;
+            btnHuyCapNhatSach.Visible = false;
             btnHuyCapNhatSach.Font = fontButton;
 
             btnThemSach.Text = "Thêm";
@@ -551,23 +581,24 @@ namespace GraphicUserInterface
         //=============== Them Sach ===============//
         private void btnThemSach_Click(object sender, EventArgs e)
         {
-            btnHuyCapNhatSach.Enabled = true;
+            btnHuyCapNhatSach.Visible = true;
             btnSuaSach.Enabled = false;
             btnXoaSach.Enabled = false;
 
             if (btnThemSach.Text == "Thêm")
             {
-                this.txtTenSach.ReadOnly = false;
-                this.txtTacGia.ReadOnly = false;
-                this.txtNamXB.ReadOnly = false;
-                this.txtNXB.ReadOnly = false;
-                this.txtNhaPhatHanh.ReadOnly = false;
+                this.cboTenSach.Enabled = true;
+                this.cboTacGia.Enabled = true;
+                this.cboNamXB.Enabled = true;
+                this.cboNXB.Enabled = true;
+                this.cboNhaPhatHanh.Enabled = true;
+                this.cboChuDe.Enabled = true;
+                this.cboTheLoai.Enabled = true;
                 this.txtGiaTri.ReadOnly = false;
                 this.txtSoLuong.ReadOnly = false;
-                this.txtChuDe.ReadOnly = false;
-                this.txtTheLoai.ReadOnly = false;
                 this.dtmNgayNhap.Enabled = true;
 
+                lblThongBaoSach.Text = "Bạn có chắc chắn muốn thêm?";
                 btnThemSach.Text = "Xác nhận thêm";
                 btnThemSach.Font = new Font("Sitka Display", 10, FontStyle.Bold);
 
@@ -575,43 +606,39 @@ namespace GraphicUserInterface
             else if (btnThemSach.Text == "Xác nhận thêm")
             {
                 // Them Sach
-                if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtNamXB.Text != "" && txtNamXB.Text != "" && txtNhaPhatHanh.Text != "" && txtChuDe.Text != "" && txtTheLoai.Text != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
-                {                   
+                if (cboTenSach.Text.ToString() != "" && cboTacGia.Text.ToString() != "" && cboNamXB.Text.ToString() != "" && cboNXB.Text.ToString() != "" && cboNhaPhatHanh.Text.ToString() != "" && cboChuDe.Text.ToString() != "" && cboTheLoai.Text.ToString() != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
+                {
                     string maSach = "";
-                    
-                    if (busSach.insertSach(maSach, txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtChuDe.Text, txtTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
-                    {
-                        lblThongBaoSach.Text = "Thêm thành công !";
-                        btnThemSach.Text = "Hoàn tất";
-                        btnThemSach.Font = new Font("Sitka Display", 12, FontStyle.Bold);
 
-                        btnHuyCapNhatSach.Enabled = false;
+                    if (busSach.insertSach(maSach, cboTenSach.Text.ToString(), cboTacGia.Text.ToString(), Convert.ToInt32(cboNamXB.Text.ToString()), cboNXB.Text.ToString(), cboNhaPhatHanh.Text.ToString(), dtmNgayNhap.Value, cboChuDe.Text.ToString(), cboTheLoai.Text.ToString(), Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
+                    {
+                        ResetControlSach();
+                        lblThongBaoSach.Text = "Thêm thành công !";
                     }
                     else
                     {
+                        ResetControlSach();
                         lblThongBaoSach.Text = "Thêm không thành công !";
-                    }
+                    }                    
                 }
                 else
                 {
                     lblThongBaoSach.Text = "Vui lòng nhập đầy đủ \ncác thông tin !";
-                }
+                }                                
 
-            }
-            else if (btnThemSach.Text == "Hoàn tất")
-            {
-                ResetControlSach();
+                btnThemSach.Text = "Thêm";
+                btnThemSach.Font = new Font("Sitka Display", 12, FontStyle.Bold);
 
                 dgvSach.DataSource = busSach.getSach();
                 dgvSach_RenameColumn();
-            }
+            }            
         }
 
 
         //============ Sua Sach ==============//
         private void btnSuaSach_Click(object sender, EventArgs e)
         {
-            btnHuyCapNhatSach.Enabled = true;
+            btnHuyCapNhatSach.Visible = true;
             btnThemSach.Enabled = false;
             btnXoaSach.Enabled = false;
 
@@ -623,15 +650,15 @@ namespace GraphicUserInterface
                 }
                 else
                 {
-                    this.txtTenSach.ReadOnly = false;
-                    this.txtTacGia.ReadOnly = false;
-                    this.txtNamXB.ReadOnly = false;
-                    this.txtNXB.ReadOnly = false;
-                    this.txtNhaPhatHanh.ReadOnly = false;
+                    this.cboTenSach.Enabled = true;
+                    this.cboTacGia.Enabled = true;
+                    this.cboNamXB.Enabled = true;
+                    this.cboNXB.Enabled = true;
+                    this.cboNhaPhatHanh.Enabled = true;
+                    this.cboChuDe.Enabled = true;
+                    this.cboTheLoai.Enabled = true;
                     this.txtGiaTri.ReadOnly = false;
                     this.txtSoLuong.ReadOnly = false;
-                    this.txtChuDe.ReadOnly = false;
-                    this.txtTheLoai.ReadOnly = false;
                     this.dtmNgayNhap.Enabled = true;
 
                     lblThongBaoSach.Text = "Bạn có chắc chắn muốn sửa?";
@@ -641,21 +668,19 @@ namespace GraphicUserInterface
             }
             else if (btnSuaSach.Text == "Xác nhận sửa")
             {
-                
+
                 DataGridViewRow row = dgvSach.CurrentRow;
 
-                if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtNamXB.Text != "" && txtNamXB.Text != "" && txtNhaPhatHanh.Text != "" && txtChuDe.Text != "" && txtTheLoai.Text != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
+                if (cboTenSach.Text.ToString() != "" && cboTacGia.Text.ToString() != "" && cboNamXB.Text.ToString() != "" && cboNXB.Text.ToString() != "" && cboNhaPhatHanh.Text.ToString() != "" && cboChuDe.Text.ToString() != "" && cboTheLoai.Text.ToString() != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
                 {
-                    if (busSach.updateSach(row.Cells["MaSach"].Value.ToString(), txtTenSach.Text, txtTacGia.Text, Convert.ToInt32(txtNamXB.Text), txtNXB.Text, txtNhaPhatHanh.Text, dtmNgayNhap.Value, txtChuDe.Text, txtTheLoai.Text, Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
+                    if (busSach.updateSach(row.Cells["MaSach"].Value.ToString(), cboTenSach.Text.ToString(), cboTacGia.Text.ToString(), Convert.ToInt32(cboNamXB.Text.ToString()), cboNXB.Text.ToString(), cboNhaPhatHanh.Text.ToString(), dtmNgayNhap.Value, cboChuDe.Text.ToString(), cboTheLoai.Text.ToString(), Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
                     {
+                        ResetControlSach();
                         lblThongBaoSach.Text = "Sửa thành công !";
-                        btnSuaSach.Text = "Hoàn tất";
-                        btnSuaSach.Font = new Font("Sitka Display", 12, FontStyle.Bold);
-
-                        btnHuyCapNhatSach.Enabled = false;
                     }
                     else
                     {
+                        ResetControlSach();
                         lblThongBaoSach.Text = "Sửa không thành công !";
                     }
                 }
@@ -663,14 +688,13 @@ namespace GraphicUserInterface
                 {
                     lblThongBaoSach.Text = "Vui lòng nhập đầy đủ \ncác thông tin !";
                 }
-            }
-            else if (btnSuaSach.Text == "Hoàn tất")
-            {
-                ResetControlSach();
+
+                btnSuaSach.Text = "Sửa";
+                btnSuaSach.Font = new Font("Sitka Display", 12, FontStyle.Bold);
 
                 dgvSach.DataSource = busSach.getSach();
                 dgvSach_RenameColumn();
-            }
+            }            
         }
 
 
@@ -679,7 +703,7 @@ namespace GraphicUserInterface
         {
             btnThemSach.Enabled = false;
             btnSuaSach.Enabled = false;
-            btnHuyCapNhatSach.Enabled = true;
+            btnHuyCapNhatSach.Visible = true;
 
             if (btnXoaSach.Text == "Xóa")
             {
@@ -700,24 +724,21 @@ namespace GraphicUserInterface
 
                 if (busSach.deleteSach(row.Cells[0].Value.ToString()))
                 {
-                    lblThongBaoSach.Text = "Xóa thành công !";
-
-                    btnXoaSach.Text = "Hoàn tất";
-                    btnXoaSach.Font = new Font("Sitka Display", 12, FontStyle.Bold);
-                    btnHuyCapNhatSach.Enabled = false;
+                    ResetControlSach();
+                    lblThongBaoSach.Text = "Xóa thành công !";                                  
                 }
                 else
                 {
+                    ResetControlSach();
                     lblThongBaoSach.Text = "Xóa không thành công !";
                 }
-            }
-            else if (btnXoaSach.Text == "Hoàn tất")
-            {
-                ResetControlSach();
+                
+                btnXoaSach.Text = "Xóa";
+                btnXoaSach.Font = new Font("Sitka Display", 12, FontStyle.Bold);
 
                 dgvSach.DataSource = busSach.getSach();
                 dgvSach_RenameColumn();
-            }
+            }            
         }
 
         //=========== Huy tac vu Sach ==========//
@@ -744,7 +765,7 @@ namespace GraphicUserInterface
         {
             if (pnlTimKiemSach.Visible == false)
             {
-                btnHuyCapNhatSach.Enabled = true;
+                btnHuyCapNhatSach.Visible = true;
 
                 pnlLocSach.Visible = false;
                 pnlTimKiemSach.Visible = true;
@@ -771,7 +792,12 @@ namespace GraphicUserInterface
         {
             string condition;
 
-            if (cboTimKiemSach.SelectedItem.ToString() == "Mã sách")
+            if (cboTimKiemSach.Text == "Tìm kiếm theo")
+            {
+                pnlTimKiemSach.Visible = false;
+                lblThongBaoSach.Text = "Không thể tìm kiếm.\nVui lòng chọn\nmột điều kiện tìm kiếm.";
+            }
+            else if (cboTimKiemSach.SelectedItem.ToString() == "Mã sách")
             {
                 condition = string.Format("A.MaSach like '%{0}%'", txtTimKiemSach.Text.ToString());
                 dgvSach.DataSource = busSach.getSach(condition);
@@ -810,10 +836,10 @@ namespace GraphicUserInterface
             {
                 condition = string.Format("A.TenTheLoai like N'%{0}%'", txtTimKiemSach.Text.ToString());
                 dgvSach.DataSource = busSach.getSach(condition);
-            }
-
+            }          
+            
             dgvSach_RenameColumn();
-        }
+        } 
 
 
         //============= Loc Sach ============//
@@ -821,7 +847,7 @@ namespace GraphicUserInterface
         {
             if (pnlLocSach.Visible == false)
             {
-                btnHuyCapNhatSach.Enabled = true;
+                btnHuyCapNhatSach.Visible = true;
 
                 pnlTimKiemSach.Visible = false;
                 pnlLocSach.Visible = true;
@@ -911,35 +937,32 @@ namespace GraphicUserInterface
 
 
         //============= Auto Complete TextBox ==================//
-        private void txtTenSach_TextChanged(object sender, EventArgs e)
+        private void cboTenSach_TextChanged(object sender, EventArgs e)
         {
-            if (txtTenSach.ReadOnly)
+            if (cboTenSach.Enabled == false)
             {
                 AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-                txtTenSach.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtTenSach.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cboTenSach.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cboTenSach.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-                List<string> sourceSach = new List<string>();
-                sourceSach = busSach.autoCompleteTextBox("TenSach", "Sach");
-
-                foreach (string tenSach in sourceSach)
+                foreach (string tenSach in cboTenSach.Items)
                 {
                     auto.Add(tenSach);
                 }                              
 
-                txtTenSach.AutoCompleteCustomSource = auto;
+                cboTenSach.AutoCompleteCustomSource = auto;
             }
         }
 
-        private void txtTacGia_TextChanged(object sender, EventArgs e)
+        private void cboTacGia_TextChanged(object sender, EventArgs e)
         {
-            if(txtTacGia.ReadOnly)
+            if(cboTacGia.Enabled == false)
             {
                 AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-                txtTacGia.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtTacGia.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cboTacGia.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cboTacGia.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
                 List<string> sourceTacGia = new List<string>();
                 sourceTacGia = busSach.autoCompleteTextBox("HoTen", "TacGia");
@@ -949,18 +972,39 @@ namespace GraphicUserInterface
                     auto.Add(tenTG);
                 }
 
-                txtTacGia.AutoCompleteCustomSource = auto;
+                cboTacGia.AutoCompleteCustomSource = auto;
             }
         }
-
-        private void txtNXB_TextChanged(object sender, EventArgs e)
+        
+        private void cboNamXB_TextChanged(object sender, EventArgs e)
         {
-            if(txtNXB.ReadOnly)
+            if (cboNamXB.Enabled == false)
             {
                 AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-                txtNXB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtNXB.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cboNXB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cboNXB.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+                List<string> sourceNamXB = new List<string>();
+                sourceNamXB = busSach.autoCompleteTextBox("NamXB", "Sach");
+
+                foreach (string NamXB in sourceNamXB)
+                {
+                    auto.Add(NamXB);
+                }
+
+                cboNhaPhatHanh.AutoCompleteCustomSource = auto;
+            }
+        }
+
+        private void cboNXB_TextChanged(object sender, EventArgs e)
+        {
+            if(cboNXB.Enabled == false)
+            {
+                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+
+                cboNXB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cboNXB.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
                 List<string> sourceNXB = new List<string>();
                 sourceNXB = busSach.autoCompleteTextBox("TenNXB", "NXB");
@@ -970,18 +1014,18 @@ namespace GraphicUserInterface
                     auto.Add(tenNXB);
                 }
 
-                txtNhaPhatHanh.AutoCompleteCustomSource = auto;
+                cboNhaPhatHanh.AutoCompleteCustomSource = auto;
             }
         }
 
-        private void txtNhaPhatHanh_TextChanged(object sender, EventArgs e)
+        private void cboNhaPhatHanh_TextChanged(object sender, EventArgs e)
         {
-            if(txtNhaPhatHanh.ReadOnly)
+            if(cboNhaPhatHanh.Enabled == false)
             {
                 AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-                txtNhaPhatHanh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtNhaPhatHanh.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cboNhaPhatHanh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cboNhaPhatHanh.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
                 List<string> sourceNPH = new List<string>();
                 sourceNPH = busSach.autoCompleteTextBox("TenNhaPhatHanh", "NhaPhatHanh");
@@ -991,18 +1035,18 @@ namespace GraphicUserInterface
                     auto.Add(tenNPH);
                 }
 
-                txtNhaPhatHanh.AutoCompleteCustomSource = auto;
+                cboNhaPhatHanh.AutoCompleteCustomSource = auto;
             }
         }
 
-        private void txtChuDe_TextChanged(object sender, EventArgs e)
+        private void cboChuDe_TextChanged(object sender, EventArgs e)
         {
-            if(txtChuDe.ReadOnly)
+            if(cboChuDe.Enabled == false)
             {
                 AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-                txtChuDe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtChuDe.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cboChuDe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cboChuDe.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
                 List<string> sourceChuDe = new List<string>();
                 sourceChuDe = busSach.autoCompleteTextBox("TenChuDe", "ChuDe");
@@ -1012,18 +1056,18 @@ namespace GraphicUserInterface
                     auto.Add(tenCD);
                 }
 
-                txtChuDe.AutoCompleteCustomSource = auto;
+                cboChuDe.AutoCompleteCustomSource = auto;
             }
         }
 
-        private void txtTheLoai_TextChanged(object sender, EventArgs e)
+        private void cboTheLoai_TextChanged(object sender, EventArgs e)
         {
-            if(txtTheLoai.ReadOnly)
+            if(cboTheLoai.Enabled == false)
             {
                 AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-                txtTheLoai.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtTheLoai.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cboTheLoai.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cboTheLoai.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
                 List<string> sourceTheLoai = new List<string>();
                 sourceTheLoai = busSach.autoCompleteTextBox("TenTheLoai", "TheLoai");
@@ -1033,9 +1077,67 @@ namespace GraphicUserInterface
                     auto.Add(tenTL);
                 }
 
-                txtTheLoai.AutoCompleteCustomSource = auto;
+                cboTheLoai.AutoCompleteCustomSource = auto;
             }
         }
+
+        private void GetDataComboBox(ComboBox name, string columnName, string tableName)
+        {
+            List<string> comboBoxSource = new List<string>();
+            comboBoxSource = busSach.getDataComboBox(columnName, tableName);
+
+            foreach (string bookName in comboBoxSource)
+            {
+                name.Items.Add(bookName);
+            }
+
+            if (name.Items.Count > 1)
+                name.Items.Add("Khác...");
+        }
+
+        // ============= Thay doi Item Combo Box ==========// 
+        private void cboTenSach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTenSach.SelectedItem.ToString() == "Khác...")
+                lblThemSach.Visible = true;
+        }
+
+        private void cboTacGia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTacGia.SelectedItem.ToString() == "Khác...")
+                lblThemTacGia.Visible = true;
+        }
+
+        private void cboNamXB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboNamXB.SelectedItem.ToString() == "Khác...")
+                lblThemNamXB.Visible = true;
+        }
+        
+        private void cboNXB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboNXB.SelectedItem.ToString() == "Khác...")
+                lblThemNXB.Visible = true;
+        }
+
+        private void cboNhaPhatHanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboNhaPhatHanh.SelectedItem.ToString() == "Khác...")
+                lblThemNhaPhatHanh.Visible = true;
+        }
+
+        private void cboChuDe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboChuDe.SelectedItem.ToString() == "Khác...")
+                lblThemChuDe.Visible = true;
+        }
+
+        private void cboTheLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTheLoai.SelectedItem.ToString() == "Khác...")
+                lblThemTheLoai.Visible = true;
+        }
+        // =================== Xu ly event ngoai ================//
 
 
         // ==========================================================================
@@ -1222,27 +1324,23 @@ namespace GraphicUserInterface
 
             try
             {
-
-                if (dgvSach.SelectedRows.Count == 1)
-                {
-                    txtTenSach.Text = dgvSach.CurrentRow.Cells["TenSach"].Value.ToString();
-                    txtTacGia.Text = dgvSach.CurrentRow.Cells["HoTen"].Value.ToString();
-                    txtNamXB.Text = dgvSach.CurrentRow.Cells["NamXB"].Value.ToString();
-                    txtNXB.Text = dgvSach.CurrentRow.Cells["TenNXB"].Value.ToString();
-                    txtNhaPhatHanh.Text = dgvSach.CurrentRow.Cells["TenNhaPhatHanh"].Value.ToString();
-                    txtChuDe.Text = dgvSach.CurrentRow.Cells["TenChuDe"].Value.ToString();
-                    txtTheLoai.Text = dgvSach.CurrentRow.Cells["TenTheLoai"].Value.ToString();
-                    txtGiaTri.Text = dgvSach.CurrentRow.Cells["GiaTri"].Value.ToString();
-                    txtSoLuong.Text = dgvSach.CurrentRow.Cells["SoLuong"].Value.ToString();
-                    dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.CurrentRow.Cells["NgayNhap"].Value.ToString());
-
-                }
+                cboTenSach.Text = dgvSach.Rows[e.RowIndex].Cells["TenSach"].Value.ToString();
+                cboTacGia.Text = dgvSach.Rows[e.RowIndex].Cells["HoTen"].Value.ToString();
+                cboNamXB.Text = dgvSach.Rows[e.RowIndex].Cells["NamXB"].Value.ToString();
+                cboNXB.Text = dgvSach.Rows[e.RowIndex].Cells["TenNXB"].Value.ToString();
+                cboNhaPhatHanh.Text = dgvSach.Rows[e.RowIndex].Cells["TenNhaPhatHanh"].Value.ToString();
+                cboChuDe.Text = dgvSach.Rows[e.RowIndex].Cells["TenChuDe"].Value.ToString();
+                cboTheLoai.Text = dgvSach.Rows[e.RowIndex].Cells["TenTheLoai"].Value.ToString();
+                txtGiaTri.Text = dgvSach.Rows[e.RowIndex].Cells["GiaTri"].Value.ToString();
+                txtSoLuong.Text = dgvSach.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
+                dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.Rows[e.RowIndex].Cells["NgayNhap"].Value.ToString());
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
     }
 
 
