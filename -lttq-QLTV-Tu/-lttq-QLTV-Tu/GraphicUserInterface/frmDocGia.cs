@@ -514,14 +514,12 @@ namespace GraphicUserInterface
             cboTheLoai.ResetText();
             dtmNgayNhap.Value = DateTime.Today;
 
-            // Unvisible cac label Them du lieu
-            lblThemSach.Visible = false;
-            lblThemTacGia.Visible = false;
-            lblThemNamXB.Visible = false;
-            lblThemNXB.Visible = false;
-            lblThemNhaPhatHanh.Visible = false;
-            lblThemChuDe.Visible = false;
-            lblThemTheLoai.Visible = false;
+            // Unvisible cac label Them du lieu            
+            btnThemTacGia.Visible = false;            
+            btnThemNXB.Visible = false;
+            btnThemNhaPhatHanh.Visible = false;
+            btnThemChuDe.Visible = false;
+            btnThemTheLoai.Visible = false;
 
             // Dat lai trang thai ReadOnly
             cboTenSach.Enabled = false;
@@ -540,7 +538,7 @@ namespace GraphicUserInterface
             GetDataComboBox(cboTenSach, "TenSach", "Sach");
 
             cboTacGia.Items.Clear();
-            GetDataComboBox(cboTacGia, "HoTen", "TacGia");
+            GetDataComboBox(cboTacGia, "TenTacGia", "TacGia");
 
             cboNamXB.Items.Clear();
             GetDataComboBox(cboNamXB, "NamXB", "Sach");
@@ -556,7 +554,7 @@ namespace GraphicUserInterface
 
             cboTheLoai.Items.Clear();
             GetDataComboBox(cboTheLoai, "TenTheLoai", "TheLoai");
-            
+
             // Dat lai cac button Cap nhat
             Font fontButton = new Font("Sitka Display", 12, FontStyle.Bold);
 
@@ -576,6 +574,7 @@ namespace GraphicUserInterface
             btnXoaSach.Enabled = true;
             btnXoaSach.Font = fontButton;
 
+            lblThongBaoSach.Location = new Point(19, 17);
             lblThongBaoSach.Text = "";
         }
         //=============== Them Sach ===============//
@@ -598,7 +597,8 @@ namespace GraphicUserInterface
                 this.txtSoLuong.ReadOnly = false;
                 this.dtmNgayNhap.Enabled = true;
 
-                lblThongBaoSach.Text = "Bạn có chắc chắn muốn thêm?";
+                lblThongBaoSach.Location = new Point(2, 2);
+                lblThongBaoSach.Text = "Vui lòng kiểm tra lại các thông tin.\nNếu bạn muốn thêm vào dữ liệu\nhoàn toàn mới, click vào nút thêm\nbên cạnh mỗi trường dữ liệu (nếu có)";
                 btnThemSach.Text = "Xác nhận thêm";
                 btnThemSach.Font = new Font("Sitka Display", 10, FontStyle.Bold);
 
@@ -619,19 +619,19 @@ namespace GraphicUserInterface
                     {
                         ResetControlSach();
                         lblThongBaoSach.Text = "Thêm không thành công !";
-                    }                    
+                    }
                 }
                 else
                 {
                     lblThongBaoSach.Text = "Vui lòng nhập đầy đủ \ncác thông tin !";
-                }                                
+                }
 
                 btnThemSach.Text = "Thêm";
                 btnThemSach.Font = new Font("Sitka Display", 12, FontStyle.Bold);
 
                 dgvSach.DataSource = busSach.getSach();
                 dgvSach_RenameColumn();
-            }            
+            }
         }
 
 
@@ -661,7 +661,9 @@ namespace GraphicUserInterface
                     this.txtSoLuong.ReadOnly = false;
                     this.dtmNgayNhap.Enabled = true;
 
-                    lblThongBaoSach.Text = "Bạn có chắc chắn muốn sửa?";
+                    lblThongBaoSach.Location = new Point(2, 2);
+                    lblThongBaoSach.Text = "Vui lòng kiểm tra lại các thông tin.\nNếu bạn muốn thêm vào dữ liệu\nhoàn toàn mới, click vào nút thêm\nbên cạnh mỗi trường dữ liệu (nếu có)";
+
                     btnSuaSach.Text = "Xác nhận sửa";
                     btnSuaSach.Font = new Font("Sitka Display", 10, FontStyle.Bold);
                 }
@@ -694,7 +696,7 @@ namespace GraphicUserInterface
 
                 dgvSach.DataSource = busSach.getSach();
                 dgvSach_RenameColumn();
-            }            
+            }
         }
 
 
@@ -725,20 +727,20 @@ namespace GraphicUserInterface
                 if (busSach.deleteSach(row.Cells[0].Value.ToString()))
                 {
                     ResetControlSach();
-                    lblThongBaoSach.Text = "Xóa thành công !";                                  
+                    lblThongBaoSach.Text = "Xóa thành công !";
                 }
                 else
                 {
                     ResetControlSach();
                     lblThongBaoSach.Text = "Xóa không thành công !";
                 }
-                
+
                 btnXoaSach.Text = "Xóa";
                 btnXoaSach.Font = new Font("Sitka Display", 12, FontStyle.Bold);
 
                 dgvSach.DataSource = busSach.getSach();
                 dgvSach_RenameColumn();
-            }            
+            }
         }
 
         //=========== Huy tac vu Sach ==========//
@@ -809,7 +811,7 @@ namespace GraphicUserInterface
             }
             else if (cboTimKiemSach.SelectedItem.ToString() == "Tác giả")
             {
-                condition = string.Format("A.HoTen like N'%{0}%'", txtTimKiemSach.Text.ToString());
+                condition = string.Format("A.TenTacGia like N'%{0}%'", txtTimKiemSach.Text.ToString());
                 dgvSach.DataSource = busSach.getSach(condition);
             }
             else if (cboTimKiemSach.SelectedItem.ToString() == "Năm xuất bản")
@@ -836,10 +838,10 @@ namespace GraphicUserInterface
             {
                 condition = string.Format("A.TenTheLoai like N'%{0}%'", txtTimKiemSach.Text.ToString());
                 dgvSach.DataSource = busSach.getSach(condition);
-            }          
-            
+            }
+
             dgvSach_RenameColumn();
-        } 
+        }
 
 
         //============= Loc Sach ============//
@@ -879,7 +881,7 @@ namespace GraphicUserInterface
 
             if (chkTacGia.Checked)
             {
-                list.Add("A.HoTen");
+                list.Add("A.TenTacGia");
             }
             if (chkNXB.Checked)
             {
@@ -904,7 +906,7 @@ namespace GraphicUserInterface
 
 
         // =============== DataGridView Sach ===========//
-        
+
 
         private void dgvSach_RenameColumn()
         {
@@ -914,8 +916,8 @@ namespace GraphicUserInterface
                     dgvSach.Columns["MaSach"].HeaderText = "Mã sách";
                 else if (col == dgvSach.Columns["TenSach"])
                     dgvSach.Columns["TenSach"].HeaderText = "Tên sách";
-                else if (col == dgvSach.Columns["HoTen"])
-                    dgvSach.Columns["HoTen"].HeaderText = "Tác giả";
+                else if (col == dgvSach.Columns["TenTacGia"])
+                    dgvSach.Columns["TenTacGia"].HeaderText = "Tác giả";
                 else if (col == dgvSach.Columns["NamXB"])
                     dgvSach.Columns["NamXB"].HeaderText = "Năm xuất bản";
                 else if (col == dgvSach.Columns["TenNXB"])
@@ -936,207 +938,266 @@ namespace GraphicUserInterface
         }
 
 
-        //============= Auto Complete TextBox ==================//
-        private void cboTenSach_TextChanged(object sender, EventArgs e)
+        private void dgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (cboTenSach.Enabled == false)
+            ResetControlSach();
+
+            try
             {
-                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
-
-                cboTenSach.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                cboTenSach.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-                foreach (string tenSach in cboTenSach.Items)
-                {
-                    auto.Add(tenSach);
-                }                              
-
-                cboTenSach.AutoCompleteCustomSource = auto;
+                cboTenSach.Text = dgvSach.Rows[e.RowIndex].Cells["TenSach"].Value.ToString();
+                cboTacGia.Text = dgvSach.Rows[e.RowIndex].Cells["TenTacGia"].Value.ToString();
+                cboNamXB.Text = dgvSach.Rows[e.RowIndex].Cells["NamXB"].Value.ToString();
+                cboNXB.Text = dgvSach.Rows[e.RowIndex].Cells["TenNXB"].Value.ToString();
+                cboNhaPhatHanh.Text = dgvSach.Rows[e.RowIndex].Cells["TenNhaPhatHanh"].Value.ToString();
+                cboChuDe.Text = dgvSach.Rows[e.RowIndex].Cells["TenChuDe"].Value.ToString();
+                cboTheLoai.Text = dgvSach.Rows[e.RowIndex].Cells["TenTheLoai"].Value.ToString();
+                txtGiaTri.Text = dgvSach.Rows[e.RowIndex].Cells["GiaTri"].Value.ToString();
+                txtSoLuong.Text = dgvSach.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
+                dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.Rows[e.RowIndex].Cells["NgayNhap"].Value.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
-
-        private void cboTacGia_TextChanged(object sender, EventArgs e)
-        {
-            if(cboTacGia.Enabled == false)
-            {
-                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
-
-                cboTacGia.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                cboTacGia.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-                List<string> sourceTacGia = new List<string>();
-                sourceTacGia = busSach.autoCompleteTextBox("HoTen", "TacGia");
-
-                foreach (string tenTG in sourceTacGia)
-                {
-                    auto.Add(tenTG);
-                }
-
-                cboTacGia.AutoCompleteCustomSource = auto;
-            }
-        }
-        
-        private void cboNamXB_TextChanged(object sender, EventArgs e)
-        {
-            if (cboNamXB.Enabled == false)
-            {
-                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
-
-                cboNXB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                cboNXB.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-                List<string> sourceNamXB = new List<string>();
-                sourceNamXB = busSach.autoCompleteTextBox("NamXB", "Sach");
-
-                foreach (string NamXB in sourceNamXB)
-                {
-                    auto.Add(NamXB);
-                }
-
-                cboNhaPhatHanh.AutoCompleteCustomSource = auto;
-            }
-        }
-
-        private void cboNXB_TextChanged(object sender, EventArgs e)
-        {
-            if(cboNXB.Enabled == false)
-            {
-                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
-
-                cboNXB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                cboNXB.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-                List<string> sourceNXB = new List<string>();
-                sourceNXB = busSach.autoCompleteTextBox("TenNXB", "NXB");
-
-                foreach (string tenNXB in sourceNXB)
-                {
-                    auto.Add(tenNXB);
-                }
-
-                cboNhaPhatHanh.AutoCompleteCustomSource = auto;
-            }
-        }
-
-        private void cboNhaPhatHanh_TextChanged(object sender, EventArgs e)
-        {
-            if(cboNhaPhatHanh.Enabled == false)
-            {
-                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
-
-                cboNhaPhatHanh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                cboNhaPhatHanh.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-                List<string> sourceNPH = new List<string>();
-                sourceNPH = busSach.autoCompleteTextBox("TenNhaPhatHanh", "NhaPhatHanh");
-
-                foreach (string tenNPH in sourceNPH)
-                {
-                    auto.Add(tenNPH);
-                }
-
-                cboNhaPhatHanh.AutoCompleteCustomSource = auto;
-            }
-        }
-
-        private void cboChuDe_TextChanged(object sender, EventArgs e)
-        {
-            if(cboChuDe.Enabled == false)
-            {
-                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
-
-                cboChuDe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                cboChuDe.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-                List<string> sourceChuDe = new List<string>();
-                sourceChuDe = busSach.autoCompleteTextBox("TenChuDe", "ChuDe");
-
-                foreach (string tenCD in sourceChuDe)
-                {
-                    auto.Add(tenCD);
-                }
-
-                cboChuDe.AutoCompleteCustomSource = auto;
-            }
-        }
-
-        private void cboTheLoai_TextChanged(object sender, EventArgs e)
-        {
-            if(cboTheLoai.Enabled == false)
-            {
-                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
-
-                cboTheLoai.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                cboTheLoai.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-                List<string> sourceTheLoai = new List<string>();
-                sourceTheLoai = busSach.autoCompleteTextBox("TenTheLoai", "TheLoai");
-
-                foreach (string tenTL in sourceTheLoai)
-                {
-                    auto.Add(tenTL);
-                }
-
-                cboTheLoai.AutoCompleteCustomSource = auto;
-            }
-        }
-
+        //============ ComboBox =============//
         private void GetDataComboBox(ComboBox name, string columnName, string tableName)
         {
             List<string> comboBoxSource = new List<string>();
             comboBoxSource = busSach.getDataComboBox(columnName, tableName);
 
-            foreach (string bookName in comboBoxSource)
+            foreach (string source in comboBoxSource)
             {
-                name.Items.Add(bookName);
+                name.Items.Add(source);
+            }
+        }
+
+        // ========= Them Du lieu chua co ==========//
+             
+        // Them Tac gia
+        private void btnThemTacGia_Click(object sender, EventArgs e)
+        {
+            if (busSach.insertTable(cboTacGia.Text, "@TenTacGia", "ThemTacGia"))
+            {
+                cboTacGia.Items.Clear();
+                GetDataComboBox(cboTacGia, "TenTacGia", "TacGia");
+            }
+        }
+
+        private void cboTacGia_Leave(object sender, EventArgs e)
+        {
+            int count = 0;
+
+            foreach (string tenTG in cboTacGia.Items)
+            {
+                if (tenTG == cboTacGia.Text)
+                    count++;
             }
 
-            if (name.Items.Count > 1)
-                name.Items.Add("Khác...");
+            if (count == 0)
+                btnThemTacGia.Visible = true;
+            else
+                btnThemTacGia.Visible = false;
         }
 
-        // ============= Thay doi Item Combo Box ==========// 
-        private void cboTenSach_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboTacGia_KeyDown(object sender, KeyEventArgs e)
         {
-            if (cboTenSach.SelectedItem.ToString() == "Khác...")
-                lblThemSach.Visible = true;
+            if (e.KeyCode == Keys.Enter)
+            {
+                int count = 0;
+
+                foreach (string tenTG in cboTacGia.Items)
+                {
+                    if (tenTG == cboTacGia.Text)
+                        count++;
+                }
+
+                if (count == 0)
+                    btnThemTacGia.Visible = true;
+                else
+                    btnThemTacGia.Visible = false;
+            }
+        }
+        // Them NXB
+        private void btnThemNXB_Click(object sender, EventArgs e)
+        {
+            if (busSach.insertTable(cboNXB.Text, "@TenNXB", "ThemNXB"))
+            {
+                cboNXB.Items.Clear();
+                GetDataComboBox(cboNXB, "TenNXB", "NXB");
+            }
         }
 
-        private void cboTacGia_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboNXB_Leave(object sender, EventArgs e)
         {
-            if (cboTacGia.SelectedItem.ToString() == "Khác...")
-                lblThemTacGia.Visible = true;
+            int count = 0;
+
+            foreach (string tenNXB in cboNXB.Items)
+            {
+                if (tenNXB == cboNXB.Text)
+                    count++;
+            }
+
+            if (count == 0)
+                btnThemNXB.Visible = true;
+            else
+                btnThemNXB.Visible = false;
         }
 
-        private void cboNamXB_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboNXB_KeyDown(object sender, KeyEventArgs e)
         {
-            if (cboNamXB.SelectedItem.ToString() == "Khác...")
-                lblThemNamXB.Visible = true;
+            if (e.KeyCode == Keys.Enter)
+            {
+                int count = 0;
+
+                foreach (string tenNXB in cboNXB.Items)
+                {
+                    if (tenNXB == cboNXB.Text)
+                        count++;
+                }
+
+                if (count == 0)
+                    btnThemNXB.Visible = true;
+                else
+                    btnThemNXB.Visible = false;
+            }
+        }
+
+        // Them Nha phat hanh
+        private void btnThemNhaPhatHanh_Click(object sender, EventArgs e)
+        {
+            if (busSach.insertTable(cboNhaPhatHanh.Text, "@TenNPH", "ThemNhaPhatHanh"))
+            {
+                cboTenSach.Items.Clear();
+                GetDataComboBox(cboNhaPhatHanh, "TenNhaPhatHanh", "NhaPhatHanh");
+            }
+        }
+
+        private void cboNhaPhatHanh_Leave(object sender, EventArgs e)
+        {
+            int count = 0;
+
+            foreach (string tenNPH in cboNhaPhatHanh.Items)
+            {
+                if (tenNPH == cboNhaPhatHanh.Text)
+                    count++;
+            }
+
+            if (count == 0)
+                btnThemNhaPhatHanh.Visible = true;
+            else
+                btnThemNhaPhatHanh.Visible = false;
+        }
+
+        private void cboNhaPhatHanh_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                int count = 0;
+
+                foreach (string tenNPH in cboNhaPhatHanh.Items)
+                {
+                    if (tenNPH == cboNhaPhatHanh.Text)
+                        count++;
+                }
+
+                if (count == 0)
+                    btnThemNhaPhatHanh.Visible = true;
+                else
+                    btnThemNhaPhatHanh.Visible = false;
+            }
+        }
+
+        // Them Chu de
+        private void btnThemChuDe_Click(object sender, EventArgs e)
+        {
+            if (busSach.insertTable(cboChuDe.Text, "@TenCD", "ThemChuDe"))
+            {
+                cboChuDe.Items.Clear();
+                GetDataComboBox(cboChuDe, "TenChuDe", "ChuDe");
+            }
+        }
+
+        private void cboChuDe_Leave(object sender, EventArgs e)
+        {
+            int count = 0;
+
+            foreach (string tenCD in cboChuDe.Items)
+            {
+                if (tenCD == cboChuDe.Text)
+                    count++;
+            }
+
+            if (count == 0)
+                btnThemChuDe.Visible = true;
+            else
+                btnThemChuDe.Visible = false;
+        }
+
+        private void cboChuDe_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                int count = 0;
+
+                foreach (string tenCD in cboChuDe.Items)
+                {
+                    if (tenCD == cboChuDe.Text)
+                        count++;
+                }
+
+                if (count == 0)
+                    btnThemChuDe.Visible = true;
+                else
+                    btnThemChuDe.Visible = false;
+            }
+        }
+
+        // Them The loai
+        private void btnThemTheLoai_Click(object sender, EventArgs e)
+        {
+            if (busSach.insertTable(cboTheLoai.Text, "@TenTL", "ThemTheLoai"))
+            {
+                cboTheLoai.Items.Clear();
+                GetDataComboBox(cboTheLoai, "TenTheLoai", "TheLoai");
+            }
         }
         
-        private void cboNXB_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboTheLoai_Leave(object sender, EventArgs e)
         {
-            if (cboNXB.SelectedItem.ToString() == "Khác...")
-                lblThemNXB.Visible = true;
+            int count = 0;
+
+            foreach (string tenTL in cboTheLoai.Items)
+            {
+                if (tenTL == cboTheLoai.Text)
+                    count++;
+            }
+
+            if (count == 0)
+                btnThemTheLoai.Visible = true;
+            else
+                btnThemTheLoai.Visible = false;
         }
 
-        private void cboNhaPhatHanh_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboTheLoai_KeyDown(object sender, KeyEventArgs e)
         {
-            if (cboNhaPhatHanh.SelectedItem.ToString() == "Khác...")
-                lblThemNhaPhatHanh.Visible = true;
+            if (e.KeyCode == Keys.Enter)
+            {
+                int count = 0;
+
+                foreach (string tenTL in cboTheLoai.Items)
+                {
+                    if (tenTL == cboTheLoai.Text)
+                        count++;
+                }
+
+                if (count == 0)
+                    btnThemTheLoai.Visible = true;
+                else
+                    btnThemTheLoai.Visible = false;
+            }
         }
 
-        private void cboChuDe_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboChuDe.SelectedItem.ToString() == "Khác...")
-                lblThemChuDe.Visible = true;
-        }
-
-        private void cboTheLoai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboTheLoai.SelectedItem.ToString() == "Khác...")
-                lblThemTheLoai.Visible = true;
-        }
         // =================== Xu ly event ngoai ================//
 
 
@@ -1185,7 +1246,7 @@ namespace GraphicUserInterface
 
         private void btnCMSLapPM_Click(object sender, EventArgs e)
         {
-            if(this.btnCMSLapPM.Text == "Lập Phiếu Mượn")
+            if (this.btnCMSLapPM.Text == "Lập Phiếu Mượn")
             {
                 if (this.cbCMSNhapMaDocGia.Text != "" && this.lblCMSTenDocGia.Text != "Độc giả")
                 {
@@ -1220,9 +1281,9 @@ namespace GraphicUserInterface
                     this.lblCMSThongBao.Text = "Chưa nhập mã độc giả";
                 }
             }
-            else if(this.btnCMSLapPM.Text == "Xác Nhận")
+            else if (this.btnCMSLapPM.Text == "Xác Nhận")
             {
-                if(dgvPMSach.Rows.Count > 1)
+                if (dgvPMSach.Rows.Count > 1)
                 {
                     BUS_PhieuMuon busPhieuMuon = new BUS_PhieuMuon();
 
@@ -1232,12 +1293,12 @@ namespace GraphicUserInterface
                     {
                         prvMaPhieuMuon = dt.Rows[dt.Rows.Count - 1]["MaPhieuMuon"].ToString();
                     }
-                    if(busPhieuMuon.insertPhieuMuon(prvMaPhieuMuon, dtoThuThu.MaThuThu, cbCMSNhapMaDocGia.Text.Substring(0, 5), DateTime.Today, dgvPMSach.Rows.Count - 1))
+                    if (busPhieuMuon.insertPhieuMuon(prvMaPhieuMuon, dtoThuThu.MaThuThu, cbCMSNhapMaDocGia.Text.Substring(0, 5), DateTime.Today, dgvPMSach.Rows.Count - 1))
                     {
                         lblCMSThongBao.Text = "Thêm phiếu mượn thành công";
                     }
                     dt = busPhieuMuon.getPhieuMuon();
-                    
+
                     for (int i = 0; i < dgvPMSach.Rows.Count - 1; i++)
                     {
                         BUS_CTPM busCTPM = new BUS_CTPM();
@@ -1257,7 +1318,7 @@ namespace GraphicUserInterface
                     this.lblCMSThongBao.Text = "Chưa chọn sách";
                 }
             }
-            
+
         }
 
         //Xu Ly phieu muon
@@ -1274,13 +1335,13 @@ namespace GraphicUserInterface
                 cbPMNhapMaSach.Items.Add(dt.Rows[i][0].ToString() + " - " + dt.Rows[i][1].ToString());
             }
         }
-      
-        
+
+
         private void cbPMNhapMaSach_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if(dgvPMSach.Rows.Count <= 3)
+                if (dgvPMSach.Rows.Count <= 3)
                 {
                     string condition = string.Format("MaSach = '{0}'", cbPMNhapMaSach.Text.Substring(0, 5));
                     List<string> listProp = new List<string>();
@@ -1296,19 +1357,19 @@ namespace GraphicUserInterface
                 {
 
                 }
-                
+
             }
         }
 
         private void dgvPMSach_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Delete)
+            if (e.KeyCode == Keys.Delete)
             {
-                foreach(DataGridViewRow row in dgvPMSach.SelectedRows)
+                foreach (DataGridViewRow row in dgvPMSach.SelectedRows)
                 {
                     dgvPMSach.Rows.Remove(row);
                 }
-                
+
             }
         }
 
@@ -1316,33 +1377,7 @@ namespace GraphicUserInterface
         {
             this.pnlCMSDSPM.BringToFront();
             this.btnCMSLapPM.Text = "Lập Phiếu Mượn";
-        }
-
-        private void dgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            ResetControlSach();
-
-            try
-            {
-                cboTenSach.Text = dgvSach.Rows[e.RowIndex].Cells["TenSach"].Value.ToString();
-                cboTacGia.Text = dgvSach.Rows[e.RowIndex].Cells["HoTen"].Value.ToString();
-                cboNamXB.Text = dgvSach.Rows[e.RowIndex].Cells["NamXB"].Value.ToString();
-                cboNXB.Text = dgvSach.Rows[e.RowIndex].Cells["TenNXB"].Value.ToString();
-                cboNhaPhatHanh.Text = dgvSach.Rows[e.RowIndex].Cells["TenNhaPhatHanh"].Value.ToString();
-                cboChuDe.Text = dgvSach.Rows[e.RowIndex].Cells["TenChuDe"].Value.ToString();
-                cboTheLoai.Text = dgvSach.Rows[e.RowIndex].Cells["TenTheLoai"].Value.ToString();
-                txtGiaTri.Text = dgvSach.Rows[e.RowIndex].Cells["GiaTri"].Value.ToString();
-                txtSoLuong.Text = dgvSach.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
-                dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.Rows[e.RowIndex].Cells["NgayNhap"].Value.ToString());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
-        }
-
+        }          
+               
     }
-
-
 }
-

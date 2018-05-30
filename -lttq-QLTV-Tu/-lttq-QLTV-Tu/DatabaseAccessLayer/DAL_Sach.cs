@@ -137,6 +137,7 @@ namespace DatabaseAccessLayer
             }
         }
 
+        // Dung de Loc sach
         public DataTable Filt(List<string> listCondition)
         {
             try
@@ -305,46 +306,6 @@ namespace DatabaseAccessLayer
         }
 
 
-        public List<string> AutoCompleteTextBox(string columnName, string tableName)
-        {
-            try
-            {
-                cn.Open();
-
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                SqlCommand command = new SqlCommand("AutoCompleteText", cn);
-                command.CommandType = CommandType.StoredProcedure;
-                //adapter.SelectCommand = command;
-
-                command.Parameters.AddWithValue("@TenCot", columnName);
-                command.Parameters.AddWithValue("@TenBang", tableName);
-
-                command.ExecuteNonQuery();
-
-                SqlDataReader reader = command.ExecuteReader();
-                List<string> completeStringSource = new List<string>();
-
-                if (reader != null)
-                {
-                    while (reader.Read())
-                    {
-                        string col = string.Format("{0}", columnName);
-                        completeStringSource.Add(reader[col].ToString());
-                    }
-                }
-                else
-                    completeStringSource.Add("");
-                
-                cn.Close();
-
-                return completeStringSource;
-            }
-            catch(Exception)
-            {
-                return null;
-            }
-        }
-
         public List<string> GetDataComboBox(string columnName, string tableName)
         {
             try
@@ -385,5 +346,30 @@ namespace DatabaseAccessLayer
             }
         }
 
+        public bool Insert(string parameterValue, string parameterName, string procedureName)
+        {
+            try
+            {
+                cn.Open();
+
+                SqlCommand cm = new SqlCommand(procedureName, cn);
+                cm.CommandType = CommandType.StoredProcedure;
+
+                cm.Parameters.AddWithValue(parameterName, parameterValue);
+
+                if (cm.ExecuteNonQuery() > 0)
+                    return true;
+            }
+            catch(Exception)
+            {
+                
+            }
+            finally
+            {
+                cn.Close();
+            }
+             
+            return false;
+        }
     }
 }

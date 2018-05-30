@@ -49,7 +49,7 @@ Create Table Sach
 Create Table TacGia
 (
 	MaTacGia char(5) Primary key,
-	HoTen nvarchar(100)
+	TenTacGia nvarchar(100)
 )
 
 Create Table NXB
@@ -203,7 +203,7 @@ Insert into ThuThu Values
 
 Create Procedure SuaDocGia
 	@MaDocGia char(5),
-	@HoTen nvarchar(20),
+	@TenDocGia nvarchar(20),
 	@DiaChi nvarchar(50),
 	@SDT varchar(15),
 	@CMND varchar(15),
@@ -236,7 +236,7 @@ Go
 Create Procedure GetFullSach
 As
 Begin
-	Select MaSach, TenSach, HoTen, NamXB , TenNXB, TenNhaPhatHanh, NgayNhap, TenChuDe, TenTheLoai, GiaTri, SoLuong 
+	Select MaSach, TenSach, TenTacGia, NamXB , TenNXB, TenNhaPhatHanh, NgayNhap, TenChuDe, TenTheLoai, GiaTri, SoLuong 
 	From Sach, TacGia, NXB, NhaPhatHanh, ChuDe, TheLoai
 	Where (Sach.MaTacGia = TacGia.MaTacGia) and (Sach.MaNXB = NXB.MaNXB) and (Sach.MaNhaPhatHanh = NhaPhatHanh.MaNhaPhatHanh)
 		  and (Sach.MaChuDe = ChuDe.MaChuDe) and (Sach.MaTheLoai = TheLoai.MaTheLoai)
@@ -252,7 +252,7 @@ Begin
 	declare @Sql nvarchar(1000)
 	
 	Set @Sql = 'Select * From
-	(Select MaSach, TenSach, HoTen, NamXB , TenNXB, TenNhaPhatHanh, NgayNhap, TenChuDe, TenTheLoai, GiaTri, SoLuong 
+	(Select MaSach, TenSach, TenTacGia, NamXB , TenNXB, TenNhaPhatHanh, NgayNhap, TenChuDe, TenTheLoai, GiaTri, SoLuong 
 	From Sach, TacGia, NXB, NhaPhatHanh, ChuDe, TheLoai
 	Where (Sach.MaTacGia = TacGia.MaTacGia) and (Sach.MaNXB = NXB.MaNXB) and (Sach.MaNhaPhatHanh = NhaPhatHanh.MaNhaPhatHanh)
 		  and (Sach.MaChuDe = ChuDe.MaChuDe) and (Sach.MaTheLoai = TheLoai.MaTheLoai)) as A
@@ -270,7 +270,7 @@ As
 Begin
 	Declare @Sql varchar(1000)	
 	Set @Sql =  'Select ' + @DieuKienLoc + ' From
-				(Select MaSach, TenSach, HoTen, TenNXB, TenNhaPhatHanh, TenChuDe, TenTheLoai From Sach, TacGia, NXB, NhaPhatHanh, ChuDe, TheLoai
+				(Select MaSach, TenSach, TenTacGia, TenNXB, TenNhaPhatHanh, TenChuDe, TenTheLoai From Sach, TacGia, NXB, NhaPhatHanh, ChuDe, TheLoai
 				Where (Sach.MaTacGia = TacGia.MaTacGia) and (Sach.MaNXB = NXB.MaNXB) and (Sach.MaNhaPhatHanh = NhaPhatHanh.MaNhaPhatHanh)
 				and (Sach.MaChuDe = ChuDe.MaChuDe) and (Sach.MaTheLoai = TheLoai.MaTheLoai)) as A'
 	Exec(@Sql)
@@ -312,38 +312,38 @@ Create Procedure ThemSach
 As 
 Begin 
 
-	If Not exists (Select Sach.TenSach, TacGia.HoTen, NXB.TenNXB, NhaPhatHanh.TenNhaPhatHanh, Sach.NamXB
+	If Not exists (Select Sach.TenSach, TacGia.TenTacGia, NXB.TenNXB, NhaPhatHanh.TenNhaPhatHanh, Sach.NamXB
 				   From Sach Inner Join TacGia On Sach.MaTacGia = TacGia.MaTacGia
 						Inner Join NXB On Sach.MaNXB = NXB.MaNXB
 						Inner Join NhaPhatHanh On Sach.MaNhaPhatHanh = NhaPhatHanh.MaNhaPhatHanh
-				   Where Sach.TenSach = @TenSach and TacGia.HoTen = @TenTacGia and NXB.TenNXB = @TenNXB
+				   Where Sach.TenSach = @TenSach and TacGia.TenTacGia = @TenTacGia and NXB.TenNXB = @TenNXB
 						 and NhaPhatHanh.TenNhaPhatHanh = @TenNhaPhatHanh and Sach.NamXB = @NamXB)
 	Begin
 		Declare @MaSach varchar(5)
 		Select @MaSach = dbo.AutoID_Sach()				
 			
-		If @TenTacGia Not in (Select HoTen From TacGia)
-			Exec ThemTacGia @TenTacGia
+		--If @TenTacGia Not in (Select HoTen From TacGia)
+		--	Exec ThemTacGia @TenTacGia
 		Declare @MaTacGia varchar(5)
-		Select @MaTacGia = (Select MaTacGia From TacGia Where HoTen = @TenTacGia)
+		Select @MaTacGia = (Select MaTacGia From TacGia Where TenTacGia = @TenTacGia)
 		
-		If @TenNXB Not in (Select TenNXB From NXB)
-			Exec ThemNXB @TenNXB
+		--If @TenNXB Not in (Select TenNXB From NXB)
+		--	Exec ThemNXB @TenNXB
 		Declare @MaNXB varchar(5)
 		Select @MaNXB = (Select MaNXB From NXB Where TenNXB = @TenNXB)
 		
-		If @TenNhaPhatHanh Not in (Select TenNhaPhatHanh From NhaPhatHanh)
-			Exec ThemNhaPhatHanh @TenNhaPhatHanh
+		--If @TenNhaPhatHanh Not in (Select TenNhaPhatHanh From NhaPhatHanh)
+		--	Exec ThemNhaPhatHanh @TenNhaPhatHanh
 		Declare @MaNhaPhatHanh varchar(5)
 		Select @MaNhaPhatHanh = (Select MaNhaPhatHanh From NhaPhatHanh Where TenNhaPhatHanh = @TenNhaPhatHanh)
 		
-		If @TenChuDe Not in (Select TenChuDe From ChuDe)
-			Exec ThemChuDe @TenChuDe
+		--If @TenChuDe Not in (Select TenChuDe From ChuDe)
+		--	Exec ThemChuDe @TenChuDe
 		Declare @MaChuDe varchar(5)
 		Select @MaChuDe = (Select MaChuDe From ChuDe Where TenChuDe = @TenChuDe)
 		
-		If @TenTheLoai Not in (Select TenTheLoai From TheLoai)
-			Exec ThemTheLoai @TenTheLoai
+		--If @TenTheLoai Not in (Select TenTheLoai From TheLoai)
+		--	Exec ThemTheLoai @TenTheLoai
 		Declare @MaTheLoai varchar(5)
 		Select @MaTheLoai = (Select MaTheLoai From TheLoai Where TenTheLoai = @TenTheLoai)
 		
@@ -369,38 +369,38 @@ Create Procedure CapNhatSach
 	@SoLuong int
 As
 Begin
-	If @TenTacGia Not in (Select HoTen From TacGia)
-	Begin
-		Exec ThemTacGia @TenTacGia
-	End
+	--If @TenTacGia Not in (Select HoTen From TacGia)
+	--Begin
+	--	Exec ThemTacGia @TenTacGia
+	--End
 	Declare @MaTacGia varchar(5)
-	Select @MaTacGia = (Select MaTacGia From TacGia Where HoTen = @TenTacGia)
+	Select @MaTacGia = (Select MaTacGia From TacGia Where TenTacGia = @TenTacGia)
 
-	If @TenNXB Not in (Select TenNXB From NXB)
-	Begin
-		Exec ThemNXB @TenNXB
-	End
+	--If @TenNXB Not in (Select TenNXB From NXB)
+	--Begin
+	--	Exec ThemNXB @TenNXB
+	--End
 	Declare @MaNXB varchar(5)
 	Select @MaNXB = (Select MaNXB From NXB Where TenNXB = @TenNXB)
 
-	If @TenNhaPhatHanh Not in (Select TenNhaPhatHanh From NhaPhatHanh)
-	Begin
-		Exec ThemNhaPhatHanh @TenNhaPhatHanh
-	End
+	--If @TenNhaPhatHanh Not in (Select TenNhaPhatHanh From NhaPhatHanh)
+	--Begin
+	--	Exec ThemNhaPhatHanh @TenNhaPhatHanh
+	--End
 	Declare @MaNhaPhatHanh varchar(5)
 	Select @MaNhaPhatHanh = (Select MaNhaPhatHanh From NhaPhatHanh Where TenNhaPhatHanh = @TenNhaPhatHanh)
 
-	If @TenChuDe Not in (Select TenChuDe From ChuDe)
-	Begin
-		Exec ThemChuDe @TenChuDe
-	End
+	--If @TenChuDe Not in (Select TenChuDe From ChuDe)
+	--Begin
+	--	Exec ThemChuDe @TenChuDe
+	--End
 	Declare @MaChuDe varchar(5)
 	Select @MaChuDe = (Select MaChuDe From ChuDe Where TenChuDe = @TenChuDe)
 
-	If @TenTheLoai Not in (Select TenTheLoai From TheLoai)
-	Begin
-		Exec ThemTheLoai @TenTheLoai
-	End
+	--If @TenTheLoai Not in (Select TenTheLoai From TheLoai)
+	--Begin
+	--	Exec ThemTheLoai @TenTheLoai
+	--End
 	Declare @MaTheLoai varchar(5)
 	Select @MaTheLoai = (Select MaTheLoai From TheLoai Where TenTheLoai = @TenTheLoai)
 
@@ -463,7 +463,7 @@ Create Procedure ThemTacGia
 	@TenTacGia nvarchar(100)
 As
 Begin
-	If @TenTacGia Not in (Select HoTen From TacGia)
+	If @TenTacGia Not in (Select TenTacGia From TacGia)
 	Begin
 		Declare @MaTacGia varchar(5)
 		Select @MaTacGia = dbo.AutoID_TG()
@@ -621,7 +621,7 @@ Go
 ---
 
 Create Procedure LayDuLieuComboBox
-@TenCot varchar(15),
+	@TenCot varchar(15),
 	@TenBang varchar(15)	
 As
 Begin
@@ -662,6 +662,3 @@ Begin
 	Values (@MaPhieuMuon, @MaSach)
 End
 Go
-
-
-
