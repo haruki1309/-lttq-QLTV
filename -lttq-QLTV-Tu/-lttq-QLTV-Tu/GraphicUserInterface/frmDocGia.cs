@@ -19,6 +19,24 @@ namespace GraphicUserInterface
     {
         BUS_DocGia busDG = new BUS_DocGia();
         BUS_Sach busSach = new BUS_Sach();
+        //LOADING ...................
+        private void tmrFrmMainLoad_Tick(object sender, EventArgs e)
+        {
+            this.Opacity *= 3;
+            if (this.Opacity == .100)
+            {
+                tmrFrmMainLoad.Stop();
+            }
+        }
+        private void LoadMainForm()
+        {
+            this.tmrFrmMainLoad.Start();
+        }
+
+
+
+
+
 
         //Thu thu quan ly hien tai
         DTO_ThuThu dtoThuThu = new DTO_ThuThu();
@@ -1377,7 +1395,8 @@ namespace GraphicUserInterface
         {
             this.pnlCMSDSPM.BringToFront();
             this.btnCMSLapPM.Text = "Lập Phiếu Mượn";
-        }          
-               
+        }
+
+        
     }
 }

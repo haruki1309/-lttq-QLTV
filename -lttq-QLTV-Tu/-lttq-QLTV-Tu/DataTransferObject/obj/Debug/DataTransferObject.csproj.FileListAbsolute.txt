@@ -28,3 +28,9 @@ F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DataTransferObjec
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DataTransferObject\obj\Debug\DataTransferObject.csproj.CoreCompileInputs.cache
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DataTransferObject\obj\Debug\DataTransferObject.dll
 F:\DoAnMonHoc\DoAn_LTTQ\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DataTransferObject\obj\Debug\DataTransferObject.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DataTransferObject\bin\Debug\DataTransferObject.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DataTransferObject\bin\Debug\DataTransferObject.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DataTransferObject\obj\Debug\DataTransferObject.csprojResolveAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DataTransferObject\obj\Debug\DataTransferObject.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DataTransferObject\obj\Debug\DataTransferObject.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DataTransferObject\obj\Debug\DataTransferObject.pdb

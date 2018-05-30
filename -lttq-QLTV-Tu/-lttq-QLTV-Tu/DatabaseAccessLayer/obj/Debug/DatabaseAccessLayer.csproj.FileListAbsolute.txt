@@ -80,3 +80,13 @@ C:\Users\VKiHT\Documents\GitHub\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseA
 C:\Users\VKiHT\Documents\GitHub\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csproj.CopyComplete
 C:\Users\VKiHT\Documents\GitHub\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.dll
 C:\Users\VKiHT\Documents\GitHub\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\bin\Debug\DatabaseAccessLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\bin\Debug\DatabaseAccessLayer.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\bin\Debug\DataTransferObject.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\bin\Debug\DataTransferObject.pdb
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csprojResolveAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.Properties.Resource1.resources
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csproj.GenerateResource.Cache
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.dll
+F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\DatabaseAccessLayer\obj\Debug\DatabaseAccessLayer.pdb
