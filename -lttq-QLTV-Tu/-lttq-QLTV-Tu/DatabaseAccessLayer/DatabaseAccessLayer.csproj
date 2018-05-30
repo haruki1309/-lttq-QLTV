@@ -43,10 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_CTPM.cs" />
+    <Compile Include="DAL_CTPT.cs" />
     <Compile Include="DAL_DocGia.cs" />
     <Compile Include="DAL_PhieuMuon.cs" />
+    <Compile Include="DAL_PhieuTra.cs" />
     <Compile Include="DAL_Sach.cs" />
     <Compile Include="DAL_ThuThu.cs" />
+    <Compile Include="DAL_TinhTrang.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

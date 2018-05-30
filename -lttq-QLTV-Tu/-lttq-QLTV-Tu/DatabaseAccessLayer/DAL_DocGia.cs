@@ -57,7 +57,7 @@ namespace DatabaseAccessLayer
             try
             {
                 //string SQL = string.Format("select {0} from DocGia", listProperties);
-                string sql = "select " + listProperties[0];
+                string sql = "select distinct " + listProperties[0];
                 for(int i = 1; i < listProperties.Count; i++)
                 {
                     sql += (", " + listProperties[i]);

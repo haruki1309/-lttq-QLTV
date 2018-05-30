@@ -91,9 +91,7 @@ namespace GraphicUserInterface
             //Khoi tao du lieu cho Thu Thu da dang nhap
             this.loadDataForThuThu();
 
-            //khoi tao du lieu cho tab Phieu Muon
-            this.loadDataForCBMaDocGia();
-            this.loadDataForCBMaSach();
+            
 
         }
 
@@ -1228,19 +1226,41 @@ namespace GraphicUserInterface
         {
             this.pnltabChoMuonSach.BringToFront();
             this.dgvCMSDSPhieuMuon.DataSource = busPhieuMuon.getPhieuMuon();
+
+            Button sentBtn = (Button)sender;
+
+            //khoi tao du lieu cho tab Phieu Muon
+            this.loadDataForCBMaDocGia(sentBtn.Text);
+            this.loadDataForCBMaSach();
         }
 
-        private void loadDataForCBMaDocGia()
+        private void loadDataForCBMaDocGia(string nameBtn)
         {
             List<string> column = new List<string>();
             column.Add("MaDocGia");
             column.Add("HoTen");
             DataTable dt = new DataTable();
-            dt = busDG.getDocGia(column);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            
+
+            if(nameBtn == "Cho Mượn Sách")
             {
-                cbCMSNhapMaDocGia.Items.Add(dt.Rows[i][0].ToString() + " - " + dt.Rows[i][1].ToString());
+                dt = busDG.getDocGia(column);
+                cboNTSNhapMaDocGia.Items.Clear();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    cbCMSNhapMaDocGia.Items.Add(dt.Rows[i][0].ToString() + " - " + dt.Rows[i][1].ToString());
+                }
             }
+            else if (nameBtn == "Nhận Trả Sách")
+            {
+                dt = busDG.getDocGia(column);
+                cbCMSNhapMaDocGia.Items.Clear();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    cboNTSNhapMaDocGia.Items.Add(dt.Rows[i][0].ToString() + " - " + dt.Rows[i][1].ToString());
+                }
+            }
+
         }
 
         private void cbCMSNhapMaDocGia_KeyDown(object sender, KeyEventArgs e)
@@ -1330,6 +1350,7 @@ namespace GraphicUserInterface
                         busSach.updateSoluongSach(dt1.Rows[0]["MaSach"].ToString(), soLuong);
                     }
                     this.btnCMSLapPM.Text = "Lập Phiếu Mượn";
+                    dgvCMSSachDangMuon.DataSource = busDG.GetSachDangMuon(cbCMSNhapMaDocGia.Text.Substring(0, 5));
                 }
                 else
                 {
@@ -1397,6 +1418,211 @@ namespace GraphicUserInterface
             this.btnCMSLapPM.Text = "Lập Phiếu Mượn";
         }
 
-        
+
+        // ==========================================================================
+        //
+        // NHAN TRA SACH
+        //
+
+
+        BUS_PhieuTra busPhieuTra = new BUS_PhieuTra();
+
+        private void mainbtnNhanTraSach_Click(object sender, EventArgs e)
+        {
+            this.pnltabNhanTraSach.BringToFront();
+            this.dgvPTDanhSachPhieuTra.DataSource = busPhieuTra.getFullPhieuTra();
+
+            Button sentBtn = (Button)sender;
+            this.loadDataForCBMaDocGia(sentBtn.Text);
+
+            
+        }
+        private void PTloadDataForCBMaSach()
+        {
+            List<string> column = new List<string>();
+            column.Add("MaSach");
+            column.Add("TenSach");
+            DataTable dt = new DataTable();
+            
+            for (int i = 0; i < dgvNTSSachDangMuon.Rows.Count - 1; i++)
+            {
+                string condition = string.Format("MaSach = '{0}'", dgvNTSSachDangMuon.Rows[i].Cells["MaSach"].Value.ToString());
+                dt = busSach.getSach(column, condition);
+                cboPTNhapMaSach.Items.Add(dt.Rows[0][0].ToString() + " - " + dt.Rows[0][1].ToString());
+            }          
+        }
+        private void PTLoadDataForCBTinhTrang()
+        {
+            DataTable dt = new DataTable();
+            BUS_TinhTrang busTinhTrang = new BUS_TinhTrang();
+            dt = busTinhTrang.GetTinhTrang();
+
+            for(int i = 0; i < dt.Rows.Count; i++)
+            {
+                cboPTTinhTrangSach.Items.Add(dt.Rows[i]["TenTinhTrang"].ToString());
+            }
+        }
+
+        private void cboNTSNhapMaDocGia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string tenDocGia = "";
+                string condition = string.Format("MaDocGia = '{0}'", cboNTSNhapMaDocGia.Text.Substring(0, 5));
+                List<string> listProp = new List<string>();
+                listProp.Add("HoTen");
+                DataTable dt = busDG.getDocGia(listProp, condition);
+                if (dt.Rows.Count != 0)
+                {
+                    tenDocGia = (" " + dt.Rows[0]["HoTen"].ToString());
+                    lblNTSTenDG.Text = "Độc giả: ";
+                    lblNTSTenDG.Text += tenDocGia;
+                }
+                dgvNTSSachDangMuon.DataSource = busDG.GetSachDangMuon(cboNTSNhapMaDocGia.Text.Substring(0, 5));
+            }
+        }
+
+        private void btnNTSLapPhieuTra_Click(object sender, EventArgs e)
+        {
+            if (this.btnNTSLapPhieuTra.Text == "Lập Phiếu Trả")
+            {
+                if (this.cboNTSNhapMaDocGia.Text != "" && this.lblNTSTenDG.Text != "Độc giả")
+                {
+                    PTloadDataForCBMaSach();
+                    PTLoadDataForCBTinhTrang();
+
+                    this.lblNTSThongBao.Text = "";
+                    string tenDocGia = "";
+                    string ngayTra = "";
+                    string tenThuThu = "";
+                    string condition = string.Format("MaDocGia = '{0}'", cboNTSNhapMaDocGia.Text.Substring(0, 5));
+                    List<string> listProp = new List<string>();
+                    listProp.Add("HoTen");
+                    DataTable dt = busDG.getDocGia(listProp, condition);
+                    if (dt.Rows.Count != 0)
+                    {
+                        tenDocGia = (" " + dt.Rows[0]["HoTen"].ToString());
+                        lblPTTenDocGia.Text = "Độc giả: ";
+                        lblPTTenDocGia.Text += tenDocGia;
+
+                        ngayTra = "  " + DateTime.Today.ToString().Substring(0, 10);
+                        lblPTNgayTra.Text = "Ngày Trả: ";
+                        lblPTNgayTra.Text += ngayTra;
+
+                        tenThuThu = " " + dtoThuThu.HoTen;
+                        lblPTThuThu.Text = "Thủ Thư: ";
+                        lblPTThuThu.Text += tenThuThu;
+                    }
+                    this.pnlPTPhieuTra.BringToFront();
+
+                    btnNTSLapPhieuTra.Text = "Xác Nhận";
+                }
+                else
+                {
+                    this.lblNTSThongBao.Text = "Chưa nhập mã độc giả";
+                }
+            }
+            else if (this.btnNTSLapPhieuTra.Text == "Xác Nhận")
+            {
+                if (dgvPTDSSach.Rows.Count > 1)
+                {
+                    BUS_PhieuTra busPhieuTra = new BUS_PhieuTra();
+
+                    DataTable dt = busPhieuTra.getPhieuTra();
+                    string prvMaPhieuTra = "null";
+                    if (dt.Rows.Count > 0)
+                    {
+                        prvMaPhieuTra = dt.Rows[dt.Rows.Count - 1]["MaPhieuTra"].ToString();
+                    }
+
+                    if (busPhieuTra.insertPhieuTra(prvMaPhieuTra, dtoThuThu.MaThuThu, cboNTSNhapMaDocGia.Text.Substring(0, 5), DateTime.Today, dgvPTDSSach.Rows.Count - 1))
+                    {
+                        lblNTSThongBao.Text = "Thêm phiếu trả thành công";
+                        
+                    }
+
+
+
+                    dt = busPhieuTra.getPhieuTra();
+
+                    for (int i = 0; i < dgvPTDSSach.Rows.Count - 1; i++)
+                    {
+                        BUS_CTPT busCTPT = new BUS_CTPT();
+                        string maSach = dgvPTDSSach.Rows[i].Cells[0].Value.ToString();
+                        string maPhieuTra = dt.Rows[dt.Rows.Count - 1]["MaPhieuTra"].ToString();
+
+                        DataTable dtTinhTrang = new DataTable();
+                        BUS_TinhTrang busTinhTrang = new BUS_TinhTrang();
+                        string conditionTinhTrang = string.Format(" TenTinhTrang = N'{0}'", dgvPTDSSach.Rows[i].Cells[1].Value.ToString());
+                        dt = busTinhTrang.GetTinhTrang(conditionTinhTrang);
+                        string maTinhTrang = dt.Rows[0][0].ToString();
+
+                        string conditionSach = string.Format("MaSach = '{0}'", maSach);
+
+
+                        busCTPT.insertCTPT(maPhieuTra, maSach, maTinhTrang);
+
+
+
+                        DataTable dtSach = busSach.getSach(conditionSach);
+                        if(dgvPTDSSach.Rows[i].Cells[1].Value.ToString() == "Tốt")
+                        {
+                            int soLuong = int.Parse(dtSach.Rows[0]["SoLuong"].ToString()) + 1;
+                            busSach.updateSoluongSach(dtSach.Rows[0]["MaSach"].ToString(), soLuong);
+                        }
+                        else if (dgvPTDSSach.Rows[i].Cells[1].Value.ToString() == "Hỏng nhẹ")
+                        {
+                            int soLuong = int.Parse(dtSach.Rows[0]["SoLuong"].ToString()) + 1;
+                            busSach.updateSoluongSach(dtSach.Rows[0]["MaSach"].ToString(), soLuong);
+                        }
+                        
+                    }
+                    this.dgvNTSSachDangMuon.DataSource = busDG.GetSachDangMuon(cboNTSNhapMaDocGia.Text.Substring(0, 5));
+                    this.btnNTSLapPhieuTra.Text = "Lập Phiếu Trả";
+                }
+                else
+                {
+                    this.lblCMSThongBao.Text = "Chưa chọn sách";
+                }
+            }
+
+
+        }
+
+        private void btnPTEsc_Click(object sender, EventArgs e)
+        {
+            this.pnlDSPhieuTra.BringToFront();
+            this.dgvPTDanhSachPhieuTra.DataSource = busPhieuTra.getFullPhieuTra();
+           
+        }
+
+        private void cboPTNhapMaSach_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                cboPTTinhTrangSach.Focus();
+            }
+        }
+
+        private void cboPTTinhTrangSach_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(cboPTTinhTrangSach.Text != "" && cboPTNhapMaSach.Text != "")
+                {
+                    if(dgvPTDSSach.Rows.Count <= cboPTNhapMaSach.Items.Count)
+                    {
+                        string maSach = cboPTNhapMaSach.Text.Substring(0, 5);
+                        string tenSach = cboPTNhapMaSach.Text.Substring(7);
+                        string tinhTrang = cboPTTinhTrangSach.Text;
+                        dgvPTDSSach.Rows.Add(maSach, tinhTrang, tenSach);
+                    }
+
+                    cboPTNhapMaSach.Focus();
+                    cboPTTinhTrangSach.Text = "";
+                    cboPTNhapMaSach.Text = "";
+                }
+            }
+        }
     }
 }

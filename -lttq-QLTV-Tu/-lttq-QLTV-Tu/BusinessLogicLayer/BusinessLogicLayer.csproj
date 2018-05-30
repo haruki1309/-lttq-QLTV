@@ -43,10 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS_CTPM.cs" />
+    <Compile Include="BUS_CTPT.cs" />
     <Compile Include="BUS_DocGia.cs" />
     <Compile Include="BUS_PhieuMuon.cs" />
+    <Compile Include="BUS_PhieuTra.cs" />
     <Compile Include="BUS_Sach.cs" />
     <Compile Include="BUS_ThuThu.cs" />
+    <Compile Include="BUS_TinhTrang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

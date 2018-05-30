@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    class DTO_PhieuTra
+    public class DTO_PhieuTra
     {
         //======== Properties =========//
         private string maPhieuTra;
         private string maDocGia;
         private string maThuThu;
-        private DateTime ngayMuon;
+        private DateTime ngayTra;
         private int soLuong;
 
         //======== Getter/Setter =======//
@@ -34,10 +34,10 @@ namespace DataTransferObject
             set { maThuThu = value; }
         }
 
-        public DateTime NgayMuon
+        public DateTime NgayTra
         {
-            get { return ngayMuon; }
-            set { ngayMuon = value; }
+            get { return ngayTra; }
+            set { ngayTra = value; }
         }
 
         public int SoLuong
@@ -51,12 +51,12 @@ namespace DataTransferObject
         { }
 
         // Phiếu trả có đầy đủ thông tin
-        public DTO_PhieuTra(string maPM, string maDG, string maTT, DateTime ngayMuon, int soLuong)
+        public DTO_PhieuTra(string maPM, string maDG, string maTT, DateTime ngayTra, int soLuong)
         {
             this.maPhieuTra = maPM;
             this.maDocGia = maDG;
             this.maThuThu = maTT;
-            this.ngayMuon = ngayMuon;
+            this.ngayTra = ngayTra;
             this.soLuong = soLuong;
         }
     }

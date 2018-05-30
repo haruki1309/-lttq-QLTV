@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    class DTO_CTPT
+    public class DTO_CTPT
     {
         //====== Properties ======//
         private string maPhieuTra;

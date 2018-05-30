@@ -662,3 +662,61 @@ Begin
 	Values (@MaPhieuMuon, @MaSach)
 End
 Go
+
+
+--procedure cho tab Nhan tra sach
+
+---------------------------------
+--lay full phieu tra:
+---------------------------------
+
+
+Create Procedure GetFullPhieuTra
+As
+Begin
+	Select pt.MaPhieuTra, dg.HoTen as 'TenDocGia', th.HoTen as 'TenThuThu', pt.NgayTra, pt.SoLuong
+	From (PhieuTra pt Inner Join DocGia dg ON pt.MaDocGia = dg.MaDocGia)
+					  Inner Join ThuThu th ON pt.MaThuThu = th.MaThuThu
+End
+
+
+
+---------------------------------
+--Them phieu tra:
+---------------------------------
+Create Procedure ThemPhieuTra
+	@MaPhieuTra char(5),
+	@MaDocGia char(50),
+	@MaThuThu char(5),
+	@NgayTra smalldatetime,
+	@SoLuong int
+	
+As
+Begin
+	Insert Into PhieuTra
+	Values (@MaPhieuTra, @MaDocGia, @MaThuThu,@NgayTra, @SoLuong)
+End
+Go
+---------------------------------
+--Them CTPT:
+---------------------------------
+Create Procedure ThemCTPT
+	@MaPhieuTra char(5),
+	@MaSach char(5),
+	@MaTinhTrang char(5)
+	
+As
+Begin
+	Insert Into CTPT
+	Values (@MaPhieuTra, @MaSach, @MaTinhTrang)
+End
+Go
+
+
+
+
+select * 
+from PhieuTra
+
+select * 
+from CTPT
