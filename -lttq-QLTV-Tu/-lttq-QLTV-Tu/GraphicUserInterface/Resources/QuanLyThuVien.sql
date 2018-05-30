@@ -662,3 +662,32 @@ Begin
 	Values (@MaPhieuMuon, @MaSach)
 End
 Go
+<<<<<<< HEAD
+=======
+
+---------------------------------
+--Lay Sach Dang Muon:
+---------------------------------
+
+Create Procedure LaySachDangMuon
+	@MaDocGia char(5)
+
+As
+Begin
+	select s.MaSach, s.TenSach
+	from Sach s
+	where s.MaSach in 
+	(
+		select ctpm.MaSach
+		from CTPM ctpm inner join PhieuMuon pm on ctpm.MaPhieuMuon = pm.MaPhieuMuon
+		where pm.MaDocGia = @MaDocGia and MaSach not in 
+		(
+			select ctpt.MaSach 
+			from CTPT ctpt inner join PhieuTra pt on ctpt.MaPhieuTra = pt.MaPhieuTra
+			where pt.MaDocGia = @MaDocGia
+		)
+	)
+End
+Go
+
+>>>>>>> fdff5c2891ace79a969028d419b7827d0e9672d1

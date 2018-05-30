@@ -20,6 +20,19 @@ namespace GraphicUserInterface
         BUS_DocGia busDG = new BUS_DocGia();
         BUS_Sach busSach = new BUS_Sach();
 
+        //LOADING ...................
+        private void tmrFrmMainLoad_Tick(object sender, EventArgs e)
+        {
+            this.Opacity *= 3;
+            if(this.Opacity == .100)
+            {
+                tmrFrmMainLoad.Stop();
+            }
+        }
+        private void LoadMainForm()
+        {
+            this.tmrFrmMainLoad.Start();
+        }
         //Thu thu quan ly hien tai
         DTO_ThuThu dtoThuThu = new DTO_ThuThu();
         //get - set cho thuoc tinh Thu Thu
@@ -76,6 +89,9 @@ namespace GraphicUserInterface
             //khoi tao du lieu cho tab Phieu Muon
             this.loadDataForCBMaDocGia();
             this.loadDataForCBMaSach();
+
+            //setup dgv PhieuMuon
+            this.setupDGVPhieuMuon();
 
         }
 
@@ -498,7 +514,31 @@ namespace GraphicUserInterface
             ResetControlSach();
         }
 
+        private void dgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ResetControlSach();
+            try
 
+            {
+                DoubleBuffered = true;
+                cboTenSach.Text = dgvSach.Rows[e.RowIndex].Cells["TenSach"].Value.ToString();
+                cboTacGia.Text = dgvSach.Rows[e.RowIndex].Cells["HoTen"].Value.ToString();
+                cboNamXB.Text = dgvSach.Rows[e.RowIndex].Cells["NamXB"].Value.ToString();
+                cboNXB.Text = dgvSach.Rows[e.RowIndex].Cells["TenNXB"].Value.ToString();
+                cboNhaPhatHanh.Text = dgvSach.Rows[e.RowIndex].Cells["TenNhaPhatHanh"].Value.ToString();
+                cboChuDe.Text = dgvSach.Rows[e.RowIndex].Cells["TenChuDe"].Value.ToString();
+                cboTheLoai.Text = dgvSach.Rows[e.RowIndex].Cells["TenTheLoai"].Value.ToString();
+                txtGiaTri.Text = dgvSach.Rows[e.RowIndex].Cells["GiaTri"].Value.ToString();
+                txtSoLuong.Text = dgvSach.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
+                dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.Rows[e.RowIndex].Cells["NgayNhap"].Value.ToString());
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
         // Reset trang thai cac Control
         private void ResetControlSach()
         {
@@ -1209,7 +1249,7 @@ namespace GraphicUserInterface
         private void mainbtnChoMuonSach_Click(object sender, EventArgs e)
         {
             this.pnltabChoMuonSach.BringToFront();
-            this.dgvCMSDSPhieuMuon.DataSource = busPhieuMuon.getPhieuMuon();
+            
         }
 
         private void loadDataForCBMaDocGia()
@@ -1250,6 +1290,9 @@ namespace GraphicUserInterface
             {
                 if (this.cbCMSNhapMaDocGia.Text != "" && this.lblCMSTenDocGia.Text != "Độc giả")
                 {
+                    dgvPMSach.Rows.Clear();
+                    cbPMNhapMaSach.Text = "";
+
                     this.lblCMSThongBao.Text = "";
                     string tenDocGia = "";
                     string ngayMuon = "";
@@ -1335,8 +1378,23 @@ namespace GraphicUserInterface
                 cbPMNhapMaSach.Items.Add(dt.Rows[i][0].ToString() + " - " + dt.Rows[i][1].ToString());
             }
         }
+<<<<<<< HEAD
 
 
+=======
+        private void setupDGVPhieuMuon()
+        {
+            this.dgvCMSDSPhieuMuon.DataSource = busPhieuMuon.getPhieuMuon();
+
+            this.dgvCMSDSPhieuMuon.Columns["MaPhieuMuon"].HeaderText = "Mã Phiếu Mượn";
+            this.dgvCMSDSPhieuMuon.Columns["MaDocGia"].HeaderText = "Mã Độc Giả";
+            this.dgvCMSDSPhieuMuon.Columns["MaThuThu"].HeaderText = "Thủ Thư";
+            this.dgvCMSDSPhieuMuon.Columns["NgayMuon"].HeaderText = "Ngày Mượn";
+            this.dgvCMSDSPhieuMuon.Columns["SoLuong"].HeaderText = "Số Lượng";
+        }
+
+        
+>>>>>>> fdff5c2891ace79a969028d419b7827d0e9672d1
         private void cbPMNhapMaSach_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -1377,7 +1435,26 @@ namespace GraphicUserInterface
         {
             this.pnlCMSDSPM.BringToFront();
             this.btnCMSLapPM.Text = "Lập Phiếu Mượn";
+<<<<<<< HEAD
         }          
                
+=======
+            this.dgvCMSDSPhieuMuon.DataSource = busPhieuMuon.getPhieuMuon();
+        }
+
+
+
+
+        // ==========================================================================
+        //
+        // NHAN TRA SACH
+        //
+        private void mainbtnNhanTraSach_Click(object sender, EventArgs e)
+        {
+            this.pnlTabNhanTraSach.BringToFront();
+        }
+
+       
+>>>>>>> fdff5c2891ace79a969028d419b7827d0e9672d1
     }
 }
