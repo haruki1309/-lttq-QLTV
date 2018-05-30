@@ -1381,7 +1381,7 @@ namespace GraphicUserInterface
         //
         private void mainbtnNhanTraSach_Click(object sender, EventArgs e)
         {
-            
+            this.pnlTabNhanTraSach.BringToFront();
         }
 
        
