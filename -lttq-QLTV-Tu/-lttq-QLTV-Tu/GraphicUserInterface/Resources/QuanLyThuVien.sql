@@ -714,9 +714,23 @@ Go
 
 
 
+select s.MaSach, s.TenSach
+	from Sach s
+	where s.MaSach in 
+	(
+		select ctpm.MaSach
+		from CTPM ctpm inner join PhieuMuon pm on ctpm.MaPhieuMuon = pm.MaPhieuMuon
+		where pm.MaDocGia = 'DG000' and MaSach not in 
+		(
+			select ctpt.MaSach 
+			from CTPT ctpt inner join PhieuTra pt on ctpt.MaPhieuTra = pt.MaPhieuTra
+			where pt.MaDocGia = 'DG000'
+		)
+	)
+
 
 select * 
-from PhieuTra
+from PhieuMuon
 
 select * 
-from CTPT
+from CTPM
