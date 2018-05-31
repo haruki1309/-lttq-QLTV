@@ -92,3 +92,14 @@ F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\ob
 F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
 F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
 F:\DoAnMonHoc\DoAn_LTTQ\-final\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\bin\Debug\DatabaseAccessLayer.dll
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\bin\Debug\DataTransferObject.dll
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\bin\Debug\DatabaseAccessLayer.pdb
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\bin\Debug\DataTransferObject.pdb
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+F:\For Me\Study\4 - Trực quan\Project\-lttq-QLTV\-lttq-QLTV-Tu\-lttq-QLTV-Tu\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
