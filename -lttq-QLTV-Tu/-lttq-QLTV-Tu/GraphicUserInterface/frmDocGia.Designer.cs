@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -158,6 +158,30 @@
             this.chkTacGia = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pnltabChoMuonSach = new System.Windows.Forms.Panel();
+            this.pnlPMThongBao = new System.Windows.Forms.Panel();
+            this.lblCMSHeadingThongBao = new System.Windows.Forms.Label();
+            this.lblCMSThongBao = new System.Windows.Forms.Label();
+            this.lblCMSSachDangMuon = new System.Windows.Forms.Label();
+            this.btnCMSLapPM = new System.Windows.Forms.Button();
+            this.pnlCMSDSPM = new System.Windows.Forms.Panel();
+            this.lblCMSHeadingDSPM = new System.Windows.Forms.Label();
+            this.dgvCMSDSPhieuMuon = new System.Windows.Forms.DataGridView();
+            this.cbCMSNhapMaDocGia = new System.Windows.Forms.ComboBox();
+            this.dgvCMSSachDangMuon = new System.Windows.Forms.DataGridView();
+            this.lblCMSTienNoDocGia = new System.Windows.Forms.Label();
+            this.lblCMSTenDocGia = new System.Windows.Forms.Label();
+            this.lblCMSNhapMaDocGia = new System.Windows.Forms.Label();
+            this.pnlPMLapPhieuMuon = new System.Windows.Forms.Panel();
+            this.btnPMEsc = new System.Windows.Forms.Button();
+            this.cbPMNhapMaSach = new System.Windows.Forms.ComboBox();
+            this.lblPMThemSach = new System.Windows.Forms.Label();
+            this.dgvPMSach = new System.Windows.Forms.DataGridView();
+            this.colMaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblPMThuThu = new System.Windows.Forms.Label();
+            this.lblPMNgayMuon = new System.Windows.Forms.Label();
+            this.lblPMTenDocGia = new System.Windows.Forms.Label();
+            this.lblHeaderPhieuMuon = new System.Windows.Forms.Label();
             this.pnltabNhanTraSach = new System.Windows.Forms.Panel();
             this.pnlNTSThongBao = new System.Windows.Forms.Panel();
             this.lblNTSHeaderThongBao = new System.Windows.Forms.Label();
@@ -186,31 +210,9 @@
             this.lblPTNgayTra = new System.Windows.Forms.Label();
             this.lblPTTenDocGia = new System.Windows.Forms.Label();
             this.lblPTPhieuTraSach = new System.Windows.Forms.Label();
-            this.pnlPMThongBao = new System.Windows.Forms.Panel();
-            this.lblCMSHeadingThongBao = new System.Windows.Forms.Label();
-            this.lblCMSThongBao = new System.Windows.Forms.Label();
-            this.lblCMSSachDangMuon = new System.Windows.Forms.Label();
-            this.btnCMSLapPM = new System.Windows.Forms.Button();
-            this.pnlCMSDSPM = new System.Windows.Forms.Panel();
-            this.lblCMSHeadingDSPM = new System.Windows.Forms.Label();
-            this.dgvCMSDSPhieuMuon = new System.Windows.Forms.DataGridView();
-            this.cbCMSNhapMaDocGia = new System.Windows.Forms.ComboBox();
-            this.dgvCMSSachDangMuon = new System.Windows.Forms.DataGridView();
-            this.lblCMSTienNoDocGia = new System.Windows.Forms.Label();
-            this.lblCMSTenDocGia = new System.Windows.Forms.Label();
-            this.lblCMSNhapMaDocGia = new System.Windows.Forms.Label();
-            this.pnlPMLapPhieuMuon = new System.Windows.Forms.Panel();
-            this.btnPMEsc = new System.Windows.Forms.Button();
-            this.cbPMNhapMaSach = new System.Windows.Forms.ComboBox();
-            this.lblPMThemSach = new System.Windows.Forms.Label();
-            this.dgvPMSach = new System.Windows.Forms.DataGridView();
-            this.colMaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblPMThuThu = new System.Windows.Forms.Label();
-            this.lblPMNgayMuon = new System.Windows.Forms.Label();
-            this.lblPMTenDocGia = new System.Windows.Forms.Label();
-            this.lblHeaderPhieuMuon = new System.Windows.Forms.Label();
             this.tmrFrmMainLoad = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblAppName = new System.Windows.Forms.Label();
             this.pnlMainButton.SuspendLayout();
             this.pnltabDocGia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
@@ -228,6 +230,12 @@
             this.panel9.SuspendLayout();
             this.pnlLocSach.SuspendLayout();
             this.pnltabChoMuonSach.SuspendLayout();
+            this.pnlPMThongBao.SuspendLayout();
+            this.pnlCMSDSPM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCMSDSPhieuMuon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCMSSachDangMuon)).BeginInit();
+            this.pnlPMLapPhieuMuon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPMSach)).BeginInit();
             this.pnltabNhanTraSach.SuspendLayout();
             this.pnlNTSThongBao.SuspendLayout();
             this.pnlDSPhieuTra.SuspendLayout();
@@ -235,12 +243,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNTSSachDangMuon)).BeginInit();
             this.pnlPTPhieuTra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTDSSach)).BeginInit();
-            this.pnlPMThongBao.SuspendLayout();
-            this.pnlCMSDSPM.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCMSDSPhieuMuon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCMSSachDangMuon)).BeginInit();
-            this.pnlPMLapPhieuMuon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPMSach)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
@@ -267,6 +269,8 @@
             // pnlMainButton
             // 
             this.pnlMainButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            this.pnlMainButton.Controls.Add(this.lblAppName);
+            this.pnlMainButton.Controls.Add(this.label2);
             this.pnlMainButton.Controls.Add(this.pnlRunning);
             this.pnlMainButton.Controls.Add(this.mainbtnCaiDat);
             this.pnlMainButton.Controls.Add(this.mainbtnQuyDinh);
@@ -438,23 +442,23 @@
             this.dgvDocGia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDocGia.BackgroundColor = System.Drawing.Color.White;
             this.dgvDocGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocGia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocGia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDocGia.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocGia.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvDocGia.Location = new System.Drawing.Point(415, 29);
             this.dgvDocGia.Name = "dgvDocGia";
             this.dgvDocGia.ReadOnly = true;
@@ -1428,23 +1432,23 @@
             this.dgvSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvSach.BackgroundColor = System.Drawing.Color.White;
             this.dgvSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle22;
             this.dgvSach.Location = new System.Drawing.Point(418, 26);
             this.dgvSach.Name = "dgvSach";
             this.dgvSach.ReadOnly = true;
@@ -1711,6 +1715,330 @@
             this.pnltabChoMuonSach.Size = new System.Drawing.Size(871, 515);
             this.pnltabChoMuonSach.TabIndex = 38;
             // 
+            // pnlPMThongBao
+            // 
+            this.pnlPMThongBao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPMThongBao.Controls.Add(this.lblCMSHeadingThongBao);
+            this.pnlPMThongBao.Controls.Add(this.lblCMSThongBao);
+            this.pnlPMThongBao.Location = new System.Drawing.Point(10, 331);
+            this.pnlPMThongBao.Name = "pnlPMThongBao";
+            this.pnlPMThongBao.Size = new System.Drawing.Size(391, 115);
+            this.pnlPMThongBao.TabIndex = 15;
+            // 
+            // lblCMSHeadingThongBao
+            // 
+            this.lblCMSHeadingThongBao.AutoSize = true;
+            this.lblCMSHeadingThongBao.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCMSHeadingThongBao.Location = new System.Drawing.Point(302, 90);
+            this.lblCMSHeadingThongBao.Name = "lblCMSHeadingThongBao";
+            this.lblCMSHeadingThongBao.Size = new System.Drawing.Size(84, 23);
+            this.lblCMSHeadingThongBao.TabIndex = 17;
+            this.lblCMSHeadingThongBao.Text = "Thông Báo";
+            // 
+            // lblCMSThongBao
+            // 
+            this.lblCMSThongBao.AutoSize = true;
+            this.lblCMSThongBao.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCMSThongBao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblCMSThongBao.Location = new System.Drawing.Point(17, 26);
+            this.lblCMSThongBao.Name = "lblCMSThongBao";
+            this.lblCMSThongBao.Size = new System.Drawing.Size(0, 23);
+            this.lblCMSThongBao.TabIndex = 17;
+            // 
+            // lblCMSSachDangMuon
+            // 
+            this.lblCMSSachDangMuon.AutoSize = true;
+            this.lblCMSSachDangMuon.Font = new System.Drawing.Font("Sitka Heading", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCMSSachDangMuon.Location = new System.Drawing.Point(10, 146);
+            this.lblCMSSachDangMuon.Name = "lblCMSSachDangMuon";
+            this.lblCMSSachDangMuon.Size = new System.Drawing.Size(132, 23);
+            this.lblCMSSachDangMuon.TabIndex = 16;
+            this.lblCMSSachDangMuon.Text = "Sách Đang Mượn";
+            // 
+            // btnCMSLapPM
+            // 
+            this.btnCMSLapPM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnCMSLapPM.FlatAppearance.BorderSize = 0;
+            this.btnCMSLapPM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
+            this.btnCMSLapPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCMSLapPM.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCMSLapPM.Location = new System.Drawing.Point(237, 452);
+            this.btnCMSLapPM.Name = "btnCMSLapPM";
+            this.btnCMSLapPM.Size = new System.Drawing.Size(164, 40);
+            this.btnCMSLapPM.TabIndex = 15;
+            this.btnCMSLapPM.Text = "Lập Phiếu Mượn";
+            this.btnCMSLapPM.UseVisualStyleBackColor = false;
+            this.btnCMSLapPM.Click += new System.EventHandler(this.btnCMSLapPM_Click);
+            // 
+            // pnlCMSDSPM
+            // 
+            this.pnlCMSDSPM.Controls.Add(this.lblCMSHeadingDSPM);
+            this.pnlCMSDSPM.Controls.Add(this.dgvCMSDSPhieuMuon);
+            this.pnlCMSDSPM.Location = new System.Drawing.Point(421, 3);
+            this.pnlCMSDSPM.Name = "pnlCMSDSPM";
+            this.pnlCMSDSPM.Size = new System.Drawing.Size(447, 509);
+            this.pnlCMSDSPM.TabIndex = 14;
+            // 
+            // lblCMSHeadingDSPM
+            // 
+            this.lblCMSHeadingDSPM.AutoSize = true;
+            this.lblCMSHeadingDSPM.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCMSHeadingDSPM.Location = new System.Drawing.Point(6, 5);
+            this.lblCMSHeadingDSPM.Name = "lblCMSHeadingDSPM";
+            this.lblCMSHeadingDSPM.Size = new System.Drawing.Size(176, 23);
+            this.lblCMSHeadingDSPM.TabIndex = 17;
+            this.lblCMSHeadingDSPM.Text = "Danh Sách Phiếu Mượn";
+            // 
+            // dgvCMSDSPhieuMuon
+            // 
+            this.dgvCMSDSPhieuMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCMSDSPhieuMuon.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCMSDSPhieuMuon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCMSDSPhieuMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvCMSDSPhieuMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCMSDSPhieuMuon.DefaultCellStyle = dataGridViewCellStyle24;
+            this.dgvCMSDSPhieuMuon.EnableHeadersVisualStyles = false;
+            this.dgvCMSDSPhieuMuon.GridColor = System.Drawing.Color.White;
+            this.dgvCMSDSPhieuMuon.Location = new System.Drawing.Point(10, 34);
+            this.dgvCMSDSPhieuMuon.MultiSelect = false;
+            this.dgvCMSDSPhieuMuon.Name = "dgvCMSDSPhieuMuon";
+            this.dgvCMSDSPhieuMuon.ReadOnly = true;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCMSDSPhieuMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.dgvCMSDSPhieuMuon.RowHeadersVisible = false;
+            this.dgvCMSDSPhieuMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCMSDSPhieuMuon.Size = new System.Drawing.Size(428, 409);
+            this.dgvCMSDSPhieuMuon.TabIndex = 0;
+            // 
+            // cbCMSNhapMaDocGia
+            // 
+            this.cbCMSNhapMaDocGia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbCMSNhapMaDocGia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbCMSNhapMaDocGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCMSNhapMaDocGia.FormattingEnabled = true;
+            this.cbCMSNhapMaDocGia.Location = new System.Drawing.Point(142, 37);
+            this.cbCMSNhapMaDocGia.Name = "cbCMSNhapMaDocGia";
+            this.cbCMSNhapMaDocGia.Size = new System.Drawing.Size(259, 31);
+            this.cbCMSNhapMaDocGia.TabIndex = 12;
+            this.cbCMSNhapMaDocGia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbCMSNhapMaDocGia_KeyDown);
+            // 
+            // dgvCMSSachDangMuon
+            // 
+            this.dgvCMSSachDangMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCMSSachDangMuon.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCMSSachDangMuon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCMSSachDangMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            this.dgvCMSSachDangMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCMSSachDangMuon.Location = new System.Drawing.Point(13, 172);
+            this.dgvCMSSachDangMuon.Name = "dgvCMSSachDangMuon";
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCMSSachDangMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            this.dgvCMSSachDangMuon.RowHeadersVisible = false;
+            this.dgvCMSSachDangMuon.Size = new System.Drawing.Size(388, 147);
+            this.dgvCMSSachDangMuon.TabIndex = 9;
+            // 
+            // lblCMSTienNoDocGia
+            // 
+            this.lblCMSTienNoDocGia.AutoSize = true;
+            this.lblCMSTienNoDocGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCMSTienNoDocGia.Location = new System.Drawing.Point(33, 113);
+            this.lblCMSTienNoDocGia.Name = "lblCMSTienNoDocGia";
+            this.lblCMSTienNoDocGia.Size = new System.Drawing.Size(69, 23);
+            this.lblCMSTienNoDocGia.TabIndex = 11;
+            this.lblCMSTienNoDocGia.Text = "Tiền Nợ:";
+            // 
+            // lblCMSTenDocGia
+            // 
+            this.lblCMSTenDocGia.AutoSize = true;
+            this.lblCMSTenDocGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCMSTenDocGia.Location = new System.Drawing.Point(33, 83);
+            this.lblCMSTenDocGia.Name = "lblCMSTenDocGia";
+            this.lblCMSTenDocGia.Size = new System.Drawing.Size(64, 23);
+            this.lblCMSTenDocGia.TabIndex = 10;
+            this.lblCMSTenDocGia.Text = "Độc giả:";
+            // 
+            // lblCMSNhapMaDocGia
+            // 
+            this.lblCMSNhapMaDocGia.AutoSize = true;
+            this.lblCMSNhapMaDocGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCMSNhapMaDocGia.Location = new System.Drawing.Point(10, 40);
+            this.lblCMSNhapMaDocGia.Name = "lblCMSNhapMaDocGia";
+            this.lblCMSNhapMaDocGia.Size = new System.Drawing.Size(126, 23);
+            this.lblCMSNhapMaDocGia.TabIndex = 9;
+            this.lblCMSNhapMaDocGia.Text = "Nhập mã độc giả";
+            // 
+            // pnlPMLapPhieuMuon
+            // 
+            this.pnlPMLapPhieuMuon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPMLapPhieuMuon.Controls.Add(this.btnPMEsc);
+            this.pnlPMLapPhieuMuon.Controls.Add(this.cbPMNhapMaSach);
+            this.pnlPMLapPhieuMuon.Controls.Add(this.lblPMThemSach);
+            this.pnlPMLapPhieuMuon.Controls.Add(this.dgvPMSach);
+            this.pnlPMLapPhieuMuon.Controls.Add(this.lblPMThuThu);
+            this.pnlPMLapPhieuMuon.Controls.Add(this.lblPMNgayMuon);
+            this.pnlPMLapPhieuMuon.Controls.Add(this.lblPMTenDocGia);
+            this.pnlPMLapPhieuMuon.Controls.Add(this.lblHeaderPhieuMuon);
+            this.pnlPMLapPhieuMuon.Location = new System.Drawing.Point(421, 3);
+            this.pnlPMLapPhieuMuon.Name = "pnlPMLapPhieuMuon";
+            this.pnlPMLapPhieuMuon.Size = new System.Drawing.Size(447, 509);
+            this.pnlPMLapPhieuMuon.TabIndex = 0;
+            // 
+            // btnPMEsc
+            // 
+            this.btnPMEsc.BackColor = System.Drawing.Color.White;
+            this.btnPMEsc.FlatAppearance.BorderSize = 0;
+            this.btnPMEsc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPMEsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPMEsc.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPMEsc.Location = new System.Drawing.Point(411, 2);
+            this.btnPMEsc.Name = "btnPMEsc";
+            this.btnPMEsc.Size = new System.Drawing.Size(31, 31);
+            this.btnPMEsc.TabIndex = 17;
+            this.btnPMEsc.Text = "X";
+            this.btnPMEsc.UseVisualStyleBackColor = false;
+            this.btnPMEsc.Click += new System.EventHandler(this.btnPMEsc_Click);
+            // 
+            // cbPMNhapMaSach
+            // 
+            this.cbPMNhapMaSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbPMNhapMaSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbPMNhapMaSach.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPMNhapMaSach.FormattingEnabled = true;
+            this.cbPMNhapMaSach.Location = new System.Drawing.Point(100, 155);
+            this.cbPMNhapMaSach.Name = "cbPMNhapMaSach";
+            this.cbPMNhapMaSach.Size = new System.Drawing.Size(337, 31);
+            this.cbPMNhapMaSach.TabIndex = 17;
+            this.cbPMNhapMaSach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbPMNhapMaSach_KeyDown);
+            // 
+            // lblPMThemSach
+            // 
+            this.lblPMThemSach.AutoSize = true;
+            this.lblPMThemSach.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPMThemSach.Location = new System.Drawing.Point(24, 158);
+            this.lblPMThemSach.Name = "lblPMThemSach";
+            this.lblPMThemSach.Size = new System.Drawing.Size(67, 23);
+            this.lblPMThemSach.TabIndex = 6;
+            this.lblPMThemSach.Text = "Mã Sách";
+            // 
+            // dgvPMSach
+            // 
+            this.dgvPMSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPMSach.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPMSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPMSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            this.dgvPMSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPMSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaSach,
+            this.colTenSach});
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPMSach.DefaultCellStyle = dataGridViewCellStyle29;
+            this.dgvPMSach.Location = new System.Drawing.Point(28, 195);
+            this.dgvPMSach.Name = "dgvPMSach";
+            this.dgvPMSach.ReadOnly = true;
+            this.dgvPMSach.Size = new System.Drawing.Size(409, 173);
+            this.dgvPMSach.TabIndex = 4;
+            this.dgvPMSach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvPMSach_KeyDown);
+            // 
+            // colMaSach
+            // 
+            this.colMaSach.HeaderText = "Mã Sách";
+            this.colMaSach.Name = "colMaSach";
+            this.colMaSach.ReadOnly = true;
+            this.colMaSach.Width = 94;
+            // 
+            // colTenSach
+            // 
+            this.colTenSach.HeaderText = "Tên Sách";
+            this.colTenSach.Name = "colTenSach";
+            this.colTenSach.ReadOnly = true;
+            this.colTenSach.Width = 98;
+            // 
+            // lblPMThuThu
+            // 
+            this.lblPMThuThu.AutoSize = true;
+            this.lblPMThuThu.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPMThuThu.Location = new System.Drawing.Point(83, 110);
+            this.lblPMThuThu.Name = "lblPMThuThu";
+            this.lblPMThuThu.Size = new System.Drawing.Size(74, 23);
+            this.lblPMThuThu.TabIndex = 3;
+            this.lblPMThuThu.Text = "Thủ Thư:";
+            // 
+            // lblPMNgayMuon
+            // 
+            this.lblPMNgayMuon.AutoSize = true;
+            this.lblPMNgayMuon.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPMNgayMuon.Location = new System.Drawing.Point(61, 79);
+            this.lblPMNgayMuon.Name = "lblPMNgayMuon";
+            this.lblPMNgayMuon.Size = new System.Drawing.Size(96, 23);
+            this.lblPMNgayMuon.TabIndex = 2;
+            this.lblPMNgayMuon.Text = "Ngày Mượn:";
+            // 
+            // lblPMTenDocGia
+            // 
+            this.lblPMTenDocGia.AutoSize = true;
+            this.lblPMTenDocGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPMTenDocGia.Location = new System.Drawing.Point(93, 47);
+            this.lblPMTenDocGia.Name = "lblPMTenDocGia";
+            this.lblPMTenDocGia.Size = new System.Drawing.Size(64, 23);
+            this.lblPMTenDocGia.TabIndex = 1;
+            this.lblPMTenDocGia.Text = "Độc giả:";
+            // 
+            // lblHeaderPhieuMuon
+            // 
+            this.lblHeaderPhieuMuon.AutoSize = true;
+            this.lblHeaderPhieuMuon.Font = new System.Drawing.Font("Sitka Heading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderPhieuMuon.Location = new System.Drawing.Point(3, 4);
+            this.lblHeaderPhieuMuon.Name = "lblHeaderPhieuMuon";
+            this.lblHeaderPhieuMuon.Size = new System.Drawing.Size(205, 35);
+            this.lblHeaderPhieuMuon.TabIndex = 0;
+            this.lblHeaderPhieuMuon.Text = "Phiếu Mượn Sách";
+            // 
             // pnltabNhanTraSach
             // 
             this.pnltabNhanTraSach.Controls.Add(this.pnlNTSThongBao);
@@ -1807,37 +2135,37 @@
             this.dgvPTDanhSachPhieuTra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPTDanhSachPhieuTra.BackgroundColor = System.Drawing.Color.White;
             this.dgvPTDanhSachPhieuTra.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPTDanhSachPhieuTra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPTDanhSachPhieuTra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.dgvPTDanhSachPhieuTra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPTDanhSachPhieuTra.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTDanhSachPhieuTra.DefaultCellStyle = dataGridViewCellStyle31;
             this.dgvPTDanhSachPhieuTra.EnableHeadersVisualStyles = false;
             this.dgvPTDanhSachPhieuTra.GridColor = System.Drawing.Color.White;
             this.dgvPTDanhSachPhieuTra.Location = new System.Drawing.Point(5, 30);
             this.dgvPTDanhSachPhieuTra.MultiSelect = false;
             this.dgvPTDanhSachPhieuTra.Name = "dgvPTDanhSachPhieuTra";
             this.dgvPTDanhSachPhieuTra.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPTDanhSachPhieuTra.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPTDanhSachPhieuTra.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.dgvPTDanhSachPhieuTra.RowHeadersVisible = false;
             this.dgvPTDanhSachPhieuTra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPTDanhSachPhieuTra.Size = new System.Drawing.Size(437, 475);
@@ -1860,25 +2188,25 @@
             this.dgvNTSSachDangMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvNTSSachDangMuon.BackgroundColor = System.Drawing.Color.White;
             this.dgvNTSSachDangMuon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNTSSachDangMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNTSSachDangMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.dgvNTSSachDangMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNTSSachDangMuon.Location = new System.Drawing.Point(13, 172);
             this.dgvNTSSachDangMuon.Name = "dgvNTSSachDangMuon";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNTSSachDangMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNTSSachDangMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.dgvNTSSachDangMuon.RowHeadersVisible = false;
             this.dgvNTSSachDangMuon.Size = new System.Drawing.Size(388, 147);
             this.dgvNTSSachDangMuon.TabIndex = 9;
@@ -1995,27 +2323,27 @@
             this.dgvPTDSSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPTDSSach.BackgroundColor = System.Drawing.Color.White;
             this.dgvPTDSSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPTDSSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPTDSSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.dgvPTDSSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPTDSSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.colTinhTrang,
             this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPTDSSach.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTDSSach.DefaultCellStyle = dataGridViewCellStyle36;
             this.dgvPTDSSach.Location = new System.Drawing.Point(28, 257);
             this.dgvPTDSSach.Name = "dgvPTDSSach";
             this.dgvPTDSSach.ReadOnly = true;
@@ -2085,334 +2413,32 @@
             this.lblPTPhieuTraSach.TabIndex = 0;
             this.lblPTPhieuTraSach.Text = "Phiếu Trả Sách";
             // 
-            // pnlPMThongBao
-            // 
-            this.pnlPMThongBao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlPMThongBao.Controls.Add(this.lblCMSHeadingThongBao);
-            this.pnlPMThongBao.Controls.Add(this.lblCMSThongBao);
-            this.pnlPMThongBao.Location = new System.Drawing.Point(10, 331);
-            this.pnlPMThongBao.Name = "pnlPMThongBao";
-            this.pnlPMThongBao.Size = new System.Drawing.Size(391, 115);
-            this.pnlPMThongBao.TabIndex = 15;
-            // 
-            // lblCMSHeadingThongBao
-            // 
-            this.lblCMSHeadingThongBao.AutoSize = true;
-            this.lblCMSHeadingThongBao.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCMSHeadingThongBao.Location = new System.Drawing.Point(302, 90);
-            this.lblCMSHeadingThongBao.Name = "lblCMSHeadingThongBao";
-            this.lblCMSHeadingThongBao.Size = new System.Drawing.Size(84, 23);
-            this.lblCMSHeadingThongBao.TabIndex = 17;
-            this.lblCMSHeadingThongBao.Text = "Thông Báo";
-            // 
-            // lblCMSThongBao
-            // 
-            this.lblCMSThongBao.AutoSize = true;
-            this.lblCMSThongBao.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCMSThongBao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblCMSThongBao.Location = new System.Drawing.Point(17, 26);
-            this.lblCMSThongBao.Name = "lblCMSThongBao";
-            this.lblCMSThongBao.Size = new System.Drawing.Size(0, 23);
-            this.lblCMSThongBao.TabIndex = 17;
-            // 
-            // lblCMSSachDangMuon
-            // 
-            this.lblCMSSachDangMuon.AutoSize = true;
-            this.lblCMSSachDangMuon.Font = new System.Drawing.Font("Sitka Heading", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCMSSachDangMuon.Location = new System.Drawing.Point(10, 146);
-            this.lblCMSSachDangMuon.Name = "lblCMSSachDangMuon";
-            this.lblCMSSachDangMuon.Size = new System.Drawing.Size(132, 23);
-            this.lblCMSSachDangMuon.TabIndex = 16;
-            this.lblCMSSachDangMuon.Text = "Sách Đang Mượn";
-            // 
-            // btnCMSLapPM
-            // 
-            this.btnCMSLapPM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            this.btnCMSLapPM.FlatAppearance.BorderSize = 0;
-            this.btnCMSLapPM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
-            this.btnCMSLapPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCMSLapPM.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCMSLapPM.Location = new System.Drawing.Point(237, 452);
-            this.btnCMSLapPM.Name = "btnCMSLapPM";
-            this.btnCMSLapPM.Size = new System.Drawing.Size(164, 40);
-            this.btnCMSLapPM.TabIndex = 15;
-            this.btnCMSLapPM.Text = "Lập Phiếu Mượn";
-            this.btnCMSLapPM.UseVisualStyleBackColor = false;
-            this.btnCMSLapPM.Click += new System.EventHandler(this.btnCMSLapPM_Click);
-            // 
-            // pnlCMSDSPM
-            // 
-            this.pnlCMSDSPM.Controls.Add(this.lblCMSHeadingDSPM);
-            this.pnlCMSDSPM.Controls.Add(this.dgvCMSDSPhieuMuon);
-            this.pnlCMSDSPM.Location = new System.Drawing.Point(421, 3);
-            this.pnlCMSDSPM.Name = "pnlCMSDSPM";
-            this.pnlCMSDSPM.Size = new System.Drawing.Size(447, 509);
-            this.pnlCMSDSPM.TabIndex = 14;
-            // 
-            // lblCMSHeadingDSPM
-            // 
-            this.lblCMSHeadingDSPM.AutoSize = true;
-            this.lblCMSHeadingDSPM.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCMSHeadingDSPM.Location = new System.Drawing.Point(6, 5);
-            this.lblCMSHeadingDSPM.Name = "lblCMSHeadingDSPM";
-            this.lblCMSHeadingDSPM.Size = new System.Drawing.Size(176, 23);
-            this.lblCMSHeadingDSPM.TabIndex = 17;
-            this.lblCMSHeadingDSPM.Text = "Danh Sách Phiếu Mượn";
-            // 
-            // dgvCMSDSPhieuMuon
-            // 
-            this.dgvCMSDSPhieuMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvCMSDSPhieuMuon.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCMSDSPhieuMuon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCMSDSPhieuMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvCMSDSPhieuMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCMSDSPhieuMuon.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvCMSDSPhieuMuon.EnableHeadersVisualStyles = false;
-            this.dgvCMSDSPhieuMuon.GridColor = System.Drawing.Color.White;
-            this.dgvCMSDSPhieuMuon.Location = new System.Drawing.Point(10, 34);
-            this.dgvCMSDSPhieuMuon.MultiSelect = false;
-            this.dgvCMSDSPhieuMuon.Name = "dgvCMSDSPhieuMuon";
-            this.dgvCMSDSPhieuMuon.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCMSDSPhieuMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvCMSDSPhieuMuon.RowHeadersVisible = false;
-            this.dgvCMSDSPhieuMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCMSDSPhieuMuon.Size = new System.Drawing.Size(428, 409);
-            this.dgvCMSDSPhieuMuon.TabIndex = 0;
-            // 
-            // cbCMSNhapMaDocGia
-            // 
-            this.cbCMSNhapMaDocGia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbCMSNhapMaDocGia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbCMSNhapMaDocGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCMSNhapMaDocGia.FormattingEnabled = true;
-            this.cbCMSNhapMaDocGia.Location = new System.Drawing.Point(142, 37);
-            this.cbCMSNhapMaDocGia.Name = "cbCMSNhapMaDocGia";
-            this.cbCMSNhapMaDocGia.Size = new System.Drawing.Size(259, 31);
-            this.cbCMSNhapMaDocGia.TabIndex = 12;
-            this.cbCMSNhapMaDocGia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbCMSNhapMaDocGia_KeyDown);
-            // 
-            // dgvCMSSachDangMuon
-            // 
-            this.dgvCMSSachDangMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvCMSSachDangMuon.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCMSSachDangMuon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCMSSachDangMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvCMSSachDangMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCMSSachDangMuon.Location = new System.Drawing.Point(13, 172);
-            this.dgvCMSSachDangMuon.Name = "dgvCMSSachDangMuon";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCMSSachDangMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvCMSSachDangMuon.RowHeadersVisible = false;
-            this.dgvCMSSachDangMuon.Size = new System.Drawing.Size(388, 147);
-            this.dgvCMSSachDangMuon.TabIndex = 9;
-            // 
-            // lblCMSTienNoDocGia
-            // 
-            this.lblCMSTienNoDocGia.AutoSize = true;
-            this.lblCMSTienNoDocGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCMSTienNoDocGia.Location = new System.Drawing.Point(33, 113);
-            this.lblCMSTienNoDocGia.Name = "lblCMSTienNoDocGia";
-            this.lblCMSTienNoDocGia.Size = new System.Drawing.Size(69, 23);
-            this.lblCMSTienNoDocGia.TabIndex = 11;
-            this.lblCMSTienNoDocGia.Text = "Tiền Nợ:";
-            // 
-            // lblCMSTenDocGia
-            // 
-            this.lblCMSTenDocGia.AutoSize = true;
-            this.lblCMSTenDocGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCMSTenDocGia.Location = new System.Drawing.Point(33, 83);
-            this.lblCMSTenDocGia.Name = "lblCMSTenDocGia";
-            this.lblCMSTenDocGia.Size = new System.Drawing.Size(64, 23);
-            this.lblCMSTenDocGia.TabIndex = 10;
-            this.lblCMSTenDocGia.Text = "Độc giả:";
-            // 
-            // lblCMSNhapMaDocGia
-            // 
-            this.lblCMSNhapMaDocGia.AutoSize = true;
-            this.lblCMSNhapMaDocGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCMSNhapMaDocGia.Location = new System.Drawing.Point(10, 40);
-            this.lblCMSNhapMaDocGia.Name = "lblCMSNhapMaDocGia";
-            this.lblCMSNhapMaDocGia.Size = new System.Drawing.Size(126, 23);
-            this.lblCMSNhapMaDocGia.TabIndex = 9;
-            this.lblCMSNhapMaDocGia.Text = "Nhập mã độc giả";
-            // 
-            // pnlPMLapPhieuMuon
-            // 
-            this.pnlPMLapPhieuMuon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlPMLapPhieuMuon.Controls.Add(this.btnPMEsc);
-            this.pnlPMLapPhieuMuon.Controls.Add(this.cbPMNhapMaSach);
-            this.pnlPMLapPhieuMuon.Controls.Add(this.lblPMThemSach);
-            this.pnlPMLapPhieuMuon.Controls.Add(this.dgvPMSach);
-            this.pnlPMLapPhieuMuon.Controls.Add(this.lblPMThuThu);
-            this.pnlPMLapPhieuMuon.Controls.Add(this.lblPMNgayMuon);
-            this.pnlPMLapPhieuMuon.Controls.Add(this.lblPMTenDocGia);
-            this.pnlPMLapPhieuMuon.Controls.Add(this.lblHeaderPhieuMuon);
-            this.pnlPMLapPhieuMuon.Location = new System.Drawing.Point(421, 3);
-            this.pnlPMLapPhieuMuon.Name = "pnlPMLapPhieuMuon";
-            this.pnlPMLapPhieuMuon.Size = new System.Drawing.Size(447, 509);
-            this.pnlPMLapPhieuMuon.TabIndex = 0;
-            // 
-            // btnPMEsc
-            // 
-            this.btnPMEsc.BackColor = System.Drawing.Color.White;
-            this.btnPMEsc.FlatAppearance.BorderSize = 0;
-            this.btnPMEsc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnPMEsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPMEsc.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPMEsc.Location = new System.Drawing.Point(411, 2);
-            this.btnPMEsc.Name = "btnPMEsc";
-            this.btnPMEsc.Size = new System.Drawing.Size(31, 31);
-            this.btnPMEsc.TabIndex = 17;
-            this.btnPMEsc.Text = "X";
-            this.btnPMEsc.UseVisualStyleBackColor = false;
-            this.btnPMEsc.Click += new System.EventHandler(this.btnPMEsc_Click);
-            // 
-            // cbPMNhapMaSach
-            // 
-            this.cbPMNhapMaSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbPMNhapMaSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbPMNhapMaSach.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPMNhapMaSach.FormattingEnabled = true;
-            this.cbPMNhapMaSach.Location = new System.Drawing.Point(100, 155);
-            this.cbPMNhapMaSach.Name = "cbPMNhapMaSach";
-            this.cbPMNhapMaSach.Size = new System.Drawing.Size(337, 31);
-            this.cbPMNhapMaSach.TabIndex = 17;
-            this.cbPMNhapMaSach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbPMNhapMaSach_KeyDown);
-            // 
-            // lblPMThemSach
-            // 
-            this.lblPMThemSach.AutoSize = true;
-            this.lblPMThemSach.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPMThemSach.Location = new System.Drawing.Point(24, 158);
-            this.lblPMThemSach.Name = "lblPMThemSach";
-            this.lblPMThemSach.Size = new System.Drawing.Size(67, 23);
-            this.lblPMThemSach.TabIndex = 6;
-            this.lblPMThemSach.Text = "Mã Sách";
-            // 
-            // dgvPMSach
-            // 
-            this.dgvPMSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvPMSach.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPMSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPMSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvPMSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPMSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaSach,
-            this.colTenSach});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPMSach.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvPMSach.Location = new System.Drawing.Point(28, 195);
-            this.dgvPMSach.Name = "dgvPMSach";
-            this.dgvPMSach.ReadOnly = true;
-            this.dgvPMSach.Size = new System.Drawing.Size(409, 173);
-            this.dgvPMSach.TabIndex = 4;
-            this.dgvPMSach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvPMSach_KeyDown);
-            // 
-            // colMaSach
-            // 
-            this.colMaSach.HeaderText = "Mã Sách";
-            this.colMaSach.Name = "colMaSach";
-            this.colMaSach.ReadOnly = true;
-            this.colMaSach.Width = 94;
-            // 
-            // colTenSach
-            // 
-            this.colTenSach.HeaderText = "Tên Sách";
-            this.colTenSach.Name = "colTenSach";
-            this.colTenSach.ReadOnly = true;
-            this.colTenSach.Width = 98;
-            // 
-            // lblPMThuThu
-            // 
-            this.lblPMThuThu.AutoSize = true;
-            this.lblPMThuThu.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPMThuThu.Location = new System.Drawing.Point(83, 110);
-            this.lblPMThuThu.Name = "lblPMThuThu";
-            this.lblPMThuThu.Size = new System.Drawing.Size(74, 23);
-            this.lblPMThuThu.TabIndex = 3;
-            this.lblPMThuThu.Text = "Thủ Thư:";
-            // 
-            // lblPMNgayMuon
-            // 
-            this.lblPMNgayMuon.AutoSize = true;
-            this.lblPMNgayMuon.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPMNgayMuon.Location = new System.Drawing.Point(61, 79);
-            this.lblPMNgayMuon.Name = "lblPMNgayMuon";
-            this.lblPMNgayMuon.Size = new System.Drawing.Size(96, 23);
-            this.lblPMNgayMuon.TabIndex = 2;
-            this.lblPMNgayMuon.Text = "Ngày Mượn:";
-            // 
-            // lblPMTenDocGia
-            // 
-            this.lblPMTenDocGia.AutoSize = true;
-            this.lblPMTenDocGia.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPMTenDocGia.Location = new System.Drawing.Point(93, 47);
-            this.lblPMTenDocGia.Name = "lblPMTenDocGia";
-            this.lblPMTenDocGia.Size = new System.Drawing.Size(64, 23);
-            this.lblPMTenDocGia.TabIndex = 1;
-            this.lblPMTenDocGia.Text = "Độc giả:";
-            // 
-            // lblHeaderPhieuMuon
-            // 
-            this.lblHeaderPhieuMuon.AutoSize = true;
-            this.lblHeaderPhieuMuon.Font = new System.Drawing.Font("Sitka Heading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderPhieuMuon.Location = new System.Drawing.Point(3, 4);
-            this.lblHeaderPhieuMuon.Name = "lblHeaderPhieuMuon";
-            this.lblHeaderPhieuMuon.Size = new System.Drawing.Size(205, 35);
-            this.lblHeaderPhieuMuon.TabIndex = 0;
-            this.lblHeaderPhieuMuon.Text = "Phiếu Mượn Sách";
-            // 
             // tmrFrmMainLoad
             // 
             this.tmrFrmMainLoad.Enabled = true;
             this.tmrFrmMainLoad.Tick += new System.EventHandler(this.tmrFrmMainLoad_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sitka Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(10, 551);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 16);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "© Copyright 2018 TATteam";
+            // 
+            // lblAppName
+            // 
+            this.lblAppName.AutoSize = true;
+            this.lblAppName.Font = new System.Drawing.Font("Sitka Display", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.lblAppName.Location = new System.Drawing.Point(6, 9);
+            this.lblAppName.Name = "lblAppName";
+            this.lblAppName.Size = new System.Drawing.Size(139, 39);
+            this.lblAppName.TabIndex = 41;
+            this.lblAppName.Text = "MYLibrary";
             // 
             // frmDocGia
             // 
@@ -2435,6 +2461,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmDocGia_Load);
             this.pnlMainButton.ResumeLayout(false);
+            this.pnlMainButton.PerformLayout();
             this.pnltabDocGia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).EndInit();
             this.pnlThongTinDocGia.ResumeLayout(false);
@@ -2461,6 +2488,15 @@
             this.pnlLocSach.PerformLayout();
             this.pnltabChoMuonSach.ResumeLayout(false);
             this.pnltabChoMuonSach.PerformLayout();
+            this.pnlPMThongBao.ResumeLayout(false);
+            this.pnlPMThongBao.PerformLayout();
+            this.pnlCMSDSPM.ResumeLayout(false);
+            this.pnlCMSDSPM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCMSDSPhieuMuon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCMSSachDangMuon)).EndInit();
+            this.pnlPMLapPhieuMuon.ResumeLayout(false);
+            this.pnlPMLapPhieuMuon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPMSach)).EndInit();
             this.pnltabNhanTraSach.ResumeLayout(false);
             this.pnltabNhanTraSach.PerformLayout();
             this.pnlNTSThongBao.ResumeLayout(false);
@@ -2472,15 +2508,6 @@
             this.pnlPTPhieuTra.ResumeLayout(false);
             this.pnlPTPhieuTra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTDSSach)).EndInit();
-            this.pnlPMThongBao.ResumeLayout(false);
-            this.pnlPMThongBao.PerformLayout();
-            this.pnlCMSDSPM.ResumeLayout(false);
-            this.pnlCMSDSPM.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCMSDSPhieuMuon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCMSSachDangMuon)).EndInit();
-            this.pnlPMLapPhieuMuon.ResumeLayout(false);
-            this.pnlPMLapPhieuMuon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPMSach)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2652,5 +2679,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Panel pnlRunning;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAppName;
     }
 }

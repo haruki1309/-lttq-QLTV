@@ -32,25 +32,29 @@
             this.frmLoginLoadTimer = new System.Windows.Forms.Timer(this.components);
             this.pnlLoginHeader = new System.Windows.Forms.Panel();
             this.pnlLoginWelcome = new System.Windows.Forms.Panel();
+            this.lblLoginLoading = new System.Windows.Forms.Label();
+            this.pnlLoginLoading1 = new System.Windows.Forms.Panel();
+            this.pnlLoginLoading2 = new System.Windows.Forms.Panel();
             this.lblLoginTenThuThu = new System.Windows.Forms.Label();
             this.lblLoginHeaderWelcome = new System.Windows.Forms.Label();
             this.lblLoginWelcome = new System.Windows.Forms.Label();
             this.pnlLoginThongTinDN = new System.Windows.Forms.Panel();
+            this.lblLoginThongBao = new System.Windows.Forms.Label();
+            this.lblAppName = new System.Windows.Forms.Label();
             this.btnLoginESC = new System.Windows.Forms.Button();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.lblMatKhau = new System.Windows.Forms.Label();
-            this.pnlLoginLoading1 = new System.Windows.Forms.Panel();
-            this.pnlLoginLoading2 = new System.Windows.Forms.Panel();
-            this.lblLoginLoading = new System.Windows.Forms.Label();
             this.frmLoginLoading = new System.Windows.Forms.Timer(this.components);
-            this.lblAppName = new System.Windows.Forms.Label();
-            this.lblLoginThongBao = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlLoginWelcome.SuspendLayout();
-            this.pnlLoginThongTinDN.SuspendLayout();
             this.pnlLoginLoading1.SuspendLayout();
+            this.pnlLoginThongTinDN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // frmLoginLoadTimer
@@ -68,6 +72,7 @@
             // 
             // pnlLoginWelcome
             // 
+            this.pnlLoginWelcome.Controls.Add(this.label2);
             this.pnlLoginWelcome.Controls.Add(this.lblLoginLoading);
             this.pnlLoginWelcome.Controls.Add(this.pnlLoginLoading1);
             this.pnlLoginWelcome.Controls.Add(this.lblLoginTenThuThu);
@@ -77,6 +82,34 @@
             this.pnlLoginWelcome.Name = "pnlLoginWelcome";
             this.pnlLoginWelcome.Size = new System.Drawing.Size(810, 487);
             this.pnlLoginWelcome.TabIndex = 12;
+            // 
+            // lblLoginLoading
+            // 
+            this.lblLoginLoading.AutoSize = true;
+            this.lblLoginLoading.Font = new System.Drawing.Font("Sitka Display", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginLoading.ForeColor = System.Drawing.Color.White;
+            this.lblLoginLoading.Location = new System.Drawing.Point(347, 390);
+            this.lblLoginLoading.Name = "lblLoginLoading";
+            this.lblLoginLoading.Size = new System.Drawing.Size(109, 30);
+            this.lblLoginLoading.TabIndex = 12;
+            this.lblLoginLoading.Text = "Loading . . .";
+            // 
+            // pnlLoginLoading1
+            // 
+            this.pnlLoginLoading1.BackColor = System.Drawing.Color.Gray;
+            this.pnlLoginLoading1.Controls.Add(this.pnlLoginLoading2);
+            this.pnlLoginLoading1.Location = new System.Drawing.Point(41, 374);
+            this.pnlLoginLoading1.Name = "pnlLoginLoading1";
+            this.pnlLoginLoading1.Size = new System.Drawing.Size(720, 3);
+            this.pnlLoginLoading1.TabIndex = 11;
+            // 
+            // pnlLoginLoading2
+            // 
+            this.pnlLoginLoading2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.pnlLoginLoading2.Location = new System.Drawing.Point(0, 0);
+            this.pnlLoginLoading2.Name = "pnlLoginLoading2";
+            this.pnlLoginLoading2.Size = new System.Drawing.Size(10, 3);
+            this.pnlLoginLoading2.TabIndex = 12;
             // 
             // lblLoginTenThuThu
             // 
@@ -112,6 +145,8 @@
             // 
             // pnlLoginThongTinDN
             // 
+            this.pnlLoginThongTinDN.Controls.Add(this.label1);
+            this.pnlLoginThongTinDN.Controls.Add(this.pictureBox1);
             this.pnlLoginThongTinDN.Controls.Add(this.lblLoginThongBao);
             this.pnlLoginThongTinDN.Controls.Add(this.lblAppName);
             this.pnlLoginThongTinDN.Controls.Add(this.btnLoginESC);
@@ -120,10 +155,31 @@
             this.pnlLoginThongTinDN.Controls.Add(this.btnDangNhap);
             this.pnlLoginThongTinDN.Controls.Add(this.lblTaiKhoan);
             this.pnlLoginThongTinDN.Controls.Add(this.lblMatKhau);
-            this.pnlLoginThongTinDN.Location = new System.Drawing.Point(10, 0);
+            this.pnlLoginThongTinDN.Location = new System.Drawing.Point(12, 0);
             this.pnlLoginThongTinDN.Name = "pnlLoginThongTinDN";
-            this.pnlLoginThongTinDN.Size = new System.Drawing.Size(812, 487);
+            this.pnlLoginThongTinDN.Size = new System.Drawing.Size(810, 487);
             this.pnlLoginThongTinDN.TabIndex = 13;
+            // 
+            // lblLoginThongBao
+            // 
+            this.lblLoginThongBao.AutoSize = true;
+            this.lblLoginThongBao.Font = new System.Drawing.Font("Sitka Heading", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblLoginThongBao.ForeColor = System.Drawing.Color.Transparent;
+            this.lblLoginThongBao.Location = new System.Drawing.Point(502, 283);
+            this.lblLoginThongBao.Name = "lblLoginThongBao";
+            this.lblLoginThongBao.Size = new System.Drawing.Size(0, 19);
+            this.lblLoginThongBao.TabIndex = 19;
+            // 
+            // lblAppName
+            // 
+            this.lblAppName.AutoSize = true;
+            this.lblAppName.Font = new System.Drawing.Font("Sitka Display", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.lblAppName.Location = new System.Drawing.Point(6, 24);
+            this.lblAppName.Name = "lblAppName";
+            this.lblAppName.Size = new System.Drawing.Size(330, 92);
+            this.lblAppName.TabIndex = 18;
+            this.lblAppName.Text = "MYLibrary";
             // 
             // btnLoginESC
             // 
@@ -197,58 +253,41 @@
             this.lblMatKhau.TabIndex = 14;
             this.lblMatKhau.Text = "Mật Khẩu";
             // 
-            // pnlLoginLoading1
-            // 
-            this.pnlLoginLoading1.BackColor = System.Drawing.Color.Gray;
-            this.pnlLoginLoading1.Controls.Add(this.pnlLoginLoading2);
-            this.pnlLoginLoading1.Location = new System.Drawing.Point(69, 427);
-            this.pnlLoginLoading1.Name = "pnlLoginLoading1";
-            this.pnlLoginLoading1.Size = new System.Drawing.Size(720, 3);
-            this.pnlLoginLoading1.TabIndex = 11;
-            // 
-            // pnlLoginLoading2
-            // 
-            this.pnlLoginLoading2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            this.pnlLoginLoading2.Location = new System.Drawing.Point(0, 0);
-            this.pnlLoginLoading2.Name = "pnlLoginLoading2";
-            this.pnlLoginLoading2.Size = new System.Drawing.Size(10, 3);
-            this.pnlLoginLoading2.TabIndex = 12;
-            // 
-            // lblLoginLoading
-            // 
-            this.lblLoginLoading.AutoSize = true;
-            this.lblLoginLoading.Font = new System.Drawing.Font("Sitka Display", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginLoading.ForeColor = System.Drawing.Color.White;
-            this.lblLoginLoading.Location = new System.Drawing.Point(375, 433);
-            this.lblLoginLoading.Name = "lblLoginLoading";
-            this.lblLoginLoading.Size = new System.Drawing.Size(109, 30);
-            this.lblLoginLoading.TabIndex = 12;
-            this.lblLoginLoading.Text = "Loading . . .";
-            // 
             // frmLoginLoading
             // 
             this.frmLoginLoading.Tick += new System.EventHandler(this.frmLoginLoading_Tick);
             // 
-            // lblAppName
+            // pictureBox1
             // 
-            this.lblAppName.AutoSize = true;
-            this.lblAppName.Font = new System.Drawing.Font("Sitka Display", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            this.lblAppName.Location = new System.Drawing.Point(6, 9);
-            this.lblAppName.Name = "lblAppName";
-            this.lblAppName.Size = new System.Drawing.Size(181, 50);
-            this.lblAppName.TabIndex = 18;
-            this.lblAppName.Text = "MYLibrary";
+            this.pictureBox1.Image = global::GraphicUserInterface.Properties.Resources.LogoTQ;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 442);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
-            // lblLoginThongBao
+            // label1
             // 
-            this.lblLoginThongBao.AutoSize = true;
-            this.lblLoginThongBao.Font = new System.Drawing.Font("Sitka Heading", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblLoginThongBao.ForeColor = System.Drawing.Color.Transparent;
-            this.lblLoginThongBao.Location = new System.Drawing.Point(502, 283);
-            this.lblLoginThongBao.Name = "lblLoginThongBao";
-            this.lblLoginThongBao.Size = new System.Drawing.Size(0, 19);
-            this.lblLoginThongBao.TabIndex = 19;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.label1.Location = new System.Drawing.Point(53, 459);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 19);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "© Copyright 2018 TATteam";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.label2.Location = new System.Drawing.Point(323, 429);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 19);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "© Copyright 2018 TATteam";
             // 
             // frmLogin
             // 
@@ -269,9 +308,10 @@
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.pnlLoginWelcome.ResumeLayout(false);
             this.pnlLoginWelcome.PerformLayout();
+            this.pnlLoginLoading1.ResumeLayout(false);
             this.pnlLoginThongTinDN.ResumeLayout(false);
             this.pnlLoginThongTinDN.PerformLayout();
-            this.pnlLoginLoading1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,6 +336,9 @@
         private System.Windows.Forms.Timer frmLoginLoading;
         private System.Windows.Forms.Label lblAppName;
         private System.Windows.Forms.Label lblLoginThongBao;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
