@@ -50,7 +50,7 @@ namespace GraphicUserInterface
             if (this.pnlLoginLoading2.Width >= 720)
             {
                 this.frmLoginLoading.Stop();
-                frmDocGia frmDocGia = new frmDocGia();
+                frmMain frmDocGia = new frmMain();
                 frmDocGia.DTO_ThuThu.MaThuThu = txtTaiKhoan.Text;
                 this.Hide();
                 frmDocGia.ShowDialog();

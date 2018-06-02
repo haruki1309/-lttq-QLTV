@@ -15,7 +15,7 @@ using DataTransferObject;
 
 namespace GraphicUserInterface
 {
-    public partial class frmDocGia : Form
+    public partial class frmMain : Form
     {
         private Color grayBackColor = System.Drawing.Color.FromArgb(((int)((byte)54)), ((int)((byte)54)), ((int)((byte)50)));
         private Color orangeBackColor = System.Drawing.Color.FromArgb(((int)((byte)205)), ((int)((byte)104)), ((int)((byte)57)));
@@ -94,7 +94,7 @@ namespace GraphicUserInterface
             dtoThuThu.NgayVL = dt.Rows[0]["NgayVL"].ToString();
         }
 
-        public frmDocGia()
+        public frmMain()
         {
             InitializeComponent();
 
@@ -103,22 +103,7 @@ namespace GraphicUserInterface
         {
             this.dgvDocGia.DataSource = busDG.getDocGia();
             this.pnltabDocGia.BringToFront();
-
-            this.dgvDocGia.Columns["MaDocGia"].HeaderText = "Mã Độc Giả";
-            this.dgvDocGia.Columns["HoTen"].HeaderText = "Họ Tên";
-            this.dgvDocGia.Columns["DiaChi"].HeaderText = "Địa Chỉ";
-            this.dgvDocGia.Columns["SDT"].HeaderText = "Số Điện Thoại";
-            this.dgvDocGia.Columns["CMND"].HeaderText = "Chứng Minh Thư";
-            this.dgvDocGia.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
-            this.dgvDocGia.Columns["NgayDK"].HeaderText = "Ngày Đăng Ký";
-
-            this.txtHoTenDocGia.ReadOnly = true;
-            this.txtDiaChiDocGia.ReadOnly = true;
-            this.txtCMNDDocGia.ReadOnly = true;
-            this.txtSDTDocGia.ReadOnly = true;
-            this.dtmNgaySinhDocGia.Enabled = false;
-            this.dtmNgayDKDocGia.Enabled = false;
-
+                     
             //Khoi tao du lieu cho Thu Thu da dang nhap
             this.loadDataForThuThu();
 
@@ -129,11 +114,62 @@ namespace GraphicUserInterface
         //
         //TAB DOC GIA
         //
+        //Rename table DocGia
+        void DGVDocGia_RenameColumn()
+        {
+            foreach (DataGridViewColumn col in dgvDocGia.Columns)
+            {
+                if (col == dgvDocGia.Columns["MaDocGia"])
+                {
+                    dgvDocGia.Columns["MaDocGia"].HeaderText = "Mã độc giả";
+                }                   
+                else if (col == dgvDocGia.Columns["HoTen"])
+                {
+                    dgvDocGia.Columns["HoTen"].HeaderText = "Họ tên";
+                }                  
+                else if (col == dgvDocGia.Columns["DiaChi"])
+                {
+                    dgvDocGia.Columns["DiaChi"].HeaderText = "Địa chỉ";
+                }                   
+                else if (col == dgvDocGia.Columns["SoDT"])
+                {
+                    dgvDocGia.Columns["SoDT"].HeaderText = "Số điện thoại";
+                }                    
+                else if (col == dgvDocGia.Columns["CMND"])
+                {
+                    dgvDocGia.Columns["CMND"].HeaderText = "Chứng minh thư";
+                }
+                else if (col == dgvDocGia.Columns["NgaySinh"])
+                {
+                    dgvDocGia.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+                }
+                else if (col == dgvDocGia.Columns["NgayDK"])
+                {
+                    dgvDocGia.Columns["NgayDK"].HeaderText = "Ngày đăng ký";
+                }
+            }
+        }
+        void SetupTabDocGia()
+        {
+            //Setup ten cho dgv
+            DGVDocGia_RenameColumn();
+            //Setup source cho dgv
+            dgvDocGia.DataSource = busDG.getDocGia();
+            //Xoa hang duoc chon
+            dgvDocGia.ClearSelection();
+            //disable thong tin
+            this.txtHoTenDocGia.ReadOnly = true;
+            this.txtDiaChiDocGia.ReadOnly = true;
+            this.txtCMNDDocGia.ReadOnly = true;
+            this.txtSDTDocGia.ReadOnly = true;
+            this.dtmNgaySinhDocGia.Enabled = false;
+            this.dtmNgayDKDocGia.Enabled = false;
+        }
 
         private void mainbtnDocGia_Click(object sender, EventArgs e)
         {
             this.pnltabDocGia.BringToFront();
-            dgvDocGia.DataSource = busDG.getDocGia();
+            SetupTabDocGia();
             ChonMainButton(mainbtnDocGia);
         }
 
@@ -144,22 +180,29 @@ namespace GraphicUserInterface
             this.pnlHightLightBoLoc.BackColor = grayBackColor;
         }
 
-        bool isClose = false; // dung cho ham TabBoLocClick va ham TabTimKiemClick      
+          
 
         private void tabbtnTimKiem_Click(object sender, EventArgs e)
         {
-            if (!isClose)
+            if (pnlSearchFor.Visible == false)
             {
-                this.pnlSearchFor.BringToFront();
-                this.pnlHightLightTimKiem.BackColor = orangeBackColor;
-                this.pnlHightLightBoLoc.BackColor = grayBackColor;
+                pnlBoLoc.Visible = false;
+                pnlSearchFor.Visible = true;
+                pnlSearchFor.BringToFront();
 
-                isClose = true;
+                txtDGTimKiem.Clear();
+                cboSearchFor.Text = "Tìm kiếm theo";
+
+                pnlHightLightBoLoc.BackColor = grayBackColor;
+                pnlHightLightTimKiem.BackColor = orangeBackColor;
             }
             else
             {
-                this.pnlThongTinDocGia.BringToFront();
-                isClose = false;
+                pnlSearchFor.Visible = false;
+                pnlBoLoc.Visible = false;
+                pnlHightLightTimKiem.BackColor = grayBackColor;
+
+                pnlThongTinDocGia.BringToFront();
             }
         }
 
@@ -172,18 +215,23 @@ namespace GraphicUserInterface
 
         private void tabbtnBoLoc_Click(object sender, EventArgs e)
         {
-            if (!isClose)
+            if (pnlBoLoc.Visible == false)
             {
-                this.pnlBoLoc.BringToFront();
-                this.pnlHightLightTimKiem.BackColor = grayBackColor;
-                this.pnlHightLightBoLoc.BackColor = orangeBackColor;
+               
+                pnlSearchFor.Visible = false;
+                pnlBoLoc.Visible = true;
+                pnlBoLoc.BringToFront();
 
-                isClose = true;
+                pnlHightLightTimKiem.BackColor = grayBackColor;
+                pnlHightLightBoLoc.BackColor = orangeBackColor;
             }
             else
             {
-                this.pnlThongTinDocGia.BringToFront();
-                isClose = false;
+                pnlBoLoc.Visible = false;
+                pnlSearchFor.Visible = false;
+                pnlHightLightBoLoc.BackColor = grayBackColor;
+
+                pnlThongTinDocGia.BringToFront();
             }
 
         }
@@ -242,10 +290,7 @@ namespace GraphicUserInterface
             }
         }
 
-
-
-
-        private void dgvDocGia_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgvDocGia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.txtHoTenDocGia.ReadOnly = true;
             this.txtDiaChiDocGia.ReadOnly = true;
@@ -254,19 +299,28 @@ namespace GraphicUserInterface
             this.dtmNgaySinhDocGia.Enabled = false;
             this.dtmNgayDKDocGia.Enabled = false;
 
-            DataTable dt = busDG.getDocGia();
-            txtHoTenDocGia.Text = dt.Rows[e.RowIndex]["HoTen"].ToString();
-            txtDiaChiDocGia.Text = dt.Rows[e.RowIndex]["DiaChi"].ToString();
-            txtCMNDDocGia.Text = dt.Rows[e.RowIndex]["CMND"].ToString();
-            txtSDTDocGia.Text = dt.Rows[e.RowIndex]["SDT"].ToString();
-            dtmNgaySinhDocGia.Value = Convert.ToDateTime(dt.Rows[e.RowIndex]["NgaySinh"].ToString());
-            dtmNgayDKDocGia.Value = Convert.ToDateTime(dt.Rows[e.RowIndex]["NgayDK"].ToString());
+            if(e.RowIndex > -1)
+            {
+                DataTable dt = busDG.getDocGia();
+                txtHoTenDocGia.Text = dt.Rows[e.RowIndex]["HoTen"].ToString();
+                txtDiaChiDocGia.Text = dt.Rows[e.RowIndex]["DiaChi"].ToString();
+                txtCMNDDocGia.Text = dt.Rows[e.RowIndex]["CMND"].ToString();
+                txtSDTDocGia.Text = dt.Rows[e.RowIndex]["SDT"].ToString();
+                dtmNgaySinhDocGia.Value = Convert.ToDateTime(dt.Rows[e.RowIndex]["NgaySinh"].ToString());
+                dtmNgayDKDocGia.Value = Convert.ToDateTime(dt.Rows[e.RowIndex]["NgayDK"].ToString());
+            }
+            else if(e.RowIndex == -1)
+            {
+                dgvDocGia.ClearSelection();
+            }
 
             btnThemDocGia.Text = "Thêm";
             btnXoaDocGia.Text = "Xóa";
             btnSuaDocGia.Text = "Sửa";
             lblThongBaoDocGia.Text = "";
         }
+
+        
 
         //ThemDocGia
 
@@ -925,16 +979,19 @@ namespace GraphicUserInterface
 
             try
             {
-                cboTenSach.Text = dgvSach.Rows[e.RowIndex].Cells["TenSach"].Value.ToString();
-                cboTacGia.Text = dgvSach.Rows[e.RowIndex].Cells["TenTacGia"].Value.ToString();
-                cboNamXB.Text = dgvSach.Rows[e.RowIndex].Cells["NamXB"].Value.ToString();
-                cboNXB.Text = dgvSach.Rows[e.RowIndex].Cells["TenNXB"].Value.ToString();
-                cboNhaPhatHanh.Text = dgvSach.Rows[e.RowIndex].Cells["TenNhaPhatHanh"].Value.ToString();
-                cboChuDe.Text = dgvSach.Rows[e.RowIndex].Cells["TenChuDe"].Value.ToString();
-                cboTheLoai.Text = dgvSach.Rows[e.RowIndex].Cells["TenTheLoai"].Value.ToString();
-                txtGiaTri.Text = dgvSach.Rows[e.RowIndex].Cells["GiaTri"].Value.ToString();
-                txtSoLuong.Text = dgvSach.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
-                dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.Rows[e.RowIndex].Cells["NgayNhap"].Value.ToString());
+                if(e.RowIndex > -1)
+                {
+                    cboTenSach.Text = dgvSach.Rows[e.RowIndex].Cells["TenSach"].Value.ToString();
+                    cboTacGia.Text = dgvSach.Rows[e.RowIndex].Cells["TenTacGia"].Value.ToString();
+                    cboNamXB.Text = dgvSach.Rows[e.RowIndex].Cells["NamXB"].Value.ToString();
+                    cboNXB.Text = dgvSach.Rows[e.RowIndex].Cells["TenNXB"].Value.ToString();
+                    cboNhaPhatHanh.Text = dgvSach.Rows[e.RowIndex].Cells["TenNhaPhatHanh"].Value.ToString();
+                    cboChuDe.Text = dgvSach.Rows[e.RowIndex].Cells["TenChuDe"].Value.ToString();
+                    cboTheLoai.Text = dgvSach.Rows[e.RowIndex].Cells["TenTheLoai"].Value.ToString();
+                    txtGiaTri.Text = dgvSach.Rows[e.RowIndex].Cells["GiaTri"].Value.ToString();
+                    txtSoLuong.Text = dgvSach.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
+                    dtmNgayNhap.Value = Convert.ToDateTime(dgvSach.Rows[e.RowIndex].Cells["NgayNhap"].Value.ToString());
+                }
             }
             catch (Exception ex)
             {
@@ -1708,10 +1765,6 @@ namespace GraphicUserInterface
             }
         }
 
-
-
-
-
-
+        
     }
 }
