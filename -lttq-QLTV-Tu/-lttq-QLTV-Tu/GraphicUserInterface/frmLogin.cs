@@ -23,7 +23,7 @@ namespace GraphicUserInterface
             }
             else
             {
-                lblLoginThongBao.Text = "(*)Sai Tài khoản hoặc Mật khẩu";
+                lblLoginThongBao.Text = "(*) Sai Tài khoản hoặc Mật khẩu";
                 txtMatKhau.Clear();
             }
         }

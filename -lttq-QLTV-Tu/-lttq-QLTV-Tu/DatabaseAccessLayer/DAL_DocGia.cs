@@ -28,6 +28,26 @@ namespace DatabaseAccessLayer
                 return null;
             }
         }
+
+        public DataTable Get(string condition)
+        {
+            try
+            {
+                string sql = string.Format("Select * from DocGia where {0}", condition);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, cn);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch(Exception)
+            {
+                return null;
+            }
+        }
+
         public DataTable GetHoTen(string MaDocGia)
         {
             try

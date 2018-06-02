@@ -17,6 +17,12 @@ namespace BusinessLogicLayer
         {
             return dalDocGia.Get();
         }
+
+        public DataTable getDocGia(string condition)
+        {
+            return dalDocGia.Get(condition);
+        }
+
         public DataTable GetHoTenDocGia(string MaDocGia)
         {
             return dalDocGia.GetHoTen(MaDocGia);

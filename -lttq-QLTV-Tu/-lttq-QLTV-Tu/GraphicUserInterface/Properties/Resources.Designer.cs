@@ -63,26 +63,6 @@ namespace GraphicUserInterface.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add {
-            get {
-                object obj = ResourceManager.GetObject("add", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap add1 {
-            get {
-                object obj = ResourceManager.GetObject("add1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap LIBRARY {
             get {
                 object obj = ResourceManager.GetObject("LIBRARY", resourceCulture);
@@ -96,6 +76,36 @@ namespace GraphicUserInterface.Properties {
         internal static System.Drawing.Bitmap LogoTQ {
             get {
                 object obj = ResourceManager.GetObject("LogoTQ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoTQ1 {
+            get {
+                object obj = ResourceManager.GetObject("LogoTQ1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoTQ11 {
+            get {
+                object obj = ResourceManager.GetObject("LogoTQ11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoTQ2 {
+            get {
+                object obj = ResourceManager.GetObject("LogoTQ2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

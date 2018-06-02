@@ -103,7 +103,10 @@ namespace GraphicUserInterface
         {
             this.dgvDocGia.DataSource = busDG.getDocGia();
             this.pnltabDocGia.BringToFront();
-                     
+
+            dgvDocGia.ClearSelection();
+            ChonMainButton(mainbtnDocGia);
+
             //Khoi tao du lieu cho Thu Thu da dang nhap
             this.loadDataForThuThu();
 
@@ -115,7 +118,7 @@ namespace GraphicUserInterface
         //TAB DOC GIA
         //
         //Rename table DocGia
-        void DGVDocGia_RenameColumn()
+        void dgvDocGia_RenameColumn()
         {
             foreach (DataGridViewColumn col in dgvDocGia.Columns)
             {
@@ -152,7 +155,7 @@ namespace GraphicUserInterface
         void SetupTabDocGia()
         {
             //Setup ten cho dgv
-            DGVDocGia_RenameColumn();
+            dgvDocGia_RenameColumn();
             //Setup source cho dgv
             dgvDocGia.DataSource = busDG.getDocGia();
             //Xoa hang duoc chon
@@ -171,65 +174,87 @@ namespace GraphicUserInterface
             this.pnltabDocGia.BringToFront();
             SetupTabDocGia();
             ChonMainButton(mainbtnDocGia);
-        }
 
-        private void btnThongTinChiTiet_Click(object sender, EventArgs e)
-        {
-            this.pnlThongTinDocGia.BringToFront();
-            this.pnlHightLightTimKiem.BackColor = grayBackColor;
-            this.pnlHightLightBoLoc.BackColor = grayBackColor;
+            pnlTimKiemDocGia.Visible = false;
+            pnlLocDocGia.Visible = false;
+            btnHuyThaoTacDocGia.Visible = false;
         }
-
-          
+                        
 
         private void tabbtnTimKiem_Click(object sender, EventArgs e)
         {
-            if (pnlSearchFor.Visible == false)
+            if (pnlTimKiemDocGia.Visible == false)
             {
-                pnlBoLoc.Visible = false;
-                pnlSearchFor.Visible = true;
-                pnlSearchFor.BringToFront();
+                pnlLocDocGia.Visible = false;
+                pnlTimKiemDocGia.Visible = true;
+                pnlTimKiemDocGia.BringToFront();
 
                 txtDGTimKiem.Clear();
-                cboSearchFor.Text = "Tìm kiếm theo";
+                cboTimKiemDocGia.Text = "Tìm kiếm theo";
 
-                pnlHightLightBoLoc.BackColor = grayBackColor;
-                pnlHightLightTimKiem.BackColor = orangeBackColor;
+                pnlHighLightLocDocGia.BackColor = grayBackColor;
+                pnlHighLightTimKiemDocGia.BackColor = orangeBackColor;
             }
             else
             {
-                pnlSearchFor.Visible = false;
-                pnlBoLoc.Visible = false;
-                pnlHightLightTimKiem.BackColor = grayBackColor;
+                pnlTimKiemDocGia.Visible = false;
+                pnlLocDocGia.Visible = false;
+                pnlHighLightTimKiemDocGia.BackColor = grayBackColor;
 
                 pnlThongTinDocGia.BringToFront();
             }
         }
 
-        private void btnSearchFor_Click(object sender, EventArgs e)
+        private void btnTimKiemDocGia_Click(object sender, EventArgs e)
         {
+            btnHuyThaoTacDocGia.Visible = true;
 
+            if (cboTimKiemDocGia.Text == "Tìm kiếm theo")
+            {
+                pnlTimKiemDocGia.Visible = false;
+                pnlHighLightTimKiemDocGia.BackColor = grayBackColor;
+                lblThongBaoDocGia.Text = "Không thể tìm kiếm.\nVui lòng chọn điều kiện tìm kiếm.";
+            }
+            else
+            {
+                string condition = "";
+
+                if (cboTimKiemDocGia.SelectedItem.ToString() == "Mã độc giả")
+                    condition = string.Format("MaDocGia like '%{0}%'", txtDGTimKiem.Text.Trim());
+                else if (cboTimKiemDocGia.SelectedItem.ToString() == "Tên độc giả")
+                    condition = string.Format("HoTen like N'%{0}%'", txtDGTimKiem.Text.Trim());
+                else if (cboTimKiemDocGia.SelectedItem.ToString() == "Địa chỉ")
+                    condition = string.Format("DiaChi like N'%{0}%'", txtDGTimKiem.Text.Trim());
+                else if (cboTimKiemDocGia.SelectedItem.ToString() == "CMND")
+                    condition = string.Format("CMND like '%{0}%'", txtDGTimKiem.Text.Trim());
+                else if (cboTimKiemDocGia.SelectedItem.ToString() == "Số điện thoại")
+                    condition = string.Format("SDT like '%{0}%'", txtDGTimKiem.Text.Trim());
+
+                dgvDocGia.DataSource = busDG.getDocGia(condition);
+
+            }                     
         }
 
         //Chuc nang loc doc gia
 
         private void tabbtnBoLoc_Click(object sender, EventArgs e)
         {
-            if (pnlBoLoc.Visible == false)
-            {
-               
-                pnlSearchFor.Visible = false;
-                pnlBoLoc.Visible = true;
-                pnlBoLoc.BringToFront();
+            btnHuyThaoTacDocGia.Visible = true;
 
-                pnlHightLightTimKiem.BackColor = grayBackColor;
-                pnlHightLightBoLoc.BackColor = orangeBackColor;
+            if (pnlLocDocGia.Visible == false)
+            {               
+                pnlTimKiemDocGia.Visible = false;
+                pnlLocDocGia.Visible = true;
+                pnlLocDocGia.BringToFront();
+
+                pnlHighLightTimKiemDocGia.BackColor = grayBackColor;
+                pnlHighLightLocDocGia.BackColor = orangeBackColor;
             }
             else
             {
-                pnlBoLoc.Visible = false;
-                pnlSearchFor.Visible = false;
-                pnlHightLightBoLoc.BackColor = grayBackColor;
+                pnlLocDocGia.Visible = false;
+                pnlTimKiemDocGia.Visible = false;
+                pnlHighLightLocDocGia.BackColor = grayBackColor;
 
                 pnlThongTinDocGia.BringToFront();
             }
@@ -264,30 +289,7 @@ namespace GraphicUserInterface
             }
 
             dgvDocGia.DataSource = busDG.getDocGia(listProperties);
-
-            foreach (string column in listProperties)
-            {
-                if (column == "DiaChi")
-                {
-                    this.dgvDocGia.Columns["DiaChi"].HeaderText = "Địa Chỉ";
-                }
-                else if (column == "SDT")
-                {
-                    this.dgvDocGia.Columns["SDT"].HeaderText = "Số Điện Thoại";
-                }
-                else if (column == "Cmnd")
-                {
-                    this.dgvDocGia.Columns["CMND"].HeaderText = "Chứng Minh Thư";
-                }
-                else if (column == "NgaySinh")
-                {
-                    this.dgvDocGia.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
-                }
-                else if (column == "NgayDK")
-                {
-                    this.dgvDocGia.Columns["NgayDK"].HeaderText = "Ngày Đăng Ký";
-                }
-            }
+            dgvDocGia_RenameColumn();
         }
 
         private void dgvDocGia_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -329,7 +331,7 @@ namespace GraphicUserInterface
             btnXoaDocGia.Text = "Xóa";
             btnSuaDocGia.Text = "Sửa";
 
-            btnHuyThaoTacDocGia.Enabled = true;
+            btnHuyThaoTacDocGia.Visible = false;
             btnSuaDocGia.Enabled = false;
             btnXoaDocGia.Enabled = false;
 
@@ -350,6 +352,7 @@ namespace GraphicUserInterface
                 this.dtmNgayDKDocGia.Enabled = true;
 
                 btnThemDocGia.Text = "Xác Nhận";
+                btnHuyThaoTacDocGia.Visible = true;
             }
             else if (btnThemDocGia.Text == "Xác Nhận")
             {
@@ -369,7 +372,7 @@ namespace GraphicUserInterface
                     else
                     {
                         this.lblThongBaoDocGia.Text = "Thêm không thành công !";
-                        btnThemDocGia.Text = "Okay";
+                        btnThemDocGia.Text = "Thêm";
                     }
 
                     this.txtHoTenDocGia.ReadOnly = true;
@@ -379,7 +382,7 @@ namespace GraphicUserInterface
                     this.dtmNgaySinhDocGia.Enabled = false;
                     this.dtmNgayDKDocGia.Enabled = false;
 
-                    btnHuyThaoTacDocGia.Enabled = false;
+                    btnHuyThaoTacDocGia.Visible = false;
                     btnXoaDocGia.Enabled = true;
                     btnSuaDocGia.Enabled = true;
                 }
@@ -388,12 +391,7 @@ namespace GraphicUserInterface
                 {
                     lblThongBaoDocGia.Text = "Vui lòng nhập thông tin độc giả";
                 }
-            }
-            else if (btnThemDocGia.Text == "Okay")
-            {
-                this.lblThongBaoDocGia.Text = "";
-                btnThemDocGia.Text = "Thêm";
-            }
+            }            
         }
 
         //Sua thong tin doc gia        
@@ -417,7 +415,7 @@ namespace GraphicUserInterface
                     this.dtmNgaySinhDocGia.Enabled = true;
                     this.dtmNgayDKDocGia.Enabled = true;
 
-                    btnHuyThaoTacDocGia.Enabled = true;
+                    btnHuyThaoTacDocGia.Visible = true;
 
                     btnThemDocGia.Enabled = false;
                     btnXoaDocGia.Enabled = false;
@@ -457,7 +455,7 @@ namespace GraphicUserInterface
                     this.dtmNgaySinhDocGia.Enabled = false;
                     this.dtmNgayDKDocGia.Enabled = false;
 
-                    btnHuyThaoTacDocGia.Enabled = false;
+                    btnHuyThaoTacDocGia.Visible = false;
                     btnXoaDocGia.Enabled = true;
                     btnThemDocGia.Enabled = true;
                 }
@@ -487,12 +485,12 @@ namespace GraphicUserInterface
                     btnSuaDocGia.Enabled = false;
                     btnThemDocGia.Enabled = false;
 
-                    btnHuyThaoTacDocGia.Enabled = true;
+                    btnHuyThaoTacDocGia.Visible = true;
                 }
             }
             else if (btnXoaDocGia.Text == "Xác Nhận")
             {
-                btnHuyThaoTacDocGia.Enabled = true;
+                btnHuyThaoTacDocGia.Visible = false;
 
                 if (dgvDocGia.SelectedRows.Count == 0)
                 {
@@ -515,7 +513,7 @@ namespace GraphicUserInterface
                         this.lblThongBaoDocGia.Text = "Xóa không thành công !";
                         btnXoaDocGia.Text = "Xóa";
                     }
-                    btnHuyThaoTacDocGia.Enabled = false;
+                    btnHuyThaoTacDocGia.Visible = false;
                     btnSuaDocGia.Enabled = true;
                     btnThemDocGia.Enabled = true;
                 }
@@ -526,21 +524,8 @@ namespace GraphicUserInterface
         {
             if (btnHuyThaoTacDocGia.Text == "Hủy")
             {
-                if (btnThemDocGia.Text == "Xác Nhận")
-                {
-                    btnHuyThaoTacDocGia.Text = "Xác Nhận";
-                    lblThongBaoDocGia.Text = "Xác nhận hủy thao tác thêm độc giả?";
-                }
-                else if (btnSuaDocGia.Text == "Xác Nhận")
-                {
-                    btnHuyThaoTacDocGia.Text = "Xác Nhận";
-                    lblThongBaoDocGia.Text = "Xác nhận hủy thao tác sửa thông tin\nđộc giả?";
-                }
-                else if (btnXoaDocGia.Text == "Xác Nhận")
-                {
-                    btnHuyThaoTacDocGia.Text = "Xác Nhận";
-                    lblThongBaoDocGia.Text = "Xác nhận hủy thao tác xóa độc giả?";
-                }
+                btnHuyThaoTacDocGia.Text = "Xác Nhận";
+                lblThongBaoDocGia.Text = "Bạn có chắc chắn muốn hủy\ntác vụ đang thực hiện?";
             }
             else if (btnHuyThaoTacDocGia.Text == "Xác Nhận")
             {
@@ -551,7 +536,7 @@ namespace GraphicUserInterface
                 this.dtmNgaySinhDocGia.Enabled = false;
                 this.dtmNgayDKDocGia.Enabled = false;
 
-                btnHuyThaoTacDocGia.Enabled = false;
+                btnHuyThaoTacDocGia.Visible = false;
 
                 if (btnThemDocGia.Text == "Xác Nhận")
                 {
@@ -573,6 +558,8 @@ namespace GraphicUserInterface
                 }
                 btnHuyThaoTacDocGia.Text = "Hủy";
                 lblThongBaoDocGia.Text = "";
+
+                dgvDocGia.DataSource = busDG.getDocGia();
             }
         }
 
@@ -963,16 +950,10 @@ namespace GraphicUserInterface
                 else if (col == dgvSach.Columns["SoLuong"])
                     dgvSach.Columns["SoLuong"].HeaderText = "Số lượng";
             }
-        }
 
-        private void dgvSach_Click(object sender, EventArgs e)
-        {
-            pnlLocSach.Visible = false;
-            pnlTimKiemSach.Visible = false;
-            pnlHighLightBoLocSach.BackColor = grayBackColor;
-            pnlHighLightTimKiemSach.BackColor = grayBackColor;
+            dgvSach.ClearSelection();
         }
-
+        
         private void dgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ResetControlSach();
@@ -1024,23 +1005,11 @@ namespace GraphicUserInterface
 
         private void cboTacGia_Leave(object sender, EventArgs e)
         {
-            int count = 0;
-
-            foreach (string tenTG in cboTacGia.Items)
+            if (cboTacGia.Text == "")
             {
-                if (tenTG == cboTacGia.Text)
-                    count++;
-            }
-
-            if (count == 0)
-                btnThemTacGia.Visible = true;
-            else
                 btnThemTacGia.Visible = false;
-        }
-
-        private void cboTacGia_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+            }
+            else
             {
                 int count = 0;
 
@@ -1056,6 +1025,32 @@ namespace GraphicUserInterface
                     btnThemTacGia.Visible = false;
             }
         }
+
+        private void cboTacGia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (cboTacGia.Text == "")
+                {
+                    btnThemTacGia.Visible = false;
+                }
+                else
+                {
+                    int count = 0;
+
+                    foreach (string tenTG in cboTacGia.Items)
+                    {
+                        if (tenTG == cboTacGia.Text)
+                            count++;
+                    }
+
+                    if (count == 0)
+                        btnThemTacGia.Visible = true;
+                    else
+                        btnThemTacGia.Visible = false;
+                }
+            }
+        }
         // Them NXB
         private void btnThemNXB_Click(object sender, EventArgs e)
         {
@@ -1068,23 +1063,11 @@ namespace GraphicUserInterface
 
         private void cboNXB_Leave(object sender, EventArgs e)
         {
-            int count = 0;
-
-            foreach (string tenNXB in cboNXB.Items)
+            if (cboNXB.Text == "")
             {
-                if (tenNXB == cboNXB.Text)
-                    count++;
-            }
-
-            if (count == 0)
-                btnThemNXB.Visible = true;
-            else
                 btnThemNXB.Visible = false;
-        }
-
-        private void cboNXB_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+            }
+            else
             {
                 int count = 0;
 
@@ -1101,6 +1084,32 @@ namespace GraphicUserInterface
             }
         }
 
+        private void cboNXB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (cboNXB.Text == "")
+                {
+                    btnThemNXB.Visible = false;
+                }
+                else
+                {
+                    int count = 0;
+
+                    foreach (string tenNXB in cboNXB.Items)
+                    {
+                        if (tenNXB == cboNXB.Text)
+                            count++;
+                    }
+
+                    if (count == 0)
+                        btnThemNXB.Visible = true;
+                    else
+                        btnThemNXB.Visible = false;
+                }
+            }
+        }
+
         // Them Nha phat hanh
         private void btnThemNhaPhatHanh_Click(object sender, EventArgs e)
         {
@@ -1113,23 +1122,11 @@ namespace GraphicUserInterface
 
         private void cboNhaPhatHanh_Leave(object sender, EventArgs e)
         {
-            int count = 0;
-
-            foreach (string tenNPH in cboNhaPhatHanh.Items)
+            if (cboNhaPhatHanh.Text == "")
             {
-                if (tenNPH == cboNhaPhatHanh.Text)
-                    count++;
-            }
-
-            if (count == 0)
-                btnThemNhaPhatHanh.Visible = true;
-            else
                 btnThemNhaPhatHanh.Visible = false;
-        }
-
-        private void cboNhaPhatHanh_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+            }
+            else
             {
                 int count = 0;
 
@@ -1146,6 +1143,32 @@ namespace GraphicUserInterface
             }
         }
 
+        private void cboNhaPhatHanh_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (cboNhaPhatHanh.Text == "")
+                {
+                    btnThemNhaPhatHanh.Visible = false;
+                }
+                else
+                {
+                    int count = 0;
+
+                    foreach (string tenNPH in cboNhaPhatHanh.Items)
+                    {
+                        if (tenNPH == cboNhaPhatHanh.Text)
+                            count++;
+                    }
+
+                    if (count == 0)
+                        btnThemNhaPhatHanh.Visible = true;
+                    else
+                        btnThemNhaPhatHanh.Visible = false;
+                }
+            }
+        }
+
         // Them Chu de
         private void btnThemChuDe_Click(object sender, EventArgs e)
         {
@@ -1158,23 +1181,11 @@ namespace GraphicUserInterface
 
         private void cboChuDe_Leave(object sender, EventArgs e)
         {
-            int count = 0;
-
-            foreach (string tenCD in cboChuDe.Items)
+            if (cboChuDe.Text == "")
             {
-                if (tenCD == cboChuDe.Text)
-                    count++;
-            }
-
-            if (count == 0)
-                btnThemChuDe.Visible = true;
-            else
                 btnThemChuDe.Visible = false;
-        }
-
-        private void cboChuDe_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+            }
+            else
             {
                 int count = 0;
 
@@ -1191,6 +1202,32 @@ namespace GraphicUserInterface
             }
         }
 
+        private void cboChuDe_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (cboChuDe.Text == "")
+                {
+                    btnThemChuDe.Visible = false;
+                }
+                else
+                {
+                    int count = 0;
+
+                    foreach (string tenCD in cboChuDe.Items)
+                    {
+                        if (tenCD == cboChuDe.Text)
+                            count++;
+                    }
+
+                    if (count == 0)
+                        btnThemChuDe.Visible = true;
+                    else
+                        btnThemChuDe.Visible = false;
+                }
+            }
+        }
+
         // Them The loai
         private void btnThemTheLoai_Click(object sender, EventArgs e)
         {
@@ -1203,23 +1240,11 @@ namespace GraphicUserInterface
 
         private void cboTheLoai_Leave(object sender, EventArgs e)
         {
-            int count = 0;
-
-            foreach (string tenTL in cboTheLoai.Items)
+            if (cboTheLoai.Text == "")
             {
-                if (tenTL == cboTheLoai.Text)
-                    count++;
-            }
-
-            if (count == 0)
-                btnThemTheLoai.Visible = true;
-            else
                 btnThemTheLoai.Visible = false;
-        }
-
-        private void cboTheLoai_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+            }
+            else
             {
                 int count = 0;
 
@@ -1236,38 +1261,90 @@ namespace GraphicUserInterface
             }
         }
 
+        private void cboTheLoai_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (cboTheLoai.Text == "")
+                {
+                    btnThemTheLoai.Visible = false;
+                }
+                else
+                {
+                    int count = 0;
+
+                    foreach (string tenTL in cboTheLoai.Items)
+                    {
+                        if (tenTL == cboTheLoai.Text)
+                            count++;
+                    }
+
+                    if (count == 0)
+                        btnThemTheLoai.Visible = true;
+                    else
+                        btnThemTheLoai.Visible = false;
+                }
+            }
+        }
+
         // =================== Xu ly event ngoai ================//
 
         // Tat tab Tim kiem va Loc
         private void pnltabKhoSach_Click(object sender, EventArgs e)
         {
-            pnlLocSach.Visible = false;
-            pnlTimKiemSach.Visible = false;
-            pnlHighLightBoLocSach.BackColor = grayBackColor;
-            pnlHighLightTimKiemSach.BackColor = grayBackColor;
+            if (pnlLocSach.Visible == true || pnlTimKiemSach.Visible == true)
+            {
+                pnlLocSach.Visible = false;
+                pnlTimKiemSach.Visible = false;
+                pnlHighLightBoLocSach.BackColor = grayBackColor;
+                pnlHighLightTimKiemSach.BackColor = grayBackColor;
+            }
+            else
+                dgvSach.ClearSelection();
         }
 
         private void pnlCapNhatSach_Click(object sender, EventArgs e)
         {
-            pnlLocSach.Visible = false;
-            pnlTimKiemSach.Visible = false;
-            pnlHighLightBoLocSach.BackColor = grayBackColor;
-            pnlHighLightTimKiemSach.BackColor = grayBackColor;
+            if (pnlLocSach.Visible == true || pnlTimKiemSach.Visible == true)
+            {
+                pnlLocSach.Visible = false;
+                pnlTimKiemSach.Visible = false;
+                pnlHighLightBoLocSach.BackColor = grayBackColor;
+                pnlHighLightTimKiemSach.BackColor = grayBackColor;
+            }
+            else
+                dgvSach.ClearSelection();
         }
 
         private void pnlThongTinSach_Click(object sender, EventArgs e)
         {
-            pnlLocSach.Visible = false;
-            pnlTimKiemSach.Visible = false;
-            pnlHighLightBoLocSach.BackColor = grayBackColor;
-            pnlHighLightTimKiemSach.BackColor = grayBackColor;
+            if (pnlLocSach.Visible == true || pnlTimKiemSach.Visible == true)
+            {
+                pnlLocSach.Visible = false;
+                pnlTimKiemSach.Visible = false;
+                pnlHighLightBoLocSach.BackColor = grayBackColor;
+                pnlHighLightTimKiemSach.BackColor = grayBackColor;
+            }
+            else
+                dgvSach.ClearSelection();
+        }
+
+        private void dgvSach_Click(object sender, EventArgs e)
+        {
+            if (pnlLocSach.Visible == true || pnlTimKiemSach.Visible == true)
+            {
+                pnlLocSach.Visible = false;
+                pnlTimKiemSach.Visible = false;
+                pnlHighLightBoLocSach.BackColor = grayBackColor;
+                pnlHighLightTimKiemSach.BackColor = grayBackColor;
+            }
+            //else
+                //dgvSach.ClearSelection();
         }
 
         // Reset trang thai cac Control
         private void ResetControlSach()
         {
-            dgvSach.ClearSelection();
-
             // Clear noi dung TextBox
             cboTenSach.ResetText();
             cboTacGia.ResetText();
@@ -1510,7 +1587,7 @@ namespace GraphicUserInterface
             dt = busSach.getSach(column);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                cbPMNhapMaSach.Items.Add(dt.Rows[i][0].ToString() + " - " + dt.Rows[i][1].ToString());
+                cboPMNhapMaSach.Items.Add(dt.Rows[i][0].ToString() + " - " + dt.Rows[i][1].ToString());
             }
         }
 
@@ -1521,7 +1598,7 @@ namespace GraphicUserInterface
             {
                 if (dgvPMSach.Rows.Count <= 3)
                 {
-                    string condition = string.Format("MaSach = '{0}'", cbPMNhapMaSach.Text.Substring(0, 5));
+                    string condition = string.Format("MaSach = '{0}'", cboPMNhapMaSach.Text.Substring(0, 5));
                     List<string> listProp = new List<string>();
                     listProp.Add("MaSach");
                     listProp.Add("TenSach");

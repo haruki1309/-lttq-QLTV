@@ -113,13 +113,7 @@
     <None Include="Resources\LIBRARY.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\add.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\LogoTQ.png" />
+    <None Include="Resources\LogoTQ1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

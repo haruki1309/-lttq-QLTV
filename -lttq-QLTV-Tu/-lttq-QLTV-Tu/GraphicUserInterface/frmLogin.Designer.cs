@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.frmLoginLoadTimer = new System.Windows.Forms.Timer(this.components);
             this.pnlLoginHeader = new System.Windows.Forms.Panel();
             this.pnlLoginWelcome = new System.Windows.Forms.Panel();
+            this.lblCopyrightLoading = new System.Windows.Forms.Label();
             this.lblLoginLoading = new System.Windows.Forms.Label();
             this.pnlLoginLoading1 = new System.Windows.Forms.Panel();
             this.pnlLoginLoading2 = new System.Windows.Forms.Panel();
@@ -39,6 +41,8 @@
             this.lblLoginHeaderWelcome = new System.Windows.Forms.Label();
             this.lblLoginWelcome = new System.Windows.Forms.Label();
             this.pnlLoginThongTinDN = new System.Windows.Forms.Panel();
+            this.lblCopyrightLogin = new System.Windows.Forms.Label();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblLoginThongBao = new System.Windows.Forms.Label();
             this.lblAppName = new System.Windows.Forms.Label();
             this.btnLoginESC = new System.Windows.Forms.Button();
@@ -48,13 +52,10 @@
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.lblMatKhau = new System.Windows.Forms.Label();
             this.frmLoginLoading = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlLoginWelcome.SuspendLayout();
             this.pnlLoginLoading1.SuspendLayout();
             this.pnlLoginThongTinDN.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // frmLoginLoadTimer
@@ -72,7 +73,7 @@
             // 
             // pnlLoginWelcome
             // 
-            this.pnlLoginWelcome.Controls.Add(this.label2);
+            this.pnlLoginWelcome.Controls.Add(this.lblCopyrightLoading);
             this.pnlLoginWelcome.Controls.Add(this.lblLoginLoading);
             this.pnlLoginWelcome.Controls.Add(this.pnlLoginLoading1);
             this.pnlLoginWelcome.Controls.Add(this.lblLoginTenThuThu);
@@ -82,6 +83,17 @@
             this.pnlLoginWelcome.Name = "pnlLoginWelcome";
             this.pnlLoginWelcome.Size = new System.Drawing.Size(810, 487);
             this.pnlLoginWelcome.TabIndex = 12;
+            // 
+            // lblCopyrightLoading
+            // 
+            this.lblCopyrightLoading.AutoSize = true;
+            this.lblCopyrightLoading.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopyrightLoading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.lblCopyrightLoading.Location = new System.Drawing.Point(323, 429);
+            this.lblCopyrightLoading.Name = "lblCopyrightLoading";
+            this.lblCopyrightLoading.Size = new System.Drawing.Size(150, 19);
+            this.lblCopyrightLoading.TabIndex = 23;
+            this.lblCopyrightLoading.Text = "© Copyright 2018 TATteam";
             // 
             // lblLoginLoading
             // 
@@ -145,8 +157,8 @@
             // 
             // pnlLoginThongTinDN
             // 
-            this.pnlLoginThongTinDN.Controls.Add(this.label1);
-            this.pnlLoginThongTinDN.Controls.Add(this.pictureBox1);
+            this.pnlLoginThongTinDN.Controls.Add(this.lblCopyrightLogin);
+            this.pnlLoginThongTinDN.Controls.Add(this.picLogo);
             this.pnlLoginThongTinDN.Controls.Add(this.lblLoginThongBao);
             this.pnlLoginThongTinDN.Controls.Add(this.lblAppName);
             this.pnlLoginThongTinDN.Controls.Add(this.btnLoginESC);
@@ -159,6 +171,27 @@
             this.pnlLoginThongTinDN.Name = "pnlLoginThongTinDN";
             this.pnlLoginThongTinDN.Size = new System.Drawing.Size(810, 487);
             this.pnlLoginThongTinDN.TabIndex = 13;
+            // 
+            // lblCopyrightLogin
+            // 
+            this.lblCopyrightLogin.AutoSize = true;
+            this.lblCopyrightLogin.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopyrightLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.lblCopyrightLogin.Location = new System.Drawing.Point(53, 459);
+            this.lblCopyrightLogin.Name = "lblCopyrightLogin";
+            this.lblCopyrightLogin.Size = new System.Drawing.Size(150, 19);
+            this.lblCopyrightLogin.TabIndex = 21;
+            this.lblCopyrightLogin.Text = "© Copyright 2018 TATteam";
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(2, 442);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(45, 45);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 20;
+            this.picLogo.TabStop = false;
             // 
             // lblLoginThongBao
             // 
@@ -257,38 +290,6 @@
             // 
             this.frmLoginLoading.Tick += new System.EventHandler(this.frmLoginLoading_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GraphicUserInterface.Properties.Resources.LogoTQ;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 442);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            this.label1.Location = new System.Drawing.Point(53, 459);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 19);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "© Copyright 2018 TATteam";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            this.label2.Location = new System.Drawing.Point(323, 429);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 19);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "© Copyright 2018 TATteam";
-            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnDangNhap;
@@ -311,7 +312,7 @@
             this.pnlLoginLoading1.ResumeLayout(false);
             this.pnlLoginThongTinDN.ResumeLayout(false);
             this.pnlLoginThongTinDN.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,9 +337,9 @@
         private System.Windows.Forms.Timer frmLoginLoading;
         private System.Windows.Forms.Label lblAppName;
         private System.Windows.Forms.Label lblLoginThongBao;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Label lblCopyrightLogin;
+        private System.Windows.Forms.Label lblCopyrightLoading;
     }
 }
 
