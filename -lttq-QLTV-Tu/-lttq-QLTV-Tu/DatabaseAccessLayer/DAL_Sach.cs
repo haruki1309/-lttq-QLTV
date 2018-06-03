@@ -198,7 +198,7 @@ namespace DatabaseAccessLayer
                 cm.Parameters.AddWithValue("@NamXB", dtoSach.NamXB);
                 cm.Parameters.AddWithValue("@TenNXB", dtoSach.MaNXB);
                 cm.Parameters.AddWithValue("@TenNhaPhatHanh", dtoSach.MaNhaPhatHanh);
-                cm.Parameters.AddWithValue("@NgayNhap", dtoSach.NgayNhap);
+                cm.Parameters.AddWithValue("@NgayNhap", Convert.ToDateTime(dtoSach.NgayNhap.ToString().Substring(0, 10)));
                 cm.Parameters.AddWithValue("@TenChuDe", dtoSach.MaChuDe);
                 cm.Parameters.AddWithValue("@TenTheLoai", dtoSach.MaTheLoai);
                 cm.Parameters.AddWithValue("@GiaTri", dtoSach.GiaTri);
@@ -234,7 +234,7 @@ namespace DatabaseAccessLayer
                 cm.Parameters.AddWithValue("@NamXB", dtoSach.NamXB);
                 cm.Parameters.AddWithValue("@TenNXB", dtoSach.MaNXB);
                 cm.Parameters.AddWithValue("@TenNhaPhatHanh", dtoSach.MaNhaPhatHanh);
-                cm.Parameters.AddWithValue("@NgayNhap", dtoSach.NgayNhap);
+                cm.Parameters.AddWithValue("@NgayNhap", Convert.ToDateTime(dtoSach.NgayNhap.ToString().Substring(0, 10)));
                 cm.Parameters.AddWithValue("@TenChuDe", dtoSach.MaChuDe);
                 cm.Parameters.AddWithValue("@TenTheLoai", dtoSach.MaTheLoai);
                 cm.Parameters.AddWithValue("@GiaTri", dtoSach.GiaTri);
@@ -333,8 +333,8 @@ namespace DatabaseAccessLayer
                         comboBoxSource.Add(reader[col].ToString());
                     }
                 }
-                else
-                    comboBoxSource.Add("Khác...");
+                //else
+                //    comboBoxSource.Add("Khác...");
 
                 cn.Close();
 
@@ -346,6 +346,7 @@ namespace DatabaseAccessLayer
             }
         }
 
+        // Them cac Column chua co du lieu
         public bool Insert(string parameterValue, string parameterName, string procedureName)
         {
             try

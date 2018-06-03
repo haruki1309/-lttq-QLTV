@@ -39,12 +39,9 @@
             this.pnlLoginLoading2 = new System.Windows.Forms.Panel();
             this.lblLoginTenThuThu = new System.Windows.Forms.Label();
             this.lblLoginHeaderWelcome = new System.Windows.Forms.Label();
-            this.lblLoginWelcome = new System.Windows.Forms.Label();
             this.pnlLoginThongTinDN = new System.Windows.Forms.Panel();
             this.lblCopyrightLogin = new System.Windows.Forms.Label();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblLoginThongBao = new System.Windows.Forms.Label();
-            this.lblAppName = new System.Windows.Forms.Label();
             this.btnLoginESC = new System.Windows.Forms.Button();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
@@ -52,10 +49,15 @@
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.lblMatKhau = new System.Windows.Forms.Label();
             this.frmLoginLoading = new System.Windows.Forms.Timer(this.components);
+            this.picLogin = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.picLoginLoading = new System.Windows.Forms.PictureBox();
             this.pnlLoginWelcome.SuspendLayout();
             this.pnlLoginLoading1.SuspendLayout();
             this.pnlLoginThongTinDN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoginLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // frmLoginLoadTimer
@@ -73,12 +75,12 @@
             // 
             // pnlLoginWelcome
             // 
+            this.pnlLoginWelcome.Controls.Add(this.picLoginLoading);
             this.pnlLoginWelcome.Controls.Add(this.lblCopyrightLoading);
             this.pnlLoginWelcome.Controls.Add(this.lblLoginLoading);
             this.pnlLoginWelcome.Controls.Add(this.pnlLoginLoading1);
             this.pnlLoginWelcome.Controls.Add(this.lblLoginTenThuThu);
             this.pnlLoginWelcome.Controls.Add(this.lblLoginHeaderWelcome);
-            this.pnlLoginWelcome.Controls.Add(this.lblLoginWelcome);
             this.pnlLoginWelcome.Location = new System.Drawing.Point(12, 0);
             this.pnlLoginWelcome.Name = "pnlLoginWelcome";
             this.pnlLoginWelcome.Size = new System.Drawing.Size(810, 487);
@@ -144,23 +146,12 @@
             this.lblLoginHeaderWelcome.TabIndex = 1;
             this.lblLoginHeaderWelcome.Text = "WELCOME";
             // 
-            // lblLoginWelcome
-            // 
-            this.lblLoginWelcome.AutoSize = true;
-            this.lblLoginWelcome.Font = new System.Drawing.Font("Sitka Display", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            this.lblLoginWelcome.Location = new System.Drawing.Point(53, 35);
-            this.lblLoginWelcome.Name = "lblLoginWelcome";
-            this.lblLoginWelcome.Size = new System.Drawing.Size(330, 92);
-            this.lblLoginWelcome.TabIndex = 0;
-            this.lblLoginWelcome.Text = "MYLibrary";
-            // 
             // pnlLoginThongTinDN
             // 
+            this.pnlLoginThongTinDN.Controls.Add(this.picLogin);
             this.pnlLoginThongTinDN.Controls.Add(this.lblCopyrightLogin);
             this.pnlLoginThongTinDN.Controls.Add(this.picLogo);
             this.pnlLoginThongTinDN.Controls.Add(this.lblLoginThongBao);
-            this.pnlLoginThongTinDN.Controls.Add(this.lblAppName);
             this.pnlLoginThongTinDN.Controls.Add(this.btnLoginESC);
             this.pnlLoginThongTinDN.Controls.Add(this.txtMatKhau);
             this.pnlLoginThongTinDN.Controls.Add(this.txtTaiKhoan);
@@ -183,16 +174,6 @@
             this.lblCopyrightLogin.TabIndex = 21;
             this.lblCopyrightLogin.Text = "© Copyright 2018 TATteam";
             // 
-            // picLogo
-            // 
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(2, 442);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(45, 45);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 20;
-            this.picLogo.TabStop = false;
-            // 
             // lblLoginThongBao
             // 
             this.lblLoginThongBao.AutoSize = true;
@@ -202,17 +183,6 @@
             this.lblLoginThongBao.Name = "lblLoginThongBao";
             this.lblLoginThongBao.Size = new System.Drawing.Size(0, 19);
             this.lblLoginThongBao.TabIndex = 19;
-            // 
-            // lblAppName
-            // 
-            this.lblAppName.AutoSize = true;
-            this.lblAppName.Font = new System.Drawing.Font("Sitka Display", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            this.lblAppName.Location = new System.Drawing.Point(6, 24);
-            this.lblAppName.Name = "lblAppName";
-            this.lblAppName.Size = new System.Drawing.Size(330, 92);
-            this.lblAppName.TabIndex = 18;
-            this.lblAppName.Text = "MYLibrary";
             // 
             // btnLoginESC
             // 
@@ -290,6 +260,36 @@
             // 
             this.frmLoginLoading.Tick += new System.EventHandler(this.frmLoginLoading_Tick);
             // 
+            // picLogin
+            // 
+            this.picLogin.Image = global::GraphicUserInterface.Properties.Resources.Logo3;
+            this.picLogin.Location = new System.Drawing.Point(4, 3);
+            this.picLogin.Name = "picLogin";
+            this.picLogin.Size = new System.Drawing.Size(344, 103);
+            this.picLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogin.TabIndex = 22;
+            this.picLogin.TabStop = false;
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(2, 442);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(45, 45);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 20;
+            this.picLogo.TabStop = false;
+            // 
+            // picLoginLoading
+            // 
+            this.picLoginLoading.Image = global::GraphicUserInterface.Properties.Resources.Logo3;
+            this.picLoginLoading.Location = new System.Drawing.Point(69, 31);
+            this.picLoginLoading.Name = "picLoginLoading";
+            this.picLoginLoading.Size = new System.Drawing.Size(344, 103);
+            this.picLoginLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLoginLoading.TabIndex = 24;
+            this.picLoginLoading.TabStop = false;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnDangNhap;
@@ -312,7 +312,9 @@
             this.pnlLoginLoading1.ResumeLayout(false);
             this.pnlLoginThongTinDN.ResumeLayout(false);
             this.pnlLoginThongTinDN.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoginLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,7 +325,6 @@
         private System.Windows.Forms.Panel pnlLoginWelcome;
         private System.Windows.Forms.Label lblLoginTenThuThu;
         private System.Windows.Forms.Label lblLoginHeaderWelcome;
-        private System.Windows.Forms.Label lblLoginWelcome;
         private System.Windows.Forms.Panel pnlLoginThongTinDN;
         private System.Windows.Forms.Button btnLoginESC;
         private System.Windows.Forms.TextBox txtMatKhau;
@@ -335,11 +336,12 @@
         private System.Windows.Forms.Panel pnlLoginLoading1;
         private System.Windows.Forms.Panel pnlLoginLoading2;
         private System.Windows.Forms.Timer frmLoginLoading;
-        private System.Windows.Forms.Label lblAppName;
         private System.Windows.Forms.Label lblLoginThongBao;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Label lblCopyrightLogin;
         private System.Windows.Forms.Label lblCopyrightLoading;
+        private System.Windows.Forms.PictureBox picLogin;
+        private System.Windows.Forms.PictureBox picLoginLoading;
     }
 }
 

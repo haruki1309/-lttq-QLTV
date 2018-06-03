@@ -5,7 +5,6 @@ Use QuanLyThuVien
 Go
 
 
-
 /*=========== Tạo bảng ===========*/
 
 Create Table ThuThu
@@ -211,7 +210,7 @@ Create Procedure SuaDocGia
 As
 Begin
 	Update DocGia Set
-		HoTen = @HoTen,
+		HoTen = @TenDocGia,
 		DiaChi = @DiaChi,
 		SDT = @SDT,
 		CMND = @CMND,
@@ -674,10 +673,23 @@ Begin
 End
 Go
 
+---------------------------------
+--Lay Sach dang muon:
+---------------------------------
+Create Procedure LaySachDangMuon
+	@MaDocGia char(5)
+As
+Begin
+	Select distinct s.MaSach, s.TenSach, pm.NgayMuon
+	From (PhieuMuon pm Inner Join CTPM ctpm on pm.MaPhieuMuon = ctpm.MaPhieuMuon)
+					   Inner Join Sach s on ctpm.MaSach = s.MaSach
+	Where (s.MaSach Not in (Select MaSach From PhieuTra pt Inner Join CTPT ctpt On pt.MaPhieuTra = ctpt.MaPhieuTra)
+			or (pm.NgayMuon > all (Select pt.NgayTra From PhieuTra pt inner join CTPT ctpt on pt.MaPhieuTra = ctpt.MaPhieuTra where ctpt.MaSach = ctpm.MaSach and pt.MaDocGia = @MaDocGia)))
+			and pm.MaDocGia = @MaDocGia 
+End
+Go
 
-						
---procedure cho tab Nhan tra sach
-
+--procedure cho tab Nhan tra sach 
 ---------------------------------
 --lay full phieu tra:
 ---------------------------------
@@ -686,7 +698,7 @@ Go
 Create Procedure GetFullPhieuTra
 As
 Begin
-	Select pt.MaPhieuTra, dg.HoTen as 'TenDocGia', th.HoTen as 'TenThuThu', pt.NgayTra, pt.SoLuong
+	Select pt.MaPhieuTra, dg.MaDocGia, dg.HoTen as 'TenDocGia', th.MaThuThu, th.HoTen as 'TenThuThu', pt.NgayTra, pt.SoLuong
 	From (PhieuTra pt Inner Join DocGia dg ON pt.MaDocGia = dg.MaDocGia)
 					  Inner Join ThuThu th ON pt.MaThuThu = th.MaThuThu
 End
@@ -696,18 +708,40 @@ End
 ---------------------------------
 --Them phieu tra:
 ---------------------------------
-Create Procedure ThemPhieuTra
-	@MaPhieuTra char(5),
-	@MaDocGia char(50),
+Create Function AutoID_PT()
+	Returns varchar(5)
+As
+Begin
+	Declare @ID varchar(5)
+	If (Select Count(MaPhieuTra) From PhieuTra) = 0
+		Set @ID = 'PT000'
+	Else
+		Declare @tempID varchar(5)
+		Select @tempID = Max(Right(MaPhieuTra, 3)) From PhieuTra
+		Select @ID = Case
+			When @tempID + 1 <= 9 Then 'PT00' + Convert(char, Convert(int, @tempID)+1)
+			When @tempID + 1 <= 99 Then 'PT0' + Convert(char, Convert(int, @tempID)+1)
+			When @tempID + 1 <= 999 Then 'PT' + Convert(char, Convert(int, @tempID)+1)			
+		End
+	Return @ID
+End 
+
+---
+
+Create Procedure ThemPhieuTra	
+	@MaDocGia char(5),
 	@MaThuThu char(5),
-	@NgayTra smalldatetime,
+	@NgayMuon smalldatetime,
 	@SoLuong int
 	
 As
 Begin
+	Declare @MaPhieuTra char(5)
+	Select @MaPhieuTra = dbo.AutoID_PT()
+
 	Insert Into PhieuTra
-	Values (@MaPhieuTra, @MaDocGia, @MaThuThu,@NgayTra, @SoLuong)
-End
+	Values (@MaPhieuTra, @MaDocGia, @MaThuThu, @NgayMuon, @SoLuong)
+End 
 Go
 ---------------------------------
 --Them CTPT:
@@ -724,25 +758,3 @@ Begin
 End
 Go
 
-
-
-select s.MaSach, s.TenSach
-	from Sach s
-	where s.MaSach in 
-	(
-		select ctpm.MaSach
-		from CTPM ctpm inner join PhieuMuon pm on ctpm.MaPhieuMuon = pm.MaPhieuMuon
-		where pm.MaDocGia = 'DG000' and MaSach not in 
-		(
-			select ctpt.MaSach 
-			from CTPT ctpt inner join PhieuTra pt on ctpt.MaPhieuTra = pt.MaPhieuTra
-			where pt.MaDocGia = 'DG000'
-		)
-	)
-
-
-select * 
-from PhieuMuon
-
-select * 
-from CTPM

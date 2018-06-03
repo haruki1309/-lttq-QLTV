@@ -59,7 +59,7 @@ namespace DatabaseAccessLayer
                 cm.Parameters.AddWithValue("@MaPhieuTra", phieuTra.MaPhieuTra);
                 cm.Parameters.AddWithValue("@MaThuThu", phieuTra.MaThuThu);
                 cm.Parameters.AddWithValue("@MaDocGia", phieuTra.MaDocGia);
-                cm.Parameters.AddWithValue("@NgayTra", phieuTra.NgayTra);
+                cm.Parameters.AddWithValue("@NgayTra", Convert.ToDateTime(phieuTra.NgayTra.ToString("dd/MM/yyyy").Substring(0, 10)));
                 cm.Parameters.AddWithValue("@SoLuong", phieuTra.SoLuong);
 
                 if (cm.ExecuteNonQuery() > 0)

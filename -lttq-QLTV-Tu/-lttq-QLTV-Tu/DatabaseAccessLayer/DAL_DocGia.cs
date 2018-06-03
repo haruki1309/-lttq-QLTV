@@ -138,8 +138,8 @@ namespace DatabaseAccessLayer
                 cmd.Parameters.AddWithValue("@DiaChi", dTO_DocGia.DiaChi);
                 cmd.Parameters.AddWithValue("@SDT", dTO_DocGia.SoDT);
                 cmd.Parameters.AddWithValue("@CMND", dTO_DocGia.Cmnd);
-                cmd.Parameters.AddWithValue("@NgaySinh", dTO_DocGia.NgaySinh);
-                cmd.Parameters.AddWithValue("@NgayDK", dTO_DocGia.NgayDK);
+                cmd.Parameters.AddWithValue("@NgaySinh", Convert.ToDateTime(dTO_DocGia.NgaySinh.ToString().Substring(0, 10)));
+                cmd.Parameters.AddWithValue("@NgayDK", Convert.ToDateTime(dTO_DocGia.NgayDK.ToString().Substring(0, 10)));
 
 
                 if (cmd.ExecuteNonQuery() > 0)
@@ -171,7 +171,7 @@ namespace DatabaseAccessLayer
                 cmd.Parameters.AddWithValue("@DiaChi", dTO_DocGia.DiaChi);
                 cmd.Parameters.AddWithValue("@CMND", dTO_DocGia.Cmnd);
                 cmd.Parameters.AddWithValue("@SDT", dTO_DocGia.SoDT);
-                cmd.Parameters.AddWithValue("@NgaySinh", dTO_DocGia.NgaySinh);
+                cmd.Parameters.AddWithValue("@NgaySinh", Convert.ToDateTime(dTO_DocGia.NgayDK.ToString().Substring(0, 10)));
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {

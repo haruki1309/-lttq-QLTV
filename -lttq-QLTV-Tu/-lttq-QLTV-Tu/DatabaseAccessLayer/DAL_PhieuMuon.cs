@@ -46,7 +46,7 @@ namespace DatabaseAccessLayer
 
                 cm.Parameters.AddWithValue("@MaThuThu", phieuMuon.MaThuThu);
                 cm.Parameters.AddWithValue("@MaDocGia", phieuMuon.MaDocGia);
-                cm.Parameters.AddWithValue("@NgayMuon", phieuMuon.NgayMuon);
+                cm.Parameters.AddWithValue("@NgayMuon", Convert.ToDateTime(phieuMuon.NgayMuon.ToString().Substring(0,5)));
                 cm.Parameters.AddWithValue("@SoLuong", phieuMuon.SoLuong);
 
                 if (cm.ExecuteNonQuery() > 0)
