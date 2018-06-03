@@ -53,9 +53,7 @@ namespace GraphicUserInterface
                 frmMain frmDocGia = new frmMain();
                 frmDocGia.DTO_ThuThu.MaThuThu = txtTaiKhoan.Text;
                 this.Hide();
-                frmDocGia.ShowDialog();
-                
-                
+                frmDocGia.ShowDialog();              
             }
         }
 

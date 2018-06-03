@@ -11,7 +11,7 @@ Go
 Create Table ThuThu
 (
 	MaThuThu char(5) Primary key,
-	HoTen nvarchar(20),
+	HoTen nvarchar(100),
 	DiaChi nvarchar(50),
 	SDT varchar(15),
 	CMND varchar(15),
@@ -23,7 +23,7 @@ Create Table ThuThu
 Create Table DocGia
 (
 	MaDocGia char(5) Primary key,
-	HoTen nvarchar(20),
+	HoTen nvarchar(100),
 	DiaChi nvarchar(50),
 	SDT varchar(15),
 	CMND varchar(15),
@@ -285,7 +285,7 @@ As
 Begin	
 	Declare @ID varchar(5)
 	If (Select Count(MaTacGia) From TacGia) = 0
-		Set @ID = 'MS001' 		
+		Set @ID = 'MS000' 		
 	Else
 		Declare @tempID varchar(5)
 		Select @tempID = Max(Right(MaSach, 3)) From Sach
@@ -298,6 +298,7 @@ Begin
 End
 
 ---
+
 Create Procedure ThemSach
 	@TenSach nvarchar(100),
 	@TenTacGia nvarchar(100),
@@ -322,28 +323,18 @@ Begin
 		Declare @MaSach varchar(5)
 		Select @MaSach = dbo.AutoID_Sach()				
 			
-		--If @TenTacGia Not in (Select HoTen From TacGia)
-		--	Exec ThemTacGia @TenTacGia
 		Declare @MaTacGia varchar(5)
 		Select @MaTacGia = (Select MaTacGia From TacGia Where TenTacGia = @TenTacGia)
 		
-		--If @TenNXB Not in (Select TenNXB From NXB)
-		--	Exec ThemNXB @TenNXB
 		Declare @MaNXB varchar(5)
 		Select @MaNXB = (Select MaNXB From NXB Where TenNXB = @TenNXB)
 		
-		--If @TenNhaPhatHanh Not in (Select TenNhaPhatHanh From NhaPhatHanh)
-		--	Exec ThemNhaPhatHanh @TenNhaPhatHanh
 		Declare @MaNhaPhatHanh varchar(5)
 		Select @MaNhaPhatHanh = (Select MaNhaPhatHanh From NhaPhatHanh Where TenNhaPhatHanh = @TenNhaPhatHanh)
 		
-		--If @TenChuDe Not in (Select TenChuDe From ChuDe)
-		--	Exec ThemChuDe @TenChuDe
 		Declare @MaChuDe varchar(5)
 		Select @MaChuDe = (Select MaChuDe From ChuDe Where TenChuDe = @TenChuDe)
 		
-		--If @TenTheLoai Not in (Select TenTheLoai From TheLoai)
-		--	Exec ThemTheLoai @TenTheLoai
 		Declare @MaTheLoai varchar(5)
 		Select @MaTheLoai = (Select MaTheLoai From TheLoai Where TenTheLoai = @TenTheLoai)
 		
@@ -369,38 +360,18 @@ Create Procedure CapNhatSach
 	@SoLuong int
 As
 Begin
-	--If @TenTacGia Not in (Select HoTen From TacGia)
-	--Begin
-	--	Exec ThemTacGia @TenTacGia
-	--End
 	Declare @MaTacGia varchar(5)
 	Select @MaTacGia = (Select MaTacGia From TacGia Where TenTacGia = @TenTacGia)
 
-	--If @TenNXB Not in (Select TenNXB From NXB)
-	--Begin
-	--	Exec ThemNXB @TenNXB
-	--End
 	Declare @MaNXB varchar(5)
 	Select @MaNXB = (Select MaNXB From NXB Where TenNXB = @TenNXB)
 
-	--If @TenNhaPhatHanh Not in (Select TenNhaPhatHanh From NhaPhatHanh)
-	--Begin
-	--	Exec ThemNhaPhatHanh @TenNhaPhatHanh
-	--End
 	Declare @MaNhaPhatHanh varchar(5)
 	Select @MaNhaPhatHanh = (Select MaNhaPhatHanh From NhaPhatHanh Where TenNhaPhatHanh = @TenNhaPhatHanh)
 
-	--If @TenChuDe Not in (Select TenChuDe From ChuDe)
-	--Begin
-	--	Exec ThemChuDe @TenChuDe
-	--End
 	Declare @MaChuDe varchar(5)
 	Select @MaChuDe = (Select MaChuDe From ChuDe Where TenChuDe = @TenChuDe)
 
-	--If @TenTheLoai Not in (Select TenTheLoai From TheLoai)
-	--Begin
-	--	Exec ThemTheLoai @TenTheLoai
-	--End
 	Declare @MaTheLoai varchar(5)
 	Select @MaTheLoai = (Select MaTheLoai From TheLoai Where TenTheLoai = @TenTheLoai)
 
@@ -417,7 +388,9 @@ Begin
 		SoLuong = @SoLuong
 	Where  MaSach = @MaSach	
 End
---cap nhat so luong sach
+
+---
+
 Go
 Create Procedure CapNhatSoLuongSach
 	@MaSach char(5),
@@ -429,6 +402,9 @@ Begin
 	Where  MaSach = @MaSach
 End
 Go
+
+---
+
 Create Procedure XoaSach
 	@MaSach char(5)
 As
@@ -445,7 +421,7 @@ As
 Begin
 	Declare @ID varchar(5)
 	If (Select Count(MaTacGia) From TacGia) = 0
-		Set @ID = 'TG001' 		
+		Set @ID = 'TG000' 		
 	Else
 		Declare @tempID varchar(5)
 		Select @tempID = Max(Right(MaTacGia, 3)) From TacGia
@@ -478,7 +454,7 @@ As
 Begin
 	Declare @ID varchar(5)
 	If (Select Count(MaNXB) From NXB) = 0
-		Set @ID = 'NXB01' 		
+		Set @ID = 'NXB00' 		
 	Else
 		Declare @tempID varchar(5)
 		Select @tempID = Max(Right(MaNXB, 2)) From NXB
@@ -510,7 +486,7 @@ As
 Begin
 	Declare @ID varchar(5)
 	If (Select Count(MaNhaPhatHanh) From NhaPhatHanh) = 0
-		Set @ID = 'NPH01' 		
+		Set @ID = 'NPH00' 		
 	Else
 		Declare @tempID varchar(5)
 		Select @tempID = Max(Right(MaNhaPhatHanh, 3)) From NhaPhatHanh
@@ -543,7 +519,7 @@ As
 Begin
 	Declare @ID varchar(5)
 	If (Select Count(MaChuDe) From ChuDe) = 0
-		Set @ID = 'CD001' 		
+		Set @ID = 'CD000' 		
 	Else
 		Declare @tempID varchar(5)
 		Select @tempID = Max(Right(MaChuDe, 3)) From ChuDe
@@ -579,7 +555,7 @@ As
 Begin
 	Declare @ID varchar(5)
 	If (Select Count(MaTheLoai) From TheLoai) = 0
-		Set @ID = 'TL001' 		
+		Set @ID = 'TL000' 		
 	Else
 		Declare @tempID varchar(5)
 		Select @tempID = Max(Right(MaTheLoai, 3)) From TheLoai
@@ -631,24 +607,59 @@ Begin
 End
 Go
 
---procedure cho tab Cho muon sach
+--- Procedure cho tab Cho muon sach
+
+---------------------------------
+--Lay Phieu muon:
+---------------------------------
+Create Procedure GetFullPhieuMuon	
+As
+Begin
+	Select pm.MaPhieuMuon, dg.MaDocGia, dg.HoTen as [TenDocGia], tt.MaThuThu, tt.HoTen as [TenThuThu], pm.NgayMuon, pm.SoLuong from
+	     ((PhieuMuon pm Inner Join DocGia dg ON pm.MaDocGia = dg.MaDocGia)
+						Inner Join ThuThu tt ON pm.MaThuThu = tt.MaThuThu)	
+End 
+Go
 
 ---------------------------------
 --Them phieu muon:
 ---------------------------------
-Create Procedure ThemPhieuMuon
-	@MaPhieuMuon char(5),
-	@MaDocGia char(50),
+Create Function AutoID_PM()
+	Returns varchar(5)
+As
+Begin
+	Declare @ID varchar(5)
+	If (Select Count(MaPhieuMuon) From PhieuMuon) = 0
+		Set @ID = 'PM000'
+	Else
+		Declare @tempID varchar(5)
+		Select @tempID = Max(Right(MaPhieuMuon, 3)) From PhieuMuon
+		Select @ID = Case
+			When @tempID + 1 <= 9 Then 'PM00' + Convert(char, Convert(int, @tempID)+1)
+			When @tempID + 1 <= 99 Then 'PM0' + Convert(char, Convert(int, @tempID)+1)
+			When @tempID + 1 <= 999 Then 'PM' + Convert(char, Convert(int, @tempID)+1)			
+		End
+	Return @ID
+End 
+
+---
+
+Create Procedure ThemPhieuMuon	
+	@MaDocGia char(5),
 	@MaThuThu char(5),
 	@NgayMuon smalldatetime,
 	@SoLuong int
 	
 As
 Begin
+	Declare @MaPhieuMuon char(5)
+	Select @MaPhieuMuon = dbo.AutoID_PM()
+
 	Insert Into PhieuMuon
-	Values (@MaPhieuMuon, @MaDocGia, @MaThuThu,@NgayMuon, @SoLuong)
-End
+	Values (@MaPhieuMuon, @MaDocGia, @MaThuThu, @NgayMuon, @SoLuong)
+End 
 Go
+
 ---------------------------------
 --Them CTPM:
 ---------------------------------
@@ -656,7 +667,7 @@ Create Procedure ThemCTPM
 	@MaPhieuMuon char(5),
 	@MaSach char(5)
 	
-As
+As 
 Begin
 	Insert Into CTPM
 	Values (@MaPhieuMuon, @MaSach)
@@ -664,6 +675,7 @@ End
 Go
 
 
+						
 --procedure cho tab Nhan tra sach
 
 ---------------------------------

@@ -15,9 +15,19 @@ namespace DatabaseAccessLayer
         {
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("select * from PhieuMuon", cn);
+                cn.Open();
+
+                SqlCommand command = new SqlCommand("GetFullPhieuMuon", cn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = command;
+
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
+                cn.Close();
+
                 return dt;
             }
             catch
@@ -34,7 +44,6 @@ namespace DatabaseAccessLayer
                 SqlCommand cm = new SqlCommand("ThemPhieuMuon", cn);
                 cm.CommandType = CommandType.StoredProcedure;
 
-                cm.Parameters.AddWithValue("@MaPhieuMuon", phieuMuon.MaPhieuMuon);
                 cm.Parameters.AddWithValue("@MaThuThu", phieuMuon.MaThuThu);
                 cm.Parameters.AddWithValue("@MaDocGia", phieuMuon.MaDocGia);
                 cm.Parameters.AddWithValue("@NgayMuon", phieuMuon.NgayMuon);
