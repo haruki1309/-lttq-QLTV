@@ -41,16 +41,9 @@ namespace BusinessLogicLayer
         // Nhớ kiểm tra điều kiện Insert
         public bool insertSach(string maSach, string tenSach, string maTacGia, int namXB, string maNXB, string maNhaPhatHanh, DateTime ngayNhap, string maChuDe, string maTheLoai, double giaTri, int soLuong)
         {
-            try
-            {
-                DTO_Sach dtoSach = new DTO_Sach(maSach, tenSach, maTacGia, namXB, maNXB, maNhaPhatHanh, ngayNhap, maChuDe, maTheLoai, giaTri, soLuong);
+            DTO_Sach dtoSach = new DTO_Sach(maSach, tenSach, maTacGia, namXB, maNXB, maNhaPhatHanh, ngayNhap, maChuDe, maTheLoai, giaTri, soLuong);
 
-                return dalSach.Insert(dtoSach);
-            }
-            catch when (DateTime.Now.Year - namXB > 8)
-            {
-                return false;
-            }
+            return dalSach.Insert(dtoSach);
         }
 
         // Nhớ kiểm tra điều kiện Update

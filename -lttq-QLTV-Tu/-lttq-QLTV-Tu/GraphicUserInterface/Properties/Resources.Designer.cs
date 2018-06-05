@@ -63,9 +63,59 @@ namespace GraphicUserInterface.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LIBRARY {
+        internal static System.Drawing.Bitmap Background_Copyright {
             get {
-                object obj = ResourceManager.GetObject("LIBRARY", resourceCulture);
+                object obj = ResourceManager.GetObject("Background_Copyright", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Background_pnlHeading {
+            get {
+                object obj = ResourceManager.GetObject("Background_pnlHeading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Background_pnlLoading1 {
+            get {
+                object obj = ResourceManager.GetObject("Background_pnlLoading1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Background_pnlLoginHeader {
+            get {
+                object obj = ResourceManager.GetObject("Background_pnlLoginHeader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Background_pnlRunning {
+            get {
+                object obj = ResourceManager.GetObject("Background_pnlRunning", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,16 +126,6 @@ namespace GraphicUserInterface.Properties {
         internal static System.Drawing.Bitmap Logo1 {
             get {
                 object obj = ResourceManager.GetObject("Logo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Logo2 {
-            get {
-                object obj = ResourceManager.GetObject("Logo2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,16 +156,6 @@ namespace GraphicUserInterface.Properties {
         internal static System.Drawing.Bitmap LogoTQ1 {
             get {
                 object obj = ResourceManager.GetObject("LogoTQ1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LogoTQ11 {
-            get {
-                object obj = ResourceManager.GetObject("LogoTQ11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -198,7 +198,7 @@ namespace DatabaseAccessLayer
                 cm.Parameters.AddWithValue("@NamXB", dtoSach.NamXB);
                 cm.Parameters.AddWithValue("@TenNXB", dtoSach.MaNXB);
                 cm.Parameters.AddWithValue("@TenNhaPhatHanh", dtoSach.MaNhaPhatHanh);
-                cm.Parameters.AddWithValue("@NgayNhap", Convert.ToDateTime(dtoSach.NgayNhap.ToString().Substring(0, 10)));
+                cm.Parameters.AddWithValue("@NgayNhap", Convert.ToDateTime(dtoSach.NgayNhap.ToString()));
                 cm.Parameters.AddWithValue("@TenChuDe", dtoSach.MaChuDe);
                 cm.Parameters.AddWithValue("@TenTheLoai", dtoSach.MaTheLoai);
                 cm.Parameters.AddWithValue("@GiaTri", dtoSach.GiaTri);

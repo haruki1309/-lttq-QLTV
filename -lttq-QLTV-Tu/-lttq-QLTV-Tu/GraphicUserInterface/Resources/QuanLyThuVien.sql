@@ -684,7 +684,8 @@ Begin
 	From (PhieuMuon pm Inner Join CTPM ctpm on pm.MaPhieuMuon = ctpm.MaPhieuMuon)
 					   Inner Join Sach s on ctpm.MaSach = s.MaSach
 	Where (s.MaSach Not in (Select MaSach From PhieuTra pt Inner Join CTPT ctpt On pt.MaPhieuTra = ctpt.MaPhieuTra)
-			or (pm.NgayMuon > all (Select pt.NgayTra From PhieuTra pt inner join CTPT ctpt on pt.MaPhieuTra = ctpt.MaPhieuTra where ctpt.MaSach = ctpm.MaSach and pt.MaDocGia = @MaDocGia)))
+			or (pm.NgayMuon > all (Select pt.NgayTra From PhieuTra pt inner join CTPT ctpt on pt.MaPhieuTra = ctpt.MaPhieuTra 									
+								   where ctpt.MaSach = ctpm.MaSach and pt.MaDocGia = @MaDocGia)))							
 			and pm.MaDocGia = @MaDocGia 
 End
 Go

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Forms;
+using System.Drawing;
 using BusinessLogicLayer;
 namespace GraphicUserInterface
 {
@@ -61,5 +63,6 @@ namespace GraphicUserInterface
         {
             this.Close();
         }
+
     }
 }

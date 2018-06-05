@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmSetUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetUp.Designer.cs">
+      <DependentUpon>frmSetUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManHinhChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmSetUp.resx">
+      <DependentUpon>frmSetUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManHinhChinh.resx">
       <DependentUpon>frmManHinhChinh.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,13 +119,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\LIBRARY.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\LogoTQ1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Logo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_pnlLoading1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_pnlLoginHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_pnlHeading.png" />
+    <None Include="Resources\Background_pnlRunning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

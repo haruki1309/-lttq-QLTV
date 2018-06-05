@@ -29,28 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.pnlMainButton = new System.Windows.Forms.Panel();
+            this.picAppName = new System.Windows.Forms.PictureBox();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pnlRunning = new System.Windows.Forms.Panel();
             this.mainbtnCaiDat = new System.Windows.Forms.Button();
@@ -60,7 +62,6 @@
             this.mainbtnChoMuonSach = new System.Windows.Forms.Button();
             this.mainbtnDocGia = new System.Windows.Forms.Button();
             this.mainbtnKhoSach = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.pnltabDocGia = new System.Windows.Forms.Panel();
             this.dgvDocGia = new System.Windows.Forms.DataGridView();
             this.pnlThongTinDocGia = new System.Windows.Forms.Panel();
@@ -68,7 +69,7 @@
             this.lblTitleThongBaoDocGia = new System.Windows.Forms.Label();
             this.lblThongBaoDocGia = new System.Windows.Forms.Label();
             this.btnHuyThaoTacDocGia = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCapNhatDocGia = new System.Windows.Forms.Label();
             this.dtmNgayDKDocGia = new System.Windows.Forms.DateTimePicker();
             this.dtmNgaySinhDocGia = new System.Windows.Forms.DateTimePicker();
             this.txtCMNDDocGia = new System.Windows.Forms.TextBox();
@@ -85,7 +86,7 @@
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.lblHoTen = new System.Windows.Forms.Label();
             this.pnlLocDocGia = new System.Windows.Forms.Panel();
-            this.btnLoc = new System.Windows.Forms.Button();
+            this.btnLocDocGia = new System.Windows.Forms.Button();
             this.chkNgayDK = new System.Windows.Forms.CheckBox();
             this.chkNgaySinh = new System.Windows.Forms.CheckBox();
             this.chkCMND = new System.Windows.Forms.CheckBox();
@@ -94,7 +95,7 @@
             this.lblTuaDe = new System.Windows.Forms.Label();
             this.pnlTimKiemDocGia = new System.Windows.Forms.Panel();
             this.txtDGTimKiem = new System.Windows.Forms.TextBox();
-            this.lblTimKiem = new System.Windows.Forms.Label();
+            this.lblTimKiemDocGia = new System.Windows.Forms.Label();
             this.btnTimKiemDocGia = new System.Windows.Forms.Button();
             this.cboTimKiemDocGia = new System.Windows.Forms.ComboBox();
             this.pnlTacVu = new System.Windows.Forms.Panel();
@@ -135,7 +136,7 @@
             this.lblTitleThongBaoSach = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnHuyCapNhatSach = new System.Windows.Forms.Button();
-            this.lblCapNhatDocGia = new System.Windows.Forms.Label();
+            this.lblCapNhatSach = new System.Windows.Forms.Label();
             this.btnSuaSach = new System.Windows.Forms.Button();
             this.btnXoaSach = new System.Windows.Forms.Button();
             this.btnThemSach = new System.Windows.Forms.Button();
@@ -157,7 +158,7 @@
             this.chkNhaPhatHanh = new System.Windows.Forms.CheckBox();
             this.chkNXB = new System.Windows.Forms.CheckBox();
             this.chkTacGia = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblLocSach = new System.Windows.Forms.Label();
             this.pnltabChoMuonSach = new System.Windows.Forms.Panel();
             this.pnlPMThongBao = new System.Windows.Forms.Panel();
             this.lblCMSHeadingThongBao = new System.Windows.Forms.Label();
@@ -213,8 +214,9 @@
             this.lblPTPhieuTraSach = new System.Windows.Forms.Label();
             this.tmrFrmMainLoad = new System.Windows.Forms.Timer(this.components);
             this.btnMainESC = new System.Windows.Forms.Button();
-            this.picAppName = new System.Windows.Forms.PictureBox();
+            this.pnlHeading = new System.Windows.Forms.Panel();
             this.pnlMainButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAppName)).BeginInit();
             this.pnltabDocGia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
             this.pnlThongTinDocGia.SuspendLayout();
@@ -244,7 +246,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNTSSachDangMuon)).BeginInit();
             this.pnlPTPhieuTra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTDSSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAppName)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
@@ -287,6 +288,17 @@
             this.pnlMainButton.Size = new System.Drawing.Size(150, 572);
             this.pnlMainButton.TabIndex = 27;
             // 
+            // picAppName
+            // 
+            this.picAppName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picAppName.BackgroundImage")));
+            this.picAppName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picAppName.Location = new System.Drawing.Point(2, 3);
+            this.picAppName.Name = "picAppName";
+            this.picAppName.Size = new System.Drawing.Size(142, 52);
+            this.picAppName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAppName.TabIndex = 41;
+            this.picAppName.TabStop = false;
+            // 
             // lblCopyright
             // 
             this.lblCopyright.AutoSize = true;
@@ -300,11 +312,13 @@
             // 
             // pnlRunning
             // 
-            this.pnlRunning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
+            this.pnlRunning.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlRunning.BackgroundImage")));
+            this.pnlRunning.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlRunning.Location = new System.Drawing.Point(2, 90);
             this.pnlRunning.Name = "pnlRunning";
             this.pnlRunning.Size = new System.Drawing.Size(11, 40);
             this.pnlRunning.TabIndex = 39;
+            this.pnlRunning.Visible = false;
             // 
             // mainbtnCaiDat
             // 
@@ -430,14 +444,6 @@
             this.mainbtnKhoSach.UseVisualStyleBackColor = false;
             this.mainbtnKhoSach.Click += new System.EventHandler(this.mainbtnKhoSach_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            this.panel4.Location = new System.Drawing.Point(150, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(847, 10);
-            this.panel4.TabIndex = 28;
-            // 
             // pnltabDocGia
             // 
             this.pnltabDocGia.Controls.Add(this.dgvDocGia);
@@ -461,23 +467,23 @@
             this.dgvDocGia.BackgroundColor = System.Drawing.Color.White;
             this.dgvDocGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDocGia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocGia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocGia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDocGia.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocGia.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDocGia.EnableHeadersVisualStyles = false;
             this.dgvDocGia.Location = new System.Drawing.Point(415, 29);
             this.dgvDocGia.Name = "dgvDocGia";
@@ -494,7 +500,7 @@
             // 
             this.pnlThongTinDocGia.Controls.Add(this.pnlThongBaoDocGia);
             this.pnlThongTinDocGia.Controls.Add(this.btnHuyThaoTacDocGia);
-            this.pnlThongTinDocGia.Controls.Add(this.label1);
+            this.pnlThongTinDocGia.Controls.Add(this.lblCapNhatDocGia);
             this.pnlThongTinDocGia.Controls.Add(this.dtmNgayDKDocGia);
             this.pnlThongTinDocGia.Controls.Add(this.dtmNgaySinhDocGia);
             this.pnlThongTinDocGia.Controls.Add(this.txtCMNDDocGia);
@@ -512,7 +518,7 @@
             this.pnlThongTinDocGia.Controls.Add(this.lblHoTen);
             this.pnlThongTinDocGia.Location = new System.Drawing.Point(0, 0);
             this.pnlThongTinDocGia.Name = "pnlThongTinDocGia";
-            this.pnlThongTinDocGia.Size = new System.Drawing.Size(415, 474);
+            this.pnlThongTinDocGia.Size = new System.Drawing.Size(415, 473);
             this.pnlThongTinDocGia.TabIndex = 34;
             // 
             // pnlThongBaoDocGia
@@ -548,11 +554,12 @@
             // 
             // btnHuyThaoTacDocGia
             // 
-            this.btnHuyThaoTacDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnHuyThaoTacDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnHuyThaoTacDocGia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHuyThaoTacDocGia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnHuyThaoTacDocGia.FlatAppearance.BorderSize = 0;
-            this.btnHuyThaoTacDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnHuyThaoTacDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnHuyThaoTacDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnHuyThaoTacDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnHuyThaoTacDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyThaoTacDocGia.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHuyThaoTacDocGia.Location = new System.Drawing.Point(293, 365);
@@ -564,15 +571,15 @@
             this.btnHuyThaoTacDocGia.Visible = false;
             this.btnHuyThaoTacDocGia.Click += new System.EventHandler(this.btnHuyThaoTacDocGia_Click);
             // 
-            // label1
+            // lblCapNhatDocGia
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sitka Heading", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(16, 262);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 30);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Cập Nhật";
+            this.lblCapNhatDocGia.AutoSize = true;
+            this.lblCapNhatDocGia.Font = new System.Drawing.Font("Sitka Heading", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblCapNhatDocGia.Location = new System.Drawing.Point(16, 262);
+            this.lblCapNhatDocGia.Name = "lblCapNhatDocGia";
+            this.lblCapNhatDocGia.Size = new System.Drawing.Size(99, 30);
+            this.lblCapNhatDocGia.TabIndex = 40;
+            this.lblCapNhatDocGia.Text = "Cập Nhật";
             // 
             // dtmNgayDKDocGia
             // 
@@ -610,11 +617,12 @@
             // 
             // btnSuaDocGia
             // 
-            this.btnSuaDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnSuaDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnSuaDocGia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSuaDocGia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSuaDocGia.FlatAppearance.BorderSize = 0;
-            this.btnSuaDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnSuaDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnSuaDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnSuaDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnSuaDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaDocGia.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSuaDocGia.Location = new System.Drawing.Point(165, 300);
@@ -627,11 +635,12 @@
             // 
             // btnXoaDocGia
             // 
-            this.btnXoaDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnXoaDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnXoaDocGia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnXoaDocGia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnXoaDocGia.FlatAppearance.BorderSize = 0;
-            this.btnXoaDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnXoaDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnXoaDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnXoaDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnXoaDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaDocGia.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXoaDocGia.Location = new System.Drawing.Point(293, 300);
@@ -652,11 +661,12 @@
             // 
             // btnThemDocGia
             // 
-            this.btnThemDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnThemDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnThemDocGia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThemDocGia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnThemDocGia.FlatAppearance.BorderSize = 0;
-            this.btnThemDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnThemDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnThemDocGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnThemDocGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnThemDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemDocGia.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThemDocGia.Location = new System.Drawing.Point(37, 300);
@@ -738,7 +748,7 @@
             // pnlLocDocGia
             // 
             this.pnlLocDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
-            this.pnlLocDocGia.Controls.Add(this.btnLoc);
+            this.pnlLocDocGia.Controls.Add(this.btnLocDocGia);
             this.pnlLocDocGia.Controls.Add(this.chkNgayDK);
             this.pnlLocDocGia.Controls.Add(this.chkNgaySinh);
             this.pnlLocDocGia.Controls.Add(this.chkCMND);
@@ -751,19 +761,19 @@
             this.pnlLocDocGia.TabIndex = 35;
             this.pnlLocDocGia.Visible = false;
             // 
-            // btnLoc
+            // btnLocDocGia
             // 
-            this.btnLoc.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoc.Font = new System.Drawing.Font("Sitka Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLoc.ForeColor = System.Drawing.Color.White;
-            this.btnLoc.Location = new System.Drawing.Point(247, 148);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(104, 32);
-            this.btnLoc.TabIndex = 6;
-            this.btnLoc.Text = "Lọc";
-            this.btnLoc.UseVisualStyleBackColor = true;
-            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            this.btnLocDocGia.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLocDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocDocGia.Font = new System.Drawing.Font("Sitka Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLocDocGia.ForeColor = System.Drawing.Color.White;
+            this.btnLocDocGia.Location = new System.Drawing.Point(247, 148);
+            this.btnLocDocGia.Name = "btnLocDocGia";
+            this.btnLocDocGia.Size = new System.Drawing.Size(104, 32);
+            this.btnLocDocGia.TabIndex = 6;
+            this.btnLocDocGia.Text = "Lọc";
+            this.btnLocDocGia.UseVisualStyleBackColor = true;
+            this.btnLocDocGia.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // chkNgayDK
             // 
@@ -840,7 +850,7 @@
             // 
             this.pnlTimKiemDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
             this.pnlTimKiemDocGia.Controls.Add(this.txtDGTimKiem);
-            this.pnlTimKiemDocGia.Controls.Add(this.lblTimKiem);
+            this.pnlTimKiemDocGia.Controls.Add(this.lblTimKiemDocGia);
             this.pnlTimKiemDocGia.Controls.Add(this.btnTimKiemDocGia);
             this.pnlTimKiemDocGia.Controls.Add(this.cboTimKiemDocGia);
             this.pnlTimKiemDocGia.Location = new System.Drawing.Point(6, 261);
@@ -860,16 +870,16 @@
             this.txtDGTimKiem.TabIndex = 11;
             this.txtDGTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDGTimKiem_KeyDown);
             // 
-            // lblTimKiem
+            // lblTimKiemDocGia
             // 
-            this.lblTimKiem.AutoSize = true;
-            this.lblTimKiem.Font = new System.Drawing.Font("Sitka Heading", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTimKiem.ForeColor = System.Drawing.Color.White;
-            this.lblTimKiem.Location = new System.Drawing.Point(20, 22);
-            this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(95, 28);
-            this.lblTimKiem.TabIndex = 10;
-            this.lblTimKiem.Text = "Tìm Kiếm";
+            this.lblTimKiemDocGia.AutoSize = true;
+            this.lblTimKiemDocGia.Font = new System.Drawing.Font("Sitka Heading", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTimKiemDocGia.ForeColor = System.Drawing.Color.White;
+            this.lblTimKiemDocGia.Location = new System.Drawing.Point(20, 22);
+            this.lblTimKiemDocGia.Name = "lblTimKiemDocGia";
+            this.lblTimKiemDocGia.Size = new System.Drawing.Size(95, 28);
+            this.lblTimKiemDocGia.TabIndex = 10;
+            this.lblTimKiemDocGia.Text = "Tìm Kiếm";
             // 
             // btnTimKiemDocGia
             // 
@@ -916,7 +926,6 @@
             // 
             // pnlHighLightTimKiemDocGia
             // 
-            this.pnlHighLightTimKiemDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
             this.pnlHighLightTimKiemDocGia.Location = new System.Drawing.Point(0, 33);
             this.pnlHighLightTimKiemDocGia.Name = "pnlHighLightTimKiemDocGia";
             this.pnlHighLightTimKiemDocGia.Size = new System.Drawing.Size(200, 7);
@@ -978,7 +987,7 @@
             this.pnlCapNhatSach.Controls.Add(this.pnlThongTinSach);
             this.pnlCapNhatSach.Controls.Add(this.pnlThongBaoSach);
             this.pnlCapNhatSach.Controls.Add(this.btnHuyCapNhatSach);
-            this.pnlCapNhatSach.Controls.Add(this.lblCapNhatDocGia);
+            this.pnlCapNhatSach.Controls.Add(this.lblCapNhatSach);
             this.pnlCapNhatSach.Controls.Add(this.btnSuaSach);
             this.pnlCapNhatSach.Controls.Add(this.btnXoaSach);
             this.pnlCapNhatSach.Controls.Add(this.btnThemSach);
@@ -990,6 +999,7 @@
             // 
             // pnlThongTinSach
             // 
+            this.pnlThongTinSach.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.pnlThongTinSach.Controls.Add(this.btnThemTheLoai);
             this.pnlThongTinSach.Controls.Add(this.btnThemChuDe);
             this.pnlThongTinSach.Controls.Add(this.btnThemNhaPhatHanh);
@@ -1017,16 +1027,17 @@
             this.pnlThongTinSach.Controls.Add(this.dtmNgayNhap);
             this.pnlThongTinSach.Location = new System.Drawing.Point(0, 26);
             this.pnlThongTinSach.Name = "pnlThongTinSach";
-            this.pnlThongTinSach.Size = new System.Drawing.Size(415, 217);
+            this.pnlThongTinSach.Size = new System.Drawing.Size(415, 210);
             this.pnlThongTinSach.TabIndex = 37;
             this.pnlThongTinSach.Click += new System.EventHandler(this.pnlThongTinSach_Click);
             // 
             // btnThemTheLoai
             // 
-            this.btnThemTheLoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnThemTheLoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnThemTheLoai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThemTheLoai.FlatAppearance.BorderSize = 0;
-            this.btnThemTheLoai.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnThemTheLoai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnThemTheLoai.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnThemTheLoai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnThemTheLoai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemTheLoai.Font = new System.Drawing.Font("Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnThemTheLoai.Location = new System.Drawing.Point(368, 211);
@@ -1035,13 +1046,15 @@
             this.btnThemTheLoai.TabIndex = 35;
             this.btnThemTheLoai.Text = "+";
             this.btnThemTheLoai.UseVisualStyleBackColor = false;
+            this.btnThemTheLoai.Click += new System.EventHandler(this.btnThemTheLoai_Click);
             // 
             // btnThemChuDe
             // 
-            this.btnThemChuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnThemChuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnThemChuDe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThemChuDe.FlatAppearance.BorderSize = 0;
-            this.btnThemChuDe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnThemChuDe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnThemChuDe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnThemChuDe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnThemChuDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemChuDe.Font = new System.Drawing.Font("Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnThemChuDe.Location = new System.Drawing.Point(368, 176);
@@ -1054,10 +1067,11 @@
             // 
             // btnThemNhaPhatHanh
             // 
-            this.btnThemNhaPhatHanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnThemNhaPhatHanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnThemNhaPhatHanh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThemNhaPhatHanh.FlatAppearance.BorderSize = 0;
-            this.btnThemNhaPhatHanh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnThemNhaPhatHanh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnThemNhaPhatHanh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnThemNhaPhatHanh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnThemNhaPhatHanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemNhaPhatHanh.Font = new System.Drawing.Font("Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnThemNhaPhatHanh.Location = new System.Drawing.Point(368, 141);
@@ -1070,10 +1084,11 @@
             // 
             // btnThemNXB
             // 
-            this.btnThemNXB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnThemNXB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnThemNXB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThemNXB.FlatAppearance.BorderSize = 0;
-            this.btnThemNXB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnThemNXB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnThemNXB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnThemNXB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnThemNXB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemNXB.Font = new System.Drawing.Font("Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnThemNXB.Location = new System.Drawing.Point(368, 106);
@@ -1086,10 +1101,11 @@
             // 
             // btnThemTacGia
             // 
-            this.btnThemTacGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnThemTacGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnThemTacGia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThemTacGia.FlatAppearance.BorderSize = 0;
-            this.btnThemTacGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnThemTacGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnThemTacGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnThemTacGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnThemTacGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemTacGia.Font = new System.Drawing.Font("Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnThemTacGia.Location = new System.Drawing.Point(368, 36);
@@ -1118,6 +1134,7 @@
             // 
             // cboTheLoai
             // 
+            this.cboTheLoai.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.cboTheLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboTheLoai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTheLoai.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -1132,6 +1149,7 @@
             // 
             // cboChuDe
             // 
+            this.cboChuDe.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.cboChuDe.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboChuDe.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboChuDe.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -1146,6 +1164,7 @@
             // 
             // cboNhaPhatHanh
             // 
+            this.cboNhaPhatHanh.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.cboNhaPhatHanh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboNhaPhatHanh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboNhaPhatHanh.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -1160,6 +1179,7 @@
             // 
             // cboNXB
             // 
+            this.cboNXB.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.cboNXB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboNXB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboNXB.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -1174,6 +1194,7 @@
             // 
             // cboNamXB
             // 
+            this.cboNamXB.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.cboNamXB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboNamXB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboNamXB.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -1186,6 +1207,7 @@
             // 
             // cboTacGia
             // 
+            this.cboTacGia.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.cboTacGia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboTacGia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTacGia.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -1200,6 +1222,7 @@
             // 
             // cboTenSach
             // 
+            this.cboTenSach.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.cboTenSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboTenSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTenSach.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -1363,11 +1386,12 @@
             // 
             // btnHuyCapNhatSach
             // 
-            this.btnHuyCapNhatSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnHuyCapNhatSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnHuyCapNhatSach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHuyCapNhatSach.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnHuyCapNhatSach.FlatAppearance.BorderSize = 0;
-            this.btnHuyCapNhatSach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnHuyCapNhatSach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnHuyCapNhatSach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnHuyCapNhatSach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnHuyCapNhatSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyCapNhatSach.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHuyCapNhatSach.Location = new System.Drawing.Point(293, 344);
@@ -1378,23 +1402,24 @@
             this.btnHuyCapNhatSach.UseVisualStyleBackColor = false;
             this.btnHuyCapNhatSach.Click += new System.EventHandler(this.btnHuyCapNhatSach_Click);
             // 
-            // lblCapNhatDocGia
+            // lblCapNhatSach
             // 
-            this.lblCapNhatDocGia.AutoSize = true;
-            this.lblCapNhatDocGia.Font = new System.Drawing.Font("Sitka Heading", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblCapNhatDocGia.Location = new System.Drawing.Point(16, 246);
-            this.lblCapNhatDocGia.Name = "lblCapNhatDocGia";
-            this.lblCapNhatDocGia.Size = new System.Drawing.Size(99, 30);
-            this.lblCapNhatDocGia.TabIndex = 40;
-            this.lblCapNhatDocGia.Text = "Cập Nhật";
+            this.lblCapNhatSach.AutoSize = true;
+            this.lblCapNhatSach.Font = new System.Drawing.Font("Sitka Heading", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblCapNhatSach.Location = new System.Drawing.Point(16, 246);
+            this.lblCapNhatSach.Name = "lblCapNhatSach";
+            this.lblCapNhatSach.Size = new System.Drawing.Size(99, 30);
+            this.lblCapNhatSach.TabIndex = 40;
+            this.lblCapNhatSach.Text = "Cập Nhật";
             // 
             // btnSuaSach
             // 
-            this.btnSuaSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnSuaSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnSuaSach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSuaSach.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSuaSach.FlatAppearance.BorderSize = 0;
-            this.btnSuaSach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnSuaSach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnSuaSach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnSuaSach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnSuaSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaSach.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSuaSach.Location = new System.Drawing.Point(165, 284);
@@ -1407,11 +1432,12 @@
             // 
             // btnXoaSach
             // 
-            this.btnXoaSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnXoaSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnXoaSach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnXoaSach.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnXoaSach.FlatAppearance.BorderSize = 0;
-            this.btnXoaSach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnXoaSach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnXoaSach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnXoaSach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnXoaSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaSach.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXoaSach.Location = new System.Drawing.Point(293, 284);
@@ -1424,11 +1450,12 @@
             // 
             // btnThemSach
             // 
-            this.btnThemSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnThemSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnThemSach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThemSach.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnThemSach.FlatAppearance.BorderSize = 0;
-            this.btnThemSach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(71)))));
-            this.btnThemSach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(121)))), ((int)(((byte)(66)))));
+            this.btnThemSach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnThemSach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnThemSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemSach.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThemSach.Location = new System.Drawing.Point(37, 284);
@@ -1448,23 +1475,23 @@
             this.dgvSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvSach.BackgroundColor = System.Drawing.Color.White;
             this.dgvSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSach.Location = new System.Drawing.Point(418, 26);
             this.dgvSach.Name = "dgvSach";
             this.dgvSach.ReadOnly = true;
@@ -1612,7 +1639,7 @@
             this.pnlLocSach.Controls.Add(this.chkNhaPhatHanh);
             this.pnlLocSach.Controls.Add(this.chkNXB);
             this.pnlLocSach.Controls.Add(this.chkTacGia);
-            this.pnlLocSach.Controls.Add(this.label11);
+            this.pnlLocSach.Controls.Add(this.lblLocSach);
             this.pnlLocSach.Location = new System.Drawing.Point(6, 262);
             this.pnlLocSach.Name = "pnlLocSach";
             this.pnlLocSach.Size = new System.Drawing.Size(400, 211);
@@ -1703,16 +1730,16 @@
             this.chkTacGia.Text = "Tác Giả";
             this.chkTacGia.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // lblLocSach
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Sitka Heading", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(20, 21);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(179, 28);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Thông Tin Cần Xem";
+            this.lblLocSach.AutoSize = true;
+            this.lblLocSach.Font = new System.Drawing.Font("Sitka Heading", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblLocSach.ForeColor = System.Drawing.Color.White;
+            this.lblLocSach.Location = new System.Drawing.Point(20, 21);
+            this.lblLocSach.Name = "lblLocSach";
+            this.lblLocSach.Size = new System.Drawing.Size(179, 28);
+            this.lblLocSach.TabIndex = 0;
+            this.lblLocSach.Text = "Thông Tin Cần Xem";
             // 
             // pnltabChoMuonSach
             // 
@@ -1773,9 +1800,11 @@
             // 
             // btnCMSLapPM
             // 
-            this.btnCMSLapPM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnCMSLapPM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnCMSLapPM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCMSLapPM.FlatAppearance.BorderSize = 0;
-            this.btnCMSLapPM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
+            this.btnCMSLapPM.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnCMSLapPM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnCMSLapPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCMSLapPM.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCMSLapPM.Location = new System.Drawing.Point(237, 452);
@@ -1810,37 +1839,37 @@
             this.dgvCMSDSPhieuMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCMSDSPhieuMuon.BackgroundColor = System.Drawing.Color.White;
             this.dgvCMSDSPhieuMuon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCMSDSPhieuMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCMSDSPhieuMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCMSDSPhieuMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCMSDSPhieuMuon.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCMSDSPhieuMuon.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCMSDSPhieuMuon.EnableHeadersVisualStyles = false;
             this.dgvCMSDSPhieuMuon.GridColor = System.Drawing.Color.White;
             this.dgvCMSDSPhieuMuon.Location = new System.Drawing.Point(10, 34);
             this.dgvCMSDSPhieuMuon.MultiSelect = false;
             this.dgvCMSDSPhieuMuon.Name = "dgvCMSDSPhieuMuon";
             this.dgvCMSDSPhieuMuon.ReadOnly = true;
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle61.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle61.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle61.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCMSDSPhieuMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCMSDSPhieuMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCMSDSPhieuMuon.RowHeadersVisible = false;
             this.dgvCMSDSPhieuMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCMSDSPhieuMuon.Size = new System.Drawing.Size(428, 409);
@@ -1864,25 +1893,25 @@
             this.dgvCMSSachDangMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCMSSachDangMuon.BackgroundColor = System.Drawing.Color.White;
             this.dgvCMSSachDangMuon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle62.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle62.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle62.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCMSSachDangMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCMSSachDangMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCMSSachDangMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCMSSachDangMuon.Location = new System.Drawing.Point(13, 172);
             this.dgvCMSSachDangMuon.Name = "dgvCMSSachDangMuon";
-            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle63.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle63.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle63.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCMSSachDangMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCMSSachDangMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCMSSachDangMuon.RowHeadersVisible = false;
             this.dgvCMSSachDangMuon.Size = new System.Drawing.Size(388, 147);
             this.dgvCMSSachDangMuon.TabIndex = 9;
@@ -1976,26 +2005,26 @@
             this.dgvPMSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPMSach.BackgroundColor = System.Drawing.Color.White;
             this.dgvPMSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle64.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle64.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle64.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle64.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPMSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPMSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPMSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPMSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaSach,
             this.colTenSach});
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle65.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle65.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle65.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPMSach.DefaultCellStyle = dataGridViewCellStyle65;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPMSach.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvPMSach.Location = new System.Drawing.Point(28, 195);
             this.dgvPMSach.Name = "dgvPMSach";
             this.dgvPMSach.ReadOnly = true;
@@ -2116,9 +2145,11 @@
             // 
             // btnNTSLapPhieuTra
             // 
-            this.btnNTSLapPhieuTra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.btnNTSLapPhieuTra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
+            this.btnNTSLapPhieuTra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNTSLapPhieuTra.FlatAppearance.BorderSize = 0;
-            this.btnNTSLapPhieuTra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
+            this.btnNTSLapPhieuTra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btnNTSLapPhieuTra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(193)))), ((int)(((byte)(0)))));
             this.btnNTSLapPhieuTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNTSLapPhieuTra.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNTSLapPhieuTra.Location = new System.Drawing.Point(237, 452);
@@ -2153,37 +2184,37 @@
             this.dgvPTDanhSachPhieuTra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPTDanhSachPhieuTra.BackgroundColor = System.Drawing.Color.White;
             this.dgvPTDanhSachPhieuTra.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle68.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle68.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPTDanhSachPhieuTra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPTDanhSachPhieuTra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvPTDanhSachPhieuTra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle69.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPTDanhSachPhieuTra.DefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTDanhSachPhieuTra.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvPTDanhSachPhieuTra.EnableHeadersVisualStyles = false;
             this.dgvPTDanhSachPhieuTra.GridColor = System.Drawing.Color.White;
             this.dgvPTDanhSachPhieuTra.Location = new System.Drawing.Point(5, 30);
             this.dgvPTDanhSachPhieuTra.MultiSelect = false;
             this.dgvPTDanhSachPhieuTra.Name = "dgvPTDanhSachPhieuTra";
             this.dgvPTDanhSachPhieuTra.ReadOnly = true;
-            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle70.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPTDanhSachPhieuTra.RowHeadersDefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPTDanhSachPhieuTra.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPTDanhSachPhieuTra.RowHeadersVisible = false;
             this.dgvPTDanhSachPhieuTra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPTDanhSachPhieuTra.Size = new System.Drawing.Size(437, 475);
@@ -2207,25 +2238,25 @@
             this.dgvNTSSachDangMuon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvNTSSachDangMuon.BackgroundColor = System.Drawing.Color.White;
             this.dgvNTSSachDangMuon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle66.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle66.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle66.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNTSSachDangMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNTSSachDangMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvNTSSachDangMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNTSSachDangMuon.Location = new System.Drawing.Point(13, 172);
             this.dgvNTSSachDangMuon.Name = "dgvNTSSachDangMuon";
-            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle67.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle67.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNTSSachDangMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Sitka Display", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNTSSachDangMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvNTSSachDangMuon.RowHeadersVisible = false;
             this.dgvNTSSachDangMuon.Size = new System.Drawing.Size(388, 147);
             this.dgvNTSSachDangMuon.TabIndex = 9;
@@ -2342,27 +2373,27 @@
             this.dgvPTDSSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPTDSSach.BackgroundColor = System.Drawing.Color.White;
             this.dgvPTDSSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle71.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPTDSSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPTDSSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvPTDSSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPTDSSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.colTinhTrang,
             this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle72.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPTDSSach.DefaultCellStyle = dataGridViewCellStyle72;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPTDSSach.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvPTDSSach.Location = new System.Drawing.Point(28, 257);
             this.dgvPTDSSach.Name = "dgvPTDSSach";
             this.dgvPTDSSach.ReadOnly = true;
@@ -2452,15 +2483,15 @@
             this.btnMainESC.UseVisualStyleBackColor = false;
             this.btnMainESC.Click += new System.EventHandler(this.btnMainESC_Click);
             // 
-            // picAppName
+            // pnlHeading
             // 
-            this.picAppName.Image = global::GraphicUserInterface.Properties.Resources.Logo3;
-            this.picAppName.Location = new System.Drawing.Point(2, 3);
-            this.picAppName.Name = "picAppName";
-            this.picAppName.Size = new System.Drawing.Size(142, 52);
-            this.picAppName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAppName.TabIndex = 41;
-            this.picAppName.TabStop = false;
+            this.pnlHeading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(104)))), ((int)(((byte)(57)))));
+            this.pnlHeading.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlHeading.BackgroundImage")));
+            this.pnlHeading.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHeading.Location = new System.Drawing.Point(150, 0);
+            this.pnlHeading.Name = "pnlHeading";
+            this.pnlHeading.Size = new System.Drawing.Size(847, 10);
+            this.pnlHeading.TabIndex = 28;
             // 
             // frmMain
             // 
@@ -2473,7 +2504,7 @@
             this.Controls.Add(this.pnltabChoMuonSach);
             this.Controls.Add(this.pnltabKhoSach);
             this.Controls.Add(this.pnltabDocGia);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.pnlHeading);
             this.Controls.Add(this.pnlMainButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -2485,6 +2516,7 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlMainButton.ResumeLayout(false);
             this.pnlMainButton.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAppName)).EndInit();
             this.pnltabDocGia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).EndInit();
             this.pnlThongTinDocGia.ResumeLayout(false);
@@ -2531,7 +2563,6 @@
             this.pnlPTPhieuTra.ResumeLayout(false);
             this.pnlPTPhieuTra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTDSSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAppName)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2548,7 +2579,7 @@
         private System.Windows.Forms.Button mainbtnNhanTraSach;
         private System.Windows.Forms.Button mainbtnChoMuonSach;
         private System.Windows.Forms.Button mainbtnDocGia;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlHeading;
         private System.Windows.Forms.Panel pnltabDocGia;
         private System.Windows.Forms.Button btnXoaDocGia;
         private System.Windows.Forms.Button btnThemDocGia;
@@ -2565,7 +2596,7 @@
         private System.Windows.Forms.Label lblDiaChi;
         private System.Windows.Forms.Label lblHoTen;
         private System.Windows.Forms.Panel pnlLocDocGia;
-        private System.Windows.Forms.Button btnLoc;
+        private System.Windows.Forms.Button btnLocDocGia;
         private System.Windows.Forms.CheckBox chkNgayDK;
         private System.Windows.Forms.CheckBox chkNgaySinh;
         private System.Windows.Forms.CheckBox chkCMND;
@@ -2574,13 +2605,13 @@
         private System.Windows.Forms.Label lblTuaDe;
         private System.Windows.Forms.Panel pnlTimKiemDocGia;
         private System.Windows.Forms.TextBox txtDGTimKiem;
-        private System.Windows.Forms.Label lblTimKiem;
+        private System.Windows.Forms.Label lblTimKiemDocGia;
         private System.Windows.Forms.Button btnTimKiemDocGia;
         private System.Windows.Forms.ComboBox cboTimKiemDocGia;
         private System.Windows.Forms.DataGridView dgvDocGia;
         private System.Windows.Forms.DateTimePicker dtmNgayDKDocGia;
         private System.Windows.Forms.DateTimePicker dtmNgaySinhDocGia;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCapNhatDocGia;
         private System.Windows.Forms.Label lblThongBaoDocGia;
         private System.Windows.Forms.Button btnHuyThaoTacDocGia;
         private System.Windows.Forms.Panel pnlThongBaoDocGia;
@@ -2597,7 +2628,7 @@
         private System.Windows.Forms.Label lblTitleThongBaoSach;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnHuyCapNhatSach;
-        private System.Windows.Forms.Label lblCapNhatDocGia;
+        private System.Windows.Forms.Label lblCapNhatSach;
         private System.Windows.Forms.Button btnSuaSach;
         private System.Windows.Forms.Button btnXoaSach;
         private System.Windows.Forms.Button btnThemSach;
@@ -2607,7 +2638,7 @@
         private System.Windows.Forms.CheckBox chkNhaPhatHanh;
         private System.Windows.Forms.CheckBox chkNXB;
         private System.Windows.Forms.CheckBox chkTacGia;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblLocSach;
         private System.Windows.Forms.Panel pnlTimKiemSach;
         private System.Windows.Forms.TextBox txtTimKiemSach;
         private System.Windows.Forms.Label lblTimKiemSach;

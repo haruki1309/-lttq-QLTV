@@ -18,7 +18,7 @@ namespace GraphicUserInterface
     public partial class frmMain : Form
     {
         private Color grayBackColor = System.Drawing.Color.FromArgb(((int)((byte)54)), ((int)((byte)54)), ((int)((byte)50)));
-        private Color orangeBackColor = System.Drawing.Color.FromArgb(((int)((byte)205)), ((int)((byte)104)), ((int)((byte)57)));
+        private Color orangeBackColor = System.Drawing.Color.FromArgb(((int)((byte)231)), ((int)((byte)150)), ((int)((byte)0)));
 
         //LOADING ...................
         private void tmrFrmMainLoad_Tick(object sender, EventArgs e)
@@ -35,27 +35,7 @@ namespace GraphicUserInterface
             pnlRunning.Visible = false;
         }
 
-        // Danh dau button nao dang duoc click; nguoi dung dang o tab nao
-        private void ChonMainButton(Button button)
-        {
-            foreach (Control btn in pnlMainButton.Controls)
-            {
-                if (btn == button)
-                {
-                    btn.BackColor = Color.DimGray;
-                    pnlRunning.Visible = true;
-                    pnlRunning.BackColor = orangeBackColor;
-                    pnlRunning.Location = new Point(2, button.Location.Y);
-                }
-                else
-                {
-                    btn.BackColor = grayBackColor;
-                }
-            }
-        }
-
-
-
+        
         //Thu thu quan ly hien tai
         DTO_ThuThu dtoThuThu = new DTO_ThuThu();
 
@@ -88,8 +68,65 @@ namespace GraphicUserInterface
             InitializeComponent();
         }
 
+        // ================ Phương thức hỗ trợ ================= //
+        // Kiem tra chuoi so nhap vao co hop le hay khong
+        private bool checkValidNumberString(string numberString)
+        {
+            foreach (char num in numberString)
+            {
+                if ((int)num < 48 || (int)num > 57)
+                    return false;
+            }
+
+            return true;
+        }
+
+        private bool checkValidNumberString(string numberString, int min, int max)
+        {
+            if (!checkValidNumberString(numberString) || numberString.Length < min || numberString.Length > max)
+                return false;
+
+            return true;
+        }
+
+        // Kiem tra SDT, CMND nhap vao co hop le hay khong
+        private bool checkValidPhoneNumber(string numberString, int min, int max)
+        {
+            if (!checkValidNumberString(numberString) || numberString.Length < min || numberString.Length > max)
+                return false;
+
+            return true;
+        }
+
+        private bool checkValidIdentityCardNumber(string numberString, int min, int max)
+        {
+            if (!checkValidNumberString(numberString) || (numberString.Length != min && numberString.Length != max))
+                return false;
+
+            return true;
+        }
+
+        // Danh dau button nao dang duoc click; nguoi dung dang o tab nao
+        private void ChonMainButton(Button button)
+        {
+            foreach (Control btn in pnlMainButton.Controls)
+            {
+                if (btn == button)
+                {
+                    btn.BackColor = Color.DimGray;
+                    pnlRunning.Visible = true;
+                    //pnlRunning.BackColor = orangeBackColor;
+                    pnlRunning.Location = new Point(2, button.Location.Y);
+                }
+                else
+                {
+                    btn.BackColor = grayBackColor;
+                }
+            }
+        }
 
 
+        // ============================================= //
         BUS_DocGia busDG = new BUS_DocGia();
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -394,24 +431,31 @@ namespace GraphicUserInterface
 
                 if (txtHoTenDocGia.Text != "" && txtDiaChiDocGia.Text != "" && txtCMNDDocGia.Text != "" && txtSDTDocGia.Text != "" && dtmNgaySinhDocGia.Value != DateTime.Today)
                 {
-                    DataTable dt = busDG.getDocGia();
-
-                    string prvMaDocGia = dt.Rows[dt.Rows.Count - 1]["MaDocGia"].ToString();
-
-                    if (busDG.insertDocGia(prvMaDocGia, txtHoTenDocGia.Text, txtDiaChiDocGia.Text, txtSDTDocGia.Text, txtCMNDDocGia.Text, dtmNgaySinhDocGia.Value, dtmNgayDKDocGia.Value))
+                    if (checkValidIdentityCardNumber(txtCMNDDocGia.Text, 9, 12) && checkValidPhoneNumber(txtSDTDocGia.Text, 10, 11))
                     {
-                        this.lblThongBaoDocGia.Text = "Thêm thành công";
-                        dgvDocGia.DataSource = busDG.getDocGia();
-                        dgvDocGia_RenameColumn();
-                        btnThemDocGia.Text = "Thêm";
+                        DataTable dt = busDG.getDocGia();
+
+                        string prvMaDocGia = dt.Rows[dt.Rows.Count - 1]["MaDocGia"].ToString();
+
+                        if (busDG.insertDocGia(prvMaDocGia, txtHoTenDocGia.Text, txtDiaChiDocGia.Text, txtSDTDocGia.Text, txtCMNDDocGia.Text, dtmNgaySinhDocGia.Value, dtmNgayDKDocGia.Value))
+                        {
+                            this.lblThongBaoDocGia.Text = "Thêm thành công";
+                            dgvDocGia.DataSource = busDG.getDocGia();
+                            dgvDocGia_RenameColumn();
+                            btnThemDocGia.Text = "Thêm";
+                        }
+                        else
+                        {
+                            this.lblThongBaoDocGia.Text = "Thêm không thành công !";
+                            btnThemDocGia.Text = "Thêm";
+                        }
+
+                        setUpTabDocGia();
                     }
                     else
                     {
-                        this.lblThongBaoDocGia.Text = "Thêm không thành công !";
-                        btnThemDocGia.Text = "Thêm";
+                        this.lblThongBaoDocGia.Text = "CMND, Số điện thoại không hợp lệ.";
                     }
-
-                    setUpTabDocGia();
                 }
 
                 else
@@ -460,29 +504,35 @@ namespace GraphicUserInterface
                 }
                 else if (dgvDocGia.SelectedRows.Count > 0)
                 {
-                    DataGridViewRow row = dgvDocGia.CurrentRow;
-
-                    string maDocGia = row.Cells[0].Value.ToString();
-
-                    if (busDG.updateDocGia(maDocGia, txtHoTenDocGia.Text, txtDiaChiDocGia.Text, txtSDTDocGia.Text, txtCMNDDocGia.Text, dtmNgaySinhDocGia.Value, dtmNgayDKDocGia.Value))
+                    if (txtHoTenDocGia.Text != "" && txtDiaChiDocGia.Text != "" && txtCMNDDocGia.Text != "" && txtSDTDocGia.Text != "" && dtmNgaySinhDocGia.Value != DateTime.Today)
                     {
-                        this.lblThongBaoDocGia.Text = "Sửa thành công";
-                        dgvDocGia.DataSource = busDG.getDocGia();
-                        dgvDocGia_RenameColumn();
-                        btnSuaDocGia.Text = "Sửa";
+                        DataGridViewRow row = dgvDocGia.CurrentRow;
+
+                        string maDocGia = row.Cells[0].Value.ToString();
+
+                        if (busDG.updateDocGia(maDocGia, txtHoTenDocGia.Text, txtDiaChiDocGia.Text, txtSDTDocGia.Text, txtCMNDDocGia.Text, dtmNgaySinhDocGia.Value, dtmNgayDKDocGia.Value))
+                        {
+                            this.lblThongBaoDocGia.Text = "Sửa thành công";
+                            dgvDocGia.DataSource = busDG.getDocGia();
+                            dgvDocGia_RenameColumn();
+                            btnSuaDocGia.Text = "Sửa";
+                        }
+                        else
+                        {
+                            this.lblThongBaoDocGia.Text = "Sửa không thành công !";
+                            btnSuaDocGia.Text = "Sửa";
+                        }
+
+                        setUpTabDocGia();
                     }
                     else
                     {
-                        this.lblThongBaoDocGia.Text = "Sửa không thành công !";
-                        btnSuaDocGia.Text = "Sửa";
+                        this.lblThongBaoDocGia.Text = "CMND, Số điện thoại không hợp lệ.";
                     }
-
-                    setUpTabDocGia();
                 }
             }
-
-
         }
+
         //Xoa doc gia       
         private void btnXoaDocGia_Click(object sender, EventArgs e)
         {
@@ -626,17 +676,26 @@ namespace GraphicUserInterface
                 // Them Sach
                 if (cboTenSach.Text.ToString() != "" && cboTacGia.Text.ToString() != "" && cboNamXB.Text.ToString() != "" && cboNXB.Text.ToString() != "" && cboNhaPhatHanh.Text.ToString() != "" && cboChuDe.Text.ToString() != "" && cboTheLoai.Text.ToString() != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
                 {
-                    string maSach = "";
-
-                    if (busSach.insertSach(maSach, cboTenSach.Text.ToString(), cboTacGia.Text.ToString(), Convert.ToInt32(cboNamXB.Text.ToString()), cboNXB.Text.ToString(), cboNhaPhatHanh.Text.ToString(), dtmNgayNhap.Value, cboChuDe.Text.ToString(), cboTheLoai.Text.ToString(), Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
+                    if (checkValidNumberString(cboNamXB.Text) && checkValidNumberString(txtSoLuong.Text) && checkValidNumberString(txtGiaTri.Text) && checkValidNumberString(cboNamXB.Text, 0, 4))
                     {
-                        ResetControlSach();
-                        lblThongBaoSach.Text = "Thêm thành công !";
+                        string maSach = "";
+
+                        if (busSach.insertSach(maSach, cboTenSach.Text.ToString(), cboTacGia.Text.ToString(), Convert.ToInt32(cboNamXB.Text.ToString()), cboNXB.Text.ToString(), cboNhaPhatHanh.Text.ToString(), dtmNgayNhap.Value, cboChuDe.Text.ToString(), cboTheLoai.Text.ToString(), Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
+                        {
+                            ResetControlSach();
+                            lblThongBaoSach.Text = "Thêm thành công !";
+                        }
+                        else
+                        {                          
+                            lblThongBaoSach.Text = "Thêm không thành công !";
+                        }
+
+                        dgvSach.DataSource = busSach.getSach();
+                        dgvSach_RenameColumn();
                     }
                     else
                     {
-                        ResetControlSach();
-                        lblThongBaoSach.Text = "Thêm không thành công !";
+                        lblThongBaoSach.Text = "Dữ liệu thêm vào không hợp lệ.\nVui lòng kiểm tra lại.";
                     }
                 }
                 else
@@ -644,8 +703,6 @@ namespace GraphicUserInterface
                     lblThongBaoSach.Text = "Vui lòng nhập đầy đủ \ncác thông tin !";
                 }
 
-                dgvSach.DataSource = busSach.getSach();
-                dgvSach_RenameColumn();
             }
         }
 
@@ -684,30 +741,38 @@ namespace GraphicUserInterface
                 }
             }
             else if (btnSuaSach.Text == "Xác nhận sửa")
-            {
-
-                DataGridViewRow row = dgvSach.CurrentRow;
-
+            {             
                 if (cboTenSach.Text.ToString() != "" && cboTacGia.Text.ToString() != "" && cboNamXB.Text.ToString() != "" && cboNXB.Text.ToString() != "" && cboNhaPhatHanh.Text.ToString() != "" && cboChuDe.Text.ToString() != "" && cboTheLoai.Text.ToString() != "" && txtGiaTri.Text != "" && txtSoLuong.Text != "")
                 {
-                    if (busSach.updateSach(row.Cells["MaSach"].Value.ToString(), cboTenSach.Text.ToString(), cboTacGia.Text.ToString(), Convert.ToInt32(cboNamXB.Text.ToString()), cboNXB.Text.ToString(), cboNhaPhatHanh.Text.ToString(), dtmNgayNhap.Value, cboChuDe.Text.ToString(), cboTheLoai.Text.ToString(), Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
+                    if (checkValidNumberString(cboNamXB.Text) && checkValidNumberString(txtSoLuong.Text) && checkValidNumberString(txtGiaTri.Text) && checkValidNumberString(cboNamXB.Text, 0, 4))
                     {
-                        ResetControlSach();
-                        lblThongBaoSach.Text = "Sửa thành công !";
+                        DataGridViewRow row = dgvSach.CurrentRow;
+
+                        if (busSach.updateSach(row.Cells["MaSach"].Value.ToString(), cboTenSach.Text.ToString(), cboTacGia.Text.ToString(), Convert.ToInt32(cboNamXB.Text.ToString()), cboNXB.Text.ToString(), cboNhaPhatHanh.Text.ToString(), dtmNgayNhap.Value, cboChuDe.Text.ToString(), cboTheLoai.Text.ToString(), Convert.ToDouble(txtGiaTri.Text), Convert.ToInt32(txtSoLuong.Text)))
+                        {
+                            ResetControlSach();
+                            lblThongBaoSach.Text = "Sửa thành công !";
+
+
+                            dgvSach.DataSource = busSach.getSach();
+                            dgvSach_RenameColumn();
+                        }
+                        else
+                        {
+                            ResetControlSach();
+                            lblThongBaoSach.Text = "Sửa không thành công !";
+                        }
                     }
                     else
                     {
-                        ResetControlSach();
-                        lblThongBaoSach.Text = "Sửa không thành công !";
+                        lblThongBaoSach.Text = "Dữ liệu thêm vào không hợp lệ.\nVui lòng kiểm tra lại.";
                     }
+
                 }
                 else
                 {
                     lblThongBaoSach.Text = "Vui lòng nhập đầy đủ \ncác thông tin !";
                 }
-
-                dgvSach.DataSource = busSach.getSach();
-                dgvSach_RenameColumn();
             }
         }
 
@@ -2066,6 +2131,8 @@ namespace GraphicUserInterface
 
             dgvNTSSachDangMuon.ClearSelection();
         }
+
+      
         // =================================== Thoát chương trình =================================== //
         private void btnMainESC_Click(object sender, EventArgs e)
         {
